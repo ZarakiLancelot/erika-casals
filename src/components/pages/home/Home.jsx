@@ -1,4 +1,10 @@
+import Booking from '../../booking/Booking';
+import Footer from '../../footer/Footer';
+import InstagramFeed from '../../instagramfeed/InstagramFeed';
 import WhoIs from '../../layouts/whois/WhoIs';
+import MyWork from '../../mywork/MyWork';
+import Reviews from '../../reviews/Reviews';
+import ServicesComp from '../../servicesComp/ServicesComp';
 import {
 	StyledButton,
 	StyledContainer,
@@ -55,6 +61,12 @@ const Home = () => {
 				</StyledFlexContainer>
 			</StyledContent>
 			<WhoIs />
+			<MyWork />
+			<ServicesComp />
+			<Reviews />
+			<Booking />
+			<InstagramFeed />
+			<Footer />
 		</StyledContainer>
 	);
 };
