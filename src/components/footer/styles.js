@@ -67,10 +67,10 @@ const StyledDescription = styled.p`
 const StyledContactButton = styled.button`
 	background-color: white;
 	color: black;
-	padding: 12px 30px;
+	padding: 12px 46px;
 	border-radius: 25px;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -82,6 +82,10 @@ const StyledContactButton = styled.button`
 	&:hover {
 		background-color: rgb(167, 196, 250);
 		color: #2c3e50;
+	}
+
+	img {
+		width: 1.5rem;
 	}
 `;
 

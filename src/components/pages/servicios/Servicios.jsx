@@ -1,11 +1,4 @@
 import { Link } from 'react-router-dom';
-import Booking from '../../booking/Booking';
-import Footer from '../../footer/Footer';
-import InstagramFeed from '../../instagramfeed/InstagramFeed';
-import WhoIs from '../../layouts/whois/WhoIs';
-import MyWork from '../../mywork/MyWork';
-import Reviews from '../../reviews/Reviews';
-import ServicesComp from '../../servicesComp/ServicesComp';
 import {
 	StyledButton,
 	StyledContainer,
@@ -19,9 +12,13 @@ import {
 	StyledNavLi,
 	StyledNavRight,
 	StyledTitle
-} from './styles';
+} from '../home/styles';
+import Footer from '../../footer/Footer';
+import Propiedades from '../../propiedades/Propiedades';
+import MiamiCosta from '../../miamicosta/MiamiCosta';
+import Booking from '../../booking/Booking';
 
-const Home = () => {
+const Servicios = () => {
 	return (
 		<StyledContainer>
 			<StyledNavbar>
@@ -43,37 +40,43 @@ const Home = () => {
 					</StyledButton>
 				</StyledNavRight>
 			</StyledNavbar>
+
 			<StyledContent>
 				<StyledFlexContainer>
-					<StyledImage src='/images/home-group-1.png' alt='Home Image 1' />
+					<StyledImage
+						src='/images/services-group-1.png'
+						alt='Service Image 1'
+					/>
 				</StyledFlexContainer>
 				<StyledFlexContainer>
 					<StyledTitle>
-						Vende tu propiedad con alguien que realmente te representa.
+						Dime qué estás buscando… y te mostraré el camino más directo para
+						encontrarlo.
 					</StyledTitle>
 					<StyledDescription>
-						Soy Erika Casals, asesora inmobiliaria especializada en ventas de
-						propiedades en España. Acompaño a propietarios como tú a vender su
-						casa con confianza, destacando su valor real y asegurando un proceso
-						claro, ágil y sin complicaciones.
+						Cada cliente es diferente. Algunos buscan una inversión rentable,
+						otros una segunda residencia, y otros simplemente quieren empezar
+						una nueva etapa con total tranquilidad. Por eso mis servicios se
+						adaptan a ti, no al revés.
 					</StyledDescription>
 					<StyledButton>
-						Contáctame <img src='/icons/whatsapp-icon.png' alt='' />
+						Hablemos ahora por WhatsApp{' '}
+						<img src='/icons/whatsapp-icon.png' alt='' />
 					</StyledButton>
 				</StyledFlexContainer>
 				<StyledFlexContainer>
-					<StyledImage src='/images/home-group-2.png' alt='Home Image 1' />
+					<StyledImage src='/images/home-group-2.png' alt='Service Image 2' />
 				</StyledFlexContainer>
 			</StyledContent>
-			<WhoIs />
-			<MyWork />
-			<ServicesComp />
-			<Reviews />
+			<Propiedades reverse={false} />
+			<Propiedades reverse={true} />
+			<MiamiCosta />
 			<Booking />
-			<InstagramFeed />
+
+			{/* Footer */}
 			<Footer />
 		</StyledContainer>
 	);
 };
 
-export default Home;
+export default Servicios;
