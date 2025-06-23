@@ -30,9 +30,15 @@ const Servicios = () => {
 					<StyledNavLi>
 						<Link to='/servicios'>Servicios</Link>
 					</StyledNavLi>
-					<StyledNavLi>Sobre mí</StyledNavLi>
-					<StyledNavLi>Alquiler</StyledNavLi>
-					<StyledNavLi>Venta</StyledNavLi>
+					<StyledNavLi>
+						<Link to='/aboutme'>Sobre mí</Link>
+					</StyledNavLi>
+					<StyledNavLi>
+						<Link to='/rent'>Alquiler</Link>
+					</StyledNavLi>
+					<StyledNavLi>
+						<Link to='/sales'>Venta</Link>
+					</StyledNavLi>
 				</StyledNavCenter>
 				<StyledNavRight>
 					<StyledButton>

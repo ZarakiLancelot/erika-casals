@@ -1,0 +1,392 @@
+import { useState } from 'react';
+import styled from 'styled-components';
+import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
+import PropertyDetail from './PropertyDetail';
+import PropertyCard from './PropertyCard';
+import PropertyCard from './PropertyCard';
+
+const PropertiesContainer = styled.div`
+	min-height: 100vh;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	padding: 60px 0;
+`;
+
+const HeaderSection = styled.div`
+	text-align: center;
+	margin-bottom: 60px;
+	
+	h1 {
+		color: white;
+		font-size: 3rem;
+		font-weight: 700;
+		margin: 0;
+		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	}
+`;
+
+const FilterSection = styled.div`
+	max-width: 1200px;
+	margin: 0 auto 40px auto;
+	padding: 0 20px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+`;
+
+const FilterButton = styled.button`
+	background: ${props => props.active ? 'white' : 'rgba(255, 255, 255, 0.2)'};
+	color: ${props => props.active ? '#667eea' : 'white'};
+	border: 2px solid ${props => props.active ? 'white' : 'rgba(255, 255, 255, 0.3)'};
+	padding: 12px 30px;
+	border-radius: 50px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	&:hover {
+		background: white;
+		color: #667eea;
+		border-color: white;
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+	}
+`;
+
+const SearchSection = styled.div`
+	max-width: 1200px;
+	margin: 0 auto 40px auto;
+	padding: 0 20px;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 30px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+`;
+
+const SearchField = styled.div`
+	display: flex;
+	flex-direction: column;
+	
+	label {
+		color: white;
+		font-size: 14px;
+		font-weight: 600;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+	
+	select, input {
+		background: rgba(255, 255, 255, 0.9);
+		border: none;
+		border-radius: 10px;
+		padding: 12px;
+		font-size: 14px;
+		color: #333;
+		
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+		}
+	}
+`;
+
+const StatusBar = styled.div`
+	max-width: 1200px;
+	margin: 0 auto 30px auto;
+	padding: 0 20px;
+	
+	.status-badge {
+		background: ${props => props.error ? '#ff6b6b' : props.loading ? '#ffd93d' : '#51cf66'};
+		color: ${props => props.error ? 'white' : '#333'};
+		padding: 12px 24px;
+		border-radius: 25px;
+		display: inline-block;
+		font-weight: 600;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+`;
+
+const PropertiesGrid = styled.div`
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 30px;
+`;
+
+const LoadingSpinner = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+	color: white;
+	font-size: 18px;
+	
+	&:after {
+		content: '';
+		width: 40px;
+		height: 40px;
+		border: 4px solid rgba(255, 255, 255, 0.3);
+		border-top: 4px solid white;
+		border-radius: 50%;
+		animation: spin 1s linear infinite;
+		margin-left: 20px;
+	}
+	
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+`;
+
+const ErrorMessage = styled.div`
+	text-align: center;
+	padding: 40px;
+	color: #ff6b6b;
+	font-size: 18px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	margin: 0 20px;
+`;
+
+const EmptyState = styled.div`
+	text-align: center;
+	padding: 60px 20px;
+	color: white;
+	
+	h3 {
+		font-size: 24px;
+		margin-bottom: 16px;
+	}
+	
+	p {
+		font-size: 16px;
+		opacity: 0.8;
+	}
+`;
+
+const Properties = () => {
+	const {
+		properties,
+		loading,
+		error,
+		filter,
+		setFilter,
+		formatPrice,
+		getPropertyMainImage,
+		fetchPropertyImages
+	} = useIdealistaProperties();
+
+	const [showDetail, setShowDetail] = useState(false);
+	const [selectedProperty, setSelectedProperty] = useState(null);
+
+	const handlePropertyClick = async (property) => {
+		setSelectedProperty(property);
+		setShowDetail(true);
+		
+		// Cargar imágenes si no las tiene ya
+		if (property.propertyId) {
+			await fetchPropertyImages(property.propertyId);
+		}
+	};
+	const getOperationType = (property) => {
+		if (!property.operation) return 'unknown';
+		return property.operation.type;
+	};
+
+	const getPropertyFeatures = (property) => {
+		const features = [];
+		
+		if (property.features?.areaConstructed) {
+			features.push({ icon: '📐', text: `${property.features.areaConstructed} m²` });
+		}
+		
+		if (property.features?.rooms) {
+			features.push({ icon: '🛏️', text: `${property.features.rooms} hab.` });
+		}
+		
+		if (property.features?.bathroomNumber) {
+			features.push({ icon: '🚿', text: `${property.features.bathroomNumber} baños` });
+		}
+		
+		return features;
+	};
+
+	const getLocationText = (property) => {
+		if (property.address) {
+			const { streetName, streetNumber, town } = property.address;
+			const parts = [streetName, streetNumber, town].filter(Boolean);
+			return parts.join(', ');
+		}
+		return 'Ubicación no especificada';
+	};
+
+	const getDescription = (property) => {
+		if (property.descriptions && property.descriptions.length > 0) {
+			// Buscar descripción en español primero
+			const esDesc = property.descriptions.find(desc => desc.language === 'es');
+			if (esDesc) return esDesc.text;
+			
+			// Si no hay en español, tomar la primera disponible
+			return property.descriptions[0].text;
+		}
+		return 'Venta de locales en excelente zona. Las posibilidades son muchas dependiendo de las necesidades finales del cliente.';
+	};
+
+	if (showDetail && selectedProperty) {
+		return (
+			<PropertyDetail 
+				property={selectedProperty}
+				onBack={() => setShowDetail(false)}
+			/>
+		);
+	}
+	return (
+		<PropertiesContainer>
+			<HeaderSection>
+				<h1>{filter === 'sale' ? 'En Venta' : filter === 'rent' ? 'En Alquiler' : 'Propiedades'}</h1>
+			</HeaderSection>
+
+			<FilterSection>
+				<FilterButton 
+					active={filter === 'all'} 
+					onClick={() => setFilter('all')}
+				>
+					Todas
+				</FilterButton>
+				<FilterButton 
+					active={filter === 'sale'} 
+					onClick={() => setFilter('sale')}
+				>
+					Venta
+				</FilterButton>
+				<FilterButton 
+					active={filter === 'rent'} 
+					onClick={() => setFilter('rent')}
+				>
+					Alquiler
+				</FilterButton>
+			</FilterSection>
+
+			<SearchSection>
+				<SearchField>
+					<label>Tipo de inmueble</label>
+					<select defaultValue="">
+						<option value="">Todos los tipos</option>
+						<option value="flat">Piso</option>
+						<option value="chalet">Chalet</option>
+						<option value="office">Oficina</option>
+					</select>
+				</SearchField>
+				
+				<SearchField>
+					<label>Precio mínimo</label>
+					<input type="number" placeholder="€" />
+				</SearchField>
+				
+				<SearchField>
+					<label>Precio máximo</label>
+					<input type="number" placeholder="€" />
+				</SearchField>
+				
+				<SearchField>
+					<label>Más filtros</label>
+					<select defaultValue="">
+						<option value="">Más filtros</option>
+						<option value="new">Obra nueva</option>
+						<option value="garage">Con garaje</option>
+						<option value="terrace">Con terraza</option>
+					</select>
+				</SearchField>
+			</SearchSection>
+
+			<StatusBar error={error} loading={loading}>
+				<div className="status-badge">
+					{error ? 'Error de conexión' : loading ? 'Cargando...' : `${properties.length} propiedades encontradas`}
+				</div>
+			</StatusBar>
+
+			{loading && <LoadingSpinner>Cargando propiedades...</LoadingSpinner>}
+			
+			{error && (
+				<ErrorMessage>
+					{error}
+				</ErrorMessage>
+			)}
+
+			{!loading && !error && properties.length === 0 && (
+				<EmptyState>
+					<h3>No se encontraron propiedades</h3>
+					<p>Intenta ajustar los filtros o verifica la conexión con Idealista</p>
+				</EmptyState>
+			)}
+
+			{!loading && !error && properties.length > 0 && (
+				<PropertiesGrid>
+					{properties.map((property, index) => (
+						<PropertyCard 
+							key={property.propertyId || index}
+							onClick={() => handlePropertyClick(property)}
+						>							<PropertyImageContainer>
+								<PropertyImage 
+									src={getPropertyMainImage(property.propertyId)}
+									alt={`Propiedad en ${getLocationText(property)}`}
+									onLoad={() => {
+										// Si no tiene imágenes cargadas, cargarlas
+										if (!getPropertyMainImage(property.propertyId).includes('idealista')) {
+											fetchPropertyImages(property.propertyId);
+										}
+									}}
+									onError={(e) => {
+										console.log('Error loading image for property', property.propertyId);
+										e.target.src = '/images/costa-espanola.png';
+									}}
+								/>
+								<ImageOverlay>
+									<StatusBadge type={getOperationType(property)}>
+										{getOperationType(property) === 'sale' ? 'Venta' : 
+										 getOperationType(property) === 'rent' ? 'Alquiler' : 'N/A'}
+									</StatusBadge>
+								</ImageOverlay>
+							</PropertyImageContainer>
+									<PropertyContent>
+								<PropertyPrice>
+									{formatPrice(property)}
+								</PropertyPrice>
+								
+								<PropertyLocation>
+									{getLocationText(property)}
+								</PropertyLocation>
+								
+								<PropertyFeatures>
+									{getPropertyFeatures(property).map((feature, idx) => (
+										<Feature key={idx}>
+											<span>{feature.icon}</span>
+											{feature.text}
+										</Feature>
+									))}
+								</PropertyFeatures>
+								
+								<PropertyDescription>
+									{getDescription(property)}
+								</PropertyDescription>
+							</PropertyContent>
+						</PropertyCard>
+					))}
+				</PropertiesGrid>
+			)}
+		</PropertiesContainer>
+	);
+};
+
+export default Properties;

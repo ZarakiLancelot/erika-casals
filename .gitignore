@@ -2,3 +2,9 @@ node_modules
 .DS_Store
 dist
 dist-ssr
+*.log
+.env
+.env.local
+.env.production
+backend/package-lock.json
+nul

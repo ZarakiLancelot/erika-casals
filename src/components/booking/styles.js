@@ -8,6 +8,10 @@ const StyledContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 2rem 0;
+
+	@media (max-width: 768px) {
+		min-height: auto;
+	}
 `;
 
 const StyledContent = styled.div`
@@ -69,7 +73,11 @@ const StyledImageContainer = styled.div`
 	}
 
 	@media (max-width: 768px) {
+		width: 100%;
 		height: 200px;
+		img {
+			object-fit: contain;
+		}
 	}
 `;
 
