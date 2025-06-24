@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
+import { useContentfulRentProperties } from '../../hooks/useContentfulProperties';
 import PropertyDetail from './PropertyDetail';
+import PageTransition from '../common/PageTransition';
+import ScrollAnimation from '../common/ScrollAnimation';
 import {
 	PropertiesContainer,
 	ContentWrapper,
@@ -57,6 +60,12 @@ const PropertiesRent = () => {
 		getPropertyTitle,
 		fetchPropertyImages
 	} = useIdealistaProperties();
+	// Hook para obtener propiedades de Contentful (solo alquiler)
+	const {
+		properties: contentfulProperties,
+		loading: contentfulLoading,
+		error: contentfulError
+	} = useContentfulRentProperties();
 	// Estados para filtros locales
 	const [localFilters, setLocalFilters] = useState({
 		location: '',
@@ -93,17 +102,6 @@ const PropertiesRent = () => {
 		[loadedImages, loadingImages, fetchPropertyImages]
 	);
 
-	// Función para obtener los metros cuadrados de una propiedad
-	const getPropertySize = useCallback(property => {
-		return (
-			property.features?.areaConstructed ||
-			property.features?.builtArea ||
-			property.features?.usableArea ||
-			property.size ||
-			null
-		);
-	}, []);
-
 	// Establecer filtro a 'rent' al montar el componente y limpiar filtros locales
 	useEffect(() => {
 		setFilter('rent');
@@ -119,22 +117,27 @@ const PropertiesRent = () => {
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
 	}, [setFilter, location.pathname]); // Agregar location.pathname como dependencia
-
-	// Generar ubicaciones disponibles basadas en las propiedades
+	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
 	useEffect(() => {
-		if (properties.length > 0) {
+		const allProps = [...properties, ...contentfulProperties];
+		if (allProps.length > 0) {
 			const locations = new Set();
-			properties.forEach(property => {
+			allProps.forEach(property => {
+				// Para propiedades de Idealista
 				if (property.address?.town) {
 					locations.add(property.address.town);
 				}
 				if (property.address?.district) {
 					locations.add(property.address.district);
 				}
+				// Para propiedades de Contentful
+				if (property.source === 'contentful' && property.location) {
+					locations.add(property.location);
+				}
 			});
 			setAvailableLocations(Array.from(locations).sort());
 		}
-	}, [properties]);
+	}, [properties, contentfulProperties]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
@@ -210,7 +213,6 @@ const PropertiesRent = () => {
 			'';
 		const address = property.address?.streetName?.toLowerCase() || '';
 		const district = property.address?.district?.toLowerCase() || '';
-
 		return (
 			description.includes(term) ||
 			address.includes(term) ||
@@ -218,26 +220,43 @@ const PropertiesRent = () => {
 		);
 	};
 
+	// Combinar propiedades de Idealista y Contentful
+	const allProperties = [
+		...properties,
+		...contentfulProperties // Ya están filtradas por alquiler en el hook
+	];
+
 	// Filtrar propiedades localmente según los filtros adicionales
-	const filteredProperties = properties.filter(property => {
+	const filteredProperties = allProperties.filter(property => {
 		// Filtro por ubicación
 		if (localFilters.location && localFilters.location !== '') {
-			const address = property.address?.streetName?.toLowerCase() || '';
-			const district = property.address?.district?.toLowerCase() || '';
-			const town = property.address?.town?.toLowerCase() || '';
 			const locationFilter = localFilters.location.toLowerCase();
-			if (
-				!address.includes(locationFilter) &&
-				!district.includes(locationFilter) &&
-				!town.includes(locationFilter)
-			) {
-				return false;
+
+			// Para propiedades de Idealista
+			if (property.address) {
+				const address = property.address?.streetName?.toLowerCase() || '';
+				const district = property.address?.district?.toLowerCase() || '';
+				const town = property.address?.town?.toLowerCase() || '';
+				if (
+					!address.includes(locationFilter) &&
+					!district.includes(locationFilter) &&
+					!town.includes(locationFilter)
+				) {
+					return false;
+				}
+			}
+			// Para propiedades de Contentful
+			else if (property.source === 'contentful') {
+				const location = property.location?.toLowerCase() || '';
+				if (!location.includes(locationFilter)) {
+					return false;
+				}
 			}
 		}
 
 		// Filtro por precio mínimo
 		if (localFilters.minPrice && localFilters.minPrice !== '') {
-			const price = property.operation?.price || 0;
+			const price = property.operation?.price || property.price || 0;
 			if (price < parseInt(localFilters.minPrice)) {
 				return false;
 			}
@@ -245,7 +264,7 @@ const PropertiesRent = () => {
 
 		// Filtro por precio máximo
 		if (localFilters.maxPrice && localFilters.maxPrice !== '') {
-			const price = property.operation?.price || 0;
+			const price = property.operation?.price || property.price || 0;
 			if (price > parseInt(localFilters.maxPrice)) {
 				return false;
 			}
@@ -254,7 +273,10 @@ const PropertiesRent = () => {
 		// Filtro por área mínima
 		if (localFilters.minArea && localFilters.minArea !== '') {
 			const area =
-				property.features?.areaConstructed || property.features?.builtArea || 0;
+				property.features?.areaConstructed ||
+				property.features?.builtArea ||
+				property.size ||
+				0;
 			if (area < parseInt(localFilters.minArea)) {
 				return false;
 			}
@@ -263,7 +285,10 @@ const PropertiesRent = () => {
 		// Filtro por área máxima
 		if (localFilters.maxArea && localFilters.maxArea !== '') {
 			const area =
-				property.features?.areaConstructed || property.features?.builtArea || 0;
+				property.features?.areaConstructed ||
+				property.features?.builtArea ||
+				property.size ||
+				0;
 			if (area > parseInt(localFilters.maxArea)) {
 				return false;
 			}
@@ -278,6 +303,38 @@ const PropertiesRent = () => {
 
 		return true;
 	});
+
+	// Funciones unificadas para manejo de propiedades de ambas fuentes
+	const getPropertyTitleUnified = property => {
+		if (property.source === 'contentful') {
+			return property.title || 'Propiedad exclusiva';
+		}
+		return getPropertyTitle(property);
+	};
+
+	// Función para obtener el tamaño de la propiedad
+	const getPropertySizeUnified = property => {
+		if (property.source === 'contentful') {
+			return property.size;
+		}
+		return property.features?.areaConstructed || property.features?.builtArea;
+	};
+
+	// Función para obtener el número de habitaciones
+	const getRoomsUnified = property => {
+		if (property.source === 'contentful') {
+			return property.rooms;
+		}
+		return property.features?.rooms;
+	};
+
+	// Función para obtener el número de baños
+	const getBathroomsUnified = property => {
+		if (property.source === 'contentful') {
+			return property.bathrooms;
+		}
+		return property.features?.bathroomNumber;
+	};
 
 	const handleFilterChange = (filterName, value) => {
 		setLocalFilters(prev => ({
@@ -309,7 +366,7 @@ const PropertiesRent = () => {
 		<PropertiesContainer>
 			<ContentWrapper>
 				<StyledNavbar>
-					<StyledNavLeft></StyledNavLeft>
+					<StyledNavLeft></StyledNavLeft>{' '}
 					<StyledNavCenter>
 						<StyledNavLi>
 							<Link to='/'>Inicio</Link>
@@ -319,7 +376,7 @@ const PropertiesRent = () => {
 						</StyledNavLi>
 						<StyledNavLi>
 							<Link to='/aboutme'>Sobre mí</Link>
-						</StyledNavLi>
+						</StyledNavLi>{' '}
 						<StyledNavLi>
 							<Link to='/rent'>Alquiler</Link>
 						</StyledNavLi>
@@ -331,202 +388,260 @@ const PropertiesRent = () => {
 						<StyledButton>
 							Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
 						</StyledButton>
-					</StyledNavRight>
+					</StyledNavRight>{' '}
 				</StyledNavbar>
-				<HeaderSection>
-					<h1>En Alquiler</h1>
-				</HeaderSection>
+				<PageTransition type='properties'>
+					<HeaderSection>
+						<h1>En Alquiler</h1>
+					</HeaderSection>
 
-				<MainContainer>
-					{/* Sidebar de filtros */}
-					<FilterSidebar>
-						<FilterCard>
-							<FilterTitle>Filtros de búsqueda</FilterTitle> {/* Filtros */}
-							<FilterGroup>
-								<FilterLabel>Localización</FilterLabel>
-								<FilterSelect
-									value={localFilters.location}
-									onChange={e => handleFilterChange('location', e.target.value)}
-								>
-									<option value=''>Todas las ubicaciones</option>
-									{availableLocations.map(location => (
-										<option key={location} value={location}>
-											{location}
-										</option>
-									))}
-								</FilterSelect>
-							</FilterGroup>
-							<FilterGroup>
-								<FilterLabel>Precio mensual</FilterLabel>
-								<PriceRangeGroup>
-									<PriceInput
-										placeholder='Precio mín €'
-										value={localFilters.minPrice}
+					<MainContainer>
+						{/* Sidebar de filtros */}
+						<FilterSidebar>
+							<FilterCard>
+								<FilterTitle>Filtros de búsqueda</FilterTitle> {/* Filtros */}
+								<FilterGroup>
+									<FilterLabel>Localización</FilterLabel>
+									<FilterSelect
+										value={localFilters.location}
 										onChange={e =>
-											handleFilterChange('minPrice', e.target.value)
+											handleFilterChange('location', e.target.value)
 										}
-										type='number'
-									/>
-									<PriceSeparator>—</PriceSeparator>
-									<PriceInput
-										placeholder='Precio máx €'
-										value={localFilters.maxPrice}
+									>
+										<option value=''>Todas las ubicaciones</option>
+										{availableLocations.map(location => (
+											<option key={location} value={location}>
+												{location}
+											</option>
+										))}
+									</FilterSelect>
+								</FilterGroup>
+								<FilterGroup>
+									<FilterLabel>Precio mensual</FilterLabel>
+									<PriceRangeGroup>
+										<PriceInput
+											placeholder='Precio mín €'
+											value={localFilters.minPrice}
+											onChange={e =>
+												handleFilterChange('minPrice', e.target.value)
+											}
+											type='number'
+										/>
+										<PriceSeparator>—</PriceSeparator>
+										<PriceInput
+											placeholder='Precio máx €'
+											value={localFilters.maxPrice}
+											onChange={e =>
+												handleFilterChange('maxPrice', e.target.value)
+											}
+											type='number'
+										/>
+									</PriceRangeGroup>
+								</FilterGroup>
+								<FilterGroup>
+									<FilterLabel>Superficie (m²)</FilterLabel>
+									<PriceRangeGroup>
+										<PriceInput
+											placeholder='m² min'
+											value={localFilters.minArea}
+											onChange={e =>
+												handleFilterChange('minArea', e.target.value)
+											}
+											type='number'
+										/>
+										<PriceSeparator>—</PriceSeparator>
+										<PriceInput
+											placeholder='m² max'
+											value={localFilters.maxArea}
+											onChange={e =>
+												handleFilterChange('maxArea', e.target.value)
+											}
+											type='number'
+										/>
+									</PriceRangeGroup>
+								</FilterGroup>
+								<FilterGroup>
+									<FilterLabel>Características</FilterLabel>
+									<FilterInput
+										placeholder='ej: ascensor, aire acondicionado, terraza...'
+										value={localFilters.features}
 										onChange={e =>
-											handleFilterChange('maxPrice', e.target.value)
+											handleFilterChange('features', e.target.value)
 										}
-										type='number'
+										title='Busca por: ascensor, aire acondicionado, terraza, balcón, garaje, piscina, jardín, trastero, armarios, calefacción, ático, dúplex'
 									/>
-								</PriceRangeGroup>
-							</FilterGroup>
-							<FilterGroup>
-								<FilterLabel>Superficie (m²)</FilterLabel>
-								<PriceRangeGroup>
-									<PriceInput
-										placeholder='m² min'
-										value={localFilters.minArea}
-										onChange={e =>
-											handleFilterChange('minArea', e.target.value)
-										}
-										type='number'
-									/>
-									<PriceSeparator>—</PriceSeparator>
-									<PriceInput
-										placeholder='m² max'
-										value={localFilters.maxArea}
-										onChange={e =>
-											handleFilterChange('maxArea', e.target.value)
-										}
-										type='number'
-									/>
-								</PriceRangeGroup>
-							</FilterGroup>
-							<FilterGroup>
-								<FilterLabel>Características</FilterLabel>
-								<FilterInput
-									placeholder='ej: ascensor, aire acondicionado, terraza...'
-									value={localFilters.features}
-									onChange={e => handleFilterChange('features', e.target.value)}
-									title='Busca por: ascensor, aire acondicionado, terraza, balcón, garaje, piscina, jardín, trastero, armarios, calefacción, ático, dúplex'
-								/>
-							</FilterGroup>
-						</FilterCard>
-					</FilterSidebar>
+								</FilterGroup>
+							</FilterCard>
+						</FilterSidebar>
 
-					{/* Sección principal de propiedades */}
-					<PropertiesSection>
-						<ResultsHeader>
-							<ResultsCount>
-								{loading
-									? 'Cargando propiedades...'
-									: error
-									? 'Error al cargar propiedades'
-									: `${filteredProperties.length} ${
-											filteredProperties.length === 1
-												? 'resultado'
-												: 'resultados'
-									  } encontrados`}
-							</ResultsCount>
-						</ResultsHeader>
-						{loading && (
-							<LoadingSpinner>Cargando propiedades...</LoadingSpinner>
-						)}
-						{error && <ErrorMessage>{error}</ErrorMessage>}
-						{!loading && !error && filteredProperties.length === 0 && (
-							<EmptyState>
-								<h3>No se encontraron propiedades</h3>
-								<p>Intenta ajustar los filtros o verifica la conexión</p>
-							</EmptyState>
-						)}{' '}
-						{!loading && !error && filteredProperties.length > 0 && (
-							<PropertiesGrid>
-								{filteredProperties.map((property, index) => {
-									// Intentar cargar imagen cuando la propiedad aparece en el grid
-									const propertyId = property.propertyId;
-									if (propertyId && !loadedImages.has(propertyId)) {
-										loadPropertyImage(propertyId);
-									}
-									return (
-										<StyledPropertyCard
-											key={propertyId || index}
-											onClick={() => handlePropertyClick(property)}
-										>
-											{/* Mostrar loader mientras carga, imagen cuando está disponible, o placeholder si no hay imagen */}
-											{loadingImages.has(propertyId) ? (
-												<ImageLoader />
-											) : (
-												<PropertyImage
-													src={
-														getPropertyMainImage(propertyId) ||
-														'/images/home-image-1.png'
+						{/* Sección principal de propiedades */}
+						<PropertiesSection>
+							<ResultsHeader>
+								<ResultsCount>
+									{loading
+										? 'Cargando propiedades...'
+										: error
+										? 'Error al cargar propiedades'
+										: `${filteredProperties.length} ${
+												filteredProperties.length === 1
+													? 'resultado'
+													: 'resultados'
+										  } encontrados`}
+								</ResultsCount>
+							</ResultsHeader>{' '}
+							{(loading || contentfulLoading) && (
+								<LoadingSpinner>Cargando propiedades...</LoadingSpinner>
+							)}
+							{(error || contentfulError) && (
+								<ErrorMessage>{error || contentfulError}</ErrorMessage>
+							)}
+							{!loading &&
+								!contentfulLoading &&
+								!error &&
+								!contentfulError &&
+								filteredProperties.length === 0 && (
+									<EmptyState>
+										<h3>No se encontraron propiedades</h3>
+										<p>Intenta ajustar los filtros o verifica la conexión</p>
+									</EmptyState>
+								)}{' '}
+							{!loading &&
+								!contentfulLoading &&
+								!error &&
+								!contentfulError &&
+								filteredProperties.length > 0 && (
+									<PropertiesGrid>
+										{filteredProperties.map((property, index) => {
+											// Para propiedades de Idealista
+											const propertyId = property.propertyId;
+											if (propertyId && !loadedImages.has(propertyId)) {
+												loadPropertyImage(propertyId);
+											} // Determinar la imagen a mostrar
+											let imageSrc;
+											if (property.source === 'contentful') {
+												// Para Contentful, usar la URL de la primera imagen
+												if (property.images && property.images.length > 0) {
+													const imageUrl = property.images[0].url;
+													imageSrc = imageUrl.startsWith('//')
+														? `https:${imageUrl}`
+														: imageUrl;
+												} else {
+													imageSrc = '/images/home-image-1.png';
+												}
+											} else {
+												imageSrc =
+													getPropertyMainImage(propertyId) ||
+													'/images/home-image-1.png';
+											}
+											return (
+												<ScrollAnimation
+													key={
+														property.source === 'contentful'
+															? property.id
+															: propertyId || index
 													}
-													alt={getPropertyTitle(property)}
-												/>
-											)}
-											<PropertyContent>
-												<PropertyIcon />
-												<PropertyTitle>
-													{getPropertyTitle(property)}
-												</PropertyTitle>
-												<PropertyPrice>
-													{formatPrice(property)}
-													<span>
-														{' '}
-														Ref. ec-
-														{propertyId?.toString().slice(-4) || '1024'}
-													</span>
-												</PropertyPrice>
-												<PropertyDescription>
-													{(() => {
-														if (
-															property.descriptions &&
-															property.descriptions.length > 0
-														) {
-															const esDesc = property.descriptions.find(
-																desc => desc.language === 'es'
-															);
-															const description = esDesc
-																? esDesc.text
-																: property.descriptions[0].text;
-															// Limitar a 150 caracteres
-															return description.length > 150
-																? description.substring(0, 150) + '...'
-																: description;
-														}
-														return (
-															property.description ||
-															'Propiedad en alquiler en excelente zona. Ideal para familias o profesionales.'
-														);
-													})()}
-												</PropertyDescription>
-												<PropertyBottom>
-													<PropertyFeatures>
-														<img src='/icons/house.png' alt='' />
-														{getPropertySize(property) && (
-															<PropertyFeature>
-																{getPropertySize(property)}m²
-															</PropertyFeature>
+													delay={index * 0.1}
+												>
+													<StyledPropertyCard
+														onClick={() => handlePropertyClick(property)}
+													>
+														{/* Mostrar loader solo para propiedades de Idealista */}
+														{property.source !== 'contentful' &&
+														loadingImages.has(propertyId) ? (
+															<ImageLoader />
+														) : (
+															<PropertyImage
+																src={imageSrc}
+																alt={getPropertyTitleUnified(property)}
+															/>
 														)}
-														{property.features?.rooms && (
-															<PropertyFeature>
-																{property.features.rooms} hab.
-															</PropertyFeature>
-														)}
-														{property.features?.bathroomNumber && (
-															<PropertyFeature>
-																{property.features.bathroomNumber} baños
-															</PropertyFeature>
-														)}
-													</PropertyFeatures>
-												</PropertyBottom>
-											</PropertyContent>
-										</StyledPropertyCard>
-									);
-								})}
-							</PropertiesGrid>
-						)}
-					</PropertiesSection>
-				</MainContainer>
-				<Footer />
+														<PropertyContent>
+															<PropertyIcon />
+															<PropertyTitle>
+																{getPropertyTitleUnified(property)}
+															</PropertyTitle>
+															<PropertyPrice>
+																{property.source === 'contentful'
+																	? `${property.price?.toLocaleString(
+																			'es-ES'
+																	  )} €`
+																	: formatPrice(property)}
+																<span>
+																	{' '}
+																	Ref.{' '}
+																	{property.source === 'contentful'
+																		? 'ex'
+																		: 'ec'}
+																	-
+																	{property.source === 'contentful'
+																		? property.id.slice(-4)
+																		: propertyId?.toString().slice(-4) ||
+																		  '1024'}
+																</span>
+															</PropertyPrice>
+															<PropertyDescription>
+																{(() => {
+																	if (property.source === 'contentful') {
+																		const description =
+																			property.description ||
+																			'Propiedad exclusiva en alquiler con características únicas.';
+																		return description.length > 150
+																			? description.substring(0, 150) + '...'
+																			: description;
+																	}
+
+																	if (
+																		property.descriptions &&
+																		property.descriptions.length > 0
+																	) {
+																		const esDesc = property.descriptions.find(
+																			desc => desc.language === 'es'
+																		);
+																		const description = esDesc
+																			? esDesc.text
+																			: property.descriptions[0].text;
+																		// Limitar a 150 caracteres
+																		return description.length > 150
+																			? description.substring(0, 150) + '...'
+																			: description;
+																	}
+																	return (
+																		property.description ||
+																		'Propiedad en alquiler en excelente zona. Ideal para familias o profesionales.'
+																	);
+																})()}
+															</PropertyDescription>
+															<PropertyBottom>
+																<PropertyFeatures>
+																	<img src='/icons/house.png' alt='' />
+																	{getPropertySizeUnified(property) && (
+																		<PropertyFeature>
+																			{getPropertySizeUnified(property)}m²
+																		</PropertyFeature>
+																	)}
+																	{getRoomsUnified(property) && (
+																		<PropertyFeature>
+																			{getRoomsUnified(property)} hab.
+																		</PropertyFeature>
+																	)}
+																	{getBathroomsUnified(property) && (
+																		<PropertyFeature>
+																			{getBathroomsUnified(property)} baños
+																		</PropertyFeature>
+																	)}{' '}
+																</PropertyFeatures>
+															</PropertyBottom>
+														</PropertyContent>
+													</StyledPropertyCard>
+												</ScrollAnimation>
+											);
+										})}
+									</PropertiesGrid>
+								)}{' '}
+						</PropertiesSection>
+					</MainContainer>
+					<Footer />
+				</PageTransition>
 			</ContentWrapper>
 		</PropertiesContainer>
 	);

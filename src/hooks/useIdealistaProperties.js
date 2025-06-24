@@ -303,7 +303,26 @@ export const useIdealistaProperties = () => {
 
 	// Función para formatear precio
 	const formatPrice = useCallback(property => {
-		if (!property || !property.operation) return 'Precio no disponible';
+		if (!property) return 'Precio no disponible';
+
+		// Para propiedades de Contentful, el precio está directamente en property.price
+		if (property.source === 'contentful') {
+			if (!property.price) return 'Precio no disponible';
+
+			const formattedPrice = new Intl.NumberFormat('es-ES', {
+				style: 'currency',
+				currency: 'EUR',
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0
+			}).format(property.price);
+
+			// Determinar si es alquiler por el tipo
+			const isRent = property.type === 'En alquiler';
+			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
+		}
+
+		// Para propiedades de Idealista, usar la estructura operation
+		if (!property.operation) return 'Precio no disponible';
 
 		const { price, type } = property.operation;
 

@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import AboutProfile from '../../aboutme/AboutProfile';
+import PageTransition from '../../common/PageTransition';
+import ScrollAnimation from '../../common/ScrollAnimation';
 import {
 	StyledButton,
 	StyledContainer,
@@ -8,7 +11,6 @@ import {
 	StyledNavLi,
 	StyledNavRight
 } from '../home/styles';
-import AboutProfile from '../../aboutme/AboutProfile';
 import Booking from '../../booking/Booking';
 import Footer from '../../footer/Footer';
 import InstagramFeed from '../../instagramfeed/InstagramFeed';
@@ -17,7 +19,7 @@ const AboutMe = () => {
 	return (
 		<StyledContainer style={{ background: 'none' }}>
 			<StyledNavbar style={{ background: '#16243e' }}>
-				<StyledNavLeft></StyledNavLeft>
+				<StyledNavLeft></StyledNavLeft>{' '}
 				<StyledNavCenter>
 					<StyledNavLi>
 						<Link to='/'>Inicio</Link>
@@ -29,6 +31,7 @@ const AboutMe = () => {
 						<Link to='/aboutme'>Sobre mí</Link>
 					</StyledNavLi>
 					<StyledNavLi>
+						{' '}
 						<Link to='/rent'>Alquiler</Link>
 					</StyledNavLi>
 					<StyledNavLi>
@@ -39,12 +42,18 @@ const AboutMe = () => {
 					<StyledButton>
 						Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
 					</StyledButton>{' '}
-				</StyledNavRight>
+				</StyledNavRight>{' '}
 			</StyledNavbar>
-			<AboutProfile />
-			<InstagramFeed />
-			<Booking />
-			<Footer />
+			<PageTransition>
+				<AboutProfile />
+				<ScrollAnimation delay={0.1}>
+					<InstagramFeed />
+				</ScrollAnimation>
+				<ScrollAnimation delay={0.2}>
+					<Booking />
+				</ScrollAnimation>
+				<Footer />
+			</PageTransition>
 		</StyledContainer>
 	);
 };

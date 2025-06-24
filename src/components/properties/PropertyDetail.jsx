@@ -721,10 +721,13 @@ const PropertyDetail = ({ property, onBack }) => {
 
 	// Distancia mínima para considerar un swipe
 	const minSwipeDistance = 50;
-
 	// Cargar imágenes al montar el componente
 	useEffect(() => {
-		if (property.propertyId && !propertyImages[property.propertyId]) {
+		if (property.source === 'contentful') {
+			// Para propiedades de Contentful, las imágenes ya vienen en la propiedad
+			setImagesLoading(false);
+		} else if (property.propertyId && !propertyImages[property.propertyId]) {
+			// Para propiedades de Idealista, cargar imágenes de la API
 			setImagesLoading(true);
 			fetchPropertyImages(property.propertyId).then(() => {
 				setImagesLoading(false);
@@ -732,7 +735,12 @@ const PropertyDetail = ({ property, onBack }) => {
 		} else {
 			setImagesLoading(false);
 		}
-	}, [property.propertyId, propertyImages, fetchPropertyImages]);
+	}, [
+		property.propertyId,
+		property.source,
+		propertyImages,
+		fetchPropertyImages
+	]);
 	// Imágenes de ejemplo para el grid cuando la API no devuelve fotos
 	const mockImages = [
 		{ url: '/images/home-image-1.png', alt: 'Vista principal de la propiedad' },
@@ -744,11 +752,34 @@ const PropertyDetail = ({ property, onBack }) => {
 		{ url: '/images/booking-photo.png', alt: 'Baño principal' },
 		{ url: '/images/who-is-image.png', alt: 'Terraza' }
 	];
+	// Obtener imágenes según la fuente
+	const getPropertyImages = () => {
+		if (
+			property.source === 'contentful' &&
+			property.images &&
+			property.images.length > 0
+		) {
+			// Para propiedades de Contentful, usar las imágenes incluidas
+			return property.images.map(img => ({
+				url: img.url.startsWith('//') ? `https:${img.url}` : img.url,
+				alt: img.title || 'Imagen de la propiedad'
+			}));
+		} else if (property.propertyId && propertyImages[property.propertyId]) {
+			// Para propiedades de Idealista, usar las imágenes cargadas de la API
+			return propertyImages[property.propertyId];
+		}
+		// Fallback a imágenes mock
+		return mockImages;
+	};
 
-	const images = propertyImages[property.propertyId] || [];
-	const allImages = images.length > 0 ? images : mockImages;
-
+	const allImages = getPropertyImages();
 	const getLocationText = property => {
+		// Si viene de Contentful, usar el campo location
+		if (property.source === 'contentful' && property.location) {
+			return property.location;
+		}
+
+		// Para propiedades de Idealista, usar address
 		if (property.address) {
 			const { streetName, streetNumber, town } = property.address;
 			const parts = [streetName, streetNumber, town].filter(Boolean);
@@ -756,34 +787,40 @@ const PropertyDetail = ({ property, onBack }) => {
 		}
 		return 'Ubicación no especificada';
 	};
-
 	const getPropertyFeatures = property => {
 		const features = [];
 
-		if (property.features?.areaConstructed) {
+		// Área construida - Compatible con ambas fuentes
+		const area = property.size || property.features?.areaConstructed;
+		if (area) {
 			features.push({
 				icon: '📐',
-				value: property.features.areaConstructed,
+				value: area,
 				label: 'm² construidos'
 			});
 		}
 
-		if (property.features?.rooms) {
+		// Habitaciones - Compatible con ambas fuentes
+		const rooms = property.rooms || property.features?.rooms;
+		if (rooms) {
 			features.push({
 				icon: '🛏️',
-				value: property.features.rooms,
+				value: rooms,
 				label: 'Habitaciones'
 			});
 		}
 
-		if (property.features?.bathroomNumber) {
+		// Baños - Compatible con ambas fuentes
+		const bathrooms = property.bathrooms || property.features?.bathroomNumber;
+		if (bathrooms) {
 			features.push({
 				icon: '🚿',
-				value: property.features.bathroomNumber,
+				value: bathrooms,
 				label: 'Baños'
 			});
 		}
 
+		// Planta - Solo para Idealista
 		if (property.address?.floor !== undefined) {
 			features.push({
 				icon: '🏢',
@@ -797,7 +834,11 @@ const PropertyDetail = ({ property, onBack }) => {
 	const getCharacteristics = property => {
 		const characteristics = [];
 
+		// Tipo de propiedad - Compatible con ambas fuentes
 		if (property.type) {
+			// Para Contentful, puede ser "En venta"/"En alquiler", usar propertyType si está disponible
+			const propertyType = property.propertyType || property.type;
+
 			// Traducir el tipo de propiedad
 			const typeMap = {
 				flat: 'Piso',
@@ -808,21 +849,33 @@ const PropertyDetail = ({ property, onBack }) => {
 				land: 'Terreno',
 				premises: 'Local',
 				store: 'Local comercial',
-				warehouse: 'Nave industrial'
+				warehouse: 'Nave industrial',
+				// Para Contentful
+				Apartamento: 'Apartamento',
+				Villa: 'Villa',
+				Penthouse: 'Penthouse',
+				Casa: 'Casa'
 			};
-			characteristics.push({
-				label: 'Tipo',
-				value: typeMap[property.type] || property.type
-			});
+
+			// Solo agregar si no es "En venta" o "En alquiler"
+			if (propertyType !== 'En venta' && propertyType !== 'En alquiler') {
+				characteristics.push({
+					label: 'Tipo',
+					value: typeMap[propertyType] || propertyType
+				});
+			}
 		}
 
-		if (property.features?.areaConstructed) {
+		// Superficie - Compatible con ambas fuentes
+		const area = property.size || property.features?.areaConstructed;
+		if (area) {
 			characteristics.push({
 				label: 'Superficie construida',
-				value: `${property.features.areaConstructed} m²`
+				value: `${area} m²`
 			});
 		}
 
+		// Certificación energética - Solo Idealista por ahora
 		if (property.features?.energyCertificateRating) {
 			characteristics.push({
 				label: 'Certificación energética',
@@ -830,6 +883,7 @@ const PropertyDetail = ({ property, onBack }) => {
 			});
 		}
 
+		// Orientaciones - Solo Idealista
 		const orientations = [];
 		if (property.features?.orientationNorth) orientations.push('Norte');
 		if (property.features?.orientationSouth) orientations.push('Sur');
@@ -843,6 +897,7 @@ const PropertyDetail = ({ property, onBack }) => {
 			});
 		}
 
+		// Estado de conservación - Solo Idealista
 		if (property.features?.conservation) {
 			// Traducir el estado de conservación
 			const conservationMap = {
@@ -862,12 +917,26 @@ const PropertyDetail = ({ property, onBack }) => {
 			});
 		}
 
+		// Para propiedades de Contentful, agregar características específicas
+		if (
+			property.source === 'contentful' &&
+			property.features &&
+			Array.isArray(property.features)
+		) {
+			property.features.forEach(feature => {
+				characteristics.push({
+					label: 'Característica',
+					value: feature
+				});
+			});
+		}
+
 		return characteristics;
-	};
-	// Función para obtener características del edificio
+	}; // Función para obtener características del edificio
 	const getBuildingCharacteristics = property => {
 		const building = [];
 
+		// Para propiedades de Idealista
 		if (property.address?.floor !== undefined) {
 			// Función para traducir valores de piso
 			const translateFloor = floor => {
@@ -908,10 +977,18 @@ const PropertyDetail = ({ property, onBack }) => {
 			});
 		}
 
-		if (property.features?.liftAvailable !== undefined) {
+		// Ascensor - Compatible con ambas fuentes
+		const hasElevator =
+			property.features?.liftAvailable ||
+			(property.source === 'contentful' &&
+				property.features &&
+				Array.isArray(property.features) &&
+				property.features.some(f => f.toLowerCase().includes('ascensor')));
+
+		if (hasElevator !== undefined) {
 			building.push({
 				label: 'Ascensor',
-				value: property.features.liftAvailable ? 'Sí' : 'No'
+				value: hasElevator ? 'Sí' : 'No'
 			});
 		}
 
@@ -1052,17 +1129,29 @@ const PropertyDetail = ({ property, onBack }) => {
 
 		return equipment;
 	};
-
 	const getDescription = property => {
+		// Si viene de Contentful y tiene descripción, usarla
+		if (property.source === 'contentful' && property.description) {
+			return property.description;
+		}
+
+		// Para propiedades de Idealista, usar descriptions
 		if (property.descriptions && property.descriptions.length > 0) {
 			const esDesc = property.descriptions.find(desc => desc.language === 'es');
 			if (esDesc) return esDesc.text;
 			return property.descriptions[0].text;
 		}
+
+		// Descripción por defecto
 		return `Venta de locales en excelente zona. Las posibilidades son muchas dependiendo de las necesidades finales del cliente. Actualmente un 60% de la superficie se destina. Con aproximadamente la mitad de locales de fachada Su distribución permite realizar locales distribuidos en una o dos plantas inferiores casatrasteras). Uno de los locales solo la fachada es acristalada y otros dos tienen amplias ventanas y puertas con acceso. Con ubicación, privilegiada a pocos metros del Ayuntamiento, centro comercial así como del metro línea 12) y fuente. Contactanos para más información.`;
 	};
-
 	const getPropertyTitle = property => {
+		// Si viene de Contentful y tiene título, usarlo
+		if (property.source === 'contentful' && property.title) {
+			return property.title;
+		}
+
+		// Para propiedades de Idealista, generar título como antes
 		const type = property.type || 'Propiedad';
 		const location = property.address?.town || 'Madrid';
 
@@ -1242,12 +1331,15 @@ const PropertyDetail = ({ property, onBack }) => {
 					<PropertyHeader>
 						<PropertyTitle>{getPropertyTitle(property)}</PropertyTitle>{' '}
 						<PropertyInfo>
+							{' '}
 							<PropertyPrice>
 								{formatPrice(property)}
 								<span>
 									{' '}
 									Ref. ec-
-									{property.propertyId?.toString().slice(-4) || '1024'}
+									{property.propertyId?.toString().slice(-4) ||
+										property.id?.toString().slice(-4) ||
+										'1024'}
 								</span>
 							</PropertyPrice>{' '}
 							{(property.size || property.features?.areaConstructed) && (

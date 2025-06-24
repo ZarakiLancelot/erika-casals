@@ -3,11 +3,9 @@ import { StyledWrapper } from './styles';
 
 const HomeLayout = () => {
 	return (
-		<>
-			<StyledWrapper>
-				<Outlet />
-			</StyledWrapper>
-		</>
+		<StyledWrapper>
+			<Outlet />
+		</StyledWrapper>
 	);
 };
 
