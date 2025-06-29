@@ -15,10 +15,13 @@
 
 ### **PASO 1: Preparar el Proyecto**
 
-Tu proyecto ya está listo! Solo verifica que tienes:
+Tu proyecto ya está listo! Railway detectará automáticamente:
 - ✅ `backend/package.json` con `"start": "node server.js"`
 - ✅ `backend/server.js` funcionando
-- ✅ `backend/.env.production` con las variables
+- ✅ **Node.js** automáticamente (sin necesidad de Dockerfile)
+- ✅ Variables de entorno desde Railway Dashboard
+
+**🎯 Dockerfile renombrado a `.optional`** para usar detección automática.
 
 ### **PASO 2: Subir a GitHub**
 
