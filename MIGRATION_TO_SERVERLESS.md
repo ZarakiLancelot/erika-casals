@@ -171,6 +171,17 @@ const response = await fetch('/api/properties');
 
 ---
 
+## 🚨 PROBLEMA RESUELTO: Error de Runtime
+
+Si al hacer deploy obtienes este error:
+```
+Error: Function Runtimes must have a valid version, for example 'now-php@1.0.0'
+```
+
+**✅ YA SOLUCIONADO:** Se quitó la configuración de `functions` en `vercel.json` porque Vercel detecta automáticamente el runtime de Node.js.
+
+---
+
 ## 📞 PRÓXIMOS PASOS
 
 1. **Deploy inmediato:** `vercel --prod`
