@@ -40,7 +40,7 @@ NODE_ENV=production
 
 # Idealista API
 IDEALISTA_CLIENT_ID=tu_client_id
-IDEALISTA_CLIENT_SECRET=tu_client_secret  
+IDEALISTA_CLIENT_SECRET=tu_client_secret
 IDEALISTA_FEED_KEY=ilc_tu_feed_key
 
 # Contentful
@@ -55,14 +55,16 @@ CORS_ORIGINS=https://tu-dominio.com,https://www.tu-dominio.com
 
 ```javascript
 // En tu server.js, línea del CORS:
-const allowedOrigins = process.env.CORS_ORIGINS 
-  ? process.env.CORS_ORIGINS.split(',')
-  : ['http://localhost:5173', 'http://localhost:3000'];
+const allowedOrigins = process.env.CORS_ORIGINS
+	? process.env.CORS_ORIGINS.split(',')
+	: ['http://localhost:5173', 'http://localhost:3000'];
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
+app.use(
+	cors({
+		origin: allowedOrigins,
+		credentials: true
+	})
+);
 ```
 
 ## 🚂 DEPLOY EN RAILWAY (RECOMENDADO)
@@ -87,6 +89,7 @@ app.use(cors({
 7. **Deploy automático**
 
 ### URL Resultante:
+
 ```
 https://tu-proyecto-production.up.railway.app
 ```
@@ -94,16 +97,19 @@ https://tu-proyecto-production.up.railway.app
 ## 🌐 ALTERNATIVAS A RAILWAY
 
 ### 1. Render.com
+
 - Similar a Railway
 - Plan gratuito disponible
 - Auto-deploy desde Git
 
 ### 2. Heroku
+
 - Clásico pero de pago
 - Muy estable
 - Muchos addons
 
 ### 3. DigitalOcean App Platform
+
 - $5/mes mínimo
 - Muy buena performance
 - Escalado automático
@@ -136,18 +142,20 @@ curl https://tu-backend.railway.app/api/properties?operation=sale&maxResults=5
 ```javascript
 // En consola del navegador (en tu frontend)
 fetch('https://tu-backend.railway.app/api/status')
-  .then(r => r.json())
-  .then(console.log)
+	.then(r => r.json())
+	.then(console.log);
 ```
 
 ## 📊 MONITOREO
 
 ### Logs en Railway:
+
 - Panel de Railway → Tu proyecto → "View Logs"
 - Logs en tiempo real
 - Filtros por fecha/nivel
 
 ### Métricas importantes:
+
 - **Response time** < 2 segundos
 - **Error rate** < 5%
 - **Uptime** > 99%
@@ -164,8 +172,8 @@ app.use(helmet());
 // Rate limiting
 const rateLimit = require('express-rate-limit');
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100 // máximo 100 requests por IP
+	windowMs: 15 * 60 * 1000, // 15 minutos
+	max: 100 // máximo 100 requests por IP
 });
 app.use('/api', limiter);
 ```
@@ -173,43 +181,48 @@ app.use('/api', limiter);
 ## 💡 OPTIMIZACIONES
 
 ### 1. Cache de Tokens
+
 ```javascript
 // Tu backend ya implementa cache de tokens OAuth2
 // No hacer llamadas innecesarias a Idealista
 ```
 
 ### 2. Compression
+
 ```javascript
 const compression = require('compression');
 app.use(compression());
 ```
 
 ### 3. Logs Estructurados
+
 ```javascript
 const winston = require('winston');
 const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.Console()
-  ]
+	level: 'info',
+	format: winston.format.json(),
+	transports: [new winston.transports.Console()]
 });
 ```
 
 ## 🚨 TROUBLESHOOTING
 
 ### Error CORS:
+
 - Verificar `CORS_ORIGINS` en variables de entorno
 - Incluir `https://` en las URLs
 
 ### Error 500:
+
 - Revisar logs en Railway
 - Verificar variables de entorno de Idealista
 
 ### Error de Contentful:
+
 - Verificar `CONTENTFUL_SPACE_ID` y `CONTENTFUL_ACCESS_TOKEN`
 
 ### Backend no responde:
+
 - Verificar que Railway está "deployed"
 - Check health endpoint: `/api/status`
 

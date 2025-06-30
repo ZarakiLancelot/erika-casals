@@ -25,7 +25,6 @@ class IdealistaPartnersService {
 		this.clientSecret =
 			process.env.IDEALISTA_CLIENT_SECRET || 'JhD6oblLrNlOBwU8ney2Gx1nunwsh2Qy';
 
-		// ¡IMPORTANTE! feedKey que empieza por "ilc" (no "lci")
 		this.feedKey =
 			process.env.IDEALISTA_FEED_KEY ||
 			'ilcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';

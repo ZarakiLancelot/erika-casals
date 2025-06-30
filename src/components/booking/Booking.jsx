@@ -19,7 +19,12 @@ const Booking = () => {
 					<img src='/images/booking-photo.png' alt='Vista panorámica' />
 				</StyledImageContainer>
 
-				<StyledWhatsAppButton>
+				<StyledWhatsAppButton
+					as={'a'}
+					href='https://wa.me/34655981758'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
 					<StyledWhatsAppText>
 						Agenda una llamada conmigo por WhatsApp
 					</StyledWhatsAppText>

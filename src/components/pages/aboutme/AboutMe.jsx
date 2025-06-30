@@ -39,7 +39,12 @@ const AboutMe = () => {
 					</StyledNavLi>
 				</StyledNavCenter>
 				<StyledNavRight>
-					<StyledButton>
+					<StyledButton
+						as='a'
+						href='https://wa.me/34655981758'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
 					</StyledButton>{' '}
 				</StyledNavRight>{' '}

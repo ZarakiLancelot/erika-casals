@@ -56,9 +56,16 @@ const StyledButton = styled.button`
 	gap: 1rem;
 	transition: background-color 0.3s ease;
 	justify-self: center;
+	color: #16243e;
+	font-size: 0.75rem;
 
 	&:hover {
 		background-color: rgb(167, 196, 250);
+	}
+
+	img {
+		width: 1.2rem;
+		height: 1.2rem;
 	}
 
 	@media (max-width: 768px) {

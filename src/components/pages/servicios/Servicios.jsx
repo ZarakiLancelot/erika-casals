@@ -44,7 +44,12 @@ const Servicios = () => {
 					</StyledNavLi>
 				</StyledNavCenter>
 				<StyledNavRight>
-					<StyledButton>
+					<StyledButton
+						as='a'
+						href='https://wa.me/34655981758'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
 					</StyledButton>
 				</StyledNavRight>{' '}
@@ -68,7 +73,12 @@ const Servicios = () => {
 							una nueva etapa con total tranquilidad. Por eso mis servicios se
 							adaptan a ti, no al revés.
 						</StyledDescription>
-						<StyledButton>
+						<StyledButton
+							as='a'
+							href='https://wa.me/34655981758'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
 							Hablemos ahora por WhatsApp{' '}
 							<img src='/icons/whatsapp-icon.png' alt='' />
 						</StyledButton>

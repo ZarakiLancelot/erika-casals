@@ -47,7 +47,12 @@ const Home = () => {
 					</StyledNavLi>
 				</StyledNavCenter>
 				<StyledNavRight>
-					<StyledButton>
+					<StyledButton
+						as='a'
+						href='https://wa.me/34655981758'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
 					</StyledButton>
 				</StyledNavRight>{' '}
@@ -67,7 +72,12 @@ const Home = () => {
 							casa con confianza, destacando su valor real y asegurando un
 							proceso claro, ágil y sin complicaciones.
 						</StyledDescription>
-						<StyledButton>
+						<StyledButton
+							as='a'
+							href='https://wa.me/34655981758'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
 							Contáctame <img src='/icons/whatsapp-icon.png' alt='' />
 						</StyledButton>
 					</StyledFlexContainer>

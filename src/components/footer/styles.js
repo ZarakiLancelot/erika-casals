@@ -65,6 +65,7 @@ const StyledDescription = styled.p`
 `;
 
 const StyledContactButton = styled.button`
+	width: fit-content;
 	background-color: white;
 	color: black;
 	padding: 12px 46px;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
 	StyledContainer,
 	StyledContent,
@@ -29,7 +30,9 @@ const MiamiCosta = () => {
 							src='/images/costa-espanola.png'
 							alt='Miami Properties'
 						/>
-						<StyledViewButton>Ver Producto</StyledViewButton>
+						<Link to='/sales'>
+							<StyledViewButton>Ver Propiedades en Venta</StyledViewButton>
+						</Link>
 					</StyledImageContainer>
 				</StyledSection>
 
@@ -48,7 +51,9 @@ const MiamiCosta = () => {
 							src='/images/en-alquiler.png'
 							alt='Costa Española Properties'
 						/>
-						<StyledViewButton>Ver Producto</StyledViewButton>
+						<Link to='/rent'>
+							<StyledViewButton>Ver Propiedades en Alquiler</StyledViewButton>
+						</Link>
 					</StyledImageContainer>
 				</StyledSection>
 			</StyledContent>

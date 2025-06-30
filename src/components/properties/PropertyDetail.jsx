@@ -95,6 +95,13 @@ const StyledButton = styled.button`
 	gap: 1rem;
 	transition: background-color 0.3s ease;
 	justify-self: center;
+	color: #16243e;
+	font-size: 12px;
+
+	img {
+		width: 1.2rem;
+		height: 1.2rem;
+	}
 
 	&:hover {
 		background-color: rgb(167, 196, 250);
@@ -1258,7 +1265,12 @@ const PropertyDetail = ({ property, onBack }) => {
 					</StyledNavLi>
 				</StyledNavCenter>
 				<StyledNavRight>
-					<StyledButton>
+					<StyledButton
+						as='a'
+						href='https://wa.me/34655981758'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
 					</StyledButton>
 				</StyledNavRight>
@@ -1414,7 +1426,12 @@ const PropertyDetail = ({ property, onBack }) => {
 				</MainContent>
 				{/* Sidebar de contacto */}
 				<Sidebar>
-					<ContactButton>
+					<ContactButton
+						as='a'
+						href='https://wa.me/34655981758'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Hablemos ahora por WhatsApp{' '}
 						<img src='/icons/whatsapp-icon.png' alt='' />
 					</ContactButton>

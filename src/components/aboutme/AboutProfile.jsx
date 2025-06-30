@@ -22,7 +22,7 @@ const AboutProfile = () => {
 		<StyledInfoContainer>
 			<StyledInfoContent>
 				<StyledInfoDiv>
-					<img src='/images/who-is-image.png' alt='Erika Casals' />
+					<img src='/images/erika-photo.jpg' alt='Erika Casals' />
 				</StyledInfoDiv>
 				<StyledInfoDiv>
 					<StyledTitle style={{ fontSize: '50px', marginBottom: '0px' }}>
@@ -38,13 +38,28 @@ const AboutProfile = () => {
 							<img src='/icons/call.png' alt='' /> +34 655 89 17 36
 						</ContactItem>
 						<SocialLinks>
-							<SocialButton>
+							<SocialButton
+								as={'a'}
+								href='https://www.facebook.com/erika.casals.3'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
 								<img src='/icons/facebook-icon.png' alt='' />
 							</SocialButton>
-							<SocialButton>
+							<SocialButton
+								as='a'
+								href='https://www.instagram.com/erikacasals/'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
 								<img src='/icons/instagram-icon.png' alt='' />
 							</SocialButton>
-							<SocialButton>
+							<SocialButton
+								as='a'
+								href='https://www.linkedin.com/in/erikacasals/'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
 								<img src='/icons/linkedin.png' alt='' />
 							</SocialButton>
 						</SocialLinks>
@@ -79,7 +94,12 @@ const AboutProfile = () => {
 						</ProfileText>
 					</StyledDescription>
 
-					<WhatsAppButton>
+					<WhatsAppButton
+						as='a'
+						href='https://wa.me/34655981758'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Hablemos ahora por WhatsApp{' '}
 						<img src='/icons/whatsapp-icon.png' alt='' />
 					</WhatsAppButton>

@@ -29,8 +29,9 @@ CORS_ORIGIN=https://yourdomain.com
 ### Deploy:
 
 Este backend está listo para deploy en:
+
 - Railway
-- Heroku  
+- Heroku
 - Render
 - DigitalOcean
 - Cualquier VPS con Node.js

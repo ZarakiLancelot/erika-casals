@@ -5,6 +5,7 @@
 Tu backend es **perfecto para subir tal como está**. Solo necesitas:
 
 ### ✅ Lo que YA funciona:
+
 - ✅ Backend con llamadas a Idealista API
 - ✅ Integración con Contentful
 - ✅ Frontend que consume el backend
@@ -54,11 +55,13 @@ VITE_CONTENTFUL_ENVIRONMENT=master
 ## 🎯 OPCIONES DE DEPLOY:
 
 ### **OPCIÓN A: TODO EN IONOS VPS** (Si tienes VPS)
+
 - Frontend + Backend en el mismo servidor
 - Más económico
 - Configuración manual requerida
 
 ### **OPCIÓN B: IONOS + RAILWAY** (Más fácil)
+
 - Frontend en IONOS
 - Backend en Railway (gratis)
 - Deploy automático
@@ -68,18 +71,21 @@ VITE_CONTENTFUL_ENVIRONMENT=master
 ## 🚀 PROCESO RECOMENDADO (OPCIÓN B):
 
 ### **1. Deploy Backend en Railway:**
+
 1. Subir tu proyecto a GitHub
 2. Conectar Railway a tu repo
 3. Configurar variables de entorno en Railway
 4. Railway te da una URL: `https://tu-proyecto.up.railway.app`
 
 ### **2. Actualizar Frontend:**
+
 ```env
 # En .env.production
 VITE_BACKEND_URL=https://tu-proyecto.up.railway.app
 ```
 
 ### **3. Build y Subir Frontend a IONOS:**
+
 ```bash
 npm run build
 # Subir carpeta 'dist' a IONOS
@@ -90,14 +96,17 @@ npm run build
 ## 💡 **RESPUESTA SIMPLE:**
 
 ### **¿Puedes subirlo tal cual?**
+
 - ✅ **Backend**: SÍ, funciona perfecto
 - ⚠️ **Frontend**: Solo cambiar `VITE_BACKEND_URL` para que apunte al backend en producción
 
 ### **¿Qué .env cambiar?**
+
 - **Backend**: Cambiar `NODE_ENV=production` y `PORT=3000`
 - **Frontend**: Cambiar `VITE_BACKEND_URL` a la URL de producción
 
 ### **¿Algo más?**
+
 - ❌ NO necesitas cambiar el código
 - ❌ NO necesitas cambiar las credenciales de Idealista
 - ❌ NO necesitas cambiar Contentful

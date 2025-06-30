@@ -16,6 +16,7 @@
 ### **PASO 1: Preparar el Proyecto**
 
 Tu proyecto ya está listo! Railway detectará automáticamente:
+
 - ✅ `backend/package.json` con `"start": "node server.js"`
 - ✅ `backend/server.js` funcionando
 - ✅ **Node.js** automáticamente (sin necesidad de Dockerfile)
@@ -43,11 +44,13 @@ git push origin main
 ### **PASO 4: Configurar el Proyecto**
 
 #### **4.1 Configuración Básica:**
+
 - **Root Directory**: `backend`
 - **Start Command**: `node server.js`
 - **Build Command**: `npm install`
 
 #### **4.2 Variables de Entorno:**
+
 En Railway → Settings → Variables, añadir:
 
 ```
@@ -64,8 +67,37 @@ CONTENTFUL_ACCESS_TOKEN=L8gcA69KN0wRCHK_dACQwTUaMzlkcTpB_i5V8gKPBLw
 ### **PASO 5: Deploy Automático**
 
 Railway hará el deploy automáticamente y te dará una URL como:
+
 ```
 https://tu-proyecto-production-abc123.up.railway.app
+```
+
+---
+
+## 🔍 **ENCONTRAR LA URL DEL DEPLOY:**
+
+### **¿Dónde está la URL?**
+
+1. **Railway Dashboard** → Tu proyecto
+2. **En la parte superior** → URL automática generada
+3. **O en "Settings" → "Domains"**
+
+### **Formato de la URL:**
+
+```
+https://tu-proyecto-production-abc123.up.railway.app
+```
+
+### **Probar que funciona:**
+
+```bash
+curl https://tu-url-de-railway.up.railway.app/api/status
+```
+
+### **Debería devolver:**
+
+```json
+{ "status": "OK", "timestamp": "2024-12-06T..." }
 ```
 
 ---
@@ -75,11 +107,13 @@ https://tu-proyecto-production-abc123.up.railway.app
 Una vez que tengas la URL de Railway:
 
 1. **Actualizar `.env.production`:**
+
 ```env
 VITE_BACKEND_URL=https://tu-proyecto-production-abc123.up.railway.app
 ```
 
 2. **Hacer build del frontend:**
+
 ```bash
 npm run build
 ```
@@ -91,9 +125,11 @@ npm run build
 ## 📊 **MONITOREO Y LOGS**
 
 ### **Ver logs en tiempo real:**
+
 - Railway Dashboard → Tu proyecto → "View Logs"
 
 ### **Verificar que funciona:**
+
 ```bash
 # Test desde terminal
 curl https://tu-proyecto.up.railway.app/api/status
@@ -107,16 +143,19 @@ curl https://tu-proyecto.up.railway.app/api/status
 ## 💡 **TIPS IMPORTANTES:**
 
 ### **Variables de Entorno:**
+
 - ❌ **NO** subas archivos `.env` a GitHub
 - ✅ **SÍ** configura las variables en Railway Dashboard
 - ✅ Railway lee las variables automáticamente
 
 ### **Puerto:**
+
 - ❌ **NO** configures `PORT` en Railway
 - ✅ Railway asigna el puerto automáticamente
 - ✅ Tu código ya usa `process.env.PORT || 5000`
 
 ### **Redeploy Automático:**
+
 - Cada `git push` → Redeploy automático
 - Cambios en variables → Reinicio automático
 
@@ -139,14 +178,17 @@ curl https://tu-proyecto.up.railway.app/api/status
 ## 🚨 **TROUBLESHOOTING:**
 
 ### **Error: "Application failed to respond"**
+
 - Verificar que `server.js` usa `process.env.PORT`
 - Revisar logs en Railway
 
 ### **Error: "Module not found"**
+
 - Verificar que `package.json` tiene todas las dependencias
 - Railway ejecuta `npm install` automáticamente
 
 ### **Error CORS:**
+
 - Tu backend ya tiene CORS configurado
 - Debería funcionar automáticamente
 

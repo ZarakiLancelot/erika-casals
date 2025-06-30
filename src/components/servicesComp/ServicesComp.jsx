@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
 	StyledContainer,
 	StyledContent,
@@ -29,9 +30,9 @@ const ServicesComp = () => {
 							Propiedades exclusivas listas para entrar a vivir o invertir con
 							rentabilidad.
 						</StyledServiceDescription>
-						<StyledServiceButton href='https://erikacasals.com/venta'>
-							Ver proyectos
-						</StyledServiceButton>
+						<Link to='/sales'>
+							<StyledServiceButton as='span'>Ver proyectos</StyledServiceButton>
+						</Link>
 					</StyledServiceCard>
 					<StyledServiceCard>
 						<StyledServiceIcon
@@ -43,9 +44,9 @@ const ServicesComp = () => {
 							Propiedades exclusivas listas para entrar a vivir o invertir con
 							rentabilidad.
 						</StyledServiceDescription>
-						<StyledServiceButton href='https://erikacasals.com/venta'>
-							Ver proyectos
-						</StyledServiceButton>
+						<Link to='/rent'>
+							<StyledServiceButton as='span'>Ver proyectos</StyledServiceButton>
+						</Link>
 					</StyledServiceCard>
 					<StyledServiceCard>
 						<StyledServiceIcon src='/images/miami.png' alt='Miami' />
@@ -54,9 +55,9 @@ const ServicesComp = () => {
 							Vivir en Miami es una declaración de estilo de vida. Te muestro
 							las zonas que realmente valen la pena.
 						</StyledServiceDescription>
-						<StyledServiceButton href='https://erikacasals.com/venta'>
-							Ver proyectos
-						</StyledServiceButton>
+						<Link to='/sales'>
+							<StyledServiceButton as='span'>Ver proyectos</StyledServiceButton>
+						</Link>
 					</StyledServiceCard>
 					<StyledServiceCard>
 						<StyledServiceIcon
@@ -67,9 +68,9 @@ const ServicesComp = () => {
 						<StyledServiceDescription>
 							A orillas del Mediterráneo hay más que sol: hay hogares con alma.
 						</StyledServiceDescription>
-						<StyledServiceButton href='https://erikacasals.com/venta'>
-							Ver proyectos
-						</StyledServiceButton>
+						<Link to='/rent'>
+							<StyledServiceButton as='span'>Ver proyectos</StyledServiceButton>
+						</Link>
 					</StyledServiceCard>
 				</StyledGridContainer>
 			</StyledContent>
