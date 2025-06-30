@@ -24,7 +24,7 @@ const ServicesComp = () => {
 				</StyledDescription>
 				<StyledGridContainer>
 					<StyledServiceCard>
-						<StyledServiceIcon src='/images/en-venta.png' alt='En venta' />
+						<StyledServiceIcon src='/images/sales.png' alt='En venta' />
 						<StyledServiceTitle>En venta</StyledServiceTitle>
 						<StyledServiceDescription>
 							Propiedades exclusivas listas para entrar a vivir o invertir con
@@ -35,10 +35,7 @@ const ServicesComp = () => {
 						</Link>
 					</StyledServiceCard>
 					<StyledServiceCard>
-						<StyledServiceIcon
-							src='/images/en-alquiler.png'
-							alt='En alquiler'
-						/>
+						<StyledServiceIcon src='/images/rent.png' alt='En alquiler' />
 						<StyledServiceTitle>En alquiler</StyledServiceTitle>
 						<StyledServiceDescription>
 							Propiedades exclusivas listas para entrar a vivir o invertir con
@@ -60,10 +57,7 @@ const ServicesComp = () => {
 						</Link>
 					</StyledServiceCard>
 					<StyledServiceCard>
-						<StyledServiceIcon
-							src='/images/costa-espanola.png'
-							alt='Costa Española'
-						/>
+						<StyledServiceIcon src='/images/costa.png' alt='Costa Española' />
 						<StyledServiceTitle>Costa Española</StyledServiceTitle>
 						<StyledServiceDescription>
 							A orillas del Mediterráneo hay más que sol: hay hogares con alma.
