@@ -1,5 +1,5 @@
 // GET /api/status - Estado del servicio
-const IdealistaPartnersService = require('../_lib/idealistaService');
+const IdealistaPartnersService = require('./_lib/idealistaService');
 
 module.exports = async (req, res) => {
   // Configurar CORS

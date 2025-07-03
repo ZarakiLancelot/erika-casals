@@ -8,3 +8,4 @@ dist-ssr
 .env.production
 backend/package-lock.json
 nul
+.vercel

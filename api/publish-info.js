@@ -1,5 +1,5 @@
 // GET /api/publish-info - Información de publicación
-const IdealistaPartnersService = require('../_lib/idealistaService');
+const IdealistaPartnersService = require('./_lib/idealistaService');
 
 module.exports = async (req, res) => {
   // Configurar CORS

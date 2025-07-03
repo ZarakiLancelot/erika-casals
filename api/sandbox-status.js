@@ -1,5 +1,5 @@
 // GET /api/sandbox-status - Verificar si sandbox está disponible
-const IdealistaPartnersService = require('../_lib/idealistaService');
+const IdealistaPartnersService = require('./_lib/idealistaService');
 const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {

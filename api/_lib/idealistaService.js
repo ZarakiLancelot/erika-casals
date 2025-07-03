@@ -210,6 +210,128 @@ class IdealistaPartnersService {
     }
   }
 
+  // POST /v1/contacts - Crear contacto
+  async createContact(contactData) {
+    try {
+      console.log('👤 Creando contacto...', contactData);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/contacts`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'POST',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(contactData)
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al crear contacto',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error creando contacto:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
+  // GET /v1/contacts/{id} - Obtener contacto por ID
+  async getContactById(contactId) {
+    try {
+      console.log('👤 Obteniendo contacto por ID:', contactId);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/contacts/${contactId}`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'GET',
+        headers
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al obtener contacto',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error obteniendo contacto:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
+  // PUT /v1/contacts/{id} - Actualizar contacto
+  async updateContact(contactId, contactData) {
+    try {
+      console.log('👤 Actualizando contacto:', contactId, contactData);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/contacts/${contactId}`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'PUT',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(contactData)
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al actualizar contacto',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error actualizando contacto:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
   // GET /v1/customer/publishinfo
   async getPublishInfo() {
     try {
@@ -329,6 +451,188 @@ class IdealistaPartnersService {
         success: false,
         error: error.message,
         timestamp: new Date().toISOString()
+      };
+    }
+  }
+
+  // =========================
+  // MÉTODOS PARA PROPIEDADES
+  // =========================
+
+  // POST /v1/properties - Crear propiedad
+  async createProperty(propertyData) {
+    try {
+      console.log('🏠 Creando propiedad...', propertyData);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/properties`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'POST',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(propertyData)
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al crear propiedad',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error creando propiedad:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
+  // GET /v1/properties/{id} - Obtener propiedad por ID (ya existía)
+  
+  // PUT /v1/properties/{id} - Actualizar propiedad
+  async updateProperty(propertyId, propertyData) {
+    try {
+      console.log('🏠 Actualizando propiedad:', propertyId, propertyData);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/properties/${propertyId}`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'PUT',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(propertyData)
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al actualizar propiedad',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error actualizando propiedad:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
+  // PUT /v1/properties/{id}/deactivate - Desactivar propiedad
+  async deactivateProperty(propertyId) {
+    try {
+      console.log('🏠 Desactivando propiedad:', propertyId);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/properties/${propertyId}/deactivate`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'POST', // Cambiar a POST según documentación
+        headers
+      });
+
+      let responseData;
+      const contentType = response.headers.get('content-type');
+      
+      if (contentType && contentType.includes('application/json')) {
+        responseData = await response.json();
+      } else {
+        const textResponse = await response.text();
+        responseData = { message: textResponse, rawResponse: true };
+      }
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al desactivar propiedad',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error desactivando propiedad:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
+  // PUT /v1/properties/{id}/reactivate - Reactivar propiedad
+  async reactivateProperty(propertyId) {
+    try {
+      console.log('🏠 Reactivando propiedad:', propertyId);
+
+      const headers = await this.getApiHeaders();
+      const endpoint = `/v1/properties/${propertyId}/reactivate`;
+
+      const response = await fetch(`${this.baseURL}${endpoint}`, {
+        method: 'POST', // Cambiar a POST según documentación
+        headers
+      });
+
+      let responseData;
+      const contentType = response.headers.get('content-type');
+      
+      if (contentType && contentType.includes('application/json')) {
+        responseData = await response.json();
+      } else {
+        const textResponse = await response.text();
+        responseData = { message: textResponse, rawResponse: true };
+      }
+
+      if (response.ok) {
+        return {
+          success: true,
+          data: responseData,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        return {
+          success: false,
+          error: responseData.message || 'Error al reactivar propiedad',
+          statusCode: response.status,
+          details: responseData
+        };
+      }
+    } catch (error) {
+      console.error('❌ Error reactivando propiedad:', error);
+      return {
+        success: false,
+        error: error.message
       };
     }
   }

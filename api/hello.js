@@ -1,6 +1,4 @@
-// GET /api/test - Test de conectividad
-const IdealistaPartnersService = require('./_lib/idealistaService');
-
+// GET /api/hello - Test simple
 module.exports = async (req, res) => {
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -12,9 +10,11 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const idealistaService = new IdealistaPartnersService();
-    const result = await idealistaService.testConnection();
-    res.json(result);
+    res.json({
+      message: 'Hello from Vercel serverless!',
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV || 'development'
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
