@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useReactToPrint } from 'react-to-print';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
 import Footer from '../footer/Footer';
 
@@ -19,6 +20,11 @@ const StyledNavbar = styled.nav`
 	padding: 3rem 5%;
 	position: relative;
 	z-index: 10;
+
+	/* Ocultar navegación en la impresión */
+	@media print {
+		display: none !important;
+	}
 
 	@media (max-width: 768px) {
 		padding: 1.5rem 1rem;
@@ -148,6 +154,11 @@ const BackButton = styled.button`
 		background: rgba(0, 0, 0, 0.9);
 		transform: scale(1.1);
 	}
+
+	/* Ocultar botón de volver en la impresión */
+	@media print {
+		display: none !important;
+	}
 `;
 
 const ImageGallery = styled.div`
@@ -172,6 +183,23 @@ const ImageGallery = styled.div`
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, 1fr);
 		height: 250px;
+	}
+
+	/* Optimizar para impresión */
+	@media print {
+		height: 400px;
+		page-break-inside: avoid;
+		
+		/* Mostrar solo la imagen principal */
+		> div:not(:first-child) {
+			display: none !important;
+		}
+		
+		/* La primera imagen ocupa todo el espacio disponible */
+		> div:first-child {
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+		}
 	}
 `;
 
@@ -399,6 +427,15 @@ const ContentContainer = styled.div`
 		grid-template-columns: 1fr;
 		gap: 30px;
 	}
+
+	/* Estilos para impresión */
+	@media print {
+		margin: 0;
+		max-width: none;
+		grid-template-columns: 1fr;
+		gap: 20px;
+		box-shadow: none;
+	}
 `;
 
 const MainContent = styled.div`
@@ -548,6 +585,14 @@ const CharacteristicsSection = styled.div`
 			content: '${props => (props.expanded ? '▼' : '▶')}';
 			font-size: 14px;
 		}
+
+		/* Ocultar la flecha en la versión impresa y quitar el cursor */
+		@media print {
+			cursor: default;
+			&:after {
+				display: none;
+			}
+		}
 	}
 `;
 
@@ -556,6 +601,11 @@ const CharacteristicsList = styled.div`
 	background: #f8f9fa;
 	padding: 20px;
 	border-radius: 0;
+
+	/* Mostrar todos los acordeones en la versión impresa */
+	@media print {
+		display: block !important;
+	}
 
 	.characteristic {
 		display: flex;
@@ -583,6 +633,11 @@ const Sidebar = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
+
+	/* En la versión impresa, ocultar completamente el sidebar */
+	@media print {
+		display: none !important;
+	}
 `;
 
 const ContactCard = styled.div`
@@ -647,63 +702,154 @@ const ContactButton = styled.button`
 	@media (max-width: 480px) {
 		padding: 0.5rem 1rem;
 		font-size: 0.85rem;
-		gap: 0.6rem;
 	}
 `;
 
-const ContactForm = styled.div`
+const ContactForm = styled.form`
 	.form-group {
-		margin-bottom: 15px;
-		text-align: left;
+		margin-bottom: 20px;
 	}
 
 	.form-label {
-		font-size: 14px;
-		color: #666;
-		margin-bottom: 5px;
 		display: block;
+		margin-bottom: 8px;
+		font-weight: 500;
+		color: #16243e;
+		font-size: 14px;
 	}
+
 	.form-input {
 		width: 100%;
-		padding: 10px;
+		padding: 12px 16px;
 		border: 1px solid #ddd;
-		border-radius: 0;
+		border-radius: 4px;
 		font-size: 14px;
-		box-sizing: border-box;
-		font-family: 'Space Grotesk', sans-serif;
+		font-family: 'Montserrat', sans-serif;
+		transition: border-color 0.3s ease;
 
 		&:focus {
 			outline: none;
-			border-color: #2c5aa0;
+			border-color: #16243e;
 		}
 	}
 
 	textarea.form-input {
 		resize: vertical;
-		min-height: 80px;
+		min-height: 100px;
 	}
 
 	.contact-submit {
-		font-family: 'Space Grotesk', sans-serif;
-		font-size: 16px;
 		width: 100%;
-		background: #16243e;
+		padding: 12px;
+		background-color: #16243e;
 		color: white;
 		border: none;
-		padding: 12px;
-		border-radius: 0;
-		margin-top: 16px;
-		cursor: pointer;
+		border-radius: 4px;
+		font-size: 16px;
 		font-weight: 500;
-		transition: background 0.3s ease;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
 
 		&:hover {
-			background: #0056b3;
+			background-color: #2c3e50;
 		}
 	}
 `;
 
-const PropertyDetail = ({ property, onBack }) => {
+// Styled components para el bloque de compartir e imprimir
+const SharePrintBlock = styled.div`
+	width: 100%;
+	background: white;
+	border-radius: 0;
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+`;
+
+const ShareTitle = styled.h3`
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	color: #666;
+	margin-bottom: 20px;
+	text-transform: none;
+	letter-spacing: 0.5px;
+`;
+
+const ShareButtonsContainer = styled.div`
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+`;
+
+const ShareButton = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	padding: 0;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+	}
+
+	&:active {
+		transform: translateY(-1px);
+	}
+
+	img {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+		filter: brightness(0) invert(1); /* Hacer las imágenes blancas */
+	}
+
+	/* WhatsApp */
+	&.whatsapp {
+		background-color: #25d366;
+	}
+
+	/* Facebook */
+	&.facebook {
+		background-color: #1877f2;
+	}
+
+	/* Twitter */
+	&.twitter {
+		background-color: #1da1f2;
+		
+		img {
+			filter: none; /* El icono SVG ya es blanco */
+		}
+	}
+
+	/* Print */
+	&.print {
+		background-color: #6c757d;
+		
+		img {
+			filter: none; /* Los iconos SVG ya son blancos */
+		}
+	}
+`;
+
+// Wrapper para ocultar Footer en impresión
+const FooterWrapper = styled.div`
+	@media print {
+		display: none !important;
+	}
+`;
+
+const PropertyDetail = ({ property, onBack, images }) => {
+	const componentRef = useRef();
 	const {
 		propertyImages,
 		getPropertyMainImage,
@@ -728,9 +874,51 @@ const PropertyDetail = ({ property, onBack }) => {
 
 	// Distancia mínima para considerar un swipe
 	const minSwipeDistance = 50;
+
+	// Configuración para react-to-print
+	const handlePrint = useReactToPrint({
+		contentRef: componentRef,
+		documentTitle: 'Detalle de Propiedad',
+		onAfterPrint: () => {
+			console.log('Impresión completada');
+		}
+	});
+
+	// Funciones para compartir
+	const handleWhatsAppShare = () => {
+		const propertyTitle = getPropertyTitle(property);
+		const propertyPrice = formatPrice(property);
+		const currentUrl = window.location.href;
+		const message = `¡Mira esta propiedad! ${propertyTitle} - ${propertyPrice}. Más detalles: ${currentUrl}`;
+		const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+		window.open(whatsappUrl, '_blank');
+	};
+
+	const handleFacebookShare = () => {
+		const currentUrl = window.location.href;
+		const propertyTitle = getPropertyTitle(property);
+		const propertyPrice = formatPrice(property);
+		
+		// Facebook Sharer con más parámetros
+		const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&quote=${encodeURIComponent(`${propertyTitle} - ${propertyPrice}. ¡Échale un vistazo a esta increíble propiedad!`)}`;
+		window.open(facebookUrl, '_blank', 'width=600,height=400');
+	};
+
+	const handleTwitterShare = () => {
+		const propertyTitle = getPropertyTitle(property);
+		const propertyPrice = formatPrice(property);
+		const currentUrl = window.location.href;
+		const tweetText = `¡Mira esta propiedad! ${propertyTitle} - ${propertyPrice}`;
+		const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(currentUrl)}`;
+		window.open(twitterUrl, '_blank', 'width=600,height=400');
+	};
+
 	// Cargar imágenes al montar el componente
 	useEffect(() => {
-		if (property.source === 'contentful') {
+		if (images && images.length > 0) {
+			// Si se pasaron imágenes como prop, usarlas directamente
+			setImagesLoading(false);
+		} else if (property.source === 'contentful') {
 			// Para propiedades de Contentful, las imágenes ya vienen en la propiedad
 			setImagesLoading(false);
 		} else if (property.propertyId && !propertyImages[property.propertyId]) {
@@ -743,6 +931,7 @@ const PropertyDetail = ({ property, onBack }) => {
 			setImagesLoading(false);
 		}
 	}, [
+		images,
 		property.propertyId,
 		property.source,
 		propertyImages,
@@ -761,7 +950,10 @@ const PropertyDetail = ({ property, onBack }) => {
 	];
 	// Obtener imágenes según la fuente
 	const getPropertyImages = () => {
-		if (
+		if (images && images.length > 0) {
+			// Usar las imágenes pasadas como prop (cargadas específicamente para esta propiedad)
+			return images;
+		} else if (
 			property.source === 'contentful' &&
 			property.images &&
 			property.images.length > 0
@@ -1307,7 +1499,7 @@ const PropertyDetail = ({ property, onBack }) => {
 				</LightboxContent>
 			</LightboxOverlay>{' '}
 			{/* Contenido principal */}
-			<ContentContainer>
+			<ContentContainer ref={componentRef}>
 				{' '}
 				{/* Galería de imágenes ocupando todo el ancho */}
 				<ImageGallery style={{ gridColumn: '1 / -1' }}>
@@ -1472,9 +1664,46 @@ const PropertyDetail = ({ property, onBack }) => {
 							<button className='contact-submit'>Contactar</button>
 						</ContactForm>
 					</ContactCard>
+
+					{/* Bloque de compartir e imprimir */}
+					<SharePrintBlock>
+						<ShareTitle>Comparte este inmueble</ShareTitle>
+						<ShareButtonsContainer>
+							<ShareButton 
+								className="whatsapp"
+								onClick={handleWhatsAppShare}
+								title="Compartir por WhatsApp"
+							>
+								<img src="/icons/whatsapp-icon.png" alt="WhatsApp" />
+							</ShareButton>
+							<ShareButton 
+								className="facebook"
+								onClick={handleFacebookShare}
+								title="Compartir en Facebook"
+							>
+								<img src="/icons/facebook-icon.png" alt="Facebook" />
+							</ShareButton>
+							<ShareButton 
+								className="twitter"
+								onClick={handleTwitterShare}
+								title="Compartir en Twitter"
+							>
+								<img src="/icons/twitter-icon.svg" alt="Twitter" />
+							</ShareButton>
+							<ShareButton 
+								className="print"
+								onClick={handlePrint}
+								title="Imprimir o guardar como PDF"
+							>
+								<img src="/icons/print-icon.svg" alt="Imprimir" />
+							</ShareButton>
+						</ShareButtonsContainer>
+					</SharePrintBlock>
 				</Sidebar>
 			</ContentContainer>
-			<Footer />
+			<FooterWrapper>
+				<Footer />
+			</FooterWrapper>
 		</DetailContainer>
 	);
 };

@@ -4,6 +4,7 @@ import HomeLayout from '../layouts/homelayout/HomeLayout';
 import Servicios from '../pages/servicios/Servicios';
 import PropiedadesPage from '../../pages/propiedades/PropiedadesPage';
 import PropiedadesRentPage from '../../pages/propiedades/PropiedadesRentPage';
+import PropertyDetailPage from '../../pages/propiedades/PropertyDetailPage';
 import AboutMe from '../pages/aboutme/AboutMe';
 
 const Router = () => {
@@ -16,6 +17,7 @@ const Router = () => {
 				<Route path='/rent' element={<PropiedadesRentPage />} />
 				<Route path='/sales' element={<PropiedadesPage />} />
 			</Route>
+			<Route path='/property/:propertyId' element={<PropertyDetailPage />} />
 		</Routes>
 	);
 };

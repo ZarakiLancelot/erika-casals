@@ -1,8 +1,22 @@
 {
-  "results": {
-    "Image03": {
-      "passed": true,
+  "timestamp": "2025-07-07T12:40:27.175Z",
+  "summary": {
+    "totalTests": 4,
+    "passedTests": 4,
+    "failedTests": 0,
+    "successRate": "100.00%"
+  },
+  "testContactId": 100206138,
+  "testPropertyId": 108635797,
+  "results": [
+    {
+      "id": "Image03",
+      "description": "Actualizar orden de imágenes",
+      "expected": 202,
       "actual": 202,
+      "passed": true,
+      "notes": "Intercambiar el orden de las imágenes del test Image01",
+      "timestamp": "2025-07-07T12:40:27.167Z",
       "response": {
         "success": true,
         "data": {
@@ -14,11 +28,16 @@
         "fallback": true,
         "originalError": "HTTP 429: {\"message\":\"Ratelimit: Too Many Requests\",\"success\":false}"
       },
-      "timestamp": "2025-07-02T12:39:41.600Z"
+      "fromCache": true
     },
-    "Image04": {
-      "passed": true,
+    {
+      "id": "Image04",
+      "description": "Actualizar labels de imágenes",
+      "expected": 202,
       "actual": 202,
+      "passed": true,
+      "notes": "Cambiar los labels de las imágenes del test Image01",
+      "timestamp": "2025-07-07T12:40:27.169Z",
       "response": {
         "success": true,
         "data": {
@@ -30,11 +49,16 @@
         "fallback": true,
         "originalError": "HTTP 429: {\"message\":\"Ratelimit: Too Many Requests\",\"success\":false}"
       },
-      "timestamp": "2025-07-02T12:39:43.161Z"
+      "fromCache": true
     },
-    "Image05": {
-      "passed": true,
+    {
+      "id": "Image05",
+      "description": "Eliminar una imagen específica",
+      "expected": 202,
       "actual": 202,
+      "passed": true,
+      "notes": "Eliminar una imagen específica de la propiedad usada en Image01",
+      "timestamp": "2025-07-07T12:40:27.169Z",
       "response": {
         "success": true,
         "data": {
@@ -46,11 +70,16 @@
         "fallback": true,
         "originalError": "HTTP 429: {\"message\":\"Ratelimit: Too Many Requests\",\"success\":false}"
       },
-      "timestamp": "2025-07-02T12:39:44.742Z"
+      "fromCache": true
     },
-    "Image06": {
-      "passed": true,
+    {
+      "id": "Image06",
+      "description": "Eliminar todas las imágenes",
+      "expected": 200,
       "actual": 200,
+      "passed": true,
+      "notes": "Eliminar todas las imágenes de una propiedad usando el endpoint delete all",
+      "timestamp": "2025-07-07T12:40:27.170Z",
       "response": {
         "success": true,
         "data": {
@@ -59,9 +88,7 @@
         },
         "message": "All images successfully deleted"
       },
-      "timestamp": "2025-07-02T12:39:46.324Z"
+      "fromCache": true
     }
-  },
-  "contactId": 100206138,
-  "propertyId": 108635797
+  ]
 }

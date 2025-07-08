@@ -1,7 +1,7 @@
 # 🏢 Tests Office01-StorageRoom01 - Idealista API
 
 ## 📊 Resumen
-- **Fecha:** 2/7/2025
+- **Fecha:** 7/7/2025
 - **Tests:** Office01 a StorageRoom01 (Tipos comerciales y terrenos)
 - **Total:** 10
 - **Exitosos:** 10 ✅
@@ -24,4 +24,4 @@
 | StorageRoom01 | Crear nueva propiedad tipo storage | 201 | 201 | ✅ PASS |
 
 ---
-*Reporte generado automáticamente - 2025-07-02T11:17:29.553Z*
+*Reporte generado automáticamente - 2025-07-07T11:57:46.341Z*

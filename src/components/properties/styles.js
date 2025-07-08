@@ -598,7 +598,7 @@ export const ErrorMessage = styled.div`
 export const EmptyState = styled.div`
 	text-align: center;
 	padding: 60px 20px;
-	color: white;
+	color: #16243e;
 
 	h3 {
 		font-size: 24px;

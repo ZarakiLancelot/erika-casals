@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-07-07T12:34:20.644Z",
+  "summary": {
+    "totalTests": 2,
+    "passedTests": 2,
+    "failedTests": 0,
+    "successRate": "100.00%"
+  },
+  "testContactId": 100206138,
+  "testPropertyId": 108635797,
+  "results": [
+    {
+      "id": "Image01",
+      "description": "Crear imágenes para propiedad existente",
+      "expected": 202,
+      "actual": 202,
+      "passed": true,
+      "notes": "Enviar exactamente dos imágenes en el request",
+      "timestamp": "2025-07-07T12:34:20.637Z",
+      "response": {
+        "success": true,
+        "data": {
+          "message": "Successful operation",
+          "success": true
+        },
+        "message": "Images successfully set"
+      },
+      "fromCache": true
+    },
+    {
+      "id": "Image02",
+      "description": "Buscar todas las imágenes de la propiedad",
+      "expected": 200,
+      "actual": 200,
+      "passed": true,
+      "notes": "Buscar todas las imágenes para una propiedad que tiene imágenes",
+      "timestamp": "2025-07-07T12:34:20.640Z",
+      "response": {
+        "success": true,
+        "data": {
+          "message": "Successful operation",
+          "success": true,
+          "images": []
+        }
+      },
+      "fromCache": true
+    }
+  ]
+}

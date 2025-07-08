@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
 	StyledContainer,
 	StyledContent,
@@ -92,7 +93,9 @@ const Propiedades = ({ reverse = false }) => {
 							</StyledPropertyDiv>
 							<StyledImageDiv reverse={reverse}>
 								<img src='/images/review-photo.png' alt='Property showcase' />
-								<StyledViewButton>Ver Propiedades</StyledViewButton>
+								<StyledViewButton>
+									<Link to={reverse ? '/rent' : '/sales'}>Ver Propiedades</Link>
+								</StyledViewButton>
 							</StyledImageDiv>
 						</StyledContentDiv>
 					</StyledContentContainer>

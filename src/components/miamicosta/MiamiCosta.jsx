@@ -30,9 +30,34 @@ const MiamiCosta = () => {
 							src='/images/costa-espanola.png'
 							alt='Miami Properties'
 						/>
-						<Link to='/sales'>
-							<StyledViewButton>Ver Propiedades en Venta</StyledViewButton>
-						</Link>
+						<div
+							style={{
+								position: 'absolute',
+								top: '50%',
+								left: '50%',
+								transform: 'translate(-50%, -50%)',
+								display: 'flex',
+								gap: '15px',
+								flexWrap: 'wrap',
+								justifyContent: 'center',
+								zIndex: 3
+							}}
+						>
+							<Link to='/sales?location=Miami'>
+								<StyledViewButton
+									style={{ position: 'static', transform: 'none' }}
+								>
+									En venta
+								</StyledViewButton>
+							</Link>
+							<Link to='/rent?location=Miami'>
+								<StyledViewButton
+									style={{ position: 'static', transform: 'none' }}
+								>
+									En alquiler
+								</StyledViewButton>
+							</Link>
+						</div>
 					</StyledImageContainer>
 				</StyledSection>
 
@@ -51,9 +76,34 @@ const MiamiCosta = () => {
 							src='/images/en-alquiler.png'
 							alt='Costa Española Properties'
 						/>
-						<Link to='/rent'>
-							<StyledViewButton>Ver Propiedades en Alquiler</StyledViewButton>
-						</Link>
+						<div
+							style={{
+								position: 'absolute',
+								top: '50%',
+								left: '50%',
+								transform: 'translate(-50%, -50%)',
+								display: 'flex',
+								gap: '15px',
+								flexWrap: 'wrap',
+								justifyContent: 'center',
+								zIndex: 3
+							}}
+						>
+							<Link to='/sales?location=Costa Española'>
+								<StyledViewButton
+									style={{ position: 'static', transform: 'none' }}
+								>
+									En venta
+								</StyledViewButton>
+							</Link>
+							<Link to='/rent?location=Costa Española'>
+								<StyledViewButton
+									style={{ position: 'static', transform: 'none' }}
+								>
+									En alquiler
+								</StyledViewButton>
+							</Link>
+						</div>
 					</StyledImageContainer>
 				</StyledSection>
 			</StyledContent>

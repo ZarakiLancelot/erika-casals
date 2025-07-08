@@ -52,9 +52,24 @@ const ServicesComp = () => {
 							Vivir en Miami es una declaración de estilo de vida. Te muestro
 							las zonas que realmente valen la pena.
 						</StyledServiceDescription>
-						<Link to='/sales'>
-							<StyledServiceButton as='span'>Ver proyectos</StyledServiceButton>
-						</Link>
+						<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+							<Link to='/sales?location=Miami'>
+								<StyledServiceButton
+									as='span'
+									style={{ fontSize: '12px', padding: '8px 12px' }}
+								>
+									Venta
+								</StyledServiceButton>
+							</Link>
+							<Link to='/rent?location=Miami'>
+								<StyledServiceButton
+									as='span'
+									style={{ fontSize: '12px', padding: '8px 12px' }}
+								>
+									Alquiler
+								</StyledServiceButton>
+							</Link>
+						</div>
 					</StyledServiceCard>
 					<StyledServiceCard>
 						<StyledServiceIcon src='/images/costa.png' alt='Costa Española' />
@@ -62,9 +77,24 @@ const ServicesComp = () => {
 						<StyledServiceDescription>
 							A orillas del Mediterráneo hay más que sol: hay hogares con alma.
 						</StyledServiceDescription>
-						<Link to='/rent'>
-							<StyledServiceButton as='span'>Ver proyectos</StyledServiceButton>
-						</Link>
+						<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+							<Link to='/sales?location=Costa Española'>
+								<StyledServiceButton
+									as='span'
+									style={{ fontSize: '12px', padding: '8px 12px' }}
+								>
+									Venta
+								</StyledServiceButton>
+							</Link>
+							<Link to='/rent?location=Costa Española'>
+								<StyledServiceButton
+									as='span'
+									style={{ fontSize: '12px', padding: '8px 12px' }}
+								>
+									Alquiler
+								</StyledServiceButton>
+							</Link>
+						</div>
 					</StyledServiceCard>
 				</StyledGridContainer>
 			</StyledContent>

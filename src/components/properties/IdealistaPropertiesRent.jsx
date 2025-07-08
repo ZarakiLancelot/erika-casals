@@ -1,8 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import {
+	Link,
+	useLocation,
+	useSearchParams,
+	useNavigate
+} from 'react-router-dom';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
 import { useContentfulRentProperties } from '../../hooks/useContentfulProperties';
-import PropertyDetail from './PropertyDetail';
 import PageTransition from '../common/PageTransition';
 import ScrollAnimation from '../common/ScrollAnimation';
 import {
@@ -50,6 +54,8 @@ import Footer from '../footer/Footer';
 
 const PropertiesRent = () => {
 	const location = useLocation();
+	const [searchParams] = useSearchParams();
+	const navigate = useNavigate();
 	const {
 		properties,
 		loading,
@@ -75,8 +81,6 @@ const PropertiesRent = () => {
 		maxArea: '',
 		features: ''
 	});
-	const [showDetail, setShowDetail] = useState(false);
-	const [selectedProperty, setSelectedProperty] = useState(null);
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
@@ -105,9 +109,13 @@ const PropertiesRent = () => {
 	// Establecer filtro a 'rent' al montar el componente y limpiar filtros locales
 	useEffect(() => {
 		setFilter('rent');
+
+		// Obtener el filtro de localización desde los parámetros de consulta
+		const locationParam = searchParams.get('location');
+
 		// Limpiar filtros locales cuando se cambia de página
 		setLocalFilters({
-			location: '',
+			location: locationParam || '',
 			minPrice: '',
 			maxPrice: '',
 			minArea: '',
@@ -116,7 +124,7 @@ const PropertiesRent = () => {
 		}); // Limpiar imágenes cargadas para evitar conflictos
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
-	}, [setFilter, location.pathname]); // Agregar location.pathname como dependencia
+	}, [setFilter, location.pathname, searchParams]); // Agregar searchParams como dependencia
 	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
 	useEffect(() => {
 		const allProps = [...properties, ...contentfulProperties];
@@ -130,9 +138,20 @@ const PropertiesRent = () => {
 				if (property.address?.district) {
 					locations.add(property.address.district);
 				}
-				// Para propiedades de Contentful
-				if (property.source === 'contentful' && property.location) {
-					locations.add(property.location);
+
+				// Para propiedades de Contentful - agregar ubicación y propertyZone
+				if (property.source === 'contentful') {
+					if (property.location && property.location !== null) {
+						locations.add(property.location);
+					}
+					// Agregar las zonas como opciones de localización
+					if (property.propertyZone) {
+						if (property.propertyZone === 'Costa') {
+							locations.add('Costa Española');
+						} else if (property.propertyZone === 'Miami') {
+							locations.add('Miami');
+						}
+					}
 				}
 			});
 			setAvailableLocations(Array.from(locations).sort());
@@ -248,7 +267,24 @@ const PropertiesRent = () => {
 			// Para propiedades de Contentful
 			else if (property.source === 'contentful') {
 				const location = property.location?.toLowerCase() || '';
-				if (!location.includes(locationFilter)) {
+				let matchesLocation = location.includes(locationFilter);
+
+				// También verificar si coincide con propertyZone
+				if (!matchesLocation && property.propertyZone) {
+					if (
+						property.propertyZone === 'Costa' &&
+						locationFilter.includes('costa española')
+					) {
+						matchesLocation = true;
+					} else if (
+						property.propertyZone === 'Miami' &&
+						locationFilter.includes('miami')
+					) {
+						matchesLocation = true;
+					}
+				}
+
+				if (!matchesLocation) {
 					return false;
 				}
 			}
@@ -343,24 +379,16 @@ const PropertiesRent = () => {
 		}));
 	};
 
-	const handlePropertyClick = async property => {
-		setSelectedProperty(property);
-		setShowDetail(true);
+	const handlePropertyClick = property => {
+		// Usar solo el ID sin prefijo
+		const propertyId =
+			property.source === 'contentful' ? property.id : property.propertyId;
 
-		// Cargar imágenes si no las tiene ya
-		if (property.propertyId) {
-			await fetchPropertyImages(property.propertyId);
-		}
+		// Navegar pasando la propiedad como estado para cargar instantáneamente
+		navigate(`/property/${propertyId}`, {
+			state: { property }
+		});
 	};
-
-	if (showDetail && selectedProperty) {
-		return (
-			<PropertyDetail
-				property={selectedProperty}
-				onBack={() => setShowDetail(false)}
-			/>
-		);
-	}
 
 	return (
 		<PropertiesContainer>

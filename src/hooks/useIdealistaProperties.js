@@ -26,11 +26,6 @@ export const useIdealistaProperties = () => {
 					state: 'active'
 				});
 
-				console.log(
-					`📄 Fetching page ${currentPage} from:`,
-					`${BACKEND_URL}/api/properties?${params}`
-				);
-
 				const response = await fetch(`${BACKEND_URL}/api/properties?${params}`);
 				const result = await response.json();
 
@@ -38,18 +33,11 @@ export const useIdealistaProperties = () => {
 					const pageProperties = result.data.properties || result.data || [];
 					allProperties = [...allProperties, ...pageProperties];
 
-					console.log(
-						`📦 Page ${currentPage}: ${pageProperties.length} properties`
-					);
-
 					// Verificar si hay más páginas
 					if (result.pagination) {
 						const { page, size, total } = result.pagination;
 						const totalPages = Math.ceil(total / size);
 						hasMorePages = page < totalPages;
-						console.log(
-							`📊 Pagination: page ${page}/${totalPages}, total: ${total}`
-						);
 					} else {
 						// Si no hay información de paginación y obtuvimos menos de 100, probablemente no hay más
 						hasMorePages = pageProperties.length === 100;
@@ -58,35 +46,11 @@ export const useIdealistaProperties = () => {
 					currentPage++;
 				} else {
 					hasMorePages = false;
-					console.error('Error in page', currentPage, ':', result.error);
 				}
 			}
 
-			console.log('📊 All properties loaded:');
-			console.log('Total properties:', allProperties.length);
-			console.log(
-				'Operation types distribution:',
-				allProperties.reduce((acc, p) => {
-					const type = p.operation?.type || 'unknown';
-					acc[type] = (acc[type] || 0) + 1;
-					return acc;
-				}, {})
-			);
-			console.log(
-				'Sample rent properties:',
-				allProperties
-					.filter(p => p.operation?.type === 'rent')
-					.slice(0, 3)
-					.map(p => ({
-						id: p.propertyId,
-						operation: p.operation,
-						address: p.address?.streetName
-					}))
-			);
-
 			setProperties(allProperties);
 		} catch (err) {
-			console.error('Error fetching all properties:', err);
 			setError('Error de conexión con el servidor');
 			setProperties([]);
 		} finally {
@@ -105,24 +69,17 @@ export const useIdealistaProperties = () => {
 				state: options.state || 'active'
 			});
 
-			console.log(
-				'Fetching properties from:',
-				`${BACKEND_URL}/api/properties?${params}`
-			);
 			const response = await fetch(`${BACKEND_URL}/api/properties?${params}`);
 			const result = await response.json();
 
-			console.log('Properties response:', result);
 			if (result.success && result.data) {
 				const properties = result.data.properties || result.data || [];
-				console.log('Setting properties:', properties.length, 'items');
 				setProperties(properties);
 			} else {
 				setError(result.error || 'Error al cargar propiedades');
 				setProperties([]);
 			}
 		} catch (err) {
-			console.error('Error fetching properties:', err);
 			setError('Error de conexión con el servidor');
 			setProperties([]);
 		} finally {
@@ -145,7 +102,6 @@ export const useIdealistaProperties = () => {
 				throw new Error(result.error || 'Error al cargar la propiedad');
 			}
 		} catch (err) {
-			console.error('Error fetching property:', err);
 			setError('Error al cargar los detalles de la propiedad');
 			return null;
 		}
@@ -154,43 +110,26 @@ export const useIdealistaProperties = () => {
 	// Función para obtener imágenes de una propiedad
 	const fetchPropertyImages = useCallback(async propertyId => {
 		try {
-			console.log('Fetching images for property:', propertyId);
 			const response = await fetch(
 				`${BACKEND_URL}/api/properties/${propertyId}/images`
 			);
 
 			if (!response.ok) {
-				console.warn(
-					`HTTP Error ${response.status} for property ${propertyId}`
-				);
 				return [];
 			}
 
 			const result = await response.json();
-			console.log('Images response for property', propertyId, ':', result);
 
 			if (result.success && result.data && result.data.images) {
-				console.log(
-					'Setting images for property',
-					propertyId,
-					':',
-					result.data.images.length,
-					'images'
-				);
 				setPropertyImages(prev => ({
 					...prev,
 					[propertyId]: result.data.images
 				}));
 				return result.data.images;
 			} else {
-				console.warn(
-					'No se pudieron cargar las imágenes:',
-					result.error || 'Estructura de datos inesperada'
-				);
 				return [];
 			}
 		} catch (err) {
-			console.error('Error fetching property images:', err);
 			return [];
 		}
 	}, []);
@@ -262,42 +201,19 @@ export const useIdealistaProperties = () => {
 		return `${type} en ${location}`;
 	}, []); // Estado derivado para las propiedades filtradas - se actualiza cuando cambia filter o properties
 	const filteredProperties = useMemo(() => {
-		console.log('🔍 Filtering properties:', {
-			filter,
-			totalProperties: properties.length,
-			propertyOperationTypes: properties
-				.map(p => p.operation?.type)
-				.filter(Boolean)
-		});
-
 		if (filter === 'all') {
-			console.log('📋 Returning all properties:', properties.length);
 			return properties;
 		}
 
 		const filtered = properties.filter(property => {
 			if (!property.operation) {
-				console.warn('⚠️ Property without operation:', property.propertyId);
 				return false;
 			}
 
 			const isMatch = property.operation.type === filter;
-			if (filter === 'rent' && isMatch) {
-				console.log(
-					'🏠 Found rent property:',
-					property.propertyId,
-					property.operation
-				);
-			}
-
 			return isMatch;
 		});
 
-		console.log(
-			`✅ Filtered results for "${filter}":`,
-			filtered.length,
-			filtered.map(p => ({ id: p.propertyId, type: p.operation?.type }))
-		);
 		return filtered;
 	}, [properties, filter]);
 
@@ -343,7 +259,6 @@ export const useIdealistaProperties = () => {
 			const result = await response.json();
 			return result.status === 'ok';
 		} catch (err) {
-			console.error('Error testing connection:', err);
 			return false;
 		}
 	}, []);

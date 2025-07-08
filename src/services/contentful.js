@@ -12,7 +12,7 @@ if (spaceId && accessToken) {
 	client = createClient({
 		space: spaceId,
 		accessToken,
-		
+
 		environment
 	});
 }
@@ -46,9 +46,10 @@ export const getProperties = async (type = null) => {
 			price: item.fields.price,
 			location: item.fields.location
 				? `${item.fields.location.lat}, ${item.fields.location.lon}`
-				: 'Ubicación no disponible',
+				: null,
 			type: item.fields.type,
 			propertyType: item.fields.propertyType,
+			propertyZone: item.fields.propertyZone,
 			rooms: item.fields.rooms,
 			bathrooms: item.fields.bathrooms,
 			size: item.fields.size,
@@ -91,9 +92,10 @@ export const getProperty = async id => {
 			price: response.fields.price,
 			location: response.fields.location
 				? `${response.fields.location.lat}, ${response.fields.location.lon}`
-				: 'Ubicación no disponible',
+				: null,
 			type: response.fields.type,
 			propertyType: response.fields.propertyType,
+			propertyZone: response.fields.propertyZone,
 			rooms: response.fields.rooms,
 			bathrooms: response.fields.bathrooms,
 			size: response.fields.size,
@@ -140,9 +142,10 @@ export const getFeaturedProperties = async () => {
 			price: item.fields.price,
 			location: item.fields.location
 				? `${item.fields.location.lat}, ${item.fields.location.lon}`
-				: 'Ubicación no disponible',
+				: null,
 			type: item.fields.type,
 			propertyType: item.fields.propertyType,
+			propertyZone: item.fields.propertyZone,
 			rooms: item.fields.rooms,
 			bathrooms: item.fields.bathrooms,
 			size: item.fields.size,
@@ -181,6 +184,7 @@ const getMockProperties = (type = null) => {
 			location: 'Barcelona, Eixample',
 			type: 'En venta',
 			propertyType: 'Apartamento',
+			propertyZone: 'Costa',
 			rooms: 3,
 			bathrooms: 2,
 			size: 95,
@@ -208,6 +212,7 @@ const getMockProperties = (type = null) => {
 			location: 'Lloret de Mar, Girona',
 			type: 'En venta',
 			propertyType: 'Villa',
+			propertyZone: 'Costa',
 			rooms: 5,
 			bathrooms: 4,
 			size: 280,
@@ -235,6 +240,7 @@ const getMockProperties = (type = null) => {
 			location: 'Madrid, Salamanca',
 			type: 'En alquiler',
 			propertyType: 'Penthouse',
+			propertyZone: 'Miami',
 			rooms: 4,
 			bathrooms: 3,
 			size: 180,
