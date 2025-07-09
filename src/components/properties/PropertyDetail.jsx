@@ -19,7 +19,6 @@ const StyledNavbar = styled.nav`
 	align-items: center;
 	padding: 3rem 5%;
 	position: relative;
-	z-index: 10;
 
 	/* Ocultar navegación en la impresión */
 	@media print {
@@ -189,12 +188,12 @@ const ImageGallery = styled.div`
 	@media print {
 		height: 400px;
 		page-break-inside: avoid;
-		
+
 		/* Mostrar solo la imagen principal */
 		> div:not(:first-child) {
 			display: none !important;
 		}
-		
+
 		/* La primera imagen ocupa todo el espacio disponible */
 		> div:first-child {
 			grid-column: 1 / -1;
@@ -825,7 +824,7 @@ const ShareButton = styled.button`
 	/* Twitter */
 	&.twitter {
 		background-color: #1da1f2;
-		
+
 		img {
 			filter: none; /* El icono SVG ya es blanco */
 		}
@@ -834,7 +833,7 @@ const ShareButton = styled.button`
 	/* Print */
 	&.print {
 		background-color: #6c757d;
-		
+
 		img {
 			filter: none; /* Los iconos SVG ya son blancos */
 		}
@@ -898,9 +897,13 @@ const PropertyDetail = ({ property, onBack, images }) => {
 		const currentUrl = window.location.href;
 		const propertyTitle = getPropertyTitle(property);
 		const propertyPrice = formatPrice(property);
-		
+
 		// Facebook Sharer con más parámetros
-		const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&quote=${encodeURIComponent(`${propertyTitle} - ${propertyPrice}. ¡Échale un vistazo a esta increíble propiedad!`)}`;
+		const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+			currentUrl
+		)}&quote=${encodeURIComponent(
+			`${propertyTitle} - ${propertyPrice}. ¡Échale un vistazo a esta increíble propiedad!`
+		)}`;
 		window.open(facebookUrl, '_blank', 'width=600,height=400');
 	};
 
@@ -909,7 +912,9 @@ const PropertyDetail = ({ property, onBack, images }) => {
 		const propertyPrice = formatPrice(property);
 		const currentUrl = window.location.href;
 		const tweetText = `¡Mira esta propiedad! ${propertyTitle} - ${propertyPrice}`;
-		const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(currentUrl)}`;
+		const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+			tweetText
+		)}&url=${encodeURIComponent(currentUrl)}`;
 		window.open(twitterUrl, '_blank', 'width=600,height=400');
 	};
 
@@ -1669,33 +1674,33 @@ const PropertyDetail = ({ property, onBack, images }) => {
 					<SharePrintBlock>
 						<ShareTitle>Comparte este inmueble</ShareTitle>
 						<ShareButtonsContainer>
-							<ShareButton 
-								className="whatsapp"
+							<ShareButton
+								className='whatsapp'
 								onClick={handleWhatsAppShare}
-								title="Compartir por WhatsApp"
+								title='Compartir por WhatsApp'
 							>
-								<img src="/icons/whatsapp-icon.png" alt="WhatsApp" />
+								<img src='/icons/whatsapp-icon.png' alt='WhatsApp' />
 							</ShareButton>
-							<ShareButton 
-								className="facebook"
+							<ShareButton
+								className='facebook'
 								onClick={handleFacebookShare}
-								title="Compartir en Facebook"
+								title='Compartir en Facebook'
 							>
-								<img src="/icons/facebook-icon.png" alt="Facebook" />
+								<img src='/icons/facebook-icon.png' alt='Facebook' />
 							</ShareButton>
-							<ShareButton 
-								className="twitter"
+							<ShareButton
+								className='twitter'
 								onClick={handleTwitterShare}
-								title="Compartir en Twitter"
+								title='Compartir en Twitter'
 							>
-								<img src="/icons/twitter-icon.svg" alt="Twitter" />
+								<img src='/icons/twitter-icon.svg' alt='Twitter' />
 							</ShareButton>
-							<ShareButton 
-								className="print"
+							<ShareButton
+								className='print'
 								onClick={handlePrint}
-								title="Imprimir o guardar como PDF"
+								title='Imprimir o guardar como PDF'
 							>
-								<img src="/icons/print-icon.svg" alt="Imprimir" />
+								<img src='/icons/print-icon.svg' alt='Imprimir' />
 							</ShareButton>
 						</ShareButtonsContainer>
 					</SharePrintBlock>
