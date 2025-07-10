@@ -12,6 +12,7 @@ if (spaceId && accessToken) {
 	client = createClient({
 		space: spaceId,
 		accessToken,
+		
 		environment
 	});
 }
