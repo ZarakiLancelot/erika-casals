@@ -40,7 +40,11 @@ const MobileNavbar = ({ isScrolled }) => {
 		<StyledMobileNavbar>
 			<MobileNavContainer>
 				<MobileNavLeft>
-					<HamburgerButton $isScrolled={isScrolled} onClick={toggleMenu} aria-label='Abrir menú'>
+					<HamburgerButton
+						$isScrolled={isScrolled}
+						onClick={toggleMenu}
+						aria-label='Abrir menú'
+					>
 						<span></span>
 						<span></span>
 						<span></span>
