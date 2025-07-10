@@ -25,7 +25,7 @@ const injectGlobalStyles = () => {
 	}
 };
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ isScrolled }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const toggleMenu = () => {
@@ -40,7 +40,7 @@ const MobileNavbar = () => {
 		<StyledMobileNavbar>
 			<MobileNavContainer>
 				<MobileNavLeft>
-					<HamburgerButton onClick={toggleMenu} aria-label='Abrir menú'>
+					<HamburgerButton $isScrolled={isScrolled} onClick={toggleMenu} aria-label='Abrir menú'>
 						<span></span>
 						<span></span>
 						<span></span>
@@ -57,7 +57,7 @@ const MobileNavbar = () => {
 						href='https://wa.me/34655981758'
 						target='_blank'
 						rel='noopener noreferrer'
-						className='button-nav'
+						className={`button-nav ${isScrolled ? 'scrolled' : ''}`}
 					>
 						Hablemos
 						<img
@@ -208,7 +208,7 @@ const ResponsiveNavbar = () => {
 	return (
 		<StyledNavbarContainer $isScrolled={isScrolled}>
 			<DesktopNavbar isScrolled={isScrolled} />
-			<MobileNavbar />
+			<MobileNavbar isScrolled={isScrolled} />
 		</StyledNavbarContainer>
 	);
 };
@@ -292,7 +292,7 @@ const HamburgerButton = styled.button`
 	span {
 		width: 25px;
 		height: 3px;
-		background-color: #16243e;
+		background-color: ${props => (props.$isScrolled ? 'white' : '#16243e')};
 		margin: 2px 0;
 		transition: 0.3s;
 		border-radius: 2px;
