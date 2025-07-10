@@ -100,7 +100,7 @@ const InstagramFeed = () => {
 				</StyledHeader>
 
 				<StyledSliderContainer>
-					<StyledSliderWrapper currentSlide={currentSlide}>
+					<StyledSliderWrapper $currentSlide={currentSlide}>
 						{reels.map((reel, index) => (
 							<StyledReelItem key={reel.id}>
 								<iframe

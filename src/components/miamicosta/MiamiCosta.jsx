@@ -14,11 +14,11 @@ const MiamiCosta = () => {
 	return (
 		<StyledContainer>
 			<StyledContent>
-				{/* Sección Miami */}
+				{/* Sección Florida */}
 				<StyledSection>
-					<StyledSectionTitle>Miami</StyledSectionTitle>
+					<StyledSectionTitle>Florida</StyledSectionTitle>
 					<StyledDescription>
-						Vivir o invertir en Miami no es solo una decisión inmobiliaria, es
+						Vivir o invertir en Florida no es solo una decisión inmobiliaria, es
 						una apuesta por un estilo de vida dinámico, internacional y con un
 						mercado en constante crecimiento. Te mostraré las{' '}
 						<b>zonas que realmente valen la pena,</b> más allá de lo que aparece
@@ -28,7 +28,7 @@ const MiamiCosta = () => {
 					<StyledImageContainer>
 						<StyledImage
 							src='/images/costa-espanola.png'
-							alt='Miami Properties'
+							alt='Florida Properties'
 						/>
 						<div
 							style={{
@@ -43,14 +43,14 @@ const MiamiCosta = () => {
 								zIndex: 3
 							}}
 						>
-							<Link to='/sales?location=Miami'>
+							<Link to='/sales?location=Florida'>
 								<StyledViewButton
 									style={{ position: 'static', transform: 'none' }}
 								>
 									En venta
 								</StyledViewButton>
 							</Link>
-							<Link to='/rent?location=Miami'>
+							<Link to='/rent?location=Florida'>
 								<StyledViewButton
 									style={{ position: 'static', transform: 'none' }}
 								>

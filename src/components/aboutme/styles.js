@@ -344,11 +344,21 @@ const SocialButton = styled.button`
 		object-fit: contain;
 	}
 
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
 	&:hover {
 		background: #16243e;
 		transform: scale(1.1);
+
 		img {
 			filter: brightness(0) invert(1);
+		}
+
+		svg {
+			fill: white !important;
 		}
 	}
 

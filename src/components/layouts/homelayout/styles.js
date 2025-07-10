@@ -4,7 +4,7 @@ const StyledWrapper = styled.div`
 	width: 100%;
 	min-height: 100vh;
 	background-color: #f0f0f0;
-	overflow-x: hidden; /* Evitar scroll horizontal durante las animaciones */
+	/* overflow-x: hidden; */
 `;
 
 // Componente para mejorar las transiciones

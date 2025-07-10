@@ -19,7 +19,7 @@ const ServicesComp = () => {
 				<StyledTitle>Servicios</StyledTitle>
 				<StyledDescription>
 					Te ayudo a vender y alquilar con total confianza, tanto en España como
-					en Miami. Propiedades seleccionadas, atención personalizada y
+					en Florida. Propiedades seleccionadas, atención personalizada y
 					acompañamiento en cada paso.
 				</StyledDescription>
 				<StyledGridContainer>
@@ -46,14 +46,14 @@ const ServicesComp = () => {
 						</Link>
 					</StyledServiceCard>
 					<StyledServiceCard>
-						<StyledServiceIcon src='/images/miami.png' alt='Miami' />
-						<StyledServiceTitle>Miami</StyledServiceTitle>
+						<StyledServiceIcon src='/images/miami.png' alt='Florida' />
+						<StyledServiceTitle>Florida</StyledServiceTitle>
 						<StyledServiceDescription>
-							Vivir en Miami es una declaración de estilo de vida. Te muestro
+							Vivir en Florida es una declaración de estilo de vida. Te muestro
 							las zonas que realmente valen la pena.
 						</StyledServiceDescription>
 						<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-							<Link to='/sales?location=Miami'>
+							<Link to='/sales?location=Florida'>
 								<StyledServiceButton
 									as='span'
 									style={{ fontSize: '12px', padding: '8px 12px' }}
@@ -61,7 +61,7 @@ const ServicesComp = () => {
 									Venta
 								</StyledServiceButton>
 							</Link>
-							<Link to='/rent?location=Miami'>
+							<Link to='/rent?location=Florida'>
 								<StyledServiceButton
 									as='span'
 									style={{ fontSize: '12px', padding: '8px 12px' }}

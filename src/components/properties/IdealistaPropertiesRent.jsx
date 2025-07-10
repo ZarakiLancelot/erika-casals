@@ -1,10 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import {
-	Link,
-	useLocation,
-	useSearchParams,
-	useNavigate
-} from 'react-router-dom';
+import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
 import { useContentfulRentProperties } from '../../hooks/useContentfulProperties';
 import PageTransition from '../common/PageTransition';
@@ -41,16 +36,10 @@ import {
 	PropertyIcon,
 	LoadingSpinner,
 	ErrorMessage,
-	EmptyState,
-	// Componentes de navegación
-	StyledNavbar,
-	StyledNavLeft,
-	StyledNavCenter,
-	StyledNavLi,
-	StyledNavRight,
-	StyledButton
+	EmptyState
 } from './styles';
 import Footer from '../footer/Footer';
+import ResponsiveNavbar from '../common/ResponsiveNavbar';
 
 const PropertiesRent = () => {
 	const location = useLocation();
@@ -148,8 +137,8 @@ const PropertiesRent = () => {
 					if (property.propertyZone) {
 						if (property.propertyZone === 'Costa') {
 							locations.add('Costa Española');
-						} else if (property.propertyZone === 'Miami') {
-							locations.add('Miami');
+						} else if (property.propertyZone === 'Florida') {
+							locations.add('Florida');
 						}
 					}
 				}
@@ -277,8 +266,8 @@ const PropertiesRent = () => {
 					) {
 						matchesLocation = true;
 					} else if (
-						property.propertyZone === 'Miami' &&
-						locationFilter.includes('miami')
+						property.propertyZone === 'Florida' &&
+						locationFilter.includes('florida')
 					) {
 						matchesLocation = true;
 					}
@@ -391,292 +380,265 @@ const PropertiesRent = () => {
 	};
 
 	return (
-		<PropertiesContainer>
-			<ContentWrapper>
-				<StyledNavbar>
-					<StyledNavLeft></StyledNavLeft>{' '}
-					<StyledNavCenter>
-						<StyledNavLi>
-							<Link to='/'>Inicio</Link>
-						</StyledNavLi>
-						<StyledNavLi>
-							<Link to='/servicios'>Servicios</Link>
-						</StyledNavLi>
-						<StyledNavLi>
-							<Link to='/aboutme'>Sobre mí</Link>
-						</StyledNavLi>{' '}
-						<StyledNavLi>
-							<Link to='/rent'>Alquiler</Link>
-						</StyledNavLi>
-						<StyledNavLi>
-							<Link to='/sales'>Venta</Link>
-						</StyledNavLi>
-					</StyledNavCenter>
-					<StyledNavRight>
-						<StyledButton
-							as='a'
-							href='https://wa.me/34655981758'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
-						</StyledButton>
-					</StyledNavRight>{' '}
-				</StyledNavbar>
-				<PageTransition type='properties'>
-					<HeaderSection>
-						<h1>En Alquiler</h1>
-					</HeaderSection>
+		<div>
+			<ResponsiveNavbar />
+			<PageTransition type='properties'>
+				<PropertiesContainer>
+					<ContentWrapper>
+						<HeaderSection>
+							<h1>En Alquiler</h1>
+						</HeaderSection>
 
-					<MainContainer>
-						{/* Sidebar de filtros */}
-						<FilterSidebar>
-							<FilterCard>
-								<FilterTitle>Filtros de búsqueda</FilterTitle> {/* Filtros */}
-								<FilterGroup>
-									<FilterLabel>Localización</FilterLabel>
-									<FilterSelect
-										value={localFilters.location}
-										onChange={e =>
-											handleFilterChange('location', e.target.value)
-										}
-									>
-										<option value=''>Todas las ubicaciones</option>
-										{availableLocations.map(location => (
-											<option key={location} value={location}>
-												{location}
-											</option>
-										))}
-									</FilterSelect>
-								</FilterGroup>
-								<FilterGroup>
-									<FilterLabel>Precio mensual</FilterLabel>
-									<PriceRangeGroup>
-										<PriceInput
-											placeholder='Precio mín €'
-											value={localFilters.minPrice}
+						<MainContainer>
+							{/* Sidebar de filtros */}
+							<FilterSidebar>
+								<FilterCard>
+									<FilterTitle>Filtros de búsqueda</FilterTitle> {/* Filtros */}
+									<FilterGroup>
+										<FilterLabel>Localización</FilterLabel>
+										<FilterSelect
+											value={localFilters.location}
 											onChange={e =>
-												handleFilterChange('minPrice', e.target.value)
+												handleFilterChange('location', e.target.value)
 											}
-											type='number'
-										/>
-										<PriceSeparator>—</PriceSeparator>
-										<PriceInput
-											placeholder='Precio máx €'
-											value={localFilters.maxPrice}
-											onChange={e =>
-												handleFilterChange('maxPrice', e.target.value)
-											}
-											type='number'
-										/>
-									</PriceRangeGroup>
-								</FilterGroup>
-								<FilterGroup>
-									<FilterLabel>Superficie (m²)</FilterLabel>
-									<PriceRangeGroup>
-										<PriceInput
-											placeholder='m² min'
-											value={localFilters.minArea}
-											onChange={e =>
-												handleFilterChange('minArea', e.target.value)
-											}
-											type='number'
-										/>
-										<PriceSeparator>—</PriceSeparator>
-										<PriceInput
-											placeholder='m² max'
-											value={localFilters.maxArea}
-											onChange={e =>
-												handleFilterChange('maxArea', e.target.value)
-											}
-											type='number'
-										/>
-									</PriceRangeGroup>
-								</FilterGroup>
-								<FilterGroup>
-									<FilterLabel>Características</FilterLabel>
-									<FilterInput
-										placeholder='ej: ascensor, aire acondicionado, terraza...'
-										value={localFilters.features}
-										onChange={e =>
-											handleFilterChange('features', e.target.value)
-										}
-										title='Busca por: ascensor, aire acondicionado, terraza, balcón, garaje, piscina, jardín, trastero, armarios, calefacción, ático, dúplex'
-									/>
-								</FilterGroup>
-							</FilterCard>
-						</FilterSidebar>
-
-						{/* Sección principal de propiedades */}
-						<PropertiesSection>
-							<ResultsHeader>
-								<ResultsCount>
-									{loading
-										? 'Cargando propiedades...'
-										: error
-										? 'Error al cargar propiedades'
-										: `${filteredProperties.length} ${
-												filteredProperties.length === 1
-													? 'resultado'
-													: 'resultados'
-										  } encontrados`}
-								</ResultsCount>
-							</ResultsHeader>{' '}
-							{(loading || contentfulLoading) && (
-								<LoadingSpinner>Cargando propiedades...</LoadingSpinner>
-							)}
-							{(error || contentfulError) && (
-								<ErrorMessage>{error || contentfulError}</ErrorMessage>
-							)}
-							{!loading &&
-								!contentfulLoading &&
-								!error &&
-								!contentfulError &&
-								filteredProperties.length === 0 && (
-									<EmptyState>
-										<h3>No se encontraron propiedades</h3>
-										<p>Intenta ajustar los filtros o verifica la conexión</p>
-									</EmptyState>
-								)}{' '}
-							{!loading &&
-								!contentfulLoading &&
-								!error &&
-								!contentfulError &&
-								filteredProperties.length > 0 && (
-									<PropertiesGrid>
-										{filteredProperties.map((property, index) => {
-											// Para propiedades de Idealista
-											const propertyId = property.propertyId;
-											if (propertyId && !loadedImages.has(propertyId)) {
-												loadPropertyImage(propertyId);
-											} // Determinar la imagen a mostrar
-											let imageSrc;
-											if (property.source === 'contentful') {
-												// Para Contentful, usar la URL de la primera imagen
-												if (property.images && property.images.length > 0) {
-													const imageUrl = property.images[0].url;
-													imageSrc = imageUrl.startsWith('//')
-														? `https:${imageUrl}`
-														: imageUrl;
-												} else {
-													imageSrc = '/images/home-image-1.png';
+										>
+											<option value=''>Todas las ubicaciones</option>
+											{availableLocations.map(location => (
+												<option key={location} value={location}>
+													{location}
+												</option>
+											))}
+										</FilterSelect>
+									</FilterGroup>
+									<FilterGroup>
+										<FilterLabel>Precio mensual</FilterLabel>
+										<PriceRangeGroup>
+											<PriceInput
+												placeholder='Precio mín €'
+												value={localFilters.minPrice}
+												onChange={e =>
+													handleFilterChange('minPrice', e.target.value)
 												}
-											} else {
-												imageSrc =
-													getPropertyMainImage(propertyId) ||
-													'/images/home-image-1.png';
+												type='number'
+											/>
+											<PriceSeparator>—</PriceSeparator>
+											<PriceInput
+												placeholder='Precio máx €'
+												value={localFilters.maxPrice}
+												onChange={e =>
+													handleFilterChange('maxPrice', e.target.value)
+												}
+												type='number'
+											/>
+										</PriceRangeGroup>
+									</FilterGroup>
+									<FilterGroup>
+										<FilterLabel>Superficie (m²)</FilterLabel>
+										<PriceRangeGroup>
+											<PriceInput
+												placeholder='m² min'
+												value={localFilters.minArea}
+												onChange={e =>
+													handleFilterChange('minArea', e.target.value)
+												}
+												type='number'
+											/>
+											<PriceSeparator>—</PriceSeparator>
+											<PriceInput
+												placeholder='m² max'
+												value={localFilters.maxArea}
+												onChange={e =>
+													handleFilterChange('maxArea', e.target.value)
+												}
+												type='number'
+											/>
+										</PriceRangeGroup>
+									</FilterGroup>
+									<FilterGroup>
+										<FilterLabel>Características</FilterLabel>
+										<FilterInput
+											placeholder='ej: ascensor, aire acondicionado, terraza...'
+											value={localFilters.features}
+											onChange={e =>
+												handleFilterChange('features', e.target.value)
 											}
-											return (
-												<ScrollAnimation
-													key={
-														property.source === 'contentful'
-															? property.id
-															: propertyId || index
-													}
-													delay={index * 0.1}
-												>
-													<StyledPropertyCard
-														onClick={() => handlePropertyClick(property)}
-													>
-														{/* Mostrar loader solo para propiedades de Idealista */}
-														{property.source !== 'contentful' &&
-														loadingImages.has(propertyId) ? (
-															<ImageLoader />
-														) : (
-															<PropertyImage
-																src={imageSrc}
-																alt={getPropertyTitleUnified(property)}
-															/>
-														)}
-														<PropertyContent>
-															<PropertyIcon />
-															<PropertyTitle>
-																{getPropertyTitleUnified(property)}
-															</PropertyTitle>
-															<PropertyPrice>
-																{property.source === 'contentful'
-																	? `${property.price?.toLocaleString(
-																			'es-ES'
-																	  )} €`
-																	: formatPrice(property)}
-																<span>
-																	{' '}
-																	Ref.{' '}
-																	{property.source === 'contentful'
-																		? 'ex'
-																		: 'ec'}
-																	-
-																	{property.source === 'contentful'
-																		? property.id.slice(-4)
-																		: propertyId?.toString().slice(-4) ||
-																		  '1024'}
-																</span>
-															</PropertyPrice>
-															<PropertyDescription>
-																{(() => {
-																	if (property.source === 'contentful') {
-																		const description =
-																			property.description ||
-																			'Propiedad exclusiva en alquiler con características únicas.';
-																		return description.length > 150
-																			? description.substring(0, 150) + '...'
-																			: description;
-																	}
+											title='Busca por: ascensor, aire acondicionado, terraza, balcón, garaje, piscina, jardín, trastero, armarios, calefacción, ático, dúplex'
+										/>
+									</FilterGroup>
+								</FilterCard>
+							</FilterSidebar>
 
-																	if (
-																		property.descriptions &&
-																		property.descriptions.length > 0
-																	) {
-																		const esDesc = property.descriptions.find(
-																			desc => desc.language === 'es'
+							{/* Sección principal de propiedades */}
+							<PropertiesSection>
+								<ResultsHeader>
+									<ResultsCount>
+										{loading
+											? 'Cargando propiedades...'
+											: error
+											? 'Error al cargar propiedades'
+											: `${filteredProperties.length} ${
+													filteredProperties.length === 1
+														? 'resultado'
+														: 'resultados'
+											  } encontrados`}
+									</ResultsCount>
+								</ResultsHeader>{' '}
+								{(loading || contentfulLoading) && (
+									<LoadingSpinner>Cargando propiedades...</LoadingSpinner>
+								)}
+								{(error || contentfulError) && (
+									<ErrorMessage>{error || contentfulError}</ErrorMessage>
+								)}
+								{!loading &&
+									!contentfulLoading &&
+									!error &&
+									!contentfulError &&
+									filteredProperties.length === 0 && (
+										<EmptyState>
+											<h3>No se encontraron propiedades</h3>
+											<p>Intenta ajustar los filtros o verifica la conexión</p>
+										</EmptyState>
+									)}{' '}
+								{!loading &&
+									!contentfulLoading &&
+									!error &&
+									!contentfulError &&
+									filteredProperties.length > 0 && (
+										<PropertiesGrid>
+											{filteredProperties.map((property, index) => {
+												// Para propiedades de Idealista
+												const propertyId = property.propertyId;
+												if (propertyId && !loadedImages.has(propertyId)) {
+													loadPropertyImage(propertyId);
+												} // Determinar la imagen a mostrar
+												let imageSrc;
+												if (property.source === 'contentful') {
+													// Para Contentful, usar la URL de la primera imagen
+													if (property.images && property.images.length > 0) {
+														const imageUrl = property.images[0].url;
+														imageSrc = imageUrl.startsWith('//')
+															? `https:${imageUrl}`
+															: imageUrl;
+													} else {
+														imageSrc = '/images/home-image-1.png';
+													}
+												} else {
+													imageSrc =
+														getPropertyMainImage(propertyId) ||
+														'/images/home-image-1.png';
+												}
+												return (
+													<ScrollAnimation
+														key={
+															property.source === 'contentful'
+																? property.id
+																: propertyId || index
+														}
+														delay={index * 0.1}
+													>
+														<StyledPropertyCard
+															onClick={() => handlePropertyClick(property)}
+														>
+															{/* Mostrar loader solo para propiedades de Idealista */}
+															{property.source !== 'contentful' &&
+															loadingImages.has(propertyId) ? (
+																<ImageLoader />
+															) : (
+																<PropertyImage
+																	src={imageSrc}
+																	alt={getPropertyTitleUnified(property)}
+																/>
+															)}
+															<PropertyContent>
+																<PropertyIcon />
+																<PropertyTitle>
+																	{getPropertyTitleUnified(property)}
+																</PropertyTitle>
+																<PropertyPrice>
+																	{property.source === 'contentful'
+																		? `${property.price?.toLocaleString(
+																				'es-ES'
+																		  )} €`
+																		: formatPrice(property)}
+																	<span>
+																		{' '}
+																		Ref.{' '}
+																		{property.source === 'contentful'
+																			? 'ex'
+																			: 'ec'}
+																		-
+																		{property.source === 'contentful'
+																			? property.id.slice(-4)
+																			: propertyId?.toString().slice(-4) ||
+																			  '1024'}
+																	</span>
+																</PropertyPrice>
+																<PropertyDescription>
+																	{(() => {
+																		if (property.source === 'contentful') {
+																			const description =
+																				property.description ||
+																				'Propiedad exclusiva en alquiler con características únicas.';
+																			return description.length > 150
+																				? description.substring(0, 150) + '...'
+																				: description;
+																		}
+
+																		if (
+																			property.descriptions &&
+																			property.descriptions.length > 0
+																		) {
+																			const esDesc = property.descriptions.find(
+																				desc => desc.language === 'es'
+																			);
+																			const description = esDesc
+																				? esDesc.text
+																				: property.descriptions[0].text;
+																			// Limitar a 150 caracteres
+																			return description.length > 150
+																				? description.substring(0, 150) + '...'
+																				: description;
+																		}
+																		return (
+																			property.description ||
+																			'Propiedad en alquiler en excelente zona. Ideal para familias o profesionales.'
 																		);
-																		const description = esDesc
-																			? esDesc.text
-																			: property.descriptions[0].text;
-																		// Limitar a 150 caracteres
-																		return description.length > 150
-																			? description.substring(0, 150) + '...'
-																			: description;
-																	}
-																	return (
-																		property.description ||
-																		'Propiedad en alquiler en excelente zona. Ideal para familias o profesionales.'
-																	);
-																})()}
-															</PropertyDescription>
-															<PropertyBottom>
-																<PropertyFeatures>
-																	<img src='/icons/house.png' alt='' />
-																	{getPropertySizeUnified(property) && (
-																		<PropertyFeature>
-																			{getPropertySizeUnified(property)}m²
-																		</PropertyFeature>
-																	)}
-																	{getRoomsUnified(property) && (
-																		<PropertyFeature>
-																			{getRoomsUnified(property)} hab.
-																		</PropertyFeature>
-																	)}
-																	{getBathroomsUnified(property) && (
-																		<PropertyFeature>
-																			{getBathroomsUnified(property)} baños
-																		</PropertyFeature>
-																	)}{' '}
-																</PropertyFeatures>
-															</PropertyBottom>
-														</PropertyContent>
-													</StyledPropertyCard>
-												</ScrollAnimation>
-											);
-										})}
-									</PropertiesGrid>
-								)}{' '}
-						</PropertiesSection>
-					</MainContainer>
-					<Footer />
-				</PageTransition>
-			</ContentWrapper>
-		</PropertiesContainer>
+																	})()}
+																</PropertyDescription>
+																<PropertyBottom>
+																	<PropertyFeatures>
+																		<img src='/icons/house.png' alt='' />
+																		{getPropertySizeUnified(property) && (
+																			<PropertyFeature>
+																				{getPropertySizeUnified(property)}m²
+																			</PropertyFeature>
+																		)}
+																		{getRoomsUnified(property) && (
+																			<PropertyFeature>
+																				{getRoomsUnified(property)} hab.
+																			</PropertyFeature>
+																		)}
+																		{getBathroomsUnified(property) && (
+																			<PropertyFeature>
+																				{getBathroomsUnified(property)} baños
+																			</PropertyFeature>
+																		)}{' '}
+																	</PropertyFeatures>
+																</PropertyBottom>
+															</PropertyContent>
+														</StyledPropertyCard>
+													</ScrollAnimation>
+												);
+											})}
+										</PropertiesGrid>
+									)}{' '}
+							</PropertiesSection>
+						</MainContainer>
+					</ContentWrapper>
+				</PropertiesContainer>
+				<Footer />
+			</PageTransition>
+		</div>
 	);
 };
 

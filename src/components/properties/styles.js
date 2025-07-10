@@ -4,10 +4,10 @@ import styled from 'styled-components';
 export const StyledNavbar = styled.nav`
 	color: white;
 	display: flex;
-	background-color: #16243e;
+	background-color: white;
 	justify-content: space-between;
 	align-items: center;
-	padding: 3rem 0;
+	padding: 1.2rem 0;
 	position: relative;
 	z-index: 10;
 
@@ -20,6 +20,14 @@ export const StyledNavbar = styled.nav`
 
 export const StyledNavLeft = styled.div`
 	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
 `;
 
 export const StyledNavCenter = styled.ul`
@@ -39,7 +47,7 @@ export const StyledNavCenter = styled.ul`
 
 export const StyledNavLi = styled.li`
 	list-style: none;
-	color: white;
+	color: #16243e;
 	cursor: pointer;
 	transition: color 0.3s ease;
 	font-weight: 300;
@@ -83,9 +91,21 @@ export const StyledButton = styled.button`
 		background-color: rgb(167, 196, 250);
 	}
 
+	&.button-nav {
+		background-color: #16243e;
+		color: white;
+		&:hover {
+			background-color: rgb(167, 196, 250);
+		}
+	}
+
 	img {
 		width: 1.2rem;
 		height: 1.2rem;
+
+		&.img-nav {
+			filter: invert(1) brightness(2);
+		}
 	}
 
 	@media (max-width: 768px) {

@@ -79,12 +79,12 @@ const StyledSliderContainer = styled.div`
 const StyledSliderWrapper = styled.div`
 	display: flex;
 	gap: 1rem;
-	transform: translateX(${props => -props.currentSlide * (100 / 3 + 1)}%);
+	transform: translateX(${props => -props.$currentSlide * (100 / 3 + 1)}%);
 	transition: transform 0.5s ease;
 	width: 100%;
 
 	@media (max-width: 768px) {
-		transform: translateX(${props => -props.currentSlide * (100 + 2)}%);
+		transform: translateX(${props => -props.$currentSlide * (100 + 2)}%);
 	}
 `;
 

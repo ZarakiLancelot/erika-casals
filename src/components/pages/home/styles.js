@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
 	width: 100%;
 	height: 100vh;
-	background: url(./images/dark-background.png) no-repeat;
+	background: url(/images/dark-background.png) no-repeat;
 	background-position: 100% 0;
 	background-size: cover;
 	/* overflow-x: hidden; */
@@ -30,7 +30,8 @@ const StyledNavbar = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 3rem 0;
+	padding: 1.2rem 0;
+	background-color: white;
 
 	@media (max-width: 768px) {
 		padding: 1.5rem 1rem;
@@ -41,6 +42,14 @@ const StyledNavbar = styled.nav`
 
 const StyledNavLeft = styled.div`
 	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
 `;
 
 const StyledButton = styled.button`
@@ -63,9 +72,22 @@ const StyledButton = styled.button`
 		background-color: rgb(167, 196, 250);
 	}
 
+	&.button-nav {
+		background-color: #16243e;
+		color: white;
+
+		&:hover {
+			background-color: rgb(167, 196, 250);
+		}
+	}
+
 	img {
 		width: 1.2rem;
 		height: 1.2rem;
+
+		&.img-nav {
+			filter: invert(1) brightness(2);
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -104,10 +126,10 @@ const StyledNavCenter = styled.ul`
 
 const StyledNavLi = styled.li`
 	list-style: none;
-	color: white;
+	color: #16243e;
 	cursor: pointer;
 	transition: color 0.3s ease;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 1px;
 
 	&:hover {

@@ -1,134 +1,14 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useReactToPrint } from 'react-to-print';
+import emailjs from '@emailjs/browser';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
 import Footer from '../footer/Footer';
+import ResponsiveNavbar from '../common/ResponsiveNavbar';
 
 const DetailContainer = styled.div`
 	min-height: 100vh;
 	background: #f5f5f5;
-`;
-
-// Navegación
-const StyledNavbar = styled.nav`
-	color: white;
-	display: flex;
-	background-color: #16243e;
-	justify-content: space-between;
-	align-items: center;
-	padding: 3rem 5%;
-	position: relative;
-
-	/* Ocultar navegación en la impresión */
-	@media print {
-		display: none !important;
-	}
-
-	@media (max-width: 768px) {
-		padding: 1.5rem 1rem;
-		flex-direction: column;
-		gap: 1rem;
-	}
-`;
-
-const StyledNavLeft = styled.div`
-	flex: 1;
-`;
-
-const StyledNavCenter = styled.ul`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 2;
-	text-align: center;
-	gap: 2rem;
-
-	@media (max-width: 768px) {
-		gap: 1rem;
-		flex-wrap: wrap;
-		order: 2;
-	}
-`;
-
-const StyledNavLi = styled.li`
-	list-style: none;
-	color: white;
-	cursor: pointer;
-	transition: color 0.3s ease;
-	font-weight: 300;
-	letter-spacing: 1px;
-
-	a {
-		color: white;
-		text-decoration: none;
-		transition: color 0.3s ease;
-
-		&:hover {
-			color: rgb(167, 196, 250);
-		}
-	}
-
-	&:hover {
-		color: rgb(167, 196, 250);
-	}
-
-	@media (max-width: 768px) {
-		font-size: 0.9rem;
-	}
-`;
-
-const StyledNavRight = styled.div`
-	flex: 1;
-
-	@media (max-width: 768px) {
-		order: 1;
-		flex: none;
-	}
-`;
-
-const StyledButton = styled.button`
-	border: none;
-	background-color: white;
-	border-radius: 20px;
-	padding: 0.4rem 1.5rem;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	transition: background-color 0.3s ease;
-	justify-self: center;
-	color: #16243e;
-	font-size: 12px;
-
-	img {
-		width: 1.2rem;
-		height: 1.2rem;
-	}
-
-	&:hover {
-		background-color: rgb(167, 196, 250);
-	}
-
-	@media (max-width: 768px) {
-		padding: 0.6rem 1.2rem;
-		font-size: 0.9rem;
-		gap: 0.8rem;
-		border-radius: 18px;
-
-		img {
-			width: 1.2rem !important;
-			height: 1.2rem !important;
-		}
-	}
-
-	@media (max-width: 480px) {
-		padding: 0.5rem 1rem;
-		font-size: 0.85rem;
-		gap: 0.6rem;
-	}
 `;
 
 const BackButton = styled.button`
@@ -179,9 +59,10 @@ const ImageGallery = styled.div`
 	}
 
 	@media (max-width: 480px) {
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(5, 1fr);
-		height: 250px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 2fr 1fr;
+		height: 350px;
+		gap: 2px;
 	}
 
 	/* Optimizar para impresión */
@@ -216,8 +97,31 @@ const ImageItem = styled.div`
 		}
 
 		@media (max-width: 480px) {
-			grid-row: 1 / 3;
+			grid-row: 1;
+			grid-column: 1 / -1;
+		}
+	}
+
+	/* Para las imágenes 2, 3 y 4 en móvil */
+	@media (max-width: 480px) {
+		&:nth-child(2) {
+			grid-row: 2;
 			grid-column: 1;
+		}
+
+		&:nth-child(3) {
+			grid-row: 2;
+			grid-column: 2;
+		}
+
+		&:nth-child(4) {
+			grid-row: 2;
+			grid-column: 3;
+		}
+
+		/* Ocultar las imágenes adicionales si hay más de 4 */
+		&:nth-child(n + 5) {
+			display: none;
 		}
 	}
 `;
@@ -749,8 +653,14 @@ const ContactForm = styled.form`
 		cursor: pointer;
 		transition: background-color 0.3s ease;
 
-		&:hover {
+		&:hover:not(:disabled) {
 			background-color: #2c3e50;
+		}
+
+		&:disabled {
+			background-color: #ccc;
+			cursor: not-allowed;
+			opacity: 0.7;
 		}
 	}
 `;
@@ -773,6 +683,7 @@ const ShareTitle = styled.h3`
 	margin-bottom: 20px;
 	text-transform: none;
 	letter-spacing: 0.5px;
+	text-align: center;
 `;
 
 const ShareButtonsContainer = styled.div`
@@ -861,6 +772,9 @@ const PropertyDetail = ({ property, onBack, images }) => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [showLightbox, setShowLightbox] = useState(false);
 	const [imagesLoading, setImagesLoading] = useState(true);
+	const [isMobile, setIsMobile] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitMessage, setSubmitMessage] = useState('');
 	const [contactForm, setContactForm] = useState({
 		name: '',
 		phone: '',
@@ -873,6 +787,23 @@ const PropertyDetail = ({ property, onBack, images }) => {
 
 	// Distancia mínima para considerar un swipe
 	const minSwipeDistance = 50;
+
+	// Detectar si estamos en móvil
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 480);
+		};
+
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
+
+	// Inicializar EmailJS
+	useEffect(() => {
+		emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+	}, []);
 
 	// Configuración para react-to-print
 	const handlePrint = useReactToPrint({
@@ -1378,6 +1309,61 @@ const PropertyDetail = ({ property, onBack, images }) => {
 		}));
 	};
 
+	const handleFormSubmit = async e => {
+		e.preventDefault();
+
+		if (!contactForm.name || !contactForm.phone || !contactForm.message) {
+			setSubmitMessage('Por favor, rellena todos los campos.');
+			return;
+		}
+
+		setIsSubmitting(true);
+		setSubmitMessage('');
+
+		try {
+			// Preparar los parámetros para EmailJS
+			const templateParams = {
+				name: contactForm.name,
+				phone: contactForm.phone,
+				message: contactForm.message,
+				time: new Date().toLocaleString('es-ES', {
+					year: 'numeric',
+					month: '2-digit',
+					day: '2-digit',
+					hour: '2-digit',
+					minute: '2-digit'
+				})
+			};
+
+			console.log('Enviando con parámetros:', templateParams);
+			console.log('Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+			console.log('Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+
+			// Enviar email usando EmailJS
+			const result = await emailjs.send(
+				import.meta.env.VITE_EMAILJS_SERVICE_ID,
+				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+				templateParams,
+				import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+			);
+
+			console.log('EmailJS result:', result);
+			setSubmitMessage(
+				'¡Mensaje enviado correctamente! Te contactaremos pronto.'
+			);
+			setContactForm({ name: '', phone: '', message: '' });
+		} catch (error) {
+			console.error('Error completo:', error);
+			console.error('Error status:', error.status);
+			console.error('Error text:', error.text);
+			setSubmitMessage(
+				'Error al enviar el mensaje. Por favor, inténtalo de nuevo.'
+			);
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
+
 	const openLightbox = index => {
 		setCurrentImageIndex(index);
 		setShowLightbox(true);
@@ -1442,274 +1428,276 @@ const PropertyDetail = ({ property, onBack, images }) => {
 	}, [showLightbox, nextImage, prevImage]);
 
 	return (
-		<DetailContainer>
+		<div>
 			{/* Navegación */}
-			<StyledNavbar>
-				<StyledNavLeft></StyledNavLeft>
-				<StyledNavCenter>
-					<StyledNavLi>
-						<Link to='/'>Inicio</Link>
-					</StyledNavLi>
-					<StyledNavLi>
-						<Link to='/servicios'>Servicios</Link>
-					</StyledNavLi>
-					<StyledNavLi>Sobre mí</StyledNavLi>
-					<StyledNavLi>
-						<Link to='/rent'>Alquiler</Link>
-					</StyledNavLi>
-					<StyledNavLi>
-						<Link to='/sales'>Venta</Link>
-					</StyledNavLi>
-				</StyledNavCenter>
-				<StyledNavRight>
-					<StyledButton
-						as='a'
-						href='https://wa.me/34655981758'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						Hablemos <img src='/icons/whatsapp-icon.png' alt='' />
-					</StyledButton>
-				</StyledNavRight>
-			</StyledNavbar>{' '}
-			<BackButton onClick={onBack}>←</BackButton>
-			{/* Lightbox */}
-			<LightboxOverlay show={showLightbox} onClick={closeLightbox}>
-				<LightboxContent onClick={e => e.stopPropagation()}>
-					<LightboxClose onClick={closeLightbox}>×</LightboxClose>
-					{allImages.length > 1 && (
-						<>
-							<LightboxNav className='prev' onClick={prevImage}>
-								‹
-							</LightboxNav>
-							<LightboxNav className='next' onClick={nextImage}>
-								›
-							</LightboxNav>
-						</>
-					)}{' '}
-					<LightboxImage
-						src={
-							allImages[currentImageIndex]?.url ||
-							allImages[currentImageIndex]?.link ||
-							getPropertyMainImage(property.propertyId)
-						}
-						alt={`Imagen ${currentImageIndex + 1}`}
-						onTouchStart={onTouchStart}
-						onTouchMove={onTouchMove}
-						onTouchEnd={onTouchEnd}
-					/>
-					<LightboxCounter>
-						{currentImageIndex + 1} / {allImages.length}
-					</LightboxCounter>
-				</LightboxContent>
-			</LightboxOverlay>{' '}
-			{/* Contenido principal */}
-			<ContentContainer ref={componentRef}>
-				{' '}
-				{/* Galería de imágenes ocupando todo el ancho */}
-				<ImageGallery style={{ gridColumn: '1 / -1' }}>
-					{imagesLoading
-						? // Mostrar loaders mientras cargan las imágenes
-						  Array.from({ length: 7 }, (_, index) => (
-								<ImageItem key={index}>
-									<GalleryImageLoader />
-								</ImageItem>
-						  ))
-						: // Mostrar imágenes reales una vez cargadas
-						  allImages.slice(0, 7).map((image, index) => (
-								<ImageItem key={index} onClick={() => openLightbox(index)}>
-									<GalleryImage
-										src={
-											image.url ||
-											image.link ||
-											getPropertyMainImage(property.propertyId)
-										}
-										alt={`Imagen ${index + 1}`}
-									/>
-									{index === 6 && allImages.length > 7 ? (
-										<MoreImagesOverlay>
-											+{allImages.length - 6} más
-										</MoreImagesOverlay>
-									) : (
-										<ImageOverlay />
-									)}
-								</ImageItem>
-						  ))}
-				</ImageGallery>{' '}
-				<MainContent>
-					<PropertyHeader>
-						<PropertyTitle>{getPropertyTitle(property)}</PropertyTitle>{' '}
-						<PropertyInfo>
-							{' '}
-							<PropertyPrice>
-								{formatPrice(property)}
-								<span>
-									{' '}
-									Ref. ec-
-									{property.propertyId?.toString().slice(-4) ||
-										property.id?.toString().slice(-4) ||
-										'1024'}
-								</span>
-							</PropertyPrice>{' '}
-							{(property.size || property.features?.areaConstructed) && (
-								<PropertyArea>
-									<img src='/icons/house.png' alt='' />
-									<span>
-										{property.size || property.features?.areaConstructed}m²
-									</span>
-								</PropertyArea>
-							)}
-						</PropertyInfo>
-						<PropertyLocation>{getLocationText(property)}</PropertyLocation>
-					</PropertyHeader>
-					<PropertyFeatures>
-						{getPropertyFeatures(property).map((feature, index) => (
-							<Feature key={index}>
-								<span className='icon'>{feature.icon}</span>
-								<div className='value'>{feature.value}</div>
-								<div className='label'>{feature.label}</div>
-							</Feature>
-						))}
-					</PropertyFeatures>
-					<DescriptionSection>
-						<h3>Descripción</h3>
-						<p>{getDescription(property)}</p>
-					</DescriptionSection>{' '}
-					<CharacteristicsSection expanded={characteristicsExpanded}>
-						<h3
-							onClick={() =>
-								setCharacteristicsExpanded(!characteristicsExpanded)
+			<ResponsiveNavbar />
+			<DetailContainer>
+				<BackButton onClick={onBack}>←</BackButton>
+				{/* Lightbox */}
+				<LightboxOverlay show={showLightbox} onClick={closeLightbox}>
+					<LightboxContent onClick={e => e.stopPropagation()}>
+						<LightboxClose onClick={closeLightbox}>×</LightboxClose>
+						{allImages.length > 1 && (
+							<>
+								<LightboxNav className='prev' onClick={prevImage}>
+									‹
+								</LightboxNav>
+								<LightboxNav className='next' onClick={nextImage}>
+									›
+								</LightboxNav>
+							</>
+						)}{' '}
+						<LightboxImage
+							src={
+								allImages[currentImageIndex]?.url ||
+								allImages[currentImageIndex]?.link ||
+								getPropertyMainImage(property.propertyId)
 							}
+							alt={`Imagen ${currentImageIndex + 1}`}
+							onTouchStart={onTouchStart}
+							onTouchMove={onTouchMove}
+							onTouchEnd={onTouchEnd}
+						/>
+						<LightboxCounter>
+							{currentImageIndex + 1} / {allImages.length}
+						</LightboxCounter>
+					</LightboxContent>
+				</LightboxOverlay>{' '}
+				{/* Contenido principal */}
+				<ContentContainer ref={componentRef}>
+					{' '}
+					{/* Galería de imágenes ocupando todo el ancho */}
+					<ImageGallery style={{ gridColumn: '1 / -1' }}>
+						{imagesLoading
+							? // Mostrar loaders mientras cargan las imágenes
+							  Array.from({ length: 7 }, (_, index) => (
+									<ImageItem key={index}>
+										<GalleryImageLoader />
+									</ImageItem>
+							  ))
+							: // Mostrar imágenes reales una vez cargadas
+							  allImages.slice(0, 7).map((image, index) => (
+									<ImageItem key={index} onClick={() => openLightbox(index)}>
+										<GalleryImage
+											src={
+												image.url ||
+												image.link ||
+												getPropertyMainImage(property.propertyId)
+											}
+											alt={`Imagen ${index + 1}`}
+										/>
+										{index === 6 && allImages.length > 7 ? (
+											<MoreImagesOverlay>
+												+{allImages.length - 6} más
+											</MoreImagesOverlay>
+										) : index === 3 && allImages.length > 4 && isMobile ? (
+											<MoreImagesOverlay>
+												+{allImages.length - 3} más
+											</MoreImagesOverlay>
+										) : (
+											<ImageOverlay />
+										)}
+									</ImageItem>
+							  ))}
+					</ImageGallery>{' '}
+					<MainContent>
+						<PropertyHeader>
+							<PropertyTitle>{getPropertyTitle(property)}</PropertyTitle>{' '}
+							<PropertyInfo>
+								{' '}
+								<PropertyPrice>
+									{formatPrice(property)}
+									<span>
+										{' '}
+										Ref. ec-
+										{property.propertyId?.toString().slice(-4) ||
+											property.id?.toString().slice(-4) ||
+											'1024'}
+									</span>
+								</PropertyPrice>{' '}
+								{(property.size || property.features?.areaConstructed) && (
+									<PropertyArea>
+										<img src='/icons/house.png' alt='' />
+										<span>
+											{property.size || property.features?.areaConstructed}m²
+										</span>
+									</PropertyArea>
+								)}
+							</PropertyInfo>
+							<PropertyLocation>{getLocationText(property)}</PropertyLocation>
+						</PropertyHeader>
+						<PropertyFeatures>
+							{getPropertyFeatures(property).map((feature, index) => (
+								<Feature key={index}>
+									<span className='icon'>{feature.icon}</span>
+									<div className='value'>{feature.value}</div>
+									<div className='label'>{feature.label}</div>
+								</Feature>
+							))}
+						</PropertyFeatures>
+						<DescriptionSection>
+							<h3>Descripción</h3>
+							<p>{getDescription(property)}</p>
+						</DescriptionSection>{' '}
+						<CharacteristicsSection expanded={characteristicsExpanded}>
+							<h3
+								onClick={() =>
+									setCharacteristicsExpanded(!characteristicsExpanded)
+								}
+							>
+								Características básicas
+							</h3>
+							<CharacteristicsList expanded={characteristicsExpanded}>
+								{getCharacteristics(property).map((char, index) => (
+									<div key={index} className='characteristic'>
+										<span className='label'>{char.label}</span>
+										<span className='value'>{char.value}</span>
+									</div>
+								))}{' '}
+							</CharacteristicsList>
+						</CharacteristicsSection>
+						{/* Acordeón de Edificio */}
+						<CharacteristicsSection expanded={buildingExpanded}>
+							<h3 onClick={() => setBuildingExpanded(!buildingExpanded)}>
+								Edificio
+							</h3>
+							<CharacteristicsList expanded={buildingExpanded}>
+								{getBuildingCharacteristics(property).map((char, index) => (
+									<div key={index} className='characteristic'>
+										<span className='label'>{char.label}</span>
+										<span className='value'>{char.value}</span>
+									</div>
+								))}{' '}
+							</CharacteristicsList>
+						</CharacteristicsSection>
+						{/* Acordeón de Equipamiento */}
+						<CharacteristicsSection expanded={equipmentExpanded}>
+							<h3 onClick={() => setEquipmentExpanded(!equipmentExpanded)}>
+								Equipamiento
+							</h3>
+							<CharacteristicsList expanded={equipmentExpanded}>
+								{getEquipmentCharacteristics(property).map((char, index) => (
+									<div key={index} className='characteristic'>
+										<span className='label'>{char.label}</span>
+										<span className='value'>{char.value}</span>
+									</div>
+								))}{' '}
+							</CharacteristicsList>
+						</CharacteristicsSection>
+					</MainContent>
+					{/* Sidebar de contacto */}
+					<Sidebar>
+						<ContactButton
+							as='a'
+							href='https://wa.me/34655981758'
+							target='_blank'
+							rel='noopener noreferrer'
 						>
-							Características básicas
-						</h3>
-						<CharacteristicsList expanded={characteristicsExpanded}>
-							{getCharacteristics(property).map((char, index) => (
-								<div key={index} className='characteristic'>
-									<span className='label'>{char.label}</span>
-									<span className='value'>{char.value}</span>
-								</div>
-							))}{' '}
-						</CharacteristicsList>
-					</CharacteristicsSection>
-					{/* Acordeón de Edificio */}
-					<CharacteristicsSection expanded={buildingExpanded}>
-						<h3 onClick={() => setBuildingExpanded(!buildingExpanded)}>
-							Edificio
-						</h3>
-						<CharacteristicsList expanded={buildingExpanded}>
-							{getBuildingCharacteristics(property).map((char, index) => (
-								<div key={index} className='characteristic'>
-									<span className='label'>{char.label}</span>
-									<span className='value'>{char.value}</span>
-								</div>
-							))}{' '}
-						</CharacteristicsList>
-					</CharacteristicsSection>
-					{/* Acordeón de Equipamiento */}
-					<CharacteristicsSection expanded={equipmentExpanded}>
-						<h3 onClick={() => setEquipmentExpanded(!equipmentExpanded)}>
-							Equipamiento
-						</h3>
-						<CharacteristicsList expanded={equipmentExpanded}>
-							{getEquipmentCharacteristics(property).map((char, index) => (
-								<div key={index} className='characteristic'>
-									<span className='label'>{char.label}</span>
-									<span className='value'>{char.value}</span>
-								</div>
-							))}{' '}
-						</CharacteristicsList>
-					</CharacteristicsSection>
-				</MainContent>
-				{/* Sidebar de contacto */}
-				<Sidebar>
-					<ContactButton
-						as='a'
-						href='https://wa.me/34655981758'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						Hablemos ahora por WhatsApp{' '}
-						<img src='/icons/whatsapp-icon.png' alt='' />
-					</ContactButton>
-					<ContactCard>
-						<ContactTitle>¿Quieres saber más?</ContactTitle>
+							Hablemos ahora por WhatsApp{' '}
+							<img src='/icons/whatsapp-icon.png' alt='' />
+						</ContactButton>
+						<ContactCard>
+							<ContactTitle>¿Quieres saber más?</ContactTitle>
 
-						<ContactForm>
-							<div className='form-group'>
-								<label className='form-label'>Nombre</label>
-								<input
-									type='text'
-									className='form-input'
-									value={contactForm.name}
-									onChange={e => handleFormChange('name', e.target.value)}
-									placeholder='Tu nombre'
-								/>
-							</div>{' '}
-							<div className='form-group'>
-								<label className='form-label'>Teléfono</label>
-								<input
-									type='tel'
-									className='form-input'
-									value={contactForm.phone}
-									onChange={e => handleFormChange('phone', e.target.value)}
-									placeholder='Tu teléfono'
-								/>
-							</div>
-							<div className='form-group'>
-								<label className='form-label'>Mensaje</label>
-								<textarea
-									className='form-input'
-									value={contactForm.message}
-									onChange={e => handleFormChange('message', e.target.value)}
-									placeholder='Tu mensaje'
-									rows={4}
-								/>
-							</div>
-							<button className='contact-submit'>Contactar</button>
-						</ContactForm>
-					</ContactCard>
+							<ContactForm onSubmit={handleFormSubmit}>
+								<div className='form-group'>
+									<label className='form-label'>Nombre</label>
+									<input
+										type='text'
+										className='form-input'
+										value={contactForm.name}
+										onChange={e => handleFormChange('name', e.target.value)}
+										placeholder='Tu nombre...'
+										required
+									/>
+								</div>{' '}
+								<div className='form-group'>
+									<label className='form-label'>Teléfono</label>
+									<input
+										type='tel'
+										className='form-input'
+										value={contactForm.phone}
+										onChange={e => handleFormChange('phone', e.target.value)}
+										placeholder='Tu teléfono...'
+										required
+									/>
+								</div>
+								<div className='form-group'>
+									<label className='form-label'>Mensaje</label>
+									<textarea
+										className='form-input'
+										value={contactForm.message}
+										onChange={e => handleFormChange('message', e.target.value)}
+										placeholder='Tu mensaje, indica por favor la calle de la propiedad que quieras consultar...'
+										rows={4}
+										required
+									/>
+								</div>
+								{submitMessage && (
+									<div
+										style={{
+											color: submitMessage.includes('Error')
+												? '#dc3545'
+												: '#28a745',
+											fontSize: '14px',
+											marginBottom: '10px',
+											textAlign: 'center'
+										}}
+									>
+										{submitMessage}
+									</div>
+								)}
+								<button
+									type='submit'
+									className='contact-submit'
+									disabled={isSubmitting}
+								>
+									{isSubmitting ? 'Enviando...' : 'Contactar'}
+								</button>
+							</ContactForm>
+						</ContactCard>
 
-					{/* Bloque de compartir e imprimir */}
-					<SharePrintBlock>
-						<ShareTitle>Comparte este inmueble</ShareTitle>
-						<ShareButtonsContainer>
-							<ShareButton
-								className='whatsapp'
-								onClick={handleWhatsAppShare}
-								title='Compartir por WhatsApp'
-							>
-								<img src='/icons/whatsapp-icon.png' alt='WhatsApp' />
-							</ShareButton>
-							<ShareButton
-								className='facebook'
-								onClick={handleFacebookShare}
-								title='Compartir en Facebook'
-							>
-								<img src='/icons/facebook-icon.png' alt='Facebook' />
-							</ShareButton>
-							<ShareButton
-								className='twitter'
-								onClick={handleTwitterShare}
-								title='Compartir en Twitter'
-							>
-								<img src='/icons/twitter-icon.svg' alt='Twitter' />
-							</ShareButton>
-							<ShareButton
-								className='print'
-								onClick={handlePrint}
-								title='Imprimir o guardar como PDF'
-							>
-								<img src='/icons/print-icon.svg' alt='Imprimir' />
-							</ShareButton>
-						</ShareButtonsContainer>
-					</SharePrintBlock>
-				</Sidebar>
-			</ContentContainer>
+						{/* Bloque de compartir e imprimir */}
+						<SharePrintBlock>
+							<ShareTitle>Comparte este inmueble</ShareTitle>
+							<ShareButtonsContainer>
+								<ShareButton
+									className='whatsapp'
+									onClick={handleWhatsAppShare}
+									title='Compartir por WhatsApp'
+								>
+									<img src='/icons/whatsapp-icon.png' alt='WhatsApp' />
+								</ShareButton>
+								<ShareButton
+									className='facebook'
+									onClick={handleFacebookShare}
+									title='Compartir en Facebook'
+								>
+									<img src='/icons/facebook-icon.png' alt='Facebook' />
+								</ShareButton>
+								<ShareButton
+									className='twitter'
+									onClick={handleTwitterShare}
+									title='Compartir en Twitter'
+								>
+									<img src='/icons/twitter-icon.svg' alt='Twitter' />
+								</ShareButton>
+								<ShareButton
+									className='print'
+									onClick={handlePrint}
+									title='Imprimir o guardar como PDF'
+								>
+									<img src='/icons/print-icon.svg' alt='Imprimir' />
+								</ShareButton>
+							</ShareButtonsContainer>
+						</SharePrintBlock>
+					</Sidebar>
+				</ContentContainer>
+			</DetailContainer>
 			<FooterWrapper>
 				<Footer />
 			</FooterWrapper>
-		</DetailContainer>
+		</div>
 	);
 };
 
