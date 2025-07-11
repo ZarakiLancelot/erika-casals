@@ -135,7 +135,7 @@ const Reviews = () => {
 								</StyledTestimonialText>
 								<StyledClientInfo className={isTransitioning ? 'fade-out' : ''}>
 									<StyledClientAvatar
-										src={currentData.avatar}
+										src={currentData.backgroundImage}
 										alt={currentData.clientName}
 									/>
 									<div
