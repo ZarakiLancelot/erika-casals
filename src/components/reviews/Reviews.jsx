@@ -24,66 +24,67 @@ const Reviews = () => {
 	const testimonials = [
 		{
 			id: 1,
-			text: 'Erika es una gran profesional, nos ha ayudado y guiado en todo el proceso de venta de nuestra casa, mostrándose muy amable y comprensiva. Se nota desde el primer momento que tiene una gran expeciencia. Es realmente eficaz y resolutiva, transmite seguridad y conafianza. Estamos muy agradecidos y la recomendamos absolutamente.',
-			clientName: 'Usuario de Instagram',
+			text: 'Erika es una gran profesional y muy cercana. Estaba muy confundida a la hora de elegir una vivienda, y ella me asesoró y ayudó (con gran paciencia), a elegir la vivienda ideal para mí. Fue bastante rápido todo, porque además me ayudo incluso con el papeleo. Y ahora estoy feliz en mi nueva casa. Sin lugar a duda recomiendo a Erika al 100%. Ya no hay profesionales como ella.',
+			clientName: 'Usuario de Google',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-10.jpg'
 		},
 		{
 			id: 2,
-			text: 'Erika es una gran profesiuonal y muy cercana. Estaba muy confundida a la hora de elegir una vivienda, y ella me asesoró y ayudó (con gran paciencia), a elegir la vivienda ideal para mí. Fue bastante rápido todo, porque además me ayudo incluso con el papeleo. Y ahora estoy feliz en mi nueva casa. Sin lugar a duda recomiendo a Erika al 100%. Ya no hay profesionales como ella.',
-			clientName: 'Usuario de Google',
-			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
-		},
-		{
-			id: 3,
 			text: 'No tengo palabras de agradecimiento hacia Erika, inmejorable su profesionalidad y trato. He conseguido lo que buscaba además de aclararme todas las dudas que me han ido surgiendo en cuanto a los papeleos ella se ha ocupado de todo. Gracias Erika por todo, me lo has hecho todo muy fácil.',
 			clientName: 'Alicia García P.',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-3.jpg'
 		},
 		{
-			id: 4,
+			id: 3,
 			text: 'Gracias al buen trabajo de Erika hemos conseguido llevar a buen puerto la venta de la casa, después de un proceso con algunas dificultades.',
 			clientName: 'Pablo R.',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-4.jpg'
 		},
 		{
-			id: 5,
+			id: 4,
 			text: 'Qué buen trabajo estás haciendo Erika, me encantan tus publicaciones!!',
 			clientName: 'Usuario de Instagram',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-5.jpg'
 		},
 		{
-			id: 6,
+			id: 5,
 			text: 'Totalmente recomendada. Necesitaba un apartamento urgente en una semana y me solucionaron el problema. Erika es muy cercana y atenta en todo momento, una gran profesional, estuvo dispuesta incluso en los días festivos, algo que de verdad me sorprendió gratamente. Gracias, si algún día necesito de nuevo algo por Madrid no dudaré en contactar contigo. Un besico.',
 			clientName: 'Cristina S.',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-6.jpg'
 		},
 		{
-			id: 7,
+			id: 6,
 			text: 'Trato excelente, disponibilidad inmediata para resolver dudas. Seriedad. Buen equipo de trabajo. Gracias Erika y equipo.',
 			clientName: 'Laura M.',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-7.jpg'
 		},
 		{
-			id: 8,
+			id: 7,
 			text: 'Excelente, me gusta lo que haces y cómo lo haces. Yo hoy puedo decir que tú me inspiraste a entrar en este mundo de los Bienes Raíces!! Lo haces muy bien. 👏👏👏👏',
 			clientName: 'Araceli J.',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-8.jpg'
 		},
 		{
-			id: 9,
+			id: 8,
 			text: 'Excelente trabajo! Muy profesionales. Me ayudaron a la venta de mi piso desde la negociación hasta la firma. Mis más sinceras felicitaciones a todo el quipo y en especial a Erika.',
 			clientName: 'Usuario de Google',
 			clientLocation: 'Madrid, España',
-			avatar: '/images/review-photo.png'
+			avatar: '/images/review-photo.png',
+			backgroundImage: '/images/review-photo-9.jpg'
 		}
 	];
 
@@ -164,7 +165,11 @@ const Reviews = () => {
 								</StyledNavigationContainer>
 							</StyledTestimonialDiv>
 							<StyledImageDiv>
-								<img src='/images/review-photo.png' alt='Interior design' />
+								<img
+									src={currentData.backgroundImage}
+									alt='Interior design'
+									className={isTransitioning ? 'fade-out' : ''}
+								/>
 							</StyledImageDiv>
 						</StyledSliderContent>
 					</StyledSliderContainer>

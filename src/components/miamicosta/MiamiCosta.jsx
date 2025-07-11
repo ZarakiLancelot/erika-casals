@@ -68,8 +68,11 @@ const MiamiCosta = () => {
 						Las costas del Mediterráneo no solo ofrecen sol, mar y relax.
 						También son una oportunidad perfecta para encontrar calidad de vida,
 						descanso o inversión. Trabajo con propiedades en zonas estratégicas
-						de la **Costa Blanca, Costa del Sol y otras ubicaciones con alta
-						demanda y calidad de vida.**
+						de la{' '}
+						<b>
+							Costa Blanca, Costa del Sol y otras ubicaciones con alta demanda y
+							calidad de vida.
+						</b>
 					</StyledDescription>
 					<StyledImageContainer>
 						<StyledImage

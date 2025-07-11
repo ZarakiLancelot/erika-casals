@@ -5,11 +5,12 @@ const StyledContainer = styled.div`
 	height: 100vh;
 	display: flex;
 	justify-content: center;
+	background: #f8f9fa;
+	position: relative;
 
 	@media (max-width: 768px) {
 		height: auto;
 		min-height: 100vh;
-		background-position: right center;
 	}
 `;
 
@@ -125,6 +126,14 @@ const StyledImageDiv = styled.div`
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		opacity: 1;
+		transform: scale(1);
+		transition: opacity 0.3s ease, transform 0.3s ease;
+
+		&.fade-out {
+			opacity: 0;
+			transform: scale(0.95);
+		}
 	}
 
 	@media (max-width: 768px) {
