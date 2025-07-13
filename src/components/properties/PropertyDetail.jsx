@@ -320,7 +320,7 @@ const LightboxCounter = styled.div`
 
 const ContentContainer = styled.div`
 	max-width: 1400px;
-	margin: 50px auto;
+	margin: 0 auto;
 	background-color: white;
 	display: grid;
 	grid-template-columns: 2fr 1fr;

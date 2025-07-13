@@ -52,7 +52,9 @@ const MobileNavbar = ({ isScrolled }) => {
 				</MobileNavLeft>
 
 				<MobileNavCenter>
-					<img src='/images/logo-nav.png' alt='Logo' />
+					<Link to='/'>
+						<img src='/images/logo-nav.png' alt='Logo' />
+					</Link>
 				</MobileNavCenter>
 
 				<MobileNavRight>
@@ -77,7 +79,9 @@ const MobileNavbar = ({ isScrolled }) => {
 				<MobileMenuOverlay $isOpen={isMenuOpen} onClick={closeMenu} />
 				<MobileMenuContent $isOpen={isMenuOpen}>
 					<MobileMenuHeader>
-						<img src='/images/logo-nav.png' alt='Logo' />
+						<Link to='/' onClick={closeMenu}>
+							<img src='/images/logo-nav.png' alt='Logo' />
+						</Link>
 						<CloseButton onClick={closeMenu} aria-label='Cerrar menú'>
 							×
 						</CloseButton>
@@ -120,7 +124,9 @@ const DesktopNavbar = ({ isScrolled }) => {
 	return (
 		<StyledDesktopNavbar $isScrolled={isScrolled}>
 			<StyledNavLeft>
-				<img src='/images/logo-nav.png' alt='Logo' />
+				<Link to='/'>
+					<img src='/images/logo-nav.png' alt='Logo' />
+				</Link>
 			</StyledNavLeft>
 			<StyledNavCenter>
 				<StyledNavLi $isScrolled={isScrolled}>
@@ -269,6 +275,12 @@ const MobileNavCenter = styled.div`
 	justify-content: center;
 	align-items: center;
 
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+
 	img {
 		width: 80px;
 		height: 80px;
@@ -357,6 +369,12 @@ const MobileMenuHeader = styled.div`
 	padding: 1.5rem;
 	border-bottom: 1px solid #eee;
 
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+
 	img {
 		width: 60px;
 		height: 60px;
@@ -414,6 +432,12 @@ const StyledNavLeft = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	a {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
 
 	img {
 		width: 100px;

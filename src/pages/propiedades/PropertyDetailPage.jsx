@@ -63,10 +63,21 @@ const PropertyDetailPage = () => {
 	// Función para cargar una propiedad específica desde Contentful
 	const loadContentfulProperty = useCallback(async propertyId => {
 		try {
-			// Aquí podrías hacer una llamada específica a Contentful si tienes un endpoint
-			// Por ahora retornamos null para que use el flujo normal
-			return null;
+			console.log('🔄 loadContentfulProperty: Loading property', propertyId);
+
+			// Importar dinámicamente el servicio de Contentful
+			const { getProperty } = await import('../../services/contentful');
+			const contentfulProperty = await getProperty(propertyId);
+
+			if (contentfulProperty) {
+				console.log('✅ loadContentfulProperty: Property loaded successfully');
+				return contentfulProperty;
+			} else {
+				console.log('❌ loadContentfulProperty: Property not found');
+				return null;
+			}
 		} catch (err) {
+			console.error('❌ loadContentfulProperty: Error', err);
 			return null;
 		}
 	}, []);
@@ -145,12 +156,39 @@ const PropertyDetailPage = () => {
 			console.log('🔄 PropertyDetailPage: Fetching property from API');
 			setLoading(true);
 
-			// Intentar cargar como propiedad de Idealista primero
+			// Detectar si es propiedad de Contentful o Idealista
+			// Las propiedades de Contentful típicamente tienen IDs alfanuméricos como 'mock-1'
+			// Las de Idealista son números puros
+			const isContentfulId =
+				isNaN(propertyId) ||
+				propertyId.includes('-') ||
+				propertyId.includes('mock');
+
+			let foundProperty = null;
+
+			if (isContentfulId) {
+				// Intentar cargar desde Contentful primero
+				foundProperty = await loadContentfulProperty(propertyId);
+				console.log(
+					'📦 PropertyDetailPage: contentfulProperty =',
+					foundProperty
+				);
+
+				if (foundProperty) {
+					setProperty(foundProperty);
+					setHasSearched(true);
+					setLoading(false);
+					return;
+				}
+			}
+
+			// Si no se encontró en Contentful o es un ID numérico, intentar Idealista
 			const idealistaProperty = await loadIdealistaProperty(propertyId);
 			console.log(
 				'📦 PropertyDetailPage: idealistaProperty =',
 				idealistaProperty
 			);
+
 			if (idealistaProperty) {
 				console.log('🔧 PropertyDetailPage: Setting property in state');
 				setProperty(idealistaProperty);
@@ -212,17 +250,19 @@ const PropertyDetailPage = () => {
 				return;
 			}
 
-			// Si no es de Idealista, intentar Contentful
-			const contentfulProperty = await loadContentfulProperty(propertyId);
-			console.log(
-				'📦 PropertyDetailPage: contentfulProperty =',
-				contentfulProperty
-			);
-			if (contentfulProperty) {
-				setProperty(contentfulProperty);
-				setHasSearched(true);
-				setLoading(false);
-				return;
+			// Si no se encuentra en ningún lado, intentar Contentful como último recurso (si no se hizo antes)
+			if (!isContentfulId) {
+				const contentfulProperty = await loadContentfulProperty(propertyId);
+				console.log(
+					'📦 PropertyDetailPage: contentfulProperty (fallback) =',
+					contentfulProperty
+				);
+				if (contentfulProperty) {
+					setProperty(contentfulProperty);
+					setHasSearched(true);
+					setLoading(false);
+					return;
+				}
 			}
 
 			// Si no se encuentra en ningún lado
