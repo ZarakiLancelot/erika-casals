@@ -158,7 +158,7 @@ export const HeaderSection = styled.div`
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: url('/images/property-title-background.png');
+		background-image: var(--header-bg-image, url('/images/en-venta-page.png'));
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;

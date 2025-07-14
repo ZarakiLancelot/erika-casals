@@ -5,6 +5,11 @@ import { useContentfulRentProperties } from '../../hooks/useContentfulProperties
 import PageTransition from '../common/PageTransition';
 import ScrollAnimation from '../common/ScrollAnimation';
 import {
+	getOrganizedLocations,
+	isInMadrid,
+	getDistrictFromCoordinates
+} from '../../utils/madridDistrictsGeoJSON';
+import {
 	PropertiesContainer,
 	ContentWrapper,
 	HeaderSection,
@@ -64,6 +69,8 @@ const PropertiesRent = () => {
 	// Estados para filtros locales
 	const [localFilters, setLocalFilters] = useState({
 		location: '',
+		district: '', // Filtro para distritos de Madrid ciudad
+		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
 		minPrice: '',
 		maxPrice: '',
 		minArea: '',
@@ -73,6 +80,8 @@ const PropertiesRent = () => {
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
+	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
+	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
 
 	// Función para cargar imagen de manera lazy solo cuando sea necesario
 	const loadPropertyImage = useCallback(
@@ -105,6 +114,8 @@ const PropertiesRent = () => {
 		// Limpiar filtros locales cuando se cambia de página
 		setLocalFilters({
 			location: locationParam || '',
+			district: '',
+			municipality: '',
 			minPrice: '',
 			maxPrice: '',
 			minArea: '',
@@ -114,38 +125,54 @@ const PropertiesRent = () => {
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
 	}, [setFilter, location.pathname, searchParams]); // Agregar searchParams como dependencia
-	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
+	// Generar ubicaciones disponibles basadas en las propiedades organizadas jerárquicamente
 	useEffect(() => {
 		const allProps = [...properties, ...contentfulProperties];
 		if (allProps.length > 0) {
-			const locations = new Set();
-			allProps.forEach(property => {
-				// Para propiedades de Idealista
-				if (property.address?.town) {
-					locations.add(property.address.town);
-				}
-				if (property.address?.district) {
-					locations.add(property.address.district);
-				}
+			// Usar el nuevo sistema de organización de ubicaciones
+			const organized = getOrganizedLocations(properties, contentfulProperties);
 
-				// Para propiedades de Contentful - agregar ubicación y propertyZone
-				if (property.source === 'contentful') {
-					if (property.location && property.location !== null) {
-						locations.add(property.location);
-					}
-					// Agregar las zonas como opciones de localización
-					if (property.propertyZone) {
-						if (property.propertyZone === 'Costa') {
-							locations.add('Costa Española');
-						} else if (property.propertyZone === 'Florida') {
-							locations.add('Florida');
-						}
-					}
-				}
-			});
-			setAvailableLocations(Array.from(locations).sort());
+			// Crear lista de ubicaciones principales para el primer filtro
+			const mainLocations = [];
+
+			// Agregar Madrid ciudad si hay distritos
+			if (
+				organized.madridCiudad.districts.length > 0 ||
+				organized.madridCiudad.otherLocations.length > 0
+			) {
+				mainLocations.push('Madrid ciudad');
+			}
+
+			// Agregar Comunidad de Madrid si hay municipios
+			if (organized.comunidadMadrid.municipalities.length > 0) {
+				mainLocations.push('Comunidad de Madrid');
+			}
+
+			// Agregar ubicaciones internacionales
+			if (organized.international['Costa Española'].length > 0) {
+				mainLocations.push('Costa Española');
+			}
+			if (organized.international.Florida.length > 0) {
+				mainLocations.push('Florida');
+			}
+
+			setAvailableLocations(mainLocations.sort());
+
+			// Configurar filtros secundarios según la ubicación seleccionada
+			if (localFilters.location.toLowerCase() === 'madrid ciudad') {
+				setAvailableDistricts(organized.madridCiudad.districts);
+				setAvailableMunicipalities([]);
+			} else if (
+				localFilters.location.toLowerCase() === 'comunidad de madrid'
+			) {
+				setAvailableDistricts([]);
+				setAvailableMunicipalities(organized.comunidadMadrid.municipalities);
+			} else {
+				setAvailableDistricts([]);
+				setAvailableMunicipalities([]);
+			}
 		}
-	}, [properties, contentfulProperties]);
+	}, [properties, contentfulProperties, localFilters.location]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
@@ -236,40 +263,103 @@ const PropertiesRent = () => {
 
 	// Filtrar propiedades localmente según los filtros adicionales
 	const filteredProperties = allProperties.filter(property => {
-		// Filtro por ubicación
+		// Filtro por ubicación principal
 		if (localFilters.location && localFilters.location !== '') {
 			const locationFilter = localFilters.location.toLowerCase();
 
 			// Para propiedades de Idealista
 			if (property.address) {
-				const address = property.address?.streetName?.toLowerCase() || '';
-				const district = property.address?.district?.toLowerCase() || '';
-				const town = property.address?.town?.toLowerCase() || '';
-				if (
-					!address.includes(locationFilter) &&
-					!district.includes(locationFilter) &&
-					!town.includes(locationFilter)
-				) {
-					return false;
+				if (locationFilter === 'madrid ciudad') {
+					// Si se selecciona Madrid ciudad, solo mostrar propiedades de Madrid
+					if (!isInMadrid(property)) {
+						return false;
+					}
+
+					// Si también hay filtro de distrito, aplicarlo
+					if (localFilters.district && localFilters.district !== '') {
+						const propertyDistrict =
+							getDistrictFromCoordinates(
+								property.address.latitude,
+								property.address.longitude
+							) || property.address.district;
+
+						if (
+							!propertyDistrict ||
+							propertyDistrict.toLowerCase() !==
+								localFilters.district.toLowerCase()
+						) {
+							return false;
+						}
+					}
+				} else if (locationFilter === 'comunidad de madrid') {
+					// Si se selecciona Comunidad de Madrid, mostrar todo EXCEPTO Madrid ciudad
+					if (isInMadrid(property)) {
+						return false;
+					}
+
+					// Si también hay filtro de municipio, aplicarlo
+					if (localFilters.municipality && localFilters.municipality !== '') {
+						const propertyTown = property.address?.town?.toLowerCase() || '';
+						if (propertyTown !== localFilters.municipality.toLowerCase()) {
+							return false;
+						}
+					}
+				} else {
+					// Para otras ubicaciones (Costa Española, Florida), buscar coincidencia
+					const address = property.address?.streetName?.toLowerCase() || '';
+					const district = property.address?.district?.toLowerCase() || '';
+					const town = property.address?.town?.toLowerCase() || '';
+					if (
+						!address.includes(locationFilter) &&
+						!district.includes(locationFilter) &&
+						!town.includes(locationFilter)
+					) {
+						return false;
+					}
 				}
 			}
 			// Para propiedades de Contentful
 			else if (property.source === 'contentful') {
 				const location = property.location?.toLowerCase() || '';
-				let matchesLocation = location.includes(locationFilter);
+				let matchesLocation = false;
 
-				// También verificar si coincide con propertyZone
-				if (!matchesLocation && property.propertyZone) {
+				if (locationFilter === 'madrid ciudad') {
+					// Para Madrid ciudad, solo incluir si la location sugiere que es Madrid ciudad
+					matchesLocation =
+						location.includes('madrid') && !property.propertyZone;
+				} else if (locationFilter === 'comunidad de madrid') {
+					// Para Comunidad de Madrid, incluir si no es Costa ni Florida
+					matchesLocation =
+						property.propertyZone !== 'Costa' &&
+						property.propertyZone !== 'Florida';
+
+					// Si hay filtro de municipio, aplicarlo
 					if (
-						property.propertyZone === 'Costa' &&
-						locationFilter.includes('costa española')
+						matchesLocation &&
+						localFilters.municipality &&
+						localFilters.municipality !== ''
 					) {
-						matchesLocation = true;
-					} else if (
-						property.propertyZone === 'Florida' &&
-						locationFilter.includes('florida')
-					) {
-						matchesLocation = true;
+						matchesLocation = location.includes(
+							localFilters.municipality.toLowerCase()
+						);
+					}
+				} else {
+					// Para ubicaciones específicas
+					matchesLocation = location.includes(locationFilter);
+
+					// También verificar si coincide con propertyZone
+					if (!matchesLocation && property.propertyZone) {
+						if (
+							property.propertyZone === 'Costa' &&
+							locationFilter.includes('costa española')
+						) {
+							matchesLocation = true;
+						} else if (
+							property.propertyZone === 'Florida' &&
+							locationFilter.includes('florida')
+						) {
+							matchesLocation = true;
+						}
 					}
 				}
 
@@ -362,10 +452,24 @@ const PropertiesRent = () => {
 	};
 
 	const handleFilterChange = (filterName, value) => {
-		setLocalFilters(prev => ({
-			...prev,
-			[filterName]: value
-		}));
+		setLocalFilters(prev => {
+			const newFilters = {
+				...prev,
+				[filterName]: value
+			};
+
+			// Si cambia la ubicación, limpiar los filtros secundarios
+			if (filterName === 'location') {
+				if (value.toLowerCase() !== 'madrid ciudad') {
+					newFilters.district = '';
+				}
+				if (value.toLowerCase() !== 'comunidad de madrid') {
+					newFilters.municipality = '';
+				}
+			}
+
+			return newFilters;
+		});
 	};
 
 	const handlePropertyClick = property => {
@@ -385,7 +489,11 @@ const PropertiesRent = () => {
 			<PageTransition type='properties'>
 				<PropertiesContainer>
 					<ContentWrapper>
-						<HeaderSection>
+						<HeaderSection
+							style={{
+								'--header-bg-image': 'url(/images/en-alquiler-page.png)'
+							}}
+						>
 							<h1>En Alquiler</h1>
 						</HeaderSection>
 
@@ -410,6 +518,47 @@ const PropertiesRent = () => {
 											))}
 										</FilterSelect>
 									</FilterGroup>
+									{/* Mostrar filtro de distrito solo si Madrid ciudad está seleccionado */}
+									{localFilters.location.toLowerCase() === 'madrid ciudad' &&
+										availableDistricts.length > 0 && (
+											<FilterGroup>
+												<FilterLabel>Distrito de Madrid</FilterLabel>
+												<FilterSelect
+													value={localFilters.district}
+													onChange={e =>
+														handleFilterChange('district', e.target.value)
+													}
+												>
+													<option value=''>Todos los distritos</option>
+													{availableDistricts.map(district => (
+														<option key={district} value={district}>
+															{district}
+														</option>
+													))}
+												</FilterSelect>
+											</FilterGroup>
+										)}
+									{/* Mostrar filtro de municipio solo si Comunidad de Madrid está seleccionado */}
+									{localFilters.location.toLowerCase() ===
+										'comunidad de madrid' &&
+										availableMunicipalities.length > 0 && (
+											<FilterGroup>
+												<FilterLabel>Municipio</FilterLabel>
+												<FilterSelect
+													value={localFilters.municipality}
+													onChange={e =>
+														handleFilterChange('municipality', e.target.value)
+													}
+												>
+													<option value=''>Todos los municipios</option>
+													{availableMunicipalities.map(municipality => (
+														<option key={municipality} value={municipality}>
+															{municipality}
+														</option>
+													))}
+												</FilterSelect>
+											</FilterGroup>
+										)}
 									<FilterGroup>
 										<FilterLabel>Precio mensual</FilterLabel>
 										<PriceRangeGroup>
