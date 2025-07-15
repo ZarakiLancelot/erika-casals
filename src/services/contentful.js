@@ -43,9 +43,7 @@ export const getProperties = async (type = null) => {
 				item.fields.description?.content?.[0]?.content?.[0]?.value ||
 				'Descripción no disponible',
 			price: item.fields.price,
-			location: item.fields.location
-				? `${item.fields.location.lat}, ${item.fields.location.lon}`
-				: null,
+			location: item.fields.address || null,
 			type: item.fields.type,
 			propertyType: item.fields.propertyType,
 			propertyZone: item.fields.propertyZone,
@@ -89,9 +87,7 @@ export const getProperty = async id => {
 				response.fields.description?.content?.[0]?.content?.[0]?.value ||
 				'Descripción no disponible',
 			price: response.fields.price,
-			location: response.fields.location
-				? `${response.fields.location.lat}, ${response.fields.location.lon}`
-				: null,
+			location: response.fields.address || null,
 			type: response.fields.type,
 			propertyType: response.fields.propertyType,
 			propertyZone: response.fields.propertyZone,
@@ -139,9 +135,7 @@ export const getFeaturedProperties = async () => {
 				item.fields.description?.content?.[0]?.content?.[0]?.value ||
 				'Descripción no disponible',
 			price: item.fields.price,
-			location: item.fields.location
-				? `${item.fields.location.lat}, ${item.fields.location.lon}`
-				: null,
+			location: item.fields.address || null,
 			type: item.fields.type,
 			propertyType: item.fields.propertyType,
 			propertyZone: item.fields.propertyZone,

@@ -1,4 +1,8 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import {
+	formatAddressByVisibility,
+	shouldShowAddress
+} from '../utils/addressUtils';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
@@ -167,30 +171,22 @@ export const useIdealistaProperties = () => {
 		const propertyType = property.propertyType || property.type || 'flat';
 		const type = propertyTypeMap[propertyType] || 'Propiedad';
 
-		// Construir dirección de manera más completa
+		// Construir dirección respetando la configuración de visibilidad
 		let location = '';
-		if (property.address) {
-			const parts = [];
+		if (property.address && shouldShowAddress(property.address)) {
+			location = formatAddressByVisibility(property.address);
+		} else if (property.address) {
+			// Si no se puede mostrar la dirección completa, mostrar solo distrito/zona
+			const district = property.address.district;
+			const town = property.address.town;
 
-			// Agregar calle y número si está disponible
-			if (property.address.streetName) {
-				const street = property.address.streetName;
-				const number = property.address.streetNumber
-					? ` ${property.address.streetNumber}`
-					: '';
-				parts.push(`${street}${number}`);
+			if (district && town) {
+				location = `${district}, ${town}`;
+			} else if (town) {
+				location = town;
+			} else if (district) {
+				location = district;
 			}
-
-			// Agregar distrito, ciudad o pueblo
-			if (property.address.district) {
-				parts.push(property.address.district);
-			} else if (property.address.town) {
-				parts.push(property.address.town);
-			} else if (property.address.city) {
-				parts.push(property.address.city);
-			}
-
-			location = parts.join(', ');
 		}
 
 		// Si no hay dirección, usar un texto genérico
@@ -198,7 +194,7 @@ export const useIdealistaProperties = () => {
 			location = 'Madrid';
 		}
 
-		return `${type} en ${location}`;
+		return `${type} en calle ${location}`;
 	}, []); // Estado derivado para las propiedades filtradas - se actualiza cuando cambia filter o properties
 	const filteredProperties = useMemo(() => {
 		if (filter === 'all') {

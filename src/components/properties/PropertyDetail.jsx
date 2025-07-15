@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { useReactToPrint } from 'react-to-print';
 import emailjs from '@emailjs/browser';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
+import {
+	formatAddressByVisibility,
+	shouldShowAddress
+} from '../../utils/addressUtils';
 import Footer from '../footer/Footer';
 import ResponsiveNavbar from '../common/ResponsiveNavbar';
 
@@ -914,12 +918,11 @@ const PropertyDetail = ({ property, onBack, images }) => {
 			return property.location;
 		}
 
-		// Para propiedades de Idealista, usar address
-		if (property.address) {
-			const { streetName, streetNumber, town } = property.address;
-			const parts = [streetName, streetNumber, town].filter(Boolean);
-			return parts.join(', ');
+		// Para propiedades de Idealista, usar address con visibilidad
+		if (property.address && shouldShowAddress(property.address)) {
+			return `Calle ${formatAddressByVisibility(property.address)}`;
 		}
+
 		return 'Ubicación no especificada';
 	};
 	const getPropertyFeatures = property => {
