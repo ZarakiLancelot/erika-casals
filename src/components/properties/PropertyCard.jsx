@@ -229,7 +229,19 @@ const PropertyCard = ({
 			</ImageContainer>
 
 			<Content>
-				<Price>{formatPrice(property)}</Price>
+				<Price>
+					{formatPrice(property)}
+					<span style={{ fontSize: '13px', color: '#888', marginLeft: 8 }}>
+						Ref.{' '}
+						{property.source === 'contentful'
+							? 'ex-' + (property.id ? property.id.slice(-4) : '')
+							: property.reference && property.reference.trim() !== ''
+							? property.reference
+							: property.propertyId
+							? 'ec-' + property.propertyId.toString().slice(-4)
+							: 'ec-1024'}
+					</span>
+				</Price>
 
 				<Location>{getLocationText(property)}</Location>
 

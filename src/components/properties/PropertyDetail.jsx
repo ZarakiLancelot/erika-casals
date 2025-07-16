@@ -1512,10 +1512,14 @@ const PropertyDetail = ({ property, onBack, images }) => {
 									{formatPrice(property)}
 									<span>
 										{' '}
-										Ref. ec-
-										{property.propertyId?.toString().slice(-4) ||
-											property.id?.toString().slice(-4) ||
-											'1024'}
+										Ref.{' '}
+										{property.source === 'contentful'
+											? 'ex-' + (property.id ? property.id.slice(-4) : '')
+											: property.reference && property.reference.trim() !== ''
+											? property.reference
+											: property.propertyId
+											? 'ec-' + property.propertyId.toString().slice(-4)
+											: 'ec-1024'}
 									</span>
 								</PropertyPrice>{' '}
 								{(property.size || property.features?.areaConstructed) && (

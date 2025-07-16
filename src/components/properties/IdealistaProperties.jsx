@@ -710,12 +710,9 @@ const Properties = () => {
 																		{' '}
 																		Ref.{' '}
 																		{property.source === 'contentful'
-																			? 'ex'
-																			: 'ec'}
-																		-
-																		{property.source === 'contentful'
-																			? property.id.slice(-4)
-																			: propertyId?.toString().slice(-4) ||
+																			? 'ex-' + property.id.slice(-4)
+																			: property.reference ||
+																			  propertyId?.toString().slice(-4) ||
 																			  '1024'}
 																	</span>
 																</PropertyPrice>{' '}
