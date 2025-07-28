@@ -164,7 +164,8 @@ const Properties = () => {
 				setAvailableDistricts(organized.madridCiudad.districts);
 				setAvailableMunicipalities([]);
 			} else if (
-				localFilters.location.toLowerCase() === 'comunidad de madrid y resto de españa'
+				localFilters.location.toLowerCase() ===
+				'comunidad de madrid y resto de españa'
 			) {
 				setAvailableDistricts([]);
 				setAvailableMunicipalities(organized.comunidadMadrid.municipalities);

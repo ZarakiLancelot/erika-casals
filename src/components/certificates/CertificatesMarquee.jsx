@@ -1,38 +1,32 @@
-import styled, { keyframes } from 'styled-components';
-
-const scroll = keyframes`
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(calc(-100% / 3));
-	}
-`;
+import styled from 'styled-components';
+import Marquee from 'react-fast-marquee';
 
 const MarqueeContainer = styled.div`
 	width: 100%;
-	overflow: hidden;
 	background-color: #16243e;
 	padding: 2rem 0;
 	border-top: 1px solid #e9ecef;
 	border-bottom: 1px solid #e9ecef;
-`;
 
-const MarqueeWrapper = styled.div`
-	display: flex;
-	animation: ${scroll} 25s linear infinite;
-	gap: 4rem;
-	width: fit-content;
+	@media (max-width: 768px) {
+		padding: 1.5rem 0;
+	}
+
+	@media (max-width: 480px) {
+		padding: 1rem 0;
+	}
 `;
 
 const MarqueeItem = styled.div`
 	flex-shrink: 0;
+	width: 200px;
 	height: 150px;
 	background: white;
 	border-radius: 12px;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 	transition: transform 0.3s ease;
+	margin-right: 2rem;
 
 	&:hover {
 		transform: translateY(-5px);
@@ -47,11 +41,15 @@ const MarqueeItem = styled.div`
 	}
 
 	@media (max-width: 768px) {
+		width: 180px;
 		height: 120px;
+		margin-right: 1.5rem;
 	}
 
 	@media (max-width: 480px) {
+		width: 160px;
 		height: 100px;
+		margin-right: 1rem;
 	}
 `;
 
@@ -65,22 +63,20 @@ const CertificatesMarquee = () => {
 		{ id: 6, src: '/images/certificado-6.png', alt: 'Certificado 6' }
 	];
 
-	// Triplicamos los certificados para crear un bucle infinito perfecto
-	const multipliedCertificates = [
-		...certificates,
-		...certificates,
-		...certificates
-	];
-
 	return (
 		<MarqueeContainer>
-			<MarqueeWrapper>
-				{multipliedCertificates.map((certificate, index) => (
-					<MarqueeItem key={`${certificate.id}-${index}`}>
+			<Marquee
+				gradient={false}
+				speed={40}
+				pauseOnHover={true}
+				autoFill={true}
+			>
+				{certificates.map((certificate) => (
+					<MarqueeItem key={certificate.id}>
 						<img src={certificate.src} alt={certificate.alt} />
 					</MarqueeItem>
 				))}
-			</MarqueeWrapper>
+			</Marquee>
 		</MarqueeContainer>
 	);
 };

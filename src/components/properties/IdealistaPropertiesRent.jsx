@@ -163,7 +163,8 @@ const PropertiesRent = () => {
 				setAvailableDistricts(organized.madridCiudad.districts);
 				setAvailableMunicipalities([]);
 			} else if (
-				localFilters.location.toLowerCase() === 'comunidad de madrid y resto de españa'
+				localFilters.location.toLowerCase() ===
+				'comunidad de madrid y resto de españa'
 			) {
 				setAvailableDistricts([]);
 				setAvailableMunicipalities(organized.comunidadMadrid.municipalities);
@@ -238,25 +239,27 @@ const PropertiesRent = () => {
 			return property.features?.duplex === true;
 		}
 
-	   // Si no es una característica específica, buscar en la descripción, dirección, distrito, referencia o id
-	   const description =
-		   property.descriptions
-			   ?.find(desc => desc.language === 'es')
-			   ?.text?.toLowerCase() ||
-		   property.descriptions?.[0]?.text?.toLowerCase() ||
-		   property.description?.toLowerCase() ||
-		   '';
-	   const address = property.address?.streetName?.toLowerCase() || '';
-	   const district = property.address?.district?.toLowerCase() || '';
-	   const reference = property.reference?.toLowerCase() || '';
-	   const propertyId = property.propertyId ? property.propertyId.toString() : '';
-	   return (
-		   description.includes(term) ||
-		   address.includes(term) ||
-		   district.includes(term) ||
-		   reference.includes(term) ||
-		   propertyId.includes(term)
-	   );
+		// Si no es una característica específica, buscar en la descripción, dirección, distrito, referencia o id
+		const description =
+			property.descriptions
+				?.find(desc => desc.language === 'es')
+				?.text?.toLowerCase() ||
+			property.descriptions?.[0]?.text?.toLowerCase() ||
+			property.description?.toLowerCase() ||
+			'';
+		const address = property.address?.streetName?.toLowerCase() || '';
+		const district = property.address?.district?.toLowerCase() || '';
+		const reference = property.reference?.toLowerCase() || '';
+		const propertyId = property.propertyId
+			? property.propertyId.toString()
+			: '';
+		return (
+			description.includes(term) ||
+			address.includes(term) ||
+			district.includes(term) ||
+			reference.includes(term) ||
+			propertyId.includes(term)
+		);
 	};
 
 	// Combinar propiedades de Idealista y Contentful
