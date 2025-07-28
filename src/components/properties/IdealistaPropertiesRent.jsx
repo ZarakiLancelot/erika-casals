@@ -145,7 +145,7 @@ const PropertiesRent = () => {
 
 			// Agregar Comunidad de Madrid si hay municipios
 			if (organized.comunidadMadrid.municipalities.length > 0) {
-				mainLocations.push('Comunidad de Madrid');
+				mainLocations.push('Comunidad de Madrid y resto de España');
 			}
 
 			// Agregar ubicaciones internacionales
@@ -163,7 +163,7 @@ const PropertiesRent = () => {
 				setAvailableDistricts(organized.madridCiudad.districts);
 				setAvailableMunicipalities([]);
 			} else if (
-				localFilters.location.toLowerCase() === 'comunidad de madrid'
+				localFilters.location.toLowerCase() === 'comunidad de madrid y resto de españa'
 			) {
 				setAvailableDistricts([]);
 				setAvailableMunicipalities(organized.comunidadMadrid.municipalities);
@@ -295,8 +295,8 @@ const PropertiesRent = () => {
 							return false;
 						}
 					}
-				} else if (locationFilter === 'comunidad de madrid') {
-					// Si se selecciona Comunidad de Madrid, mostrar todo EXCEPTO Madrid ciudad
+				} else if (locationFilter === 'comunidad de madrid y resto de españa') {
+					// Si se selecciona Comunidad de Madrid y resto de España, mostrar todo EXCEPTO Madrid ciudad
 					if (isInMadrid(property)) {
 						return false;
 					}
@@ -331,8 +331,8 @@ const PropertiesRent = () => {
 					// Para Madrid ciudad, solo incluir si la location sugiere que es Madrid ciudad
 					matchesLocation =
 						location.includes('madrid') && !property.propertyZone;
-				} else if (locationFilter === 'comunidad de madrid') {
-					// Para Comunidad de Madrid, incluir si no es Costa ni Florida
+				} else if (locationFilter === 'comunidad de madrid y resto de españa') {
+					// Para Comunidad de Madrid y resto de España, incluir si no es Costa ni Florida
 					matchesLocation =
 						property.propertyZone !== 'Costa' &&
 						property.propertyZone !== 'Florida';
@@ -467,7 +467,7 @@ const PropertiesRent = () => {
 				if (value.toLowerCase() !== 'madrid ciudad') {
 					newFilters.district = '';
 				}
-				if (value.toLowerCase() !== 'comunidad de madrid') {
+				if (value.toLowerCase() !== 'comunidad de madrid y resto de españa') {
 					newFilters.municipality = '';
 				}
 			}
@@ -542,9 +542,9 @@ const PropertiesRent = () => {
 												</FilterSelect>
 											</FilterGroup>
 										)}
-									{/* Mostrar filtro de municipio solo si Comunidad de Madrid está seleccionado */}
+									{/* Mostrar filtro de municipio solo si Comunidad de Madrid y resto de España está seleccionado */}
 									{localFilters.location.toLowerCase() ===
-										'comunidad de madrid' &&
+										'comunidad de madrid y resto de españa' &&
 										availableMunicipalities.length > 0 && (
 											<FilterGroup>
 												<FilterLabel>Municipio</FilterLabel>
