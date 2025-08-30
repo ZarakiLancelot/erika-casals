@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
-import { useContentfulSaleProperties } from '../../hooks/useContentfulProperties';
+import { useContentfulSaleProperties, useNewDevelopments } from '../../hooks/useContentfulProperties';
 import PageTransition from '../common/PageTransition';
 import ScrollAnimation from '../common/ScrollAnimation';
+import NewDevelopmentCard from './NewDevelopmentCard';
 import {
 	getOrganizedLocations,
 	isInMadrid,
@@ -67,6 +68,15 @@ const Properties = () => {
 		error: contentfulError
 	} = useContentfulSaleProperties();
 
+	const {
+		newDevelopments,
+		loading: newDevelopmentsLoading,
+		error: newDevelopmentsError,
+		fetchNewDevelopments
+	} = useNewDevelopments();
+
+
+
 	// Estados para filtros locales
 	const [localFilters, setLocalFilters] = useState({
 		location: '',
@@ -83,6 +93,7 @@ const Properties = () => {
 	const [availableLocations, setAvailableLocations] = useState([]);
 	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
 	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
+	const [newDev, setNewDev] = useState([]);
 	// Establecer filtro a 'sale' al montar el componente y limpiar filtros locales
 	useEffect(() => {
 		setFilter('sale');
@@ -104,6 +115,18 @@ const Properties = () => {
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
 	}, [setFilter, location.pathname, searchParams]); // Agregar searchParams como dependencia
+
+	// Cargar nuevos desarrollos al montar el componente
+	useEffect(() => {
+		fetchNewDevelopments();
+	}, [fetchNewDevelopments]);
+
+	useEffect(() => {
+		if (!newDevelopmentsLoading) {
+			setNewDev(newDevelopments);
+		}
+	}, [newDevelopments, newDevelopmentsLoading])
+
 
 	// Función para cargar imagen de manera lazy solo cuando sea necesario
 	const loadPropertyImage = useCallback(
@@ -128,10 +151,10 @@ const Properties = () => {
 
 	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
 	useEffect(() => {
-		const allProps = [...properties, ...contentfulProperties];
+		const allProps = [...properties, ...contentfulProperties, ...newDevelopments];
 		if (allProps.length > 0) {
 			// Usar el nuevo sistema de organización de ubicaciones
-			const organized = getOrganizedLocations(properties, contentfulProperties);
+			const organized = getOrganizedLocations(properties, contentfulProperties, newDev);
 
 			// Crear lista de ubicaciones principales para el primer filtro
 			const mainLocations = [];
@@ -174,13 +197,27 @@ const Properties = () => {
 				setAvailableMunicipalities([]);
 			}
 		}
-	}, [properties, contentfulProperties, localFilters.location]);
+	}, [properties, contentfulProperties, newDevelopments, localFilters.location]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
 		const term = searchTerm.toLowerCase();
 
-		// Búsqueda por características específicas
+		// Para newDevelopments, buscar en la descripción, título, ubicación y features
+	if (property.source === 'newDevelopments') {
+		const description = property.description?.toLowerCase() || '';
+		const title = property.title?.toLowerCase() || '';
+		const location = property.location?.toLowerCase() || '';
+		
+		// Buscar en el array de features si existe
+		const featuresMatch = property.features && Array.isArray(property.features) 
+			? property.features.some(feature => feature.toLowerCase().includes(term))
+			: false;
+		
+		return description.includes(term) || title.includes(term) || location.includes(term) || featuresMatch;
+	}
+
+		// Búsqueda por características específicas para Idealista
 		if (term.includes('ascensor') || term.includes('elevador')) {
 			return property.features?.liftAvailable === true;
 		}
@@ -266,8 +303,10 @@ const Properties = () => {
 	// Combinar propiedades de Idealista y Contentful
 	const allProperties = [
 		...properties,
-		...contentfulProperties // Ya están filtradas por venta en el hook
+		...contentfulProperties,
+		...newDevelopments,
 	];
+
 
 	// Filtrar propiedades localmente según los filtros adicionales
 	const filteredProperties = allProperties.filter(property => {
@@ -275,8 +314,10 @@ const Properties = () => {
 		if (localFilters.location && localFilters.location !== '') {
 			const locationFilter = localFilters.location.toLowerCase();
 
+			
 			// Para propiedades de Idealista
-			if (property.address) {
+			if (property.address && property.source !== 'newDevelopments') {
+				
 				if (locationFilter === 'madrid ciudad') {
 					// Si se selecciona Madrid ciudad, solo mostrar propiedades de Madrid
 					if (!isInMadrid(property)) {
@@ -294,7 +335,7 @@ const Properties = () => {
 						if (
 							!propertyDistrict ||
 							propertyDistrict.toLowerCase() !==
-								localFilters.district.toLowerCase()
+							localFilters.district.toLowerCase()
 						) {
 							return false;
 						}
@@ -317,6 +358,8 @@ const Properties = () => {
 					const address = property.address?.streetName?.toLowerCase() || '';
 					const district = property.address?.district?.toLowerCase() || '';
 					const town = property.address?.town?.toLowerCase() || '';
+
+					
 					if (
 						!address.includes(locationFilter) &&
 						!district.includes(locationFilter) &&
@@ -325,9 +368,58 @@ const Properties = () => {
 						return false;
 					}
 				}
+			} 
+			if (property.source === 'newDevelopments') {
+				const location = property.location?.toLowerCase() || '';
+				let matchesLocation = false;
+
+
+				if (locationFilter === 'madrid ciudad') {
+					// Para Madrid ciudad, solo incluir si la location sugiere que es Madrid ciudad
+					matchesLocation =
+						location.includes('madrid') && !property.propertyZone;
+				} else if (locationFilter === 'comunidad de madrid y resto de españa') {
+					// Para Comunidad de Madrid y resto de España, incluir si no es Costa ni Florida
+					matchesLocation =
+						property.propertyZone !== 'Costa' &&
+						property.propertyZone !== 'Florida';
+
+					// Si hay filtro de municipio, aplicarlo
+					if (
+						matchesLocation &&
+						localFilters.municipality &&
+						localFilters.municipality !== ''
+					) {
+						matchesLocation = location.includes(
+							localFilters.municipality.toLowerCase()
+						);
+					}
+				} else {
+					// Para ubicaciones específicas
+					matchesLocation = location.includes(locationFilter);
+
+					// También verificar si coincide con propertyZone
+					if (!matchesLocation && property.propertyZone) {
+						if (
+							property.propertyZone === 'Costa' &&
+							locationFilter.includes('costa española')
+						) {
+							matchesLocation = true;
+						} else if (
+							property.propertyZone === 'Florida' &&
+							locationFilter.includes('florida')
+						) {
+							matchesLocation = true;
+						}
+					}
+				}
+				if (!matchesLocation) {
+					return false;
+				}
 			}
-			// Para propiedades de Contentful
+			// // Para propiedades de Contentful
 			else if (property.source === 'contentful') {
+
 				const location = property.location?.toLowerCase() || '';
 				let matchesLocation = false;
 
@@ -371,33 +463,40 @@ const Properties = () => {
 					}
 				}
 
+
 				if (!matchesLocation) {
 					return false;
 				}
 			}
+
 		}
-		// Filtro por precio mínimo
+
 		if (localFilters.minPrice && localFilters.minPrice !== '') {
-			const price = property.operation?.price || property.price || 0;
+			const price = property.operation?.price || property.minPrice || property.price || 0;
 			if (price < parseInt(localFilters.minPrice)) {
 				return false;
 			}
 		}
-
 		// Filtro por precio máximo
 		if (localFilters.maxPrice && localFilters.maxPrice !== '') {
-			const price = property.operation?.price || property.price || 0;
+			const price = property.operation?.price || property.maxPrice || property.price || 0;
 			if (price > parseInt(localFilters.maxPrice)) {
 				return false;
 			}
 		}
 		// Filtro por área mínima
 		if (localFilters.minArea && localFilters.minArea !== '') {
-			const area =
-				property.features?.areaConstructed ||
-				property.features?.builtArea ||
-				property.size ||
-				0;
+			let area = 0;
+			if (property.source === 'newDevelopments') {
+				// Para newDevelopments, usar minSize como área mínima
+				area = property.minSize || property.size || 0;
+			} else {
+				// Para otras fuentes (Idealista, Contentful)
+				area = property.features?.areaConstructed ||
+					property.features?.builtArea ||
+					property.size ||
+					0;
+			}
 			if (area < parseInt(localFilters.minArea)) {
 				return false;
 			}
@@ -405,11 +504,17 @@ const Properties = () => {
 
 		// Filtro por área máxima
 		if (localFilters.maxArea && localFilters.maxArea !== '') {
-			const area =
-				property.features?.areaConstructed ||
-				property.features?.builtArea ||
-				property.size ||
-				0;
+			let area = 0;
+			if (property.source === 'newDevelopments') {
+				// Para newDevelopments, usar maxSize como área máxima
+				area = property.maxSize || property.size || 0;
+			} else {
+				// Para otras fuentes (Idealista, Contentful)
+				area = property.features?.areaConstructed ||
+					property.features?.builtArea ||
+					property.size ||
+					0;
+			}
 			if (area > parseInt(localFilters.maxArea)) {
 				return false;
 			}
@@ -423,9 +528,10 @@ const Properties = () => {
 		}
 		return true;
 	});
+
 	// Función para obtener el título correcto de la propiedad (Idealista o Contentful)
 	const getPropertyTitleUnified = property => {
-		if (property.source === 'contentful') {
+		if (property.source === 'contentful' || property.source === 'newDevelopments') {
 			return property.title || 'Propiedad exclusiva';
 		}
 		return getPropertyTitle(property);
@@ -433,7 +539,7 @@ const Properties = () => {
 
 	// Función para obtener el tamaño de la propiedad
 	const getPropertySizeUnified = property => {
-		if (property.source === 'contentful') {
+		if (property.source === 'contentful' || property.source === 'newDevelopments') {
 			return property.size;
 		}
 		return property.features?.areaConstructed || property.features?.builtArea;
@@ -441,7 +547,7 @@ const Properties = () => {
 
 	// Función para obtener el número de habitaciones
 	const getRoomsUnified = property => {
-		if (property.source === 'contentful') {
+		if (property.source === 'contentful' || property.source === 'newDevelopments') {
 			return property.rooms;
 		}
 		return property.features?.rooms;
@@ -449,7 +555,7 @@ const Properties = () => {
 
 	// Función para obtener el número de baños
 	const getBathroomsUnified = property => {
-		if (property.source === 'contentful') {
+		if (property.source === 'contentful' || property.source === 'newDevelopments') {
 			return property.bathrooms;
 		}
 		return property.features?.bathroomNumber;
@@ -479,7 +585,7 @@ const Properties = () => {
 	const handlePropertyClick = property => {
 		// Usar solo el ID sin prefijo
 		const propertyId =
-			property.source === 'contentful' ? property.id : property.propertyId;
+			property.source === 'contentful' || property.source === 'newDevelopments' ? property.id : property.propertyId;
 
 		// Navegar pasando la propiedad como estado para cargar instantáneamente
 		navigate(`/property/${propertyId}`, {
@@ -627,12 +733,11 @@ const Properties = () => {
 										{loading || contentfulLoading
 											? 'Cargando propiedades...'
 											: error || contentfulError
-											? 'Error al cargar propiedades'
-											: `${filteredProperties.length} ${
-													filteredProperties.length === 1
-														? 'resultado'
-														: 'resultados'
-											  } encontrados`}
+												? 'Error al cargar propiedades'
+												: `${filteredProperties.length} ${filteredProperties.length === 1
+													? 'resultado'
+													: 'resultados'
+												} encontrados`}
 									</ResultsCount>
 								</ResultsHeader>
 								{(loading || contentfulLoading) && (
@@ -655,13 +760,24 @@ const Properties = () => {
 										<PropertiesGrid>
 											{' '}
 											{filteredProperties.map((property, index) => {
+
+												if (property.source === 'newDevelopments') {
+													return (
+														<NewDevelopmentCard
+															key={property.id || index}
+															property={property}
+															index={index}
+															onClick={handlePropertyClick}
+														/>
+													);
+												}
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
 												if (propertyId && !loadedImages.has(propertyId)) {
 													loadPropertyImage(propertyId);
 												} // Determinar la imagen a mostrar
 												let imageSrc = '/images/home-image-1.png'; // fallback
-												if (property.source === 'contentful') {
+												if (property.source === 'contentful' || property.source === 'newDevelopments') {
 													// Para propiedades de Contentful
 													if (
 														property.images &&
@@ -694,7 +810,7 @@ const Properties = () => {
 														>
 															{/* Mostrar loader mientras carga, imagen cuando está disponible, o placeholder si no hay imagen */}
 															{loadingImages.has(propertyId) &&
-															property.source !== 'contentful' ? (
+																property.source !== 'contentful' ? (
 																<ImageLoader />
 															) : (
 																<PropertyImage
@@ -708,10 +824,10 @@ const Properties = () => {
 																	{getPropertyTitleUnified(property)}
 																</PropertyTitle>
 																<PropertyPrice>
-																	{property.source === 'contentful'
+																	{property.source === 'contentful' || property.source === 'newDevelopments'
 																		? `${property.price?.toLocaleString(
-																				'es-ES'
-																		  )} €`
+																			'es-ES'
+																		)} €`
 																		: formatPrice(property)}
 																	<span>
 																		{' '}
@@ -719,8 +835,8 @@ const Properties = () => {
 																		{property.source === 'contentful'
 																			? 'ex-' + property.id.slice(-4)
 																			: property.reference ||
-																			  propertyId?.toString().slice(-4) ||
-																			  '1024'}
+																			propertyId?.toString().slice(-4) ||
+																			'1024'}
 																	</span>
 																</PropertyPrice>{' '}
 																<PropertyDescription>

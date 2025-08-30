@@ -23,8 +23,13 @@ CORS_ORIGIN=https://yourdomain.com
 ### Endpoints:
 
 - `GET /api/properties` - Obtiene propiedades de Idealista
-- `GET /api/contentful/properties` - Obtiene propiedades de Contentful
-- `GET /health` - Health check
+- `GET /api/properties/:id` - Obtiene propiedad específica de Idealista
+- `GET /api/contacts` - Obtiene contactos de Idealista
+- `GET /api/newDevelopments` - Obtiene nuevos desarrollos desde Contentful (propertiesPandaIdx)
+- `GET /api/status` - Estado del servicio
+- `GET /api/test` - Test de conectividad con Idealista
+- `GET /api/sandbox-status` - Estado del sandbox de Idealista
+- `GET /api/publish-info` - Información de publicación
 
 ### Deploy:
 

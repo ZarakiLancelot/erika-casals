@@ -1,6 +1,7 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect, useCallback } from 'react';
 import PropertyDetail from '../../components/properties/PropertyDetail';
+import NewDevelopmentDetail from '../../components/properties/NewDevelopmentDetail';
 
 const PropertyDetailPage = () => {
 	const { propertyId } = useParams();
@@ -360,11 +361,23 @@ const PropertyDetailPage = () => {
 	}
 
 	return (
-		<PropertyDetail
-			property={property}
-			onBack={handleBack}
-			images={propertyImages}
-		/>
+
+		property.source === 'newDevelopments' ? (
+			<NewDevelopmentDetail
+				property={property}
+				onBack={handleBack}
+				images={propertyImages}
+			/>
+		) : (
+
+			<PropertyDetail
+				property={property}
+				onBack={handleBack}
+				images={propertyImages}
+			/>
+
+		)
+
 	);
 };
 
