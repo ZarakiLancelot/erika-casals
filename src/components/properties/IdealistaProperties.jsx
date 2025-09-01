@@ -86,7 +86,9 @@ const Properties = () => {
 		maxPrice: '',
 		minArea: '',
 		maxArea: '',
-		features: ''
+		features: '',
+		lowestPrice: false, // Filtro para precio más bajo
+		highestPrice: false // Filtro para precio más alto
 	});
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [loadingImages, setLoadingImages] = useState(new Set());
@@ -110,7 +112,9 @@ const Properties = () => {
 			maxPrice: '',
 			minArea: '',
 			maxArea: '',
-			features: ''
+			features: '',
+			lowestPrice: false,
+			highestPrice: false
 		}); // Limpiar imágenes cargadas para evitar conflictos
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
@@ -529,6 +533,32 @@ const Properties = () => {
 		return true;
 	});
 
+	// Aplicar filtros de precio más bajo/alto después del filtrado inicial
+	let sortedFilteredProperties = [...filteredProperties];
+
+	// Si se selecciona precio más bajo, ordenar por precio ascendente y tomar los primeros
+	if (localFilters.lowestPrice) {
+		sortedFilteredProperties = sortedFilteredProperties
+			.sort((a, b) => {
+				const priceA = a.operation?.price || a.minPrice || a.price || 0;
+				const priceB = b.operation?.price || b.minPrice || b.price || 0;
+				return priceA - priceB;
+			})
+	}
+
+	// Si se selecciona precio más alto, ordenar por precio descendente y tomar los primeros
+	if (localFilters.highestPrice) {
+		sortedFilteredProperties = sortedFilteredProperties
+			.sort((a, b) => {
+				const priceA = a.operation?.price || a.minPrice || a.price || 0;
+				const priceB = b.operation?.price || b.minPrice || b.price || 0;
+				return priceB - priceA;
+			})
+	}
+
+	// Usar las propiedades filtradas y ordenadas
+	const finalFilteredProperties = sortedFilteredProperties;
+
 	// Función para obtener el título correcto de la propiedad (Idealista o Contentful)
 	const getPropertyTitleUnified = property => {
 		if (property.source === 'contentful' || property.source === 'newDevelopments') {
@@ -576,6 +606,13 @@ const Properties = () => {
 				if (value.toLowerCase() !== 'comunidad de madrid y resto de españa') {
 					newFilters.municipality = '';
 				}
+			}
+
+			// Lógica para checkboxes de precio: solo uno puede estar activo
+			if (filterName === 'lowestPrice' && value) {
+				newFilters.highestPrice = false;
+			} else if (filterName === 'highestPrice' && value) {
+				newFilters.lowestPrice = false;
 			}
 
 			return newFilters;
@@ -689,6 +726,27 @@ const Properties = () => {
 												type='number'
 											/>
 										</PriceRangeGroup>
+										{/* Checkboxes para filtros de precio */}
+										<div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
+											<label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '14px', color: '#666' }}>
+												<input
+													type="checkbox"
+													checked={localFilters.lowestPrice}
+													onChange={e => handleFilterChange('lowestPrice', e.target.checked)}
+													style={{ marginRight: '5px' }}
+												/>
+												Precio más bajo
+											</label>
+											<label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '14px', color: '#666' }}>
+												<input
+													type="checkbox"
+													checked={localFilters.highestPrice}
+													onChange={e => handleFilterChange('highestPrice', e.target.checked)}
+													style={{ marginRight: '5px' }}
+												/>
+												Precio más alto
+											</label>
+										</div>
 									</FilterGroup>
 									<FilterGroup>
 										<FilterLabel>Superficie (m²)</FilterLabel>
@@ -734,10 +792,10 @@ const Properties = () => {
 											? 'Cargando propiedades...'
 											: error || contentfulError
 												? 'Error al cargar propiedades'
-												: `${filteredProperties.length} ${filteredProperties.length === 1
-													? 'resultado'
-													: 'resultados'
-												} encontrados`}
+												: `${finalFilteredProperties.length} ${finalFilteredProperties.length === 1
+																			? 'resultado'
+																			: 'resultados'
+																		} encontrados`}
 									</ResultsCount>
 								</ResultsHeader>
 								{(loading || contentfulLoading) && (
@@ -748,7 +806,7 @@ const Properties = () => {
 								)}
 								{!(loading || contentfulLoading) &&
 									!(error || contentfulError) &&
-									filteredProperties.length === 0 && (
+									finalFilteredProperties.length === 0 && (
 										<EmptyState>
 											<h3>No se encontraron propiedades</h3>
 											<p>Intenta ajustar los filtros o verifica la conexión</p>
@@ -756,10 +814,10 @@ const Properties = () => {
 									)}{' '}
 								{!(loading || contentfulLoading) &&
 									!(error || contentfulError) &&
-									filteredProperties.length > 0 && (
+									finalFilteredProperties.length > 0 && (
 										<PropertiesGrid>
 											{' '}
-											{filteredProperties.map((property, index) => {
+											{finalFilteredProperties.map((property, index) => {
 
 												if (property.source === 'newDevelopments') {
 													return (
