@@ -7,11 +7,11 @@ const StyledInfoContainer = styled.div`
 	margin: 0 auto;
 	padding: 2rem 0;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1500px) {
 		width: 90%;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		width: 95%;
 		padding: 1rem 0;
 		height: auto;
@@ -32,11 +32,11 @@ const StyledInfoContent = styled.div`
 	position: relative;
 	margin-top: 1.2rem;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1500px) {
 		padding: 1.5rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		flex-direction: column;
 		padding: 1rem;
 		margin-top: 0;
@@ -88,9 +88,9 @@ const StyledInfoDiv = styled.div`
 		}
 	}
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1500px) {
 		&:nth-child(2) {
-			left: 35%;
+			/* left: 35%; */
 			padding: 1rem 3rem;
 			padding-bottom: 3rem;
 		}
@@ -105,7 +105,7 @@ const StyledInfoDiv = styled.div`
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		flex: none;
 		width: 100%;
 
@@ -189,12 +189,12 @@ const StyledDescription = styled.p`
 	line-height: 1.7;
 	margin: 0;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1500px) {
 		font-size: 1rem;
 		line-height: 1.6;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 0.95rem;
 		line-height: 1.6;
 		text-align: left;
@@ -217,7 +217,7 @@ const StyledNumbersContainer = styled.div`
 	gap: 2rem;
 	margin-top: 2rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		flex-direction: column;
 		gap: 2.5rem;
 		margin-top: 3rem;
@@ -237,7 +237,7 @@ const StyledNumbersContent = styled.div`
 	flex: 1;
 	gap: 10px;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		flex: none;
 		width: 100%;
 		max-width: 300px;
@@ -251,11 +251,11 @@ const StyledNumber = styled.div`
 	font-weight: 500;
 	color: black;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1500px) {
 		font-size: 2.5rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 2.8rem;
 	}
 
@@ -276,11 +276,11 @@ const StyledNumberDescription = styled.p`
 	text-align: center;
 	margin: 0;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1500px) {
 		font-size: 1.1rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 1rem;
 	}
 

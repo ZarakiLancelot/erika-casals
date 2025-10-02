@@ -6,7 +6,7 @@ const StyledInfoContainer = styled.div`
 	margin: 0 auto;
 	padding: 2rem 0;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		width: 95%;
 		padding: 1.5rem 0;
 	}
@@ -24,7 +24,7 @@ const StyledInfoContent = styled.div`
 	margin-bottom: 3rem;
 	position: relative;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
@@ -44,7 +44,7 @@ const StyledInfoDiv = styled.div`
 		z-index: 2;
 		margin-right: -80px;
 
-		@media (max-width: 768px) {
+		@media (max-width: 1100px) {
 			margin-right: 0;
 			order: 1;
 			width: 100%;
@@ -65,11 +65,11 @@ const StyledInfoDiv = styled.div`
 		min-height: auto;
 		gap: 20px;
 
-		@media (max-width: 768px) {
+		@media (max-width: 1100px) {
 			order: 2;
 			padding: 2rem;
 			width: 100%;
-			max-width: 500px;
+			/* max-width: 500px; */
 			text-align: center;
 		}
 
@@ -85,7 +85,7 @@ const StyledInfoDiv = styled.div`
 		object-fit: cover;
 		display: block;
 
-		@media (max-width: 768px) {
+		@media (max-width: 1100px) {
 			width: 100%;
 			max-width: 400px;
 			height: auto;
@@ -107,7 +107,7 @@ const StyledInfoDiv = styled.div`
 		align-items: center;
 		margin-bottom: 1rem;
 
-		@media (max-width: 768px) {
+		@media (max-width: 1100px) {
 			font-size: 2rem;
 			justify-content: center;
 			gap: 1rem;
@@ -123,7 +123,7 @@ const StyledInfoDiv = styled.div`
 			width: 6rem;
 			height: 6rem;
 
-			@media (max-width: 768px) {
+			@media (max-width: 1100px) {
 				width: 5rem;
 				height: 5rem;
 			}
@@ -144,7 +144,7 @@ const StyledDescription = styled.div`
 	line-height: 1.6;
 	margin-top: 1rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 0.95rem;
 		line-height: 1.5;
 		text-align: left;
@@ -164,7 +164,7 @@ const StyledNumbersContainer = styled.div`
 	margin-top: 2rem;
 	padding: 0 2rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		gap: 2rem;
 		margin-top: 1.5rem;
 		padding: 0 1rem;
@@ -200,7 +200,7 @@ const StyledNumber = styled.div`
 	font-weight: 500;
 	color: black;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 2.5rem;
 	}
 
@@ -216,7 +216,7 @@ const StyledNumberDescription = styled.p`
 	color: #6b6b6b;
 	text-align: center;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 1.1rem;
 	}
 
@@ -231,7 +231,7 @@ const ContactInfo = styled.div`
 	flex-direction: column;
 	gap: 10px;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		align-items: center;
 	}
 `;
@@ -250,7 +250,7 @@ const ContactItem = styled.div`
 		height: 25px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		justify-content: center;
 	}
 
@@ -276,7 +276,7 @@ const ProfileText = styled.p`
 		margin-bottom: 0;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 0.95rem;
 		line-height: 1.5;
 	}
@@ -296,7 +296,7 @@ const ProfileHighlight = styled.p`
 	margin: 16px 0;
 	line-height: 1.6;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 0.95rem;
 		margin: 14px 0;
 	}
@@ -313,7 +313,7 @@ const SocialLinks = styled.div`
 	gap: 6px;
 	margin: 6px 0 12px 0;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		justify-content: center;
 		padding-top: 15px;
 	}
@@ -398,7 +398,7 @@ const WhatsAppButton = styled.button`
 		transform: translateY(-2px);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		align-self: center;
 		margin-top: 20px;
 		margin-bottom: 30px;

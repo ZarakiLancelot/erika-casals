@@ -116,7 +116,8 @@ const StyledTestimonialDiv = styled.div`
 
 const StyledImageDiv = styled.div`
 	position: absolute;
-	top: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	right: 0;
 	width: 55%;
 	/* height: 100%; */
@@ -143,6 +144,8 @@ const StyledImageDiv = styled.div`
 		height: 300px;
 		overflow: hidden;
 		order: 1;
+		top: 0;
+		transform: translateY(0%);
 
 		img {
 			width: 100%;
@@ -173,7 +176,7 @@ const StyledTestimonialText = styled.p`
 		transform: translateX(-20px);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		font-size: 1rem;
 		line-height: 1.6;
 		margin-bottom: 1.5rem;

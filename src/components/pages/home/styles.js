@@ -6,21 +6,24 @@ const StyledContainer = styled.div`
 	background: url(/images/dark-background.png) no-repeat;
 	background-position: 100% 0;
 	background-size: cover;
+	/* Solución universal: siempre dejar espacio para el navbar */
+
+	box-sizing: border-box;
 	/* overflow-x: hidden; */
 
 	@media (max-width: 1200px) {
 		background-position: center right;
 	}
 
-	@media (max-width: 768px) {
-		height: 100vh;
-
+	@media (max-width: 1050px) {
+		padding-top: 80px;
 		background-position: right center;
 		background-size: cover;
 	}
 
 	@media (max-width: 480px) {
-		height: 65vh;
+		padding-top: 70px;
+		height: auto;
 		background-position: 75% center;
 	}
 `;
@@ -33,7 +36,7 @@ const StyledNavbar = styled.nav`
 	padding: 1.2rem 0;
 	background-color: white;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		padding: 1.5rem 1rem;
 		flex-direction: column;
 		gap: 1rem;
@@ -90,7 +93,7 @@ const StyledButton = styled.button`
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		padding: 0.6rem 1.2rem;
 		font-size: 0.9rem;
 		gap: 0.8rem;
@@ -117,7 +120,7 @@ const StyledNavCenter = styled.ul`
 	text-align: center;
 	gap: 2rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		gap: 1rem;
 		flex-wrap: wrap;
 		order: 2;
@@ -136,7 +139,7 @@ const StyledNavLi = styled.li`
 		color: rgb(167, 196, 250);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		font-size: 0.9rem;
 	}
 `;
@@ -144,7 +147,7 @@ const StyledNavLi = styled.li`
 const StyledNavRight = styled.div`
 	flex: 1;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		order: 1;
 		flex: none;
 	}
@@ -152,7 +155,8 @@ const StyledNavRight = styled.div`
 
 const StyledContent = styled.div`
 	width: 90%;
-	height: 85%;
+	/* Ajustar altura para compensar el padding-top del container */
+	height: calc(100% - 2rem);
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
@@ -164,19 +168,20 @@ const StyledContent = styled.div`
 		gap: 2rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		flex-direction: column;
 		height: auto;
 		width: 95%;
-		padding: 2rem 1rem;
-		gap: 3rem;
-		min-height: auto;
+		padding: 1rem;
+		gap: 2rem;
+		min-height: calc(100vh - 160px);
 	}
 
 	@media (max-width: 480px) {
 		width: 100%;
-		padding: 1.5rem 0.8rem;
-		gap: 2.5rem;
+		padding: 1rem 0.8rem;
+		gap: 1.5rem;
+		min-height: calc(65vh - 140px);
 	}
 `;
 
@@ -192,9 +197,10 @@ const StyledFlexContainer = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 2rem;
+		gap: clamp(1rem, 2vw + 0.5rem, 2.5rem);
 		flex: 2;
 		z-index: 2;
+		padding: 0 clamp(0.5rem, 1vw + 0.2rem, 1.5rem);
 	}
 
 	&:nth-child(1),
@@ -235,7 +241,7 @@ const StyledFlexContainer = styled.div`
 			}
 		}
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		flex: none;
 		width: 100%;
 
@@ -308,28 +314,15 @@ const StyledFlexContainer = styled.div`
 
 const StyledTitle = styled.h1`
 	font-family: 'Space Grotesk', sans-serif;
-	font-size: 3.5rem;
+	font-size: clamp(1.8rem, 3.5vw + 1rem, 3.5rem);
 	font-weight: 400;
-	letter-spacing: 1px;
+	letter-spacing: clamp(0.3px, 0.3vw + 0.2px, 1px);
 	color: white;
 	text-align: center;
 	margin: 0;
-	line-height: 1.2;
-
-	@media (max-width: 1200px) {
-		font-size: 3rem;
-	}
-
-	@media (max-width: 768px) {
-		font-size: 2.5rem;
-		line-height: 1.3;
-		letter-spacing: 0.5px;
-	}
-
-	@media (max-width: 480px) {
-		font-size: 2rem;
-		line-height: 1.25;
-	}
+	line-height: clamp(1.15, 1.2, 1.3);
+	max-width: 100%;
+	word-wrap: break-word;
 
 	@media (max-width: 360px) {
 		font-size: 1.8rem;
@@ -337,38 +330,20 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledDescription = styled.p`
-	width: 50%;
-	font-size: 1rem;
+	width: clamp(50%, 45% + 5vw, 70%);
+	font-size: clamp(0.8rem, 0.4vw + 0.7rem, 1rem);
 	color: white;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	text-align: center;
-	margin: 1rem 0 0 0;
-	letter-spacing: 0.5px;
 	line-height: 1.8;
-
-	@media (max-width: 1200px) {
-		width: 60%;
-		font-size: 0.98rem;
-	}
-
-	@media (max-width: 768px) {
-		width: 90%;
-		font-size: 0.95rem;
-		line-height: 1.7;
-		margin: 0.8rem 0 0 0;
-	}
-
+	margin: clamp(0.5rem, 1vw + 0.2rem, 1rem) 0 0 0;
+	letter-spacing: 0.5px;
+	line-height: clamp(1.5, 1.6 + 0.2vw, 1.8);
+	max-width: 100%;
+	word-wrap: break-word;
 	@media (max-width: 480px) {
 		width: 100%;
-		font-size: 0.9rem;
-		line-height: 1.6;
-		margin: 0.6rem 0 0 0;
-	}
-
-	@media (max-width: 360px) {
-		font-size: 0.85rem;
-		line-height: 1.5;
 	}
 `;
 
@@ -384,10 +359,11 @@ const StyledImage = styled.img`
 		max-width: 450px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1050px) {
 		min-width: 100px;
 		max-width: 200px;
 		width: 90%;
+		display: none;
 	}
 
 	@media (max-width: 480px) {

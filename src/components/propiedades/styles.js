@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
 	display: flex;
 	justify-content: center;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		height: auto;
 		min-height: 100vh;
 		background-position: right center;
@@ -21,7 +21,7 @@ const StyledContent = styled.div`
 	gap: 2rem;
 	padding: 5rem 2rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		width: 95%;
 		padding: 3rem 1rem;
 		gap: 1.5rem;
@@ -40,7 +40,7 @@ const StyledTitle = styled.h1`
 	text-align: center;
 	color: #333;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		font-size: 2rem;
 	}
 
@@ -71,7 +71,7 @@ const StyledContentDiv = styled.div`
 	height: 100%;
 	padding-bottom: 5rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -98,9 +98,8 @@ const StyledPropertyDiv = styled.div`
 	z-index: 2;
 	order: ${props => (props.reverse ? 2 : 1)};
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		width: 100%;
-		max-width: 500px;
 		order: 2;
 		padding: 2rem;
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -115,7 +114,8 @@ const StyledPropertyDiv = styled.div`
 
 const StyledImageDiv = styled.div`
 	position: absolute;
-	top: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	right: ${props => (props.reverse ? 'auto' : '0')};
 	left: ${props => (props.reverse ? '0' : 'auto')};
 	width: 55%;
@@ -131,7 +131,7 @@ const StyledImageDiv = styled.div`
 		object-fit: cover;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		position: relative;
 		width: 100%;
 		max-width: 400px;
@@ -141,6 +141,8 @@ const StyledImageDiv = styled.div`
 		top: auto;
 		right: auto;
 		left: auto;
+		top: 0;
+		transform: translateY(0%);
 
 		img {
 			width: 100%;
@@ -163,7 +165,7 @@ const StyledPropertyText = styled.p`
 	line-height: 1.7;
 	margin-bottom: 2rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		font-size: 1rem;
 		line-height: 1.6;
 		margin-bottom: 1.5rem;
@@ -183,7 +185,7 @@ const StyledPropertyInfo = styled.div`
 	gap: 1rem;
 	margin-bottom: 1rem;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		justify-content: center;
 		margin-bottom: 1.5rem;
 	}
@@ -214,7 +216,7 @@ const StyledPropertyName = styled.h4`
 	color: #333;
 	margin: 0;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		font-size: 1rem;
 	}
 
@@ -230,7 +232,7 @@ const StyledPropertyLocation = styled.p`
 	color: #6b6b6b;
 	margin: 0;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		font-size: 0.85rem;
 	}
 
@@ -267,7 +269,7 @@ const StyledViewButton = styled.button`
 		transform: translate(-50%, -50%) scale(0.95);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		padding: 0.8rem 1.5rem;
 		font-size: 1rem;
 		border-radius: 25px;

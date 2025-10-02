@@ -80,7 +80,7 @@ const StyledCardContainer = styled.div`
 		min-height: 450px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 900px) {
 		flex-direction: column;
 		padding: 0 2rem;
 		height: auto;
@@ -160,6 +160,13 @@ const StyledCardTitle = styled.h2`
 	font-size: 1.6rem;
 	height: 4rem;
 	color: white;
+
+	@media (max-width: 1300px) {
+		font-size: 1.2rem;
+	}
+	@media (max-width: 900px) {
+		font-size: 1.6rem;
+	}
 `;
 
 const StyledCardDescription = styled.p`
@@ -168,6 +175,14 @@ const StyledCardDescription = styled.p`
 	font-size: 1.2rem;
 	color: white;
 	height: 7rem;
+
+	@media (max-width: 1300px) {
+		font-size: 1rem;
+	}
+
+	@media (max-width: 900px) {
+		font-size: 1.2rem;
+	}
 `;
 
 export {

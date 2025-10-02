@@ -6,6 +6,10 @@ const StyledFooterContainer = styled.footer`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+	@media (max-width: 480px) {
+		height: auto;
+		padding: 2rem 0;
+	}
 `;
 
 const StyledTopSection = styled.div`

@@ -65,13 +65,8 @@ const CertificatesMarquee = () => {
 
 	return (
 		<MarqueeContainer>
-			<Marquee
-				gradient={false}
-				speed={40}
-				pauseOnHover={true}
-				autoFill={true}
-			>
-				{certificates.map((certificate) => (
+			<Marquee gradient={false} speed={40} pauseOnHover={true} autoFill={true}>
+				{certificates.map(certificate => (
 					<MarqueeItem key={certificate.id}>
 						<img src={certificate.src} alt={certificate.alt} />
 					</MarqueeItem>
