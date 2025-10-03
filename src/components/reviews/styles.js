@@ -94,7 +94,7 @@ const StyledTestimonialDiv = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: rgb(255, 255, 255);
-	padding: 3rem 3rem;
+	padding: 2rem 1.5rem;
 	position: relative;
 	z-index: 2;
 	height: 450px;
@@ -103,7 +103,7 @@ const StyledTestimonialDiv = styled.div`
 		width: 100%;
 		max-width: 500px;
 		height: auto;
-		padding: 2rem;
+		/* padding: 2rem; */
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 		order: 2;
 	}

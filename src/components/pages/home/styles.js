@@ -7,9 +7,14 @@ const StyledContainer = styled.div`
 	background-position: 100% 0;
 	background-size: cover;
 	/* Solución universal: siempre dejar espacio para el navbar */
-
 	box-sizing: border-box;
 	/* overflow-x: hidden; */
+
+	/* Nest Hub y Nest Hub Max - padding específico */
+	@media (min-width: 1000px) and (max-height: 850px) {
+		padding-top: 100px;
+		height: calc(100vh - 100px);
+	}
 
 	@media (max-width: 1200px) {
 		background-position: center right;
@@ -163,6 +168,14 @@ const StyledContent = styled.div`
 	align-items: center;
 	gap: 3rem;
 
+	/* Nest Hub y Nest Hub Max - distribución específica */
+	@media (min-width: 1000px) and (max-height: 850px) {
+		height: 100%;
+		align-items: flex-start;
+		padding-top: 1rem;
+		gap: 2rem;
+	}
+
 	@media (max-width: 1200px) {
 		width: 95%;
 		gap: 2rem;
@@ -201,6 +214,16 @@ const StyledFlexContainer = styled.div`
 		flex: 2;
 		z-index: 2;
 		padding: 0 clamp(0.5rem, 1vw + 0.2rem, 1.5rem);
+
+		/* Nest Hub y Nest Hub Max - limitar crecimiento vertical */
+		@media (min-width: 1000px) and (max-height: 850px) {
+			flex: 2;
+			max-height: 70vh;
+			overflow: hidden;
+			justify-content: flex-start;
+			padding-top: 1.5rem;
+			gap: 1rem;
+		}
 	}
 
 	&:nth-child(1),
@@ -223,6 +246,17 @@ const StyledFlexContainer = styled.div`
 		img {
 			width: 2rem;
 			height: 2rem;
+		}
+
+		/* Nest Hub y Nest Hub Max - botón más compacto */
+		@media (min-width: 1000px) and (max-height: 850px) {
+			padding: 0.6rem 1.8rem;
+			font-size: 1rem;
+
+			img {
+				width: 1.6rem;
+				height: 1.6rem;
+			}
 		}
 	}
 
@@ -324,6 +358,13 @@ const StyledTitle = styled.h1`
 	max-width: 100%;
 	word-wrap: break-word;
 
+	/* Nest Hub y Nest Hub Max - font-size más pequeño para que quepa */
+	@media (min-width: 1000px) and (max-height: 850px) {
+		font-size: 2.2rem;
+		line-height: 1.1;
+		margin-bottom: 0.5rem;
+	}
+
 	@media (max-width: 360px) {
 		font-size: 1.8rem;
 	}
@@ -342,40 +383,55 @@ const StyledDescription = styled.p`
 	line-height: clamp(1.5, 1.6 + 0.2vw, 1.8);
 	max-width: 100%;
 	word-wrap: break-word;
+
+	/* Nest Hub y Nest Hub Max - texto más compacto */
+	@media (min-width: 1000px) and (max-height: 850px) {
+		font-size: 0.85rem;
+		line-height: 1.4;
+		margin: 0.3rem 0 0 0;
+		width: 85%;
+	}
+
 	@media (max-width: 480px) {
 		width: 100%;
 	}
 `;
 
 const StyledImage = styled.img`
+	/* Dimensiones flexibles por defecto */
+	min-width: 250px;
+	max-width: 500px;
 	width: 100%;
 	height: auto;
-	min-width: 300px;
-	max-width: 500px;
-	object-fit: contain;
+	border-radius: 8px;
+
+	/* Nest Hub y Nest Hub Max - dimensiones proporcionales al viewport para simetría */
+	@media (min-width: 1024px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 800px) {
+		width: 25vw;
+		height: 25vw;
+		object-fit: contain;
+		object-position: center;
+	}
 
 	@media (max-width: 1200px) {
-		min-width: 280px;
-		max-width: 450px;
+		min-width: 200px;
+		max-width: 400px;
 	}
 
 	@media (max-width: 1050px) {
-		min-width: 100px;
-		max-width: 200px;
-		width: 90%;
+		width: 200px;
+		height: 200px;
 		display: none;
 	}
 
 	@media (max-width: 480px) {
-		min-width: 200px;
-		max-width: 280px;
-		width: 85%;
+		width: 250px;
+		height: 250px;
 	}
 
 	@media (max-width: 360px) {
-		min-width: 180px;
-		max-width: 250px;
-		width: 80%;
+		width: 200px;
+		height: 200px;
 	}
 `;
 
