@@ -221,7 +221,8 @@ const StyledFlexContainer = styled.div`
 			max-height: 70vh;
 			overflow: hidden;
 			justify-content: flex-start;
-			padding-top: 1.5rem;
+			/* padding-top: 1.5rem; */
+			padding: 0;
 			gap: 1rem;
 		}
 	}
@@ -360,7 +361,7 @@ const StyledTitle = styled.h1`
 
 	/* Nest Hub y Nest Hub Max - font-size más pequeño para que quepa */
 	@media (min-width: 1000px) and (max-height: 850px) {
-		font-size: 2.2rem;
+		font-size: 2.5rem;
 		line-height: 1.1;
 		margin-bottom: 0.5rem;
 	}
@@ -386,7 +387,7 @@ const StyledDescription = styled.p`
 
 	/* Nest Hub y Nest Hub Max - texto más compacto */
 	@media (min-width: 1000px) and (max-height: 850px) {
-		font-size: 0.85rem;
+		font-size: 1.1rem;
 		line-height: 1.4;
 		margin: 0.3rem 0 0 0;
 		width: 85%;
