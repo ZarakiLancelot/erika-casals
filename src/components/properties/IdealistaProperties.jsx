@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
-import { useContentfulSaleProperties, useNewDevelopments } from '../../hooks/useContentfulProperties';
+import {
+	useContentfulSaleProperties,
+	useNewDevelopments
+} from '../../hooks/useContentfulProperties';
 import PageTransition from '../common/PageTransition';
 import ScrollAnimation from '../common/ScrollAnimation';
 import NewDevelopmentCard from './NewDevelopmentCard';
@@ -75,8 +78,6 @@ const Properties = () => {
 		fetchNewDevelopments
 	} = useNewDevelopments();
 
-
-
 	// Estados para filtros locales
 	const [localFilters, setLocalFilters] = useState({
 		location: '',
@@ -130,8 +131,7 @@ const Properties = () => {
 		if (!newDevelopmentsLoading) {
 			setNewDev(newDevelopments);
 		}
-	}, [newDevelopments, newDevelopmentsLoading])
-
+	}, [newDevelopments, newDevelopmentsLoading]);
 
 	// Función para cargar imagen de una propiedad cuando sea necesario
 	const loadPropertyImage = useCallback(
@@ -157,8 +157,8 @@ const Properties = () => {
 	// Intersection Observer para lazy loading de imágenes
 	useEffect(() => {
 		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
+			entries => {
+				entries.forEach(entry => {
 					if (entry.isIntersecting) {
 						const propertyId = entry.target.dataset.propertyId;
 						if (propertyId && propertyId !== 'undefined') {
@@ -177,7 +177,10 @@ const Properties = () => {
 		const timer = setTimeout(() => {
 			const cards = document.querySelectorAll('[data-property-id]');
 			cards.forEach(card => {
-				if (card.dataset.propertyId && card.dataset.propertyId !== 'undefined') {
+				if (
+					card.dataset.propertyId &&
+					card.dataset.propertyId !== 'undefined'
+				) {
 					observer.observe(card);
 				}
 			});
@@ -196,12 +199,20 @@ const Properties = () => {
 				loadPropertyImage(propertyId);
 			}
 		});
-	}, [visibleProperties, loadedImages, loadingImages, loadPropertyImage]);	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
+	}, [visibleProperties, loadedImages, loadingImages, loadPropertyImage]); // Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
 	useEffect(() => {
-		const allProps = [...properties, ...contentfulProperties, ...newDevelopments];
+		const allProps = [
+			...properties,
+			...contentfulProperties,
+			...newDevelopments
+		];
 		if (allProps.length > 0) {
 			// Usar el nuevo sistema de organización de ubicaciones
-			const organized = getOrganizedLocations(properties, contentfulProperties, newDev);
+			const organized = getOrganizedLocations(
+				properties,
+				contentfulProperties,
+				newDev
+			);
 
 			// Crear lista de ubicaciones principales para el primer filtro
 			const mainLocations = [];
@@ -244,25 +255,38 @@ const Properties = () => {
 				setAvailableMunicipalities([]);
 			}
 		}
-	}, [properties, contentfulProperties, newDevelopments, localFilters.location]);
+	}, [
+		properties,
+		contentfulProperties,
+		newDevelopments,
+		localFilters.location
+	]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
 		const term = searchTerm.toLowerCase();
 
 		// Para newDevelopments, buscar en la descripción, título, ubicación y features
-	if (property.source === 'newDevelopments') {
-		const description = property.description?.toLowerCase() || '';
-		const title = property.title?.toLowerCase() || '';
-		const location = property.location?.toLowerCase() || '';
-		
-		// Buscar en el array de features si existe
-		const featuresMatch = property.features && Array.isArray(property.features) 
-			? property.features.some(feature => feature.toLowerCase().includes(term))
-			: false;
-		
-		return description.includes(term) || title.includes(term) || location.includes(term) || featuresMatch;
-	}
+		if (property.source === 'newDevelopments') {
+			const description = property.description?.toLowerCase() || '';
+			const title = property.title?.toLowerCase() || '';
+			const location = property.location?.toLowerCase() || '';
+
+			// Buscar en el array de features si existe
+			const featuresMatch =
+				property.features && Array.isArray(property.features)
+					? property.features.some(feature =>
+							feature.toLowerCase().includes(term)
+					  )
+					: false;
+
+			return (
+				description.includes(term) ||
+				title.includes(term) ||
+				location.includes(term) ||
+				featuresMatch
+			);
+		}
 
 		// Búsqueda por características específicas para Idealista
 		if (term.includes('ascensor') || term.includes('elevador')) {
@@ -351,9 +375,8 @@ const Properties = () => {
 	const allProperties = [
 		...properties,
 		...contentfulProperties,
-		...newDevelopments,
+		...newDevelopments
 	];
-
 
 	// Filtrar propiedades localmente según los filtros adicionales
 	const filteredProperties = allProperties.filter(property => {
@@ -361,10 +384,8 @@ const Properties = () => {
 		if (localFilters.location && localFilters.location !== '') {
 			const locationFilter = localFilters.location.toLowerCase();
 
-			
 			// Para propiedades de Idealista
 			if (property.address && property.source !== 'newDevelopments') {
-				
 				if (locationFilter === 'madrid ciudad') {
 					// Si se selecciona Madrid ciudad, solo mostrar propiedades de Madrid
 					if (!isInMadrid(property)) {
@@ -382,7 +403,7 @@ const Properties = () => {
 						if (
 							!propertyDistrict ||
 							propertyDistrict.toLowerCase() !==
-							localFilters.district.toLowerCase()
+								localFilters.district.toLowerCase()
 						) {
 							return false;
 						}
@@ -406,7 +427,6 @@ const Properties = () => {
 					const district = property.address?.district?.toLowerCase() || '';
 					const town = property.address?.town?.toLowerCase() || '';
 
-					
 					if (
 						!address.includes(locationFilter) &&
 						!district.includes(locationFilter) &&
@@ -415,11 +435,10 @@ const Properties = () => {
 						return false;
 					}
 				}
-			} 
+			}
 			if (property.source === 'newDevelopments') {
 				const location = property.location?.toLowerCase() || '';
 				let matchesLocation = false;
-
 
 				if (locationFilter === 'madrid ciudad') {
 					// Para Madrid ciudad, solo incluir si la location sugiere que es Madrid ciudad
@@ -466,7 +485,6 @@ const Properties = () => {
 			}
 			// // Para propiedades de Contentful
 			else if (property.source === 'contentful') {
-
 				const location = property.location?.toLowerCase() || '';
 				let matchesLocation = false;
 
@@ -510,23 +528,23 @@ const Properties = () => {
 					}
 				}
 
-
 				if (!matchesLocation) {
 					return false;
 				}
 			}
-
 		}
 
 		if (localFilters.minPrice && localFilters.minPrice !== '') {
-			const price = property.operation?.price || property.minPrice || property.price || 0;
+			const price =
+				property.operation?.price || property.minPrice || property.price || 0;
 			if (price < parseInt(localFilters.minPrice)) {
 				return false;
 			}
 		}
 		// Filtro por precio máximo
 		if (localFilters.maxPrice && localFilters.maxPrice !== '') {
-			const price = property.operation?.price || property.maxPrice || property.price || 0;
+			const price =
+				property.operation?.price || property.maxPrice || property.price || 0;
 			if (price > parseInt(localFilters.maxPrice)) {
 				return false;
 			}
@@ -539,7 +557,8 @@ const Properties = () => {
 				area = property.minSize || property.size || 0;
 			} else {
 				// Para otras fuentes (Idealista, Contentful)
-				area = property.features?.areaConstructed ||
+				area =
+					property.features?.areaConstructed ||
 					property.features?.builtArea ||
 					property.size ||
 					0;
@@ -557,7 +576,8 @@ const Properties = () => {
 				area = property.maxSize || property.size || 0;
 			} else {
 				// Para otras fuentes (Idealista, Contentful)
-				area = property.features?.areaConstructed ||
+				area =
+					property.features?.areaConstructed ||
 					property.features?.builtArea ||
 					property.size ||
 					0;
@@ -581,22 +601,20 @@ const Properties = () => {
 
 	// Si se selecciona precio más bajo, ordenar por precio ascendente y tomar los primeros
 	if (localFilters.lowestPrice) {
-		sortedFilteredProperties = sortedFilteredProperties
-			.sort((a, b) => {
-				const priceA = a.operation?.price || a.minPrice || a.price || 0;
-				const priceB = b.operation?.price || b.minPrice || b.price || 0;
-				return priceA - priceB;
-			})
+		sortedFilteredProperties = sortedFilteredProperties.sort((a, b) => {
+			const priceA = a.operation?.price || a.minPrice || a.price || 0;
+			const priceB = b.operation?.price || b.minPrice || b.price || 0;
+			return priceA - priceB;
+		});
 	}
 
 	// Si se selecciona precio más alto, ordenar por precio descendente y tomar los primeros
 	if (localFilters.highestPrice) {
-		sortedFilteredProperties = sortedFilteredProperties
-			.sort((a, b) => {
-				const priceA = a.operation?.price || a.minPrice || a.price || 0;
-				const priceB = b.operation?.price || b.minPrice || b.price || 0;
-				return priceB - priceA;
-			})
+		sortedFilteredProperties = sortedFilteredProperties.sort((a, b) => {
+			const priceA = a.operation?.price || a.minPrice || a.price || 0;
+			const priceB = b.operation?.price || b.minPrice || b.price || 0;
+			return priceB - priceA;
+		});
 	}
 
 	// Usar las propiedades filtradas y ordenadas
@@ -604,7 +622,10 @@ const Properties = () => {
 
 	// Función para obtener el título correcto de la propiedad (Idealista o Contentful)
 	const getPropertyTitleUnified = property => {
-		if (property.source === 'contentful' || property.source === 'newDevelopments') {
+		if (
+			property.source === 'contentful' ||
+			property.source === 'newDevelopments'
+		) {
 			return property.title || 'Propiedad exclusiva';
 		}
 		return getPropertyTitle(property);
@@ -612,7 +633,10 @@ const Properties = () => {
 
 	// Función para obtener el tamaño de la propiedad
 	const getPropertySizeUnified = property => {
-		if (property.source === 'contentful' || property.source === 'newDevelopments') {
+		if (
+			property.source === 'contentful' ||
+			property.source === 'newDevelopments'
+		) {
 			return property.size;
 		}
 		return property.features?.areaConstructed || property.features?.builtArea;
@@ -620,7 +644,10 @@ const Properties = () => {
 
 	// Función para obtener el número de habitaciones
 	const getRoomsUnified = property => {
-		if (property.source === 'contentful' || property.source === 'newDevelopments') {
+		if (
+			property.source === 'contentful' ||
+			property.source === 'newDevelopments'
+		) {
 			return property.rooms;
 		}
 		return property.features?.rooms;
@@ -628,7 +655,10 @@ const Properties = () => {
 
 	// Función para obtener el número de baños
 	const getBathroomsUnified = property => {
-		if (property.source === 'contentful' || property.source === 'newDevelopments') {
+		if (
+			property.source === 'contentful' ||
+			property.source === 'newDevelopments'
+		) {
 			return property.bathrooms;
 		}
 		return property.features?.bathroomNumber;
@@ -665,7 +695,9 @@ const Properties = () => {
 	const handlePropertyClick = property => {
 		// Usar solo el ID sin prefijo
 		const propertyId =
-			property.source === 'contentful' || property.source === 'newDevelopments' ? property.id : property.propertyId;
+			property.source === 'contentful' || property.source === 'newDevelopments'
+				? property.id
+				: property.propertyId;
 
 		// Navegar pasando la propiedad como estado para cargar instantáneamente
 		navigate(`/property/${propertyId}`, {
@@ -770,21 +802,47 @@ const Properties = () => {
 											/>
 										</PriceRangeGroup>
 										{/* Checkboxes para filtros de precio */}
-										<div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
-											<label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '14px', color: '#666' }}>
+										<div
+											style={{
+												display: 'flex',
+												gap: '20px',
+												marginTop: '20px'
+											}}
+										>
+											<label
+												style={{
+													display: 'flex',
+													alignItems: 'center',
+													gap: '5px',
+													fontSize: '14px',
+													color: '#666'
+												}}
+											>
 												<input
-													type="checkbox"
+													type='checkbox'
 													checked={localFilters.lowestPrice}
-													onChange={e => handleFilterChange('lowestPrice', e.target.checked)}
+													onChange={e =>
+														handleFilterChange('lowestPrice', e.target.checked)
+													}
 													style={{ marginRight: '5px' }}
 												/>
 												Precio más bajo
 											</label>
-											<label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '14px', color: '#666' }}>
+											<label
+												style={{
+													display: 'flex',
+													alignItems: 'center',
+													gap: '5px',
+													fontSize: '14px',
+													color: '#666'
+												}}
+											>
 												<input
-													type="checkbox"
+													type='checkbox'
 													checked={localFilters.highestPrice}
-													onChange={e => handleFilterChange('highestPrice', e.target.checked)}
+													onChange={e =>
+														handleFilterChange('highestPrice', e.target.checked)
+													}
 													style={{ marginRight: '5px' }}
 												/>
 												Precio más alto
@@ -834,11 +892,12 @@ const Properties = () => {
 										{loading || contentfulLoading
 											? 'Cargando propiedades...'
 											: error || contentfulError
-												? 'Error al cargar propiedades'
-												: `${finalFilteredProperties.length} ${finalFilteredProperties.length === 1
-																			? 'resultado'
-																			: 'resultados'
-																		} encontrados`}
+											? 'Error al cargar propiedades'
+											: `${finalFilteredProperties.length} ${
+													finalFilteredProperties.length === 1
+														? 'resultado'
+														: 'resultados'
+											  } encontrados`}
 									</ResultsCount>
 								</ResultsHeader>
 								{(loading || contentfulLoading) && (
@@ -861,7 +920,6 @@ const Properties = () => {
 										<PropertiesGrid>
 											{' '}
 											{finalFilteredProperties.map((property, index) => {
-
 												if (property.source === 'newDevelopments') {
 													return (
 														<NewDevelopmentCard
@@ -874,10 +932,13 @@ const Properties = () => {
 												}
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
-												
+
 												// Determinar la imagen a mostrar
 												let imageSrc = '/images/home-image-1.png'; // fallback
-												if (property.source === 'contentful' || property.source === 'newDevelopments') {
+												if (
+													property.source === 'contentful' ||
+													property.source === 'newDevelopments'
+												) {
 													// Para propiedades de Contentful
 													if (
 														property.images &&
@@ -911,7 +972,7 @@ const Properties = () => {
 														>
 															{/* Mostrar loader mientras carga, imagen cuando está disponible, o placeholder si no hay imagen */}
 															{loadingImages.has(propertyId) &&
-																property.source !== 'contentful' ? (
+															property.source !== 'contentful' ? (
 																<ImageLoader />
 															) : (
 																<PropertyImage
@@ -925,10 +986,11 @@ const Properties = () => {
 																	{getPropertyTitleUnified(property)}
 																</PropertyTitle>
 																<PropertyPrice>
-																	{property.source === 'contentful' || property.source === 'newDevelopments'
+																	{property.source === 'contentful' ||
+																	property.source === 'newDevelopments'
 																		? `${property.price?.toLocaleString(
-																			'es-ES'
-																		)} €`
+																				'es-ES'
+																		  )} €`
 																		: formatPrice(property)}
 																	<span>
 																		{' '}
@@ -936,8 +998,8 @@ const Properties = () => {
 																		{property.source === 'contentful'
 																			? 'ex-' + property.id.slice(-4)
 																			: property.reference ||
-																			propertyId?.toString().slice(-4) ||
-																			'1024'}
+																			  propertyId?.toString().slice(-4) ||
+																			  '1024'}
 																	</span>
 																</PropertyPrice>{' '}
 																<PropertyDescription>
