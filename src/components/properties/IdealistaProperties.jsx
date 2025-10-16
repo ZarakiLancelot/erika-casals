@@ -97,7 +97,6 @@ const Properties = () => {
 	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
 	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
 	const [newDev, setNewDev] = useState([]);
-	const [visibleProperties, setVisibleProperties] = useState(new Set());
 	// Establecer filtro a 'sale' al montar el componente y limpiar filtros locales
 	useEffect(() => {
 		setFilter('sale');
@@ -139,7 +138,7 @@ const Properties = () => {
 			if (
 				!loadedImages.has(propertyId) &&
 				!loadingImages.has(propertyId) &&
-				visibleProperties.has(propertyId)
+				propertyId
 			) {
 				setLoadingImages(prev => new Set([...prev, propertyId]));
 				await fetchPropertyImages(propertyId);
@@ -151,55 +150,10 @@ const Properties = () => {
 				});
 			}
 		},
-		[loadedImages, loadingImages, visibleProperties, fetchPropertyImages]
+		[loadedImages, loadingImages, fetchPropertyImages]
 	);
 
-	// Intersection Observer para lazy loading de imágenes
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const propertyId = entry.target.dataset.propertyId;
-						if (propertyId && propertyId !== 'undefined') {
-							setVisibleProperties(prev => new Set([...prev, propertyId]));
-						}
-					}
-				});
-			},
-			{
-				rootMargin: '100px', // Cargar 100px antes de que sea visible
-				threshold: 0.01
-			}
-		);
-
-		// Dar tiempo al DOM para renderizar
-		const timer = setTimeout(() => {
-			const cards = document.querySelectorAll('[data-property-id]');
-			cards.forEach(card => {
-				if (
-					card.dataset.propertyId &&
-					card.dataset.propertyId !== 'undefined'
-				) {
-					observer.observe(card);
-				}
-			});
-		}, 100);
-
-		return () => {
-			clearTimeout(timer);
-			observer.disconnect();
-		};
-	}, [properties, contentfulProperties]); // Re-observar cuando cambien las propiedades
-
-	// Cargar imágenes cuando una propiedad se vuelva visible
-	useEffect(() => {
-		visibleProperties.forEach(propertyId => {
-			if (!loadedImages.has(propertyId) && !loadingImages.has(propertyId)) {
-				loadPropertyImage(propertyId);
-			}
-		});
-	}, [visibleProperties, loadedImages, loadingImages, loadPropertyImage]); // Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
+	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
 	useEffect(() => {
 		const allProps = [
 			...properties,
@@ -933,6 +887,11 @@ const Properties = () => {
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
 
+												// Cargar imagen si es de Idealista y no está cargada
+												if (propertyId && !loadedImages.has(propertyId)) {
+													loadPropertyImage(propertyId);
+												}
+
 												// Determinar la imagen a mostrar
 												let imageSrc = '/images/home-image-1.png'; // fallback
 												if (
@@ -968,7 +927,6 @@ const Properties = () => {
 														<StyledPropertyCard
 															key={property.id || propertyId || index}
 															onClick={() => handlePropertyClick(property)}
-															data-property-id={propertyId} // Para Intersection Observer
 														>
 															{/* Mostrar loader mientras no esté cargada la imagen de Idealista */}
 															{property.source !== 'contentful' &&
