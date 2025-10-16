@@ -135,10 +135,7 @@ const Properties = () => {
 	// Función para cargar imagen de una propiedad cuando sea necesario
 	const loadPropertyImage = useCallback(
 		async propertyId => {
-			if (
-				!loadedImages.has(propertyId) &&
-				!loadingImages.has(propertyId)
-			) {
+			if (!loadedImages.has(propertyId) && !loadingImages.has(propertyId)) {
 				setLoadingImages(prev => new Set([...prev, propertyId]));
 				await fetchPropertyImages(propertyId);
 				setLoadedImages(prev => new Set([...prev, propertyId]));
