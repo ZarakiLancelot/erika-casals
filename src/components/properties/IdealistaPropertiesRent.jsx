@@ -82,7 +82,6 @@ const PropertiesRent = () => {
 	const [availableLocations, setAvailableLocations] = useState([]);
 	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
 	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
-	const [visibleProperties, setVisibleProperties] = useState(new Set());
 
 	// Función para cargar imagen de manera lazy solo cuando sea necesario
 	const loadPropertyImage = useCallback(
@@ -90,8 +89,7 @@ const PropertiesRent = () => {
 			if (
 				!loadedImages.has(propertyId) &&
 				!loadingImages.has(propertyId) &&
-				propertyId &&
-				visibleProperties.has(propertyId)
+				propertyId
 			) {
 				setLoadingImages(prev => new Set([...prev, propertyId]));
 				await fetchPropertyImages(propertyId);
@@ -103,76 +101,8 @@ const PropertiesRent = () => {
 				});
 			}
 		},
-		[loadedImages, loadingImages, visibleProperties, fetchPropertyImages]
+		[loadedImages, loadingImages, fetchPropertyImages]
 	);
-
-	// Intersection Observer para lazy loading de imágenes
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const propertyId = entry.target.dataset.propertyId;
-						if (propertyId && propertyId !== 'undefined') {
-							setVisibleProperties(prev => new Set([...prev, propertyId]));
-						}
-					}
-				});
-			},
-			{
-				rootMargin: '200px', // Cargar 200px antes de que sea visible
-				threshold: 0.01
-			}
-		);
-
-		// Dar tiempo al DOM para renderizar y observar las tarjetas
-		const setupObserver = () => {
-			const cards = document.querySelectorAll('[data-property-id]');
-
-			if (cards.length === 0) return;
-
-			cards.forEach(card => {
-				const propertyId = card.dataset.propertyId;
-				if (propertyId && propertyId !== 'undefined') {
-					observer.observe(card);
-
-					// Si la tarjeta ya está visible, marcarla inmediatamente
-					const rect = card.getBoundingClientRect();
-					const isVisible =
-						rect.top >= 0 &&
-						rect.left >= 0 &&
-						rect.bottom <=
-							(window.innerHeight || document.documentElement.clientHeight) +
-								200 &&
-						rect.right <=
-							(window.innerWidth || document.documentElement.clientWidth);
-
-					if (isVisible) {
-						setVisibleProperties(prev => new Set([...prev, propertyId]));
-					}
-				}
-			});
-		};
-
-		// Intentar varias veces para asegurar que el DOM esté listo
-		const timer1 = setTimeout(setupObserver, 100);
-		const timer2 = setTimeout(setupObserver, 500);
-
-		return () => {
-			clearTimeout(timer1);
-			clearTimeout(timer2);
-			observer.disconnect();
-		};
-	}, [properties, contentfulProperties]); // Re-observar cuando cambien las propiedades
-
-	// Cargar imágenes cuando una propiedad se vuelva visible
-	useEffect(() => {
-		visibleProperties.forEach(propertyId => {
-			if (!loadedImages.has(propertyId) && !loadingImages.has(propertyId)) {
-				loadPropertyImage(propertyId);
-			}
-		});
-	}, [visibleProperties, loadedImages, loadingImages, loadPropertyImage]);
 
 	// Establecer filtro a 'rent' al montar el componente y limpiar filtros locales
 	useEffect(() => {
@@ -735,6 +665,11 @@ const PropertiesRent = () => {
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
 
+												// Cargar imagen si es de Idealista y no está cargada
+												if (propertyId && !loadedImages.has(propertyId)) {
+													loadPropertyImage(propertyId);
+												}
+
 												// Determinar si debemos mostrar skeleton loader
 												const isIdealistaProperty =
 													property.source !== 'contentful';
@@ -770,7 +705,6 @@ const PropertiesRent = () => {
 													>
 														<StyledPropertyCard
 															onClick={() => handlePropertyClick(property)}
-															data-property-id={propertyId} // Para Intersection Observer
 														>
 															{/* Mostrar skeleton mientras carga imagen de Idealista */}
 															{shouldShowSkeleton ? (
