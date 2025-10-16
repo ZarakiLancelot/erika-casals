@@ -168,26 +168,45 @@ const Properties = () => {
 				});
 			},
 			{
-				rootMargin: '100px', // Cargar 100px antes de que sea visible
+				rootMargin: '200px', // Cargar 200px antes de que sea visible
 				threshold: 0.01
 			}
 		);
 
-		// Dar tiempo al DOM para renderizar
-		const timer = setTimeout(() => {
+		// Dar tiempo al DOM para renderizar y observar las tarjetas
+		const setupObserver = () => {
 			const cards = document.querySelectorAll('[data-property-id]');
+			
+			if (cards.length === 0) return;
+			
 			cards.forEach(card => {
-				if (
-					card.dataset.propertyId &&
-					card.dataset.propertyId !== 'undefined'
-				) {
+				const propertyId = card.dataset.propertyId;
+				if (propertyId && propertyId !== 'undefined') {
 					observer.observe(card);
+					
+					// Si la tarjeta ya está visible, marcarla inmediatamente
+					const rect = card.getBoundingClientRect();
+					const isVisible = (
+						rect.top >= 0 &&
+						rect.left >= 0 &&
+						rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + 200 &&
+						rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+					);
+					
+					if (isVisible) {
+						setVisibleProperties(prev => new Set([...prev, propertyId]));
+					}
 				}
 			});
-		}, 100);
+		};
+
+		// Intentar varias veces para asegurar que el DOM esté listo
+		const timer1 = setTimeout(setupObserver, 100);
+		const timer2 = setTimeout(setupObserver, 500);
 
 		return () => {
-			clearTimeout(timer);
+			clearTimeout(timer1);
+			clearTimeout(timer2);
 			observer.disconnect();
 		};
 	}, [properties, contentfulProperties]); // Re-observar cuando cambien las propiedades
