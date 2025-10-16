@@ -176,23 +176,25 @@ const Properties = () => {
 		// Dar tiempo al DOM para renderizar y observar las tarjetas
 		const setupObserver = () => {
 			const cards = document.querySelectorAll('[data-property-id]');
-			
+
 			if (cards.length === 0) return;
-			
+
 			cards.forEach(card => {
 				const propertyId = card.dataset.propertyId;
 				if (propertyId && propertyId !== 'undefined') {
 					observer.observe(card);
-					
+
 					// Si la tarjeta ya está visible, marcarla inmediatamente
 					const rect = card.getBoundingClientRect();
-					const isVisible = (
+					const isVisible =
 						rect.top >= 0 &&
 						rect.left >= 0 &&
-						rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + 200 &&
-						rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-					);
-					
+						rect.bottom <=
+							(window.innerHeight || document.documentElement.clientHeight) +
+								200 &&
+						rect.right <=
+							(window.innerWidth || document.documentElement.clientWidth);
+
 					if (isVisible) {
 						setVisibleProperties(prev => new Set([...prev, propertyId]));
 					}
