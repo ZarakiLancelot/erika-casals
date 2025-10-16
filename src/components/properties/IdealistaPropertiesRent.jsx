@@ -664,22 +664,10 @@ const PropertiesRent = () => {
 											{filteredProperties.map((property, index) => {
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
-
-												// Cargar imagen si es de Idealista y no está cargada
 												if (propertyId && !loadedImages.has(propertyId)) {
 													loadPropertyImage(propertyId);
-												}
-
-												// Determinar si debemos mostrar skeleton loader
-												const isIdealistaProperty =
-													property.source !== 'contentful';
-												const shouldShowSkeleton =
-													isIdealistaProperty &&
-													propertyId &&
-													!loadedImages.has(propertyId);
-
-												// Determinar la imagen a mostrar
-												let imageSrc = null;
+												} // Determinar la imagen a mostrar
+												let imageSrc;
 												if (property.source === 'contentful') {
 													// Para Contentful, usar la URL de la primera imagen
 													if (property.images && property.images.length > 0) {
@@ -691,8 +679,9 @@ const PropertiesRent = () => {
 														imageSrc = '/images/home-image-1.png';
 													}
 												} else {
-													// Para propiedades de Idealista
-													imageSrc = getPropertyMainImage(propertyId);
+													imageSrc =
+														getPropertyMainImage(propertyId) ||
+														'/images/home-image-1.png';
 												}
 												return (
 													<ScrollAnimation
@@ -706,12 +695,13 @@ const PropertiesRent = () => {
 														<StyledPropertyCard
 															onClick={() => handlePropertyClick(property)}
 														>
-															{/* Mostrar skeleton mientras carga imagen de Idealista */}
-															{shouldShowSkeleton ? (
+															{/* Mostrar loader mientras no esté cargada la imagen de Idealista */}
+															{property.source !== 'contentful' &&
+															!loadedImages.has(propertyId) ? (
 																<ImageLoader />
 															) : (
 																<PropertyImage
-																	src={imageSrc || '/images/home-image-1.png'}
+																	src={imageSrc}
 																	alt={getPropertyTitleUnified(property)}
 																/>
 															)}
