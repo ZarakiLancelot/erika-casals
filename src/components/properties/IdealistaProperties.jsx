@@ -933,8 +933,17 @@ const Properties = () => {
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
 
+												// Determinar si debemos mostrar skeleton loader
+												const isIdealistaProperty =
+													property.source !== 'contentful' &&
+													property.source !== 'newDevelopments';
+												const shouldShowSkeleton =
+													isIdealistaProperty &&
+													propertyId &&
+													!loadedImages.has(propertyId);
+
 												// Determinar la imagen a mostrar
-												let imageSrc = '/images/home-image-1.png'; // fallback
+												let imageSrc = null;
 												if (
 													property.source === 'contentful' ||
 													property.source === 'newDevelopments'
@@ -954,9 +963,7 @@ const Properties = () => {
 													}
 												} else {
 													// Para propiedades de Idealista
-													imageSrc =
-														getPropertyMainImage(propertyId) ||
-														'/images/home-image-1.png';
+													imageSrc = getPropertyMainImage(propertyId);
 												}
 
 												return (
@@ -970,13 +977,12 @@ const Properties = () => {
 															onClick={() => handlePropertyClick(property)}
 															data-property-id={propertyId} // Para Intersection Observer
 														>
-															{/* Mostrar loader mientras carga, imagen cuando está disponible, o placeholder si no hay imagen */}
-															{loadingImages.has(propertyId) &&
-															property.source !== 'contentful' ? (
+															{/* Mostrar skeleton mientras carga imagen de Idealista */}
+															{shouldShowSkeleton ? (
 																<ImageLoader />
 															) : (
 																<PropertyImage
-																	src={imageSrc}
+																	src={imageSrc || '/images/home-image-1.png'}
 																	alt={getPropertyTitleUnified(property)}
 																/>
 															)}{' '}

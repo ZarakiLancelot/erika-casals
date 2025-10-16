@@ -82,6 +82,7 @@ const PropertiesRent = () => {
 	const [availableLocations, setAvailableLocations] = useState([]);
 	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
 	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
+	const [visibleProperties, setVisibleProperties] = useState(new Set());
 
 	// Función para cargar imagen de manera lazy solo cuando sea necesario
 	const loadPropertyImage = useCallback(
@@ -89,7 +90,8 @@ const PropertiesRent = () => {
 			if (
 				!loadedImages.has(propertyId) &&
 				!loadingImages.has(propertyId) &&
-				propertyId
+				propertyId &&
+				visibleProperties.has(propertyId)
 			) {
 				setLoadingImages(prev => new Set([...prev, propertyId]));
 				await fetchPropertyImages(propertyId);
@@ -101,8 +103,55 @@ const PropertiesRent = () => {
 				});
 			}
 		},
-		[loadedImages, loadingImages, fetchPropertyImages]
+		[loadedImages, loadingImages, visibleProperties, fetchPropertyImages]
 	);
+
+	// Intersection Observer para lazy loading de imágenes
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const propertyId = entry.target.dataset.propertyId;
+						if (propertyId && propertyId !== 'undefined') {
+							setVisibleProperties(prev => new Set([...prev, propertyId]));
+						}
+					}
+				});
+			},
+			{
+				rootMargin: '100px', // Cargar 100px antes de que sea visible
+				threshold: 0.01
+			}
+		);
+
+		// Dar tiempo al DOM para renderizar
+		const timer = setTimeout(() => {
+			const cards = document.querySelectorAll('[data-property-id]');
+			cards.forEach(card => {
+				if (
+					card.dataset.propertyId &&
+					card.dataset.propertyId !== 'undefined'
+				) {
+					observer.observe(card);
+				}
+			});
+		}, 100);
+
+		return () => {
+			clearTimeout(timer);
+			observer.disconnect();
+		};
+	}, [properties, contentfulProperties]); // Re-observar cuando cambien las propiedades
+
+	// Cargar imágenes cuando una propiedad se vuelva visible
+	useEffect(() => {
+		visibleProperties.forEach(propertyId => {
+			if (!loadedImages.has(propertyId) && !loadingImages.has(propertyId)) {
+				loadPropertyImage(propertyId);
+			}
+		});
+	}, [visibleProperties, loadedImages, loadingImages, loadPropertyImage]);
 
 	// Establecer filtro a 'rent' al montar el componente y limpiar filtros locales
 	useEffect(() => {
@@ -664,10 +713,17 @@ const PropertiesRent = () => {
 											{filteredProperties.map((property, index) => {
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
-												if (propertyId && !loadedImages.has(propertyId)) {
-													loadPropertyImage(propertyId);
-												} // Determinar la imagen a mostrar
-												let imageSrc;
+
+												// Determinar si debemos mostrar skeleton loader
+												const isIdealistaProperty =
+													property.source !== 'contentful';
+												const shouldShowSkeleton =
+													isIdealistaProperty &&
+													propertyId &&
+													!loadedImages.has(propertyId);
+
+												// Determinar la imagen a mostrar
+												let imageSrc = null;
 												if (property.source === 'contentful') {
 													// Para Contentful, usar la URL de la primera imagen
 													if (property.images && property.images.length > 0) {
@@ -679,9 +735,8 @@ const PropertiesRent = () => {
 														imageSrc = '/images/home-image-1.png';
 													}
 												} else {
-													imageSrc =
-														getPropertyMainImage(propertyId) ||
-														'/images/home-image-1.png';
+													// Para propiedades de Idealista
+													imageSrc = getPropertyMainImage(propertyId);
 												}
 												return (
 													<ScrollAnimation
@@ -694,14 +749,14 @@ const PropertiesRent = () => {
 													>
 														<StyledPropertyCard
 															onClick={() => handlePropertyClick(property)}
+															data-property-id={propertyId} // Para Intersection Observer
 														>
-															{/* Mostrar loader solo para propiedades de Idealista */}
-															{property.source !== 'contentful' &&
-															loadingImages.has(propertyId) ? (
+															{/* Mostrar skeleton mientras carga imagen de Idealista */}
+															{shouldShowSkeleton ? (
 																<ImageLoader />
 															) : (
 																<PropertyImage
-																	src={imageSrc}
+																	src={imageSrc || '/images/home-image-1.png'}
 																	alt={getPropertyTitleUnified(property)}
 																/>
 															)}
