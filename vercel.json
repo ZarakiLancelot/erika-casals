@@ -1,10 +1,4 @@
 {
-	"crons": [
-		{
-			"path": "/api/update-idealista",
-			"schedule": "30 0,8,16 * * *"
-		}
-	],
 	"rewrites": [
 		{
 			"source": "/((?!api/).*)",
