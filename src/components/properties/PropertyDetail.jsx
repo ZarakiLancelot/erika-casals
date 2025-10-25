@@ -1276,8 +1276,9 @@ const PropertyDetail = ({ property, onBack, images }) => {
 		// Para propiedades de Idealista, usar descriptions
 		if (property.descriptions && property.descriptions.length > 0) {
 			const esDesc = property.descriptions.find(desc => desc.language === 'es');
-			if (esDesc) return esDesc.text;
-			return property.descriptions[0].text;
+			// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
+			if (esDesc) return esDesc.text || esDesc.comment;
+			return property.descriptions[0].text || property.descriptions[0].comment;
 		}
 
 		// Descripción por defecto

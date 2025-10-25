@@ -4,7 +4,9 @@ import {
 	shouldShowAddress
 } from '../utils/addressUtils';
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+// NUEVO: Leer del JSON estático generado por el sistema FTP de Idealista
+// El archivo se actualiza cada 8 horas mediante el script npm run update:idealista
+const STATIC_JSON_PATH = '/idealista-properties.json';
 
 export const useIdealistaProperties = () => {
 	const [properties, setProperties] = useState([]);
@@ -13,49 +15,31 @@ export const useIdealistaProperties = () => {
 	const [selectedProperty, setSelectedProperty] = useState(null);
 	const [propertyImages, setPropertyImages] = useState({});
 	const [filter, setFilter] = useState('all'); // 'all', 'sale', 'rent'
-	// Función para obtener todas las propiedades (múltiples páginas)
+
+	// Función para obtener todas las propiedades desde el JSON estático
 	const fetchAllProperties = useCallback(async () => {
 		setLoading(true);
 		setError(null);
 
 		try {
-			let allProperties = [];
-			let currentPage = 1;
-			let hasMorePages = true;
+			// Leer del archivo JSON estático en /public
+			const response = await fetch(STATIC_JSON_PATH);
 
-			while (hasMorePages) {
-				const params = new URLSearchParams({
-					page: currentPage,
-					size: 100, // Obtener 100 propiedades por página
-					state: 'active'
-				});
-
-				const response = await fetch(`${BACKEND_URL}/api/properties?${params}`);
-				const result = await response.json();
-
-				if (result.success && result.data) {
-					const pageProperties = result.data.properties || result.data || [];
-					allProperties = [...allProperties, ...pageProperties];
-
-					// Verificar si hay más páginas
-					if (result.pagination) {
-						const { page, size, total } = result.pagination;
-						const totalPages = Math.ceil(total / size);
-						hasMorePages = page < totalPages;
-					} else {
-						// Si no hay información de paginación y obtuvimos menos de 100, probablemente no hay más
-						hasMorePages = pageProperties.length === 100;
-					}
-
-					currentPage++;
-				} else {
-					hasMorePages = false;
-				}
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
 			}
 
-			setProperties(allProperties);
+			const result = await response.json();
+
+			if (result.success && result.data) {
+				const allProperties = result.data.properties || result.data || [];
+				setProperties(allProperties);
+			} else {
+				throw new Error('Formato de datos inválido');
+			}
 		} catch (err) {
-			setError('Error de conexión con el servidor');
+			console.error('Error cargando propiedades:', err);
+			setError('Error cargando propiedades desde Idealista');
 			setProperties([]);
 		} finally {
 			setLoading(false);
@@ -63,80 +47,115 @@ export const useIdealistaProperties = () => {
 	}, []);
 
 	// Función para obtener todas las propiedades
-	const fetchProperties = useCallback(async (options = {}) => {
-		setLoading(true);
-		setError(null);
-		try {
-			const params = new URLSearchParams({
-				page: options.page || 1,
-				size: options.size || 100,
-				state: options.state || 'active'
-			});
-
-			const response = await fetch(`${BACKEND_URL}/api/properties?${params}`);
-			const result = await response.json();
-
-			if (result.success && result.data) {
-				const properties = result.data.properties || result.data || [];
-				setProperties(properties);
-			} else {
-				setError(result.error || 'Error al cargar propiedades');
-				setProperties([]);
-			}
-		} catch (err) {
-			setError('Error de conexión con el servidor');
-			setProperties([]);
-		} finally {
-			setLoading(false);
-		}
-	}, []);
+	const fetchProperties = useCallback(
+		async (options = {}) => {
+			// Ahora simplemente redirige a fetchAllProperties ya que todo está en un archivo
+			return fetchAllProperties();
+		},
+		[fetchAllProperties]
+	);
 
 	// Función para obtener una propiedad específica
-	const fetchProperty = useCallback(async propertyId => {
-		try {
-			const response = await fetch(
-				`${BACKEND_URL}/api/properties/${propertyId}`
-			);
-			const result = await response.json();
+	const fetchProperty = useCallback(
+		async propertyId => {
+			try {
+				// Buscar en las propiedades ya cargadas
+				if (properties.length > 0) {
+					const property = properties.find(p => p.propertyId === propertyId);
+					if (property) {
+						setSelectedProperty(property);
+						return property;
+					}
+				}
 
-			if (result.success && result.data) {
-				setSelectedProperty(result.data);
-				return result.data;
-			} else {
-				throw new Error(result.error || 'Error al cargar la propiedad');
+				// Si no están cargadas, cargarlas primero
+				const response = await fetch(STATIC_JSON_PATH);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+
+				const result = await response.json();
+				if (result.success && result.data) {
+					const allProperties = result.data.properties || [];
+					const property = allProperties.find(p => p.propertyId === propertyId);
+
+					if (property) {
+						setSelectedProperty(property);
+						return property;
+					}
+				}
+
+				throw new Error('Propiedad no encontrada');
+			} catch (err) {
+				console.error('Error al cargar la propiedad:', err);
+				setError('Error al cargar los detalles de la propiedad');
+				return null;
 			}
-		} catch (err) {
-			setError('Error al cargar los detalles de la propiedad');
-			return null;
-		}
-	}, []);
+		},
+		[properties]
+	);
 
 	// Función para obtener imágenes de una propiedad
-	const fetchPropertyImages = useCallback(async propertyId => {
-		try {
-			const response = await fetch(
-				`${BACKEND_URL}/api/properties/${propertyId}/images`
-			);
+	const fetchPropertyImages = useCallback(
+		async propertyId => {
+			try {
+				// Las imágenes ya vienen en el JSON de la propiedad
+				const property = properties.find(p => p.propertyId === propertyId);
 
-			if (!response.ok) {
+				if (property && property.images) {
+					const images = property.images.map(img => ({
+						url: img.url,
+						id: img.id,
+						position: img.position,
+						tag: img.tag || 'unknown'
+					}));
+
+					setPropertyImages(prev => ({
+						...prev,
+						[propertyId]: images
+					}));
+
+					return images;
+				}
+
+				// Si no está en properties, intentar cargar del JSON
+				const response = await fetch(STATIC_JSON_PATH);
+				if (!response.ok) {
+					return [];
+				}
+
+				const result = await response.json();
+				if (result.success && result.data) {
+					const allProperties = result.data.properties || [];
+					const foundProperty = allProperties.find(
+						p => p.propertyId === propertyId
+					);
+
+					if (foundProperty && foundProperty.images) {
+						const images = foundProperty.images.map(img => ({
+							url: img.url,
+							id: img.id,
+							position: img.position,
+							tag: img.tag || 'unknown'
+						}));
+
+						setPropertyImages(prev => ({
+							...prev,
+							[propertyId]: images
+						}));
+
+						return images;
+					}
+				}
+
+				return [];
+			} catch (err) {
+				console.error('Error al cargar imágenes:', err);
 				return [];
 			}
-
-			const result = await response.json();
-
-			if (result.success && result.data && result.data.images) {
-				setPropertyImages(prev => ({
-					...prev,
-					[propertyId]: result.data.images
-				}));
-				return result.data.images;
-			} else {
-				return [];
-			}
-		} catch (err) {
-			return [];
-		}
-	}, []);
+		},
+		[properties]
+	);
 	// Función para obtener la primera imagen de una propiedad para el grid
 	const getPropertyMainImage = useCallback(
 		propertyId => {
@@ -195,7 +214,9 @@ export const useIdealistaProperties = () => {
 		}
 
 		return `${type} en calle ${location}`;
-	}, []); // Estado derivado para las propiedades filtradas - se actualiza cuando cambia filter o properties
+	}, []);
+
+	// Estado derivado para las propiedades filtradas - se actualiza cuando cambia filter o properties
 	const filteredProperties = useMemo(() => {
 		if (filter === 'all') {
 			return properties;
@@ -206,8 +227,13 @@ export const useIdealistaProperties = () => {
 				return false;
 			}
 
-			const isMatch = property.operation.type === filter;
-			return isMatch;
+			// Soportar tanto el formato nuevo (string) como el antiguo (objeto)
+			const operationType =
+				typeof property.operation === 'string'
+					? property.operation
+					: property.operation.type;
+
+			return operationType === filter;
 		});
 
 		return filtered;
@@ -233,35 +259,53 @@ export const useIdealistaProperties = () => {
 			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
 		}
 
-		// Para propiedades de Idealista, usar la estructura operation
+		// Para propiedades de Idealista FTP (nuevo formato)
+		if (property.source === 'idealista-ftp') {
+			if (!property.price) return 'Precio no disponible';
+
+			const formattedPrice = new Intl.NumberFormat('es-ES', {
+				style: 'currency',
+				currency: 'EUR',
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0
+			}).format(property.price);
+
+			// operation es un string: 'sale', 'rent', 'rent_to_own'
+			const isRent =
+				property.operation === 'rent' || property.operation === 'rent_to_own';
+			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
+		}
+
+		// Para propiedades de Idealista API (formato antiguo con objeto operation)
 		if (!property.operation) return 'Precio no disponible';
 
-		const { price, type } = property.operation;
+		// Soportar tanto formato string como objeto
+		const price =
+			typeof property.operation === 'object'
+				? property.operation.price
+				: property.price;
+		const operationType =
+			typeof property.operation === 'string'
+				? property.operation
+				: property.operation.type;
+
+		if (!price) return 'Precio no disponible';
 
 		const formattedPrice = new Intl.NumberFormat('es-ES', {
 			style: 'currency',
 			currency: 'EUR',
 			minimumFractionDigits: 0,
 			maximumFractionDigits: 0
-		}).format(price || 0);
+		}).format(price);
 
-		return `${formattedPrice}${type === 'rent' ? ' / mes' : ''}`;
+		return `${formattedPrice}${operationType === 'rent' ? ' / mes' : ''}`;
 	}, []);
 
-	// Test de conexión con el backend
-	const testConnection = useCallback(async () => {
-		try {
-			const response = await fetch(`${BACKEND_URL}/api/status`);
-			const result = await response.json();
-			return result.status === 'ok';
-		} catch (err) {
-			return false;
-		}
-	}, []);
 	// Cargar propiedades al montar el componente
 	useEffect(() => {
 		fetchAllProperties(); // Usar la nueva función que carga todas las propiedades
 	}, [fetchAllProperties]);
+
 	return {
 		// Estado
 		properties: filteredProperties,
@@ -277,7 +321,6 @@ export const useIdealistaProperties = () => {
 		fetchPropertyImages,
 		setSelectedProperty,
 		setFilter,
-		testConnection,
 
 		// Utilidades
 		formatPrice,

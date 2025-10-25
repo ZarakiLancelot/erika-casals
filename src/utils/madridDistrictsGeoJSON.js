@@ -155,8 +155,10 @@ const DISTRICT_COORDINATES = {
 
 // Función para determinar si una propiedad está en Madrid
 export const isInMadrid = property => {
-	if (!property.address) return false;
-	return property.address.town?.toLowerCase() === 'madrid';
+	// Soportar ambos formatos (API y FTP)
+	const town = property.municipality?.toLowerCase() || property.address?.town?.toLowerCase();
+	if (!town && !property.address) return false;
+	return town === 'madrid';
 };
 
 // Función mejorada para obtener el distrito basándose en coordenadas
@@ -207,18 +209,45 @@ export const getOrganizedLocations = (
 
 	// Procesar propiedades de Idealista
 	idealistaProperties.forEach(property => {
+		// Soportar ambos formatos (API y FTP)
+		const town = property.municipality || property.address?.town;
+		const districtName = property.district || property.address?.district;
+		const lat = property.latitude || property.address?.latitude;
+		const lon = property.longitude || property.address?.longitude;
+		
+		// Si no hay datos de ubicación (dirección oculta), intentar extraer del texto de descripción
+		if ((!town || town === '') && (!districtName || districtName === '') && !lat && !lon) {
+			// Intentar extraer ubicación de la descripción
+			const description = property.descriptions?.find(d => d.language === 'es')?.comment ||
+			                   property.descriptions?.find(d => d.language === 'es')?.text || '';
+			
+			if (description) {
+				// Buscar menciones de distritos en la descripción
+				const lowerDesc = description.toLowerCase();
+				MADRID_DISTRICTS.forEach(district => {
+					if (lowerDesc.includes(district.toLowerCase())) {
+						locations.madridCiudad.districts.add(district);
+					}
+				});
+				
+				// Si encontramos distritos pero no podemos confirmar si es Madrid ciudad,
+				// asumir que es Madrid si menciona "madrid"
+				if (lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad de madrid')) {
+					// Ya agregamos los distritos arriba
+				}
+			}
+			return; // Saltar el resto si no hay datos de ubicación
+		}
+		
 		if (isInMadrid(property)) {
 			// Es de Madrid ciudad, intentar determinar el distrito
-			const district = getDistrictFromCoordinates(
-				property.address?.latitude,
-				property.address?.longitude
-			);
+			const district = getDistrictFromCoordinates(lat, lon);
 
 			if (district) {
 				locations.madridCiudad.districts.add(district);
-			} else if (property.address?.district) {
-				// Si no se pudo determinar por coordenadas, usar el distrito que viene en la API
-				const cleanDistrict = cleanDistrictName(property.address.district);
+			} else if (districtName) {
+				// Si no se pudo determinar por coordenadas, usar el distrito que viene en los datos
+				const cleanDistrict = cleanDistrictName(districtName);
 				if (cleanDistrict && MADRID_DISTRICTS.includes(cleanDistrict)) {
 					locations.madridCiudad.districts.add(cleanDistrict);
 				} else {
@@ -227,9 +256,9 @@ export const getOrganizedLocations = (
 			} else {
 				locations.madridCiudad.otherLocations.add('Madrid - Otros');
 			}
-		} else if (property.address?.town) {
+		} else if (town && town !== '') {
 			// No es Madrid ciudad, probablemente Comunidad de Madrid
-			locations.comunidadMadrid.municipalities.add(property.address.town);
+			locations.comunidadMadrid.municipalities.add(town);
 		}
 	});
 

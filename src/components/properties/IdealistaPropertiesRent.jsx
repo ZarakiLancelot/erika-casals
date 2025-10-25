@@ -243,12 +243,21 @@ const PropertiesRent = () => {
 		const description =
 			property.descriptions
 				?.find(desc => desc.language === 'es')
+				?.comment?.toLowerCase() ||
+			property.descriptions
+				?.find(desc => desc.language === 'es')
 				?.text?.toLowerCase() ||
+			property.descriptions?.[0]?.comment?.toLowerCase() ||
 			property.descriptions?.[0]?.text?.toLowerCase() ||
 			property.description?.toLowerCase() ||
 			'';
-		const address = property.address?.streetName?.toLowerCase() || '';
-		const district = property.address?.district?.toLowerCase() || '';
+		// Soportar ambos formatos (API y FTP)
+		const address = 
+			(typeof property.address === 'string' ? property.address : property.address?.streetName)?.toLowerCase() || '';
+		const district = 
+			property.district?.toLowerCase() ||
+			property.address?.district?.toLowerCase() || 
+			'';
 		const reference = property.reference?.toLowerCase() || '';
 		const propertyId = property.propertyId
 			? property.propertyId.toString()
@@ -274,54 +283,89 @@ const PropertiesRent = () => {
 		if (localFilters.location && localFilters.location !== '') {
 			const locationFilter = localFilters.location.toLowerCase();
 
-			// Para propiedades de Idealista
-			if (property.address) {
-				if (locationFilter === 'madrid ciudad') {
-					// Si se selecciona Madrid ciudad, solo mostrar propiedades de Madrid
-					if (!isInMadrid(property)) {
-						return false;
-					}
-
-					// Si también hay filtro de distrito, aplicarlo
-					if (localFilters.district && localFilters.district !== '') {
-						const propertyDistrict =
-							getDistrictFromCoordinates(
-								property.address.latitude,
-								property.address.longitude
-							) || property.address.district;
-
-						if (
-							!propertyDistrict ||
-							propertyDistrict.toLowerCase() !==
-								localFilters.district.toLowerCase()
-						) {
+			// Para propiedades de Idealista del FTP
+			if (property.propertyId && property.source !== 'contentful') {
+				// Soportar ambos formatos (API y FTP)
+				const lat = property.latitude || property.address?.latitude;
+				const lon = property.longitude || property.address?.longitude;
+				const municipality = property.municipality || property.address?.town;
+				const district = property.district || property.address?.district;
+				
+				// Si no hay datos de ubicación (dirección oculta), buscar en la descripción
+				if ((!municipality || municipality === '') && (!district || district === '') && !lat && !lon) {
+					const description = 
+						property.descriptions?.find(d => d.language === 'es')?.comment ||
+						property.descriptions?.find(d => d.language === 'es')?.text || 
+						'';
+					const lowerDesc = description.toLowerCase();
+					
+					if (locationFilter === 'madrid ciudad') {
+						// Buscar menciones de "madrid" pero no "comunidad de madrid"
+						if (lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad de madrid')) {
+							// Si también hay filtro de distrito, verificar que lo mencione
+							if (localFilters.district && localFilters.district !== '') {
+								if (!lowerDesc.includes(localFilters.district.toLowerCase())) {
+									return false;
+								}
+							}
+							// Coincide con Madrid ciudad
+						} else {
 							return false;
 						}
-					}
-				} else if (locationFilter === 'comunidad de madrid y resto de españa') {
-					// Si se selecciona Comunidad de Madrid y resto de España, mostrar todo EXCEPTO Madrid ciudad
-					if (isInMadrid(property)) {
-						return false;
-					}
-
-					// Si también hay filtro de municipio, aplicarlo
-					if (localFilters.municipality && localFilters.municipality !== '') {
-						const propertyTown = property.address?.town?.toLowerCase() || '';
-						if (propertyTown !== localFilters.municipality.toLowerCase()) {
+					} else if (locationFilter === 'comunidad de madrid y resto de españa') {
+						// Para comunidad de madrid, aceptar propiedades que no mencionan "madrid ciudad"
+						if (lowerDesc.includes('madrid ciudad') || 
+						    (lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad'))) {
+							return false;
+						}
+					} else {
+						// Para otras ubicaciones específicas, buscar en la descripción
+						if (!lowerDesc.includes(locationFilter)) {
 							return false;
 						}
 					}
 				} else {
-					// Para otras ubicaciones (Costa Española, Florida), buscar coincidencia
-					const address = property.address?.streetName?.toLowerCase() || '';
-					const district = property.address?.district?.toLowerCase() || '';
-					const town = property.address?.town?.toLowerCase() || '';
-					if (
-						!address.includes(locationFilter) &&
-						!district.includes(locationFilter) &&
-						!town.includes(locationFilter)
-					) {
-						return false;
+					// Hay datos de ubicación, usar la lógica normal
+					if (locationFilter === 'madrid ciudad') {
+						if (!isInMadrid({ address: { latitude: lat, longitude: lon }, municipality })) {
+							return false;
+						}
+
+						if (localFilters.district && localFilters.district !== '') {
+							const propertyDistrict =
+								getDistrictFromCoordinates(lat, lon) ||
+								district;
+
+							if (
+								!propertyDistrict ||
+								propertyDistrict.toLowerCase() !==
+									localFilters.district.toLowerCase()
+							) {
+								return false;
+							}
+						}
+					} else if (locationFilter === 'comunidad de madrid y resto de españa') {
+						if (isInMadrid({ address: { latitude: lat, longitude: lon }, municipality })) {
+							return false;
+						}
+
+						if (localFilters.municipality && localFilters.municipality !== '') {
+							if (municipality?.toLowerCase() !== localFilters.municipality.toLowerCase()) {
+								return false;
+							}
+						}
+					} else {
+						// Para otras ubicaciones (Costa Española, Florida), buscar coincidencia
+						const address = 
+							(typeof property.address === 'string' ? property.address : property.address?.streetName)?.toLowerCase() || '';
+
+						if (
+							!address.includes(locationFilter) &&
+							!(district && district.toLowerCase().includes(locationFilter)) &&
+							!(municipality && municipality.toLowerCase().includes(locationFilter))
+						) {
+							return false;
+						}
 					}
 				}
 			}
@@ -378,7 +422,8 @@ const PropertiesRent = () => {
 
 		// Filtro por precio mínimo
 		if (localFilters.minPrice && localFilters.minPrice !== '') {
-			const price = property.operation?.price || property.price || 0;
+			// Soportar ambos formatos (API: operation.price, FTP: price directo)
+			const price = property.price || property.operation?.price || 0;
 			if (price < parseInt(localFilters.minPrice)) {
 				return false;
 			}
@@ -386,7 +431,8 @@ const PropertiesRent = () => {
 
 		// Filtro por precio máximo
 		if (localFilters.maxPrice && localFilters.maxPrice !== '') {
-			const price = property.operation?.price || property.price || 0;
+			// Soportar ambos formatos (API: operation.price, FTP: price directo)
+			const price = property.price || property.operation?.price || 0;
 			if (price > parseInt(localFilters.maxPrice)) {
 				return false;
 			}
@@ -394,10 +440,11 @@ const PropertiesRent = () => {
 
 		// Filtro por área mínima
 		if (localFilters.minArea && localFilters.minArea !== '') {
+			// Soportar ambos formatos (API: features.areaConstructed, FTP: size directo)
 			const area =
+				property.size ||
 				property.features?.areaConstructed ||
 				property.features?.builtArea ||
-				property.size ||
 				0;
 			if (area < parseInt(localFilters.minArea)) {
 				return false;
@@ -406,10 +453,11 @@ const PropertiesRent = () => {
 
 		// Filtro por área máxima
 		if (localFilters.maxArea && localFilters.maxArea !== '') {
+			// Soportar ambos formatos (API: features.areaConstructed, FTP: size directo)
 			const area =
+				property.size ||
 				property.features?.areaConstructed ||
 				property.features?.builtArea ||
-				property.size ||
 				0;
 			if (area > parseInt(localFilters.maxArea)) {
 				return false;
@@ -744,13 +792,14 @@ const PropertiesRent = () => {
 																			const esDesc = property.descriptions.find(
 																				desc => desc.language === 'es'
 																			);
+																			// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
 																			const description = esDesc
-																				? esDesc.text
-																				: property.descriptions[0].text;
+																				? (esDesc.text || esDesc.comment)
+																				: (property.descriptions[0].text || property.descriptions[0].comment);
 																			// Limitar a 150 caracteres
-																			return description.length > 150
+																			return description && description.length > 150
 																				? description.substring(0, 150) + '...'
-																				: description;
+																				: (description || 'Propiedad en alquiler en excelente zona.');
 																		}
 																		return (
 																			property.description ||

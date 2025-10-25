@@ -12,11 +12,15 @@
 		"start:frontend": "npm run dev",
 		"test:contacts": "node test-contacts-api.js",
 		"generate:report": "node generate-test-report.js",
-		"dev:serverless": "vercel dev --listen 3001"
+		"dev:serverless": "vercel dev --listen 3001",
+		"parse:idealista": "node scripts/parseIdealistaXML.js",
+		"download:idealista": "node scripts/downloadIdealistaFTP.js",
+		"update:idealista": "node scripts/updateIdealistaFeed.js"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
 		"axios": "^1.10.0",
+		"basic-ftp": "^5.0.5",
 		"contentful": "^11.7.2",
 		"framer-motion": "^12.19.1",
 		"node-fetch": "^2.6.7",
@@ -26,7 +30,8 @@
 		"react-router-dom": "^7.6.2",
 		"react-to-print": "^3.1.1",
 		"styled-components": "^6.1.18",
-		"uuid": "9.0.0"
+		"uuid": "9.0.0",
+		"xml2js": "^0.6.2"
 	},
 	"devDependencies": {
 		"@vitejs/plugin-react": "3.1.0",
