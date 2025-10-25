@@ -14,16 +14,19 @@ Ve a: `https://github.com/adrian-lafuerza/erika/settings/secrets/actions`
 Crea estos 3 secrets:
 
 ### IDEALISTA_FTP_HOST
+
 ```
 ftp.habitania.com
 ```
 
 ### IDEALISTA_FTP_USER
+
 ```
 es117868528
 ```
 
 ### IDEALISTA_FTP_PASSWORD
+
 ```
 J7Mau=$X*N+@&7RI
 ```
@@ -54,6 +57,7 @@ Esto descargará el XML del FTP, generará el JSON y hará un commit automático
 ## 4️⃣ Vercel se Redeploya Automáticamente
 
 Una vez que GitHub Actions hace el commit con el JSON actualizado:
+
 - Vercel detecta el push automáticamente
 - Redeploya la aplicación con las 80 propiedades actualizadas
 - ✅ Tu sitio estará actualizado en 1-2 minutos
@@ -66,11 +70,13 @@ El sistema funciona completamente con GitHub Actions + Vercel Free.
 ## ⏰ Actualizaciones Automáticas
 
 El sistema se ejecutará automáticamente cada 8 horas:
+
 - **00:30 UTC** (01:30 AM España)
 - **08:30 UTC** (09:30 AM España)
 - **16:30 UTC** (17:30 PM España)
 
 Cada vez que Idealista actualice el FTP, GitHub Actions:
+
 1. Descarga el nuevo XML
 2. Genera el JSON actualizado
 3. Hace commit
@@ -93,11 +99,13 @@ npm run parse:idealista
 ## ��� Verificar Estado
 
 ### Ver propiedades actuales:
+
 ```bash
 node -e "const j=require('./public/idealista-properties.json');console.log('Total:',j.data.properties.length,'propiedades')"
 ```
 
 ### Ver último workflow ejecutado:
+
 `https://github.com/adrian-lafuerza/erika/actions`
 
 ---
@@ -137,9 +145,9 @@ node -e "const j=require('./public/idealista-properties.json');console.log('Tota
 ## �� Resultado Final
 
 ✨ **Sistema completamente automatizado**:
+
 - ❌ Sin rate limits de API
 - ✅ Actualizaciones cada 8 horas
 - ✅ Deploy automático en Vercel
 - ✅ 80 propiedades sincronizadas con Idealista
 - ✅ Filtros funcionando correctamente
-
