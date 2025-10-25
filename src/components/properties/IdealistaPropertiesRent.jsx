@@ -252,11 +252,14 @@ const PropertiesRent = () => {
 			property.description?.toLowerCase() ||
 			'';
 		// Soportar ambos formatos (API y FTP)
-		const address = 
-			(typeof property.address === 'string' ? property.address : property.address?.streetName)?.toLowerCase() || '';
-		const district = 
+		const address =
+			(typeof property.address === 'string'
+				? property.address
+				: property.address?.streetName
+			)?.toLowerCase() || '';
+		const district =
 			property.district?.toLowerCase() ||
-			property.address?.district?.toLowerCase() || 
+			property.address?.district?.toLowerCase() ||
 			'';
 		const reference = property.reference?.toLowerCase() || '';
 		const propertyId = property.propertyId
@@ -290,18 +293,26 @@ const PropertiesRent = () => {
 				const lon = property.longitude || property.address?.longitude;
 				const municipality = property.municipality || property.address?.town;
 				const district = property.district || property.address?.district;
-				
+
 				// Si no hay datos de ubicación (dirección oculta), buscar en la descripción
-				if ((!municipality || municipality === '') && (!district || district === '') && !lat && !lon) {
-					const description = 
+				if (
+					(!municipality || municipality === '') &&
+					(!district || district === '') &&
+					!lat &&
+					!lon
+				) {
+					const description =
 						property.descriptions?.find(d => d.language === 'es')?.comment ||
-						property.descriptions?.find(d => d.language === 'es')?.text || 
+						property.descriptions?.find(d => d.language === 'es')?.text ||
 						'';
 					const lowerDesc = description.toLowerCase();
-					
+
 					if (locationFilter === 'madrid ciudad') {
 						// Buscar menciones de "madrid" pero no "comunidad de madrid"
-						if (lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad de madrid')) {
+						if (
+							lowerDesc.includes('madrid') &&
+							!lowerDesc.includes('comunidad de madrid')
+						) {
 							// Si también hay filtro de distrito, verificar que lo mencione
 							if (localFilters.district && localFilters.district !== '') {
 								if (!lowerDesc.includes(localFilters.district.toLowerCase())) {
@@ -312,10 +323,14 @@ const PropertiesRent = () => {
 						} else {
 							return false;
 						}
-					} else if (locationFilter === 'comunidad de madrid y resto de españa') {
+					} else if (
+						locationFilter === 'comunidad de madrid y resto de españa'
+					) {
 						// Para comunidad de madrid, aceptar propiedades que no mencionan "madrid ciudad"
-						if (lowerDesc.includes('madrid ciudad') || 
-						    (lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad'))) {
+						if (
+							lowerDesc.includes('madrid ciudad') ||
+							(lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad'))
+						) {
 							return false;
 						}
 					} else {
@@ -327,14 +342,18 @@ const PropertiesRent = () => {
 				} else {
 					// Hay datos de ubicación, usar la lógica normal
 					if (locationFilter === 'madrid ciudad') {
-						if (!isInMadrid({ address: { latitude: lat, longitude: lon }, municipality })) {
+						if (
+							!isInMadrid({
+								address: { latitude: lat, longitude: lon },
+								municipality
+							})
+						) {
 							return false;
 						}
 
 						if (localFilters.district && localFilters.district !== '') {
 							const propertyDistrict =
-								getDistrictFromCoordinates(lat, lon) ||
-								district;
+								getDistrictFromCoordinates(lat, lon) || district;
 
 							if (
 								!propertyDistrict ||
@@ -344,25 +363,41 @@ const PropertiesRent = () => {
 								return false;
 							}
 						}
-					} else if (locationFilter === 'comunidad de madrid y resto de españa') {
-						if (isInMadrid({ address: { latitude: lat, longitude: lon }, municipality })) {
+					} else if (
+						locationFilter === 'comunidad de madrid y resto de españa'
+					) {
+						if (
+							isInMadrid({
+								address: { latitude: lat, longitude: lon },
+								municipality
+							})
+						) {
 							return false;
 						}
 
 						if (localFilters.municipality && localFilters.municipality !== '') {
-							if (municipality?.toLowerCase() !== localFilters.municipality.toLowerCase()) {
+							if (
+								municipality?.toLowerCase() !==
+								localFilters.municipality.toLowerCase()
+							) {
 								return false;
 							}
 						}
 					} else {
 						// Para otras ubicaciones (Costa Española, Florida), buscar coincidencia
-						const address = 
-							(typeof property.address === 'string' ? property.address : property.address?.streetName)?.toLowerCase() || '';
+						const address =
+							(typeof property.address === 'string'
+								? property.address
+								: property.address?.streetName
+							)?.toLowerCase() || '';
 
 						if (
 							!address.includes(locationFilter) &&
 							!(district && district.toLowerCase().includes(locationFilter)) &&
-							!(municipality && municipality.toLowerCase().includes(locationFilter))
+							!(
+								municipality &&
+								municipality.toLowerCase().includes(locationFilter)
+							)
 						) {
 							return false;
 						}
@@ -794,12 +829,15 @@ const PropertiesRent = () => {
 																			);
 																			// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
 																			const description = esDesc
-																				? (esDesc.text || esDesc.comment)
-																				: (property.descriptions[0].text || property.descriptions[0].comment);
+																				? esDesc.text || esDesc.comment
+																				: property.descriptions[0].text ||
+																				  property.descriptions[0].comment;
 																			// Limitar a 150 caracteres
-																			return description && description.length > 150
+																			return description &&
+																				description.length > 150
 																				? description.substring(0, 150) + '...'
-																				: (description || 'Propiedad en alquiler en excelente zona.');
+																				: description ||
+																						'Propiedad en alquiler en excelente zona.';
 																		}
 																		return (
 																			property.description ||

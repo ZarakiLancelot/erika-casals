@@ -156,7 +156,9 @@ const DISTRICT_COORDINATES = {
 // Función para determinar si una propiedad está en Madrid
 export const isInMadrid = property => {
 	// Soportar ambos formatos (API y FTP)
-	const town = property.municipality?.toLowerCase() || property.address?.town?.toLowerCase();
+	const town =
+		property.municipality?.toLowerCase() ||
+		property.address?.town?.toLowerCase();
 	if (!town && !property.address) return false;
 	return town === 'madrid';
 };
@@ -214,13 +216,20 @@ export const getOrganizedLocations = (
 		const districtName = property.district || property.address?.district;
 		const lat = property.latitude || property.address?.latitude;
 		const lon = property.longitude || property.address?.longitude;
-		
+
 		// Si no hay datos de ubicación (dirección oculta), intentar extraer del texto de descripción
-		if ((!town || town === '') && (!districtName || districtName === '') && !lat && !lon) {
+		if (
+			(!town || town === '') &&
+			(!districtName || districtName === '') &&
+			!lat &&
+			!lon
+		) {
 			// Intentar extraer ubicación de la descripción
-			const description = property.descriptions?.find(d => d.language === 'es')?.comment ||
-			                   property.descriptions?.find(d => d.language === 'es')?.text || '';
-			
+			const description =
+				property.descriptions?.find(d => d.language === 'es')?.comment ||
+				property.descriptions?.find(d => d.language === 'es')?.text ||
+				'';
+
 			if (description) {
 				// Buscar menciones de distritos en la descripción
 				const lowerDesc = description.toLowerCase();
@@ -229,16 +238,19 @@ export const getOrganizedLocations = (
 						locations.madridCiudad.districts.add(district);
 					}
 				});
-				
+
 				// Si encontramos distritos pero no podemos confirmar si es Madrid ciudad,
 				// asumir que es Madrid si menciona "madrid"
-				if (lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad de madrid')) {
+				if (
+					lowerDesc.includes('madrid') &&
+					!lowerDesc.includes('comunidad de madrid')
+				) {
 					// Ya agregamos los distritos arriba
 				}
 			}
 			return; // Saltar el resto si no hay datos de ubicación
 		}
-		
+
 		if (isInMadrid(property)) {
 			// Es de Madrid ciudad, intentar determinar el distrito
 			const district = getDistrictFromCoordinates(lat, lon);

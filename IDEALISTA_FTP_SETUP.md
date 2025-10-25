@@ -31,11 +31,13 @@ Este sistema reemplaza las llamadas a la API de Idealista Partners por un sistem
 ## 🚀 Instalación
 
 1. Instala las dependencias:
+
 ```bash
 npm install
 ```
 
 2. Configura las variables de entorno en `.env`:
+
 ```bash
 # FTP de Idealista
 IDEALISTA_FTP_HOST=ftp.habitania.com
@@ -54,6 +56,7 @@ npm run update:idealista
 ```
 
 Este comando:
+
 1. Descarga el XML/JSON más reciente del FTP
 2. Parsea y transforma las propiedades
 3. Separa venta y alquiler
@@ -97,6 +100,7 @@ npm run download:idealista list
 ### Importante: Frecuencia de actualización
 
 Idealista actualiza el fichero **cada 8 horas** (3 veces al día), por lo que tu cron job debería ejecutarse con esa frecuencia o menos:
+
 - 00:00, 08:00, 16:00 (recomendado)
 - O esperar 30 minutos después: 00:30, 08:30, 16:30
 
@@ -105,12 +109,14 @@ Idealista actualiza el fichero **cada 8 horas** (3 veces al día), por lo que tu
 Puedes configurar un cron job en tu sistema:
 
 **Linux/Mac** (`crontab -e`):
+
 ```bash
 # Ejecutar 3 veces al día (después de cada actualización de Idealista)
 30 0,8,16 * * * cd /ruta/a/tu/proyecto && npm run update:idealista
 ```
 
 **Windows** (Task Scheduler):
+
 1. Abrir "Programador de tareas"
 2. Crear tarea básica
 3. Programa: `node`
@@ -124,24 +130,28 @@ Vercel no tiene cron jobs nativos, pero puedes usar:
 
 **Opción A: Vercel Cron Jobs** (requiere plan Pro)
 Agrega a `vercel.json`:
+
 ```json
 {
-  "crons": [{
-    "path": "/api/update-idealista",
-    "schedule": "30 0,8,16 * * *"
-  }]
+	"crons": [
+		{
+			"path": "/api/update-idealista",
+			"schedule": "30 0,8,16 * * *"
+		}
+	]
 }
 ```
 
 **Opción B: GitHub Actions** (gratis)
 Crea `.github/workflows/update-idealista.yml`:
+
 ```yaml
 name: Update Idealista Feed
 on:
   schedule:
     # Cada 8 horas: 00:30, 08:30, 16:30 UTC
     - cron: '30 0,8,16 * * *'
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch: # Manual trigger
 
 jobs:
   update:
@@ -175,18 +185,18 @@ Modifica `useIdealistaProperties.js`:
 
 ```javascript
 const fetchProperties = useCallback(async () => {
-  setLoading(true);
-  try {
-    // Leer del archivo estático generado
-    const response = await fetch('/idealista-properties-sale.json');
-    const result = await response.json();
-    
-    setProperties(result.data.properties);
-  } catch (err) {
-    setError('Error cargando propiedades');
-  } finally {
-    setLoading(false);
-  }
+	setLoading(true);
+	try {
+		// Leer del archivo estático generado
+		const response = await fetch('/idealista-properties-sale.json');
+		const result = await response.json();
+
+		setProperties(result.data.properties);
+	} catch (err) {
+		setError('Error cargando propiedades');
+	} finally {
+		setLoading(false);
+	}
 }, []);
 ```
 
@@ -199,15 +209,18 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = async (req, res) => {
-  try {
-    const filePath = path.join(process.cwd(), 'public/idealista-properties-sale.json');
-    const data = fs.readFileSync(filePath, 'utf8');
-    
-    res.setHeader('Cache-Control', 's-maxage=3600'); // Cache 1 hora
-    res.json(JSON.parse(data));
-  } catch (error) {
-    res.status(500).json({ error: 'Error loading properties' });
-  }
+	try {
+		const filePath = path.join(
+			process.cwd(),
+			'public/idealista-properties-sale.json'
+		);
+		const data = fs.readFileSync(filePath, 'utf8');
+
+		res.setHeader('Cache-Control', 's-maxage=3600'); // Cache 1 hora
+		res.json(JSON.parse(data));
+	} catch (error) {
+		res.status(500).json({ error: 'Error loading properties' });
+	}
 };
 ```
 
@@ -217,60 +230,62 @@ Las propiedades se transforman del formato XML de Idealista al formato que tu ap
 
 ```json
 {
-  "success": true,
-  "data": {
-    "properties": [
-      {
-        "propertyId": "86788193",
-        "reference": "ideal-00019",
-        "operation": "sale",
-        "price": 310000,
-        "propertyType": "flat",
-        "size": 75,
-        "rooms": 2,
-        "bathrooms": 2,
-        "address": "Plaza de las Cortes 5, 28014",
-        "addressVisibility": "show_address",
-        "district": "Centro",
-        "neighborhood": "Huertas-Cortes",
-        "latitude": 40.4160483,
-        "longitude": -3.6961457,
-        "descriptions": [{
-          "language": "es",
-          "comment": "Descripción de la propiedad..."
-        }],
-        "images": [
-          {
-            "id": "710690830",
-            "url": "https://img3.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/00/00/0c/710690830.jpg",
-            "position": 1,
-            "tag": "living_room"
-          }
-        ],
-        "tours3D": [
-          {
-            "id": "655457",
-            "url": "https://tour.example.com/...",
-            "type": "3d"
-          }
-        ],
-        "features": {
-          "hasLift": true,
-          "hasAirConditioning": true,
-          "hasWardrobe": true
-        },
-        "floor": "7",
-        "builtType": "second_hand_good_condition",
-        "state": "active",
-        "modificationDate": "2025-10-22T10:30:00.000Z",
-        "creationDate": "2025-09-15T08:00:00.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      }
-    ],
-    "total": 150,
-    "lastUpdate": "2025-10-22T10:30:00.000Z"
-  }
+	"success": true,
+	"data": {
+		"properties": [
+			{
+				"propertyId": "86788193",
+				"reference": "ideal-00019",
+				"operation": "sale",
+				"price": 310000,
+				"propertyType": "flat",
+				"size": 75,
+				"rooms": 2,
+				"bathrooms": 2,
+				"address": "Plaza de las Cortes 5, 28014",
+				"addressVisibility": "show_address",
+				"district": "Centro",
+				"neighborhood": "Huertas-Cortes",
+				"latitude": 40.4160483,
+				"longitude": -3.6961457,
+				"descriptions": [
+					{
+						"language": "es",
+						"comment": "Descripción de la propiedad..."
+					}
+				],
+				"images": [
+					{
+						"id": "710690830",
+						"url": "https://img3.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/00/00/0c/710690830.jpg",
+						"position": 1,
+						"tag": "living_room"
+					}
+				],
+				"tours3D": [
+					{
+						"id": "655457",
+						"url": "https://tour.example.com/...",
+						"type": "3d"
+					}
+				],
+				"features": {
+					"hasLift": true,
+					"hasAirConditioning": true,
+					"hasWardrobe": true
+				},
+				"floor": "7",
+				"builtType": "second_hand_good_condition",
+				"state": "active",
+				"modificationDate": "2025-10-22T10:30:00.000Z",
+				"creationDate": "2025-09-15T08:00:00.000Z",
+				"source": "idealista-ftp",
+				"status": "active"
+			}
+		],
+		"total": 150,
+		"lastUpdate": "2025-10-22T10:30:00.000Z"
+	}
 }
 ```
 
@@ -285,20 +300,24 @@ Las propiedades se transforman del formato XML de Idealista al formato que tu ap
 ## 🐛 Troubleshooting
 
 ### Error: "Cannot connect to FTP"
+
 - Verifica las credenciales en `.env`
 - Comprueba que el host sea correcto (`ftp.habitania.com`)
 - Verifica que no haya firewall bloqueando el puerto 21
 
 ### Error: "File not found"
+
 - Asegúrate de que Idealista esté subiendo el archivo diariamente
 - Usa `npm run download:idealista list` para ver archivos disponibles
 
 ### Las propiedades no se actualizan
+
 - Verifica que el cron job esté ejecutándose
 - Revisa los logs del script
 - Comprueba que los archivos JSON en `/public` tengan fecha reciente
 
 ### Error de parsing XML
+
 - Verifica que el archivo XML sea válido
 - Comprueba que el formato sea el esperado por Idealista
 - Revisa el archivo `xml-ftp/idealista-latest.xml`
@@ -306,6 +325,7 @@ Las propiedades se transforman del formato XML de Idealista al formato que tu ap
 ## 📞 Soporte
 
 Si necesitas ayuda:
+
 1. Revisa los logs de ejecución
 2. Verifica las credenciales del FTP
 3. Contacta con el soporte de Idealista para problemas del FTP

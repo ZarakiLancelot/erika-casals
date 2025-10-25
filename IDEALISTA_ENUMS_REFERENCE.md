@@ -7,6 +7,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ## Enumerados principales
 
 ### Operation (Operación)
+
 ```
 0 = SALE (venta)
 1 = RENT (alquiler)
@@ -14,6 +15,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### TypologyType (Tipo de inmueble)
+
 ```
 0  = HOME (vivienda/piso)
 1  = CHALET
@@ -31,6 +33,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### AddressVisibility (Visibilidad dirección)
+
 ```
 0 = SHOW_ADDRESS (mostrar dirección completa)
 1 = ONLY_STREET_NAME (solo nombre de calle)
@@ -38,6 +41,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### State (Estado del anuncio)
+
 ```
 0 = NEW (nuevo)
 1 = PENDING (pendiente)
@@ -47,6 +51,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### BuiltType (Tipo de construcción)
+
 ```
 0 = NEW_DEVELOPMENT (obra nueva)
 1 = NEW_DEVELOPMENT_IN_CONSTRUCTION (obra nueva en construcción)
@@ -56,6 +61,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### EnergyCertification (Certificación energética)
+
 ```
 0  = EXEMPT (exento)
 1  = A1
@@ -76,12 +82,14 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### FlatSubType (Subtipo de piso)
+
 ```
 0 = PENTHOUSE (ático)
 1 = DUPLEX
 ```
 
 ### Language (Idioma)
+
 ```
 0  = SPANISH (español)
 1  = ENGLISH (inglés)
@@ -104,6 +112,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### MultimediaTag (Etiqueta de foto)
+
 ```
 0  = UNKNOWN
 1  = KITCHEN (cocina)
@@ -146,6 +155,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### Ad3DTourGroup (Tipo de tour)
+
 ```
 0 = THREE_D (tour 3D)
 1 = VIRTUAL_TOUR (tour virtual)
@@ -153,6 +163,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### ZoneLevel (Nivel geográfico)
+
 ```
 0  = LEVEL0 (Mundo)
 1  = LEVEL1 (Continente - ej: 0-EU)
@@ -210,6 +221,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ## Campos especiales
 
 ### FloorType (Tipo de suelo)
+
 ```
 2  = PARQUET
 3  = GRES
@@ -221,6 +233,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### AirConditioning (Aire acondicionado)
+
 ```
 0 = NOT_AVAILABLE (no disponible)
 1 = COLD (frío)
@@ -229,6 +242,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### BathRoom (Tipo de baño)
+
 ```
 0 = TOILETS (aseos)
 1 = FULL_EQUIPED (equipado completo)
@@ -236,6 +250,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ```
 
 ### Orientation (Orientación)
+
 ```
 0 = NORTH (norte)
 1 = SOUTH (sur)
@@ -246,6 +261,7 @@ Este documento lista los valores enumerados del XML/JSON de Idealista según su 
 ## Campos booleanos
 
 Todos los booleanos suelen empezar por `has`:
+
 - `hasLift` (tiene ascensor)
 - `hasAirConditioning` (tiene aire acondicionado)
 - `hasWardrobe` (tiene armarios)
@@ -260,9 +276,11 @@ Valores: `true` o `false`
 ## Campos de fecha
 
 ### modification y creation
+
 Son timestamps en **milisegundos UTC** (long).
 
 Conversión en JavaScript:
+
 ```javascript
 const modificationDate = new Date(parseInt(modification));
 const creationDate = new Date(parseInt(creation));
@@ -271,7 +289,9 @@ const creationDate = new Date(parseInt(creation));
 ## Estructura de direcciones (actualización 5 agosto 2024)
 
 ### myAddress (anuncios propios)
+
 Dirección completa con todos los campos disponibles:
+
 ```xml
 <myAddress>
   <street>
@@ -289,7 +309,9 @@ Dirección completa con todos los campos disponibles:
 ```
 
 ### listingAddress (anuncios de otros)
+
 Dirección con visibilidad controlada. Campos pueden tener `reason` si están ocultos:
+
 ```xml
 <listingAddress>
   <visibility>0</visibility> <!-- 0=completa, 1=solo calle, 2=oculta -->
@@ -311,6 +333,7 @@ Dirección con visibilidad controlada. Campos pueden tener `reason` si están oc
 ```
 
 ### ReasonType (motivo de ocultación)
+
 ```
 0 = HIDDEN (oculto)
 1 = NO_PRESENT (no presente)
