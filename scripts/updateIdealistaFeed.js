@@ -69,7 +69,11 @@ async function updateIdealistaProperties() {
 		);
 		parser.saveToJSON(rentProperties, rentOutputPath);
 
-		// Guardar todas juntas
+		// Guardar todas juntas (archivo principal para el frontend)
+		const mainOutputPath = path.join(outputDir, 'idealista-properties.json');
+		parser.saveToJSON(properties, mainOutputPath);
+		
+		// Guardar backup con sufijo -all
 		const allOutputPath = path.join(outputDir, 'idealista-properties-all.json');
 		parser.saveToJSON(properties, allOutputPath);
 

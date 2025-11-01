@@ -123,7 +123,12 @@ class IdealistaFTPClient {
 		const client = new ftp.Client();
 
 		try {
-			await client.access(this.config);
+			const config = {
+				...this.config,
+				pasv: true // Añadir modo pasivo explícitamente
+			};
+
+			await client.access(config);
 			const list = await client.list('/');
 
 			const files = list
