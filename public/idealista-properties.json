@@ -593,107 +593,6 @@
         "status": "active"
       },
       {
-        "propertyId": "109503587",
-        "reference": "ec-JB",
-        "operation": "rent",
-        "price": 3000,
-        "currency": "EUR",
-        "propertyType": "flat",
-        "size": 150,
-        "rooms": 3,
-        "bathrooms": 2,
-        "address": "",
-        "addressVisibility": "hidden_address",
-        "municipality": "",
-        "district": "",
-        "neighborhood": "",
-        "latitude": null,
-        "longitude": null,
-        "descriptions": [
-          {
-            "language": "es",
-            "comment": "Exclusivo ático dúplex exterior de 150 m², recién reformado, ubicado en una de las zonas más prestigiosas y demandadas de Madrid: Distrito Salamanca. \n\nSituado en la última planta de un edificio representativo que cuenta con ascensor y servicio de conserjería, este inmueble combina funcionalidad y una excelente distribución, ideal tanto para residencia habitual como inversión de alto nivel.\n\nSu orientación y altura permiten disfrutar de una magnífica luminosidad durante todo el día, aportando calidez y amplitud a todos los espacios.\n\nPLANTA PRINCIPAL:\n● Cocina moderna y funcional totalmente equipada.\n● Amplio salón-comedor con gran entrada de luz natural.\n● Dos dormitorios exteriores.\n● Un baño completo.\n\nPLANTA SUPERIOR:\n● Un dormitorio.\n● Un baño completo.\n● Terraza privada, ideal para zona chill out."
-          }
-        ],
-        "features": {
-          "hasLift": true,
-          "hasAirConditioning": true,
-          "hasWardrobe": true,
-          "hasTerrace": true,
-          "hasGarden": false,
-          "hasSwimmingPool": false,
-          "parkingAvailable": false
-        },
-        "images": [
-          {
-            "id": "1373259012",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e0/0e/2c/1373259012.jpg",
-            "position": 1
-          },
-          {
-            "id": "1373258962",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3c/e9/16/1373258962.jpg",
-            "position": 2
-          },
-          {
-            "id": "1373259011",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7e/65/15/1373259011.jpg",
-            "position": 3
-          },
-          {
-            "id": "1373259067",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/78/51/d3/1373259067.jpg",
-            "position": 4
-          },
-          {
-            "id": "1373259099",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ae/17/c9/1373259099.jpg",
-            "position": 5
-          },
-          {
-            "id": "1373258910",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b2/fc/6b/1373258910.jpg",
-            "position": 6
-          },
-          {
-            "id": "1373259093",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3c/50/76/1373259093.jpg",
-            "position": 7
-          },
-          {
-            "id": "1373259092",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c5/57/35/1373259092.jpg",
-            "position": 8
-          },
-          {
-            "id": "1373259069",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e9/7c/4c/1373259069.jpg",
-            "position": 9
-          },
-          {
-            "id": "1373258909",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3f/42/29/1373258909.jpg",
-            "position": 10
-          },
-          {
-            "id": "1373259080",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/61/ee/2c/1373259080.jpg",
-            "position": 11
-          }
-        ],
-        "tours3D": [],
-        "floor": "",
-        "constructionYear": "1974",
-        "energyCertification": "9",
-        "communityCosts": 0,
-        "builtType": "second_hand_good_condition",
-        "state": "active",
-        "modificationDate": "2025-11-05T16:03:56.000Z",
-        "creationDate": "2025-10-07T11:33:49.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      },
-      {
         "propertyId": "109392352",
         "reference": "ec-JB",
         "operation": "sale",
@@ -791,6 +690,107 @@
         "state": "active",
         "modificationDate": "2025-11-05T16:03:56.000Z",
         "creationDate": "2025-09-25T10:44:31.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
+        "propertyId": "109503587",
+        "reference": "ec-JB",
+        "operation": "rent",
+        "price": 3000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 150,
+        "rooms": 3,
+        "bathrooms": 2,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Exclusivo ático dúplex exterior de 150 m², recién reformado, ubicado en una de las zonas más prestigiosas y demandadas de Madrid: Distrito Salamanca. \n\nSituado en la última planta de un edificio representativo que cuenta con ascensor y servicio de conserjería, este inmueble combina funcionalidad y una excelente distribución, ideal tanto para residencia habitual como inversión de alto nivel.\n\nSu orientación y altura permiten disfrutar de una magnífica luminosidad durante todo el día, aportando calidez y amplitud a todos los espacios.\n\nPLANTA PRINCIPAL:\n● Cocina moderna y funcional totalmente equipada.\n● Amplio salón-comedor con gran entrada de luz natural.\n● Dos dormitorios exteriores.\n● Un baño completo.\n\nPLANTA SUPERIOR:\n● Un dormitorio.\n● Un baño completo.\n● Terraza privada, ideal para zona chill out."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": true,
+          "hasGarden": false,
+          "hasSwimmingPool": false,
+          "parkingAvailable": false
+        },
+        "images": [
+          {
+            "id": "1373259012",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e0/0e/2c/1373259012.jpg",
+            "position": 1
+          },
+          {
+            "id": "1373258962",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3c/e9/16/1373258962.jpg",
+            "position": 2
+          },
+          {
+            "id": "1373259011",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7e/65/15/1373259011.jpg",
+            "position": 3
+          },
+          {
+            "id": "1373259067",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/78/51/d3/1373259067.jpg",
+            "position": 4
+          },
+          {
+            "id": "1373259099",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ae/17/c9/1373259099.jpg",
+            "position": 5
+          },
+          {
+            "id": "1373258910",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b2/fc/6b/1373258910.jpg",
+            "position": 6
+          },
+          {
+            "id": "1373259093",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3c/50/76/1373259093.jpg",
+            "position": 7
+          },
+          {
+            "id": "1373259092",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c5/57/35/1373259092.jpg",
+            "position": 8
+          },
+          {
+            "id": "1373259069",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e9/7c/4c/1373259069.jpg",
+            "position": 9
+          },
+          {
+            "id": "1373258909",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3f/42/29/1373258909.jpg",
+            "position": 10
+          },
+          {
+            "id": "1373259080",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/61/ee/2c/1373259080.jpg",
+            "position": 11
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "1974",
+        "energyCertification": "9",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-11-05T16:03:56.000Z",
+        "creationDate": "2025-10-07T11:33:49.000Z",
         "source": "idealista-ftp",
         "status": "active"
       },
@@ -11277,7 +11277,7 @@
       }
     ],
     "total": 83,
-    "lastUpdate": "2025-11-08T16:44:36.028Z"
+    "lastUpdate": "2025-11-09T02:22:53.865Z"
   },
   "pagination": {
     "page": 1,
