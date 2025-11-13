@@ -1290,9 +1290,20 @@ const PropertyDetail = ({ property, onBack, images }) => {
 			return property.title;
 		}
 
-		// Para propiedades de Idealista, generar título como antes
-		const type = property.type || 'Propiedad';
-		const location = property.address?.town || 'Madrid';
+		// Para propiedades de Idealista, usar la descripción hasta el primer punto
+		if (property.descriptions && property.descriptions.length > 0) {
+			const description = property.descriptions[0].comment || '';
+			// Extraer hasta el primer punto
+			const firstSentence = description.split('.')[0];
+			if (firstSentence && firstSentence.trim()) {
+				return firstSentence.trim();
+			}
+		}
+
+		// Fallback: generar título tradicional si no hay descripción
+		const type = property.type || property.propertyType || 'Propiedad';
+		const location =
+			property.address?.town || property.municipality || 'Madrid';
 
 		const typeTranslations = {
 			flat: 'Piso',
