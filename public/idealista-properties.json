@@ -3,6 +3,168 @@
   "data": {
     "properties": [
       {
+        "propertyId": "109848216",
+        "reference": "109848216",
+        "operation": "sale",
+        "price": 795000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 66,
+        "rooms": 2,
+        "bathrooms": 2,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Vivienda ubicada en la zona de Goya, Barrio de Salamanca. \n\nUbicada a pocas calles del Corte Inglés de Goya, esta vivienda, completamente amueblada y equipada, es una muy buena opción tanto para vivir como para rentabilizar.\n\nLa misma cuenta con salón/comedor, cocina integrada y equipada con electrodomésticos de alta gama, dos dormitorios y dos baños. Dormitorio principal con baño en suite.\n\nAire acondicionado y calefacción individual.\n\nFinca con ascensor.\n\nUbicada en zona residencial, con excelente comercio, restauración, colegios, parques y diferentes líneas de autobús."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": false,
+          "hasGarden": false,
+          "hasSwimmingPool": false,
+          "parkingAvailable": false
+        },
+        "images": [
+          {
+            "id": "1387462394",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b6/fd/12/1387462394.jpg",
+            "position": 1
+          },
+          {
+            "id": "1387462628",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ed/67/6a/1387462628.jpg",
+            "position": 2
+          },
+          {
+            "id": "1387462675",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/31/b2/08/1387462675.jpg",
+            "position": 3
+          },
+          {
+            "id": "1387462629",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6f/7e/50/1387462629.jpg",
+            "position": 4
+          },
+          {
+            "id": "1387462543",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/76/81/51/1387462543.jpg",
+            "position": 5
+          },
+          {
+            "id": "1387462630",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/17/7a/cf/1387462630.jpg",
+            "position": 6
+          },
+          {
+            "id": "1387462631",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f8/83/a7/1387462631.jpg",
+            "position": 7
+          },
+          {
+            "id": "1387462632",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/97/cf/0d/1387462632.jpg",
+            "position": 8
+          },
+          {
+            "id": "1387462633",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/06/6e/96/1387462633.jpg",
+            "position": 9
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "",
+        "energyCertification": "9",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-11-12T21:59:56.000Z",
+        "creationDate": "2025-11-12T21:56:19.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
+        "propertyId": "109848177",
+        "reference": "ec-2036",
+        "operation": "sale",
+        "price": 630000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 46,
+        "rooms": 2,
+        "bathrooms": 1,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Vivienda ubicada en la zona de Goya, Barrio de Salamanca. \n\nUbicada a pocas calles del Corte Inglés de Goya, esta vivienda, completamente amueblada y equipada, es una muy buena opción tanto para vivir como para rentabilizar.\n\nLa misma cuenta con salón/comedor, cocina integrada y equipada con electrodomésticos de alta gama, dos dormitorios y un baño.\n\nAire acondicionado y calefacción individual.\n\nFinca con ascensor.\n\nUbicada en zona residencial, con excelente comercio, restauración, colegios, parques y diferentes líneas de autobús."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": false,
+          "hasGarden": false,
+          "hasSwimmingPool": false,
+          "parkingAvailable": false
+        },
+        "images": [
+          {
+            "id": "1387462117",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0d/7f/ed/1387462117.jpg",
+            "position": 1
+          },
+          {
+            "id": "1387462119",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/96/85/97/1387462119.jpg",
+            "position": 2
+          },
+          {
+            "id": "1387462120",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e8/c7/95/1387462120.jpg",
+            "position": 3
+          },
+          {
+            "id": "1387462077",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c4/53/e4/1387462077.jpg",
+            "position": 4
+          },
+          {
+            "id": "1387462121",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c1/e8/f9/1387462121.jpg",
+            "position": 5
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "",
+        "energyCertification": "9",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-11-12T21:52:53.000Z",
+        "creationDate": "2025-11-12T21:49:46.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
         "propertyId": "108681169",
         "reference": "ec-3380B",
         "operation": "sale",
@@ -1298,107 +1460,6 @@
         "status": "active"
       },
       {
-        "propertyId": "109423633",
-        "reference": "ec-8010",
-        "operation": "sale",
-        "price": 790000,
-        "currency": "EUR",
-        "propertyType": "flat",
-        "size": 0,
-        "rooms": 0,
-        "bathrooms": 0,
-        "address": "",
-        "addressVisibility": "hidden_address",
-        "municipality": "",
-        "district": "",
-        "neighborhood": "",
-        "latitude": null,
-        "longitude": null,
-        "descriptions": [
-          {
-            "language": "es",
-            "comment": "Ubicación privilegiada. Local CON SALIDA DE HUMOS, en planta calle, con una forma cuadrada, lo que hace que tenga muchas posibilidades. \n\nTechos de más de 3.5 netros.\n\nReformado hace 12 años para prestar el servicio actual, pero anteriormente fue un restaurante.\n\nBuena fachada.\n\nZona comercial, con buen paso de peatones tanto de la zona como de turistas por encontrarse muy cerca de la Plaza de España y Arguelles."
-          }
-        ],
-        "features": {
-          "hasLift": false,
-          "hasAirConditioning": false,
-          "hasWardrobe": false,
-          "hasTerrace": false,
-          "hasGarden": false,
-          "hasSwimmingPool": false,
-          "parkingAvailable": false
-        },
-        "images": [
-          {
-            "id": "1374221768",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/97/d1/b7/1374221768.jpg",
-            "position": 1
-          },
-          {
-            "id": "1374221760",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/eb/e5/45/1374221760.jpg",
-            "position": 2
-          },
-          {
-            "id": "1374221775",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f0/db/3a/1374221775.jpg",
-            "position": 3
-          },
-          {
-            "id": "1374221769",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ac/5a/3f/1374221769.jpg",
-            "position": 4
-          },
-          {
-            "id": "1374221770",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f1/fe/ab/1374221770.jpg",
-            "position": 5
-          },
-          {
-            "id": "1374221761",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/1c/42/87/1374221761.jpg",
-            "position": 6
-          },
-          {
-            "id": "1374221771",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/84/1c/ce/1374221771.jpg",
-            "position": 7
-          },
-          {
-            "id": "1374221762",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/d1/1f/f1/1374221762.jpg",
-            "position": 8
-          },
-          {
-            "id": "1374221776",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6b/a3/3f/1374221776.jpg",
-            "position": 9
-          },
-          {
-            "id": "1374221777",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/08/41/3c/1374221777.jpg",
-            "position": 10
-          },
-          {
-            "id": "1374221785",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/8b/b9/05/1374221785.jpg",
-            "position": 11
-          }
-        ],
-        "tours3D": [],
-        "floor": "",
-        "constructionYear": "",
-        "energyCertification": "10",
-        "communityCosts": 0,
-        "builtType": "new_development",
-        "state": "active",
-        "modificationDate": "2025-11-05T16:02:52.000Z",
-        "creationDate": "2025-09-29T11:01:30.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      },
-      {
         "propertyId": "109516178",
         "reference": "ec-3401",
         "operation": "sale",
@@ -1546,137 +1607,6 @@
         "state": "active",
         "modificationDate": "2025-11-05T16:01:38.000Z",
         "creationDate": "2025-10-08T11:24:42.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      },
-      {
-        "propertyId": "109572191",
-        "reference": "ec-vical",
-        "operation": "sale",
-        "price": 240000,
-        "currency": "EUR",
-        "propertyType": "flat",
-        "size": 65,
-        "rooms": 3,
-        "bathrooms": 1,
-        "address": "",
-        "addressVisibility": "hidden_address",
-        "municipality": "",
-        "district": "",
-        "neighborhood": "",
-        "latitude": null,
-        "longitude": null,
-        "descriptions": [
-          {
-            "language": "es",
-            "comment": "Inmueble exterior con amplias vistas.\n\nTercera planta exterior que consta de salón/comedor, 3 dormitorios, 1 baño y cocina independiente. Tiene además 2 terrazas.\n\nSuelos de tarima. A/C frío calor en todas las estancias.\n\nMuy bien ubicado, con excelentes vías de comunicación por metro y autobús."
-          }
-        ],
-        "features": {
-          "hasLift": false,
-          "hasAirConditioning": true,
-          "hasWardrobe": true,
-          "hasTerrace": true,
-          "hasGarden": false,
-          "hasSwimmingPool": false,
-          "parkingAvailable": false
-        },
-        "images": [
-          {
-            "id": "1378794895",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ff/7c/0d/1378794895.jpg",
-            "position": 1
-          },
-          {
-            "id": "1378795541",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b7/22/3a/1378795541.jpg",
-            "position": 2
-          },
-          {
-            "id": "1378794916",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/04/3b/30/1378794916.jpg",
-            "position": 3
-          },
-          {
-            "id": "1378794541",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e4/59/c3/1378794541.jpg",
-            "position": 4
-          },
-          {
-            "id": "1378795542",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a4/10/c3/1378795542.jpg",
-            "position": 5
-          },
-          {
-            "id": "1378794540",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3b/3c/8c/1378794540.jpg",
-            "position": 6
-          },
-          {
-            "id": "1378795638",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e7/06/3d/1378795638.jpg",
-            "position": 7
-          },
-          {
-            "id": "1378794896",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f3/22/03/1378794896.jpg",
-            "position": 8
-          },
-          {
-            "id": "1378794777",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/28/83/4c/1378794777.jpg",
-            "position": 9
-          },
-          {
-            "id": "1378795648",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c8/cf/8a/1378795648.jpg",
-            "position": 10
-          },
-          {
-            "id": "1378794753",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/5f/79/cc/1378794753.jpg",
-            "position": 11
-          },
-          {
-            "id": "1378794951",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/78/2e/81/1378794951.jpg",
-            "position": 12
-          },
-          {
-            "id": "1378795570",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/9a/29/a3/1378795570.jpg",
-            "position": 13
-          },
-          {
-            "id": "1378795564",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b2/9b/7e/1378795564.jpg",
-            "position": 14
-          },
-          {
-            "id": "1378795645",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/82/c5/a7/1378795645.jpg",
-            "position": 15
-          },
-          {
-            "id": "1378795629",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ed/99/d7/1378795629.jpg",
-            "position": 16
-          },
-          {
-            "id": "1378795660",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/fd/06/ef/1378795660.jpg",
-            "position": 17
-          }
-        ],
-        "tours3D": [],
-        "floor": "",
-        "constructionYear": "",
-        "energyCertification": "10",
-        "communityCosts": 50,
-        "builtType": "second_hand_good_condition",
-        "state": "active",
-        "modificationDate": "2025-11-05T16:00:48.000Z",
-        "creationDate": "2025-10-14T20:16:55.000Z",
         "source": "idealista-ftp",
         "status": "active"
       },
@@ -11327,7 +11257,7 @@
       }
     ],
     "total": 83,
-    "lastUpdate": "2025-11-12T08:51:19.805Z"
+    "lastUpdate": "2025-11-13T02:22:03.716Z"
   },
   "pagination": {
     "page": 1,
