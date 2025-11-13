@@ -12,15 +12,13 @@ const PropertyDetailPage = () => {
 	const [hasSearched, setHasSearched] = useState(!!location.state?.property);
 	const [propertyImages, setPropertyImages] = useState([]);
 
-	// Función para cargar una propiedad específica desde la API de Idealista
+	// Función para cargar una propiedad específica desde el archivo JSON local
 	const loadIdealistaProperty = useCallback(async propertyId => {
 		try {
 			console.log('🔄 loadIdealistaProperty: Loading property', propertyId);
-			// En producción usar rutas relativas, en desarrollo usar BACKEND_URL
-			const baseUrl = import.meta.env.PROD
-				? ''
-				: import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
-			const url = `${baseUrl}/api/properties/${propertyId}`;
+
+			// Cargar desde el archivo JSON estático local
+			const url = '/idealista-properties.json';
 			console.log('🔄 loadIdealistaProperty: Fetching from', url);
 
 			const response = await fetch(url);
@@ -36,20 +34,28 @@ const PropertyDetailPage = () => {
 			}
 
 			const result = await response.json();
-			console.log('📦 loadIdealistaProperty: Response data', result);
+			console.log('📦 loadIdealistaProperty: Response data received');
 
-			if (result.success && result.data) {
-				console.log('✅ loadIdealistaProperty: Property loaded successfully');
-				// result.data contiene los datos de la respuesta de Idealista
-				// Los datos reales de la propiedad están en result.data.property
-				if (result.data.property) {
+			if (result.success && result.data && result.data.properties) {
+				console.log(
+					'✅ loadIdealistaProperty: Searching for property in array'
+				);
+				// Buscar la propiedad por propertyId en el array
+				const foundProperty = result.data.properties.find(
+					prop =>
+						prop.propertyId === propertyId ||
+						prop.propertyId === String(propertyId)
+				);
+
+				if (foundProperty) {
 					console.log(
-						'🔧 loadIdealistaProperty: Extracting property from result.data.property'
+						'✅ loadIdealistaProperty: Property found',
+						foundProperty.propertyId
 					);
-					return result.data.property;
+					return foundProperty;
 				} else {
-					console.log('🔧 loadIdealistaProperty: Using result.data directly');
-					return result.data;
+					console.log('❌ loadIdealistaProperty: Property not found in array');
+					return null;
 				}
 			} else {
 				console.log('❌ loadIdealistaProperty: Invalid response format');
@@ -83,41 +89,22 @@ const PropertyDetailPage = () => {
 		}
 	}, []);
 
-	// Función para cargar imágenes específicas de una propiedad de Idealista
-	const loadPropertyImages = useCallback(async propertyId => {
+	// Función para cargar imágenes desde la propiedad (ya vienen en el JSON)
+	const loadPropertyImages = useCallback(async property => {
 		try {
-			console.log('🖼️ loadPropertyImages: Loading images for', propertyId);
-			// En producción usar rutas relativas, en desarrollo usar BACKEND_URL
-			const baseUrl = import.meta.env.PROD
-				? ''
-				: import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
-			const url = `${baseUrl}/api/properties/${propertyId}/images`;
-			console.log('🖼️ loadPropertyImages: Fetching from', url);
+			console.log('🖼️ loadPropertyImages: Extracting images from property');
 
-			const response = await fetch(url);
-			console.log(
-				'📡 loadPropertyImages: Response status',
-				response.status,
-				response.ok
-			);
-
-			if (!response.ok) {
-				console.log('❌ loadPropertyImages: Response not ok');
-				return [];
-			}
-
-			const result = await response.json();
-			console.log('📦 loadPropertyImages: Response data', result);
-
-			if (result.success && result.data) {
-				console.log('✅ loadPropertyImages: Images loaded successfully');
-				// result.data contiene directamente el array de imágenes
-				setPropertyImages(result.data);
-				return result.data;
-			} else {
+			// Las imágenes ya vienen en el objeto property desde el JSON
+			if (property && property.images && Array.isArray(property.images)) {
 				console.log(
-					'❌ loadPropertyImages: Invalid response format or no images'
+					'✅ loadPropertyImages: Found',
+					property.images.length,
+					'images'
 				);
+				setPropertyImages(property.images);
+				return property.images;
+			} else {
+				console.log('❌ loadPropertyImages: No images found in property');
 				return [];
 			}
 		} catch (err) {
@@ -132,20 +119,6 @@ const PropertyDetailPage = () => {
 		setLoading(!location.state?.property);
 		setHasSearched(!!location.state?.property);
 		setPropertyImages([]);
-
-		// Si venimos de navegación con estado (click desde lista) y no hemos recargado
-		if (
-			location.state?.property &&
-			!sessionStorage.getItem(`reloaded_${propertyId}`)
-		) {
-			console.log(
-				'🔄 PropertyDetailPage: Forcing reload for fresh data from navigation'
-			);
-			// Marcar que ya recargamos para esta propiedad
-			sessionStorage.setItem(`reloaded_${propertyId}`, 'true');
-			// Forzar recarga completa
-			window.location.reload();
-		}
 	}, [propertyId, location.state?.property]);
 
 	// Cargar la propiedad si no la tenemos
@@ -197,57 +170,8 @@ const PropertyDetailPage = () => {
 				setHasSearched(true);
 				console.log('🔧 PropertyDetailPage: Setting loading to false');
 				setLoading(false);
-				// Cargar imágenes para la propiedad de Idealista
-				console.log(
-					'🔍 PropertyDetailPage: Checking propertyId:',
-					idealistaProperty.propertyId
-				);
-				console.log(
-					'🔍 PropertyDetailPage: Full property object keys:',
-					Object.keys(idealistaProperty)
-				);
-				if (idealistaProperty.propertyId) {
-					console.log(
-						'🖼️ PropertyDetailPage: Loading images for',
-						idealistaProperty.propertyId
-					);
-					loadPropertyImages(idealistaProperty.propertyId);
-				} else {
-					console.log(
-						'❌ PropertyDetailPage: No propertyId found in property object'
-					);
-					// Intentar con otras posibles propiedades de ID o usar el propertyId original
-					const possibleIds = [
-						'id',
-						'propertyCode',
-						'_id',
-						'identifier',
-						'propertyId'
-					];
-					let foundId = null;
-
-					for (const idField of possibleIds) {
-						if (idealistaProperty[idField]) {
-							console.log(
-								`🔧 PropertyDetailPage: Found ID in ${idField}:`,
-								idealistaProperty[idField]
-							);
-							foundId = idealistaProperty[idField];
-							break;
-						}
-					}
-
-					// Si no encontramos ningún ID en la propiedad, usar el propertyId original de la URL
-					if (!foundId) {
-						console.log(
-							'🔧 PropertyDetailPage: Using original propertyId from URL:',
-							propertyId
-						);
-						foundId = propertyId;
-					}
-
-					loadPropertyImages(foundId);
-				}
+				// Cargar imágenes desde la propiedad misma
+				loadPropertyImages(idealistaProperty);
 				return;
 			}
 
@@ -288,26 +212,14 @@ const PropertyDetailPage = () => {
 		if (
 			property &&
 			property.source !== 'contentful' &&
-			property.propertyId &&
 			propertyImages.length === 0
 		) {
 			console.log(
-				'🖼️ PropertyDetailPage: Loading images for existing property',
-				property.propertyId
+				'🖼️ PropertyDetailPage: Loading images for existing property'
 			);
-			loadPropertyImages(property.propertyId);
+			loadPropertyImages(property);
 		}
 	}, [property, propertyImages.length, loadPropertyImages]);
-
-	// Limpiar sessionStorage cuando cambie la propiedad
-	useEffect(() => {
-		return () => {
-			// Limpiar el flag de recarga cuando se desmonte o cambie
-			if (propertyId) {
-				sessionStorage.removeItem(`reloaded_${propertyId}`);
-			}
-		};
-	}, [propertyId]);
 
 	const handleBack = () => {
 		navigate(-1); // Navegar hacia atrás en el historial
@@ -360,24 +272,18 @@ const PropertyDetailPage = () => {
 		);
 	}
 
-	return (
-
-		property.source === 'newDevelopments' ? (
-			<NewDevelopmentDetail
-				property={property}
-				onBack={handleBack}
-				images={propertyImages}
-			/>
-		) : (
-
-			<PropertyDetail
-				property={property}
-				onBack={handleBack}
-				images={propertyImages}
-			/>
-
-		)
-
+	return property.source === 'newDevelopments' ? (
+		<NewDevelopmentDetail
+			property={property}
+			onBack={handleBack}
+			images={propertyImages}
+		/>
+	) : (
+		<PropertyDetail
+			property={property}
+			onBack={handleBack}
+			images={propertyImages}
+		/>
 	);
 };
 

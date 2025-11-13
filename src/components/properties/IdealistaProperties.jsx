@@ -83,6 +83,7 @@ const Properties = () => {
 		location: '',
 		district: '', // Filtro para distritos de Madrid ciudad
 		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
+		propertyType: '', // Nuevo filtro para tipo de propiedad
 		minPrice: '',
 		maxPrice: '',
 		minArea: '',
@@ -96,6 +97,7 @@ const Properties = () => {
 	const [availableLocations, setAvailableLocations] = useState([]);
 	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
 	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
+	const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]); // Tipos de propiedades disponibles
 	const [newDev, setNewDev] = useState([]);
 	// Establecer filtro a 'sale' al montar el componente y limpiar filtros locales
 	useEffect(() => {
@@ -215,6 +217,24 @@ const Properties = () => {
 		newDevelopments,
 		localFilters.location
 	]);
+
+	// Generar tipos de propiedades disponibles
+	useEffect(() => {
+		const allProps = [
+			...properties,
+			...contentfulProperties,
+			...newDevelopments
+		];
+		if (allProps.length > 0) {
+			const types = new Set();
+			allProps.forEach(property => {
+				if (property.propertyType) {
+					types.add(property.propertyType);
+				}
+			});
+			setAvailablePropertyTypes(Array.from(types).sort());
+		}
+	}, [properties, contentfulProperties, newDevelopments]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
@@ -624,6 +644,13 @@ const Properties = () => {
 			}
 		}
 
+		// Filtro por tipo de propiedad
+		if (localFilters.propertyType && localFilters.propertyType !== '') {
+			if (property.propertyType !== localFilters.propertyType) {
+				return false;
+			}
+		}
+
 		// Filtro por características específicas
 		if (localFilters.features && localFilters.features !== '') {
 			if (!hasFeature(property, localFilters.features)) {
@@ -667,6 +694,24 @@ const Properties = () => {
 		) {
 			return property.title || 'Propiedad exclusiva';
 		}
+
+		// Para propiedades de Idealista, usar hasta el primer punto de la descripción
+		const description =
+			property.descriptions?.find(d => d.language === 'es')?.comment ||
+			property.descriptions?.find(d => d.language === 'es')?.text ||
+			property.descriptions?.[0]?.comment ||
+			property.descriptions?.[0]?.text ||
+			'';
+
+		if (description) {
+			// Obtener el texto hasta el primer punto
+			const firstSentence = description.trim().split('.')[0];
+
+			// Retornar la primera frase (sin el punto)
+			return firstSentence.trim();
+		}
+
+		// Fallback al título genérico si no hay descripción
 		return getPropertyTitle(property);
 	};
 
@@ -690,6 +735,26 @@ const Properties = () => {
 			return property.rooms;
 		}
 		return property.features?.rooms;
+	};
+
+	// Función para obtener etiquetas legibles de tipos de propiedad
+	const getPropertyTypeLabel = type => {
+		const labels = {
+			flat: 'Piso',
+			house: 'Casa / Chalet',
+			penthouse: 'Ático',
+			duplex: 'Dúplex',
+			studio: 'Estudio',
+			loft: 'Loft',
+			office: 'Oficina',
+			premise: 'Local',
+			garage: 'Garaje',
+			storage: 'Trastero',
+			land: 'Terreno',
+			building: 'Edificio',
+			'country-house': 'Casa de campo'
+		};
+		return labels[type] || type.charAt(0).toUpperCase() + type.slice(1);
 	};
 
 	// Función para obtener el número de baños
@@ -819,6 +884,25 @@ const Properties = () => {
 												</FilterSelect>
 											</FilterGroup>
 										)}
+									{/* Filtro de tipo de propiedad */}
+									{availablePropertyTypes.length > 1 && (
+										<FilterGroup>
+											<FilterLabel>Tipo de propiedad</FilterLabel>
+											<FilterSelect
+												value={localFilters.propertyType}
+												onChange={e =>
+													handleFilterChange('propertyType', e.target.value)
+												}
+											>
+												<option value=''>Todos los tipos</option>
+												{availablePropertyTypes.map(type => (
+													<option key={type} value={type}>
+														{getPropertyTypeLabel(type)}
+													</option>
+												))}
+											</FilterSelect>
+										</FilterGroup>
+									)}
 									<FilterGroup>
 										<FilterLabel>Precio</FilterLabel>
 										<PriceRangeGroup>
