@@ -1,0 +1,14 @@
+# robots.txt para el sitio web de Erika Real Estate
+
+# Permitir acceso a todos los bots
+User-agent: *
+Allow: /
+
+# Bloquear acceso a archivos de configuración y desarrollo
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.config.js$
+Disallow: /scripts/
+
+# Sitemap
+Sitemap: https://erikacasals.com/sitemap.xml

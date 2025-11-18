@@ -15,7 +15,8 @@
 		"dev:serverless": "vercel dev --listen 3001",
 		"parse:idealista": "node scripts/parseIdealistaXML.js",
 		"download:idealista": "node scripts/downloadIdealistaFTP.js",
-		"update:idealista": "node scripts/updateIdealistaFeed.js"
+		"update:idealista": "node scripts/updateIdealistaFeed.js",
+		"generate:sitemap": "node scripts/generateSitemap.js"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",

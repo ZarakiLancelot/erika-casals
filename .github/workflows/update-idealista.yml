@@ -33,16 +33,19 @@ jobs:
           IDEALISTA_FTP_USER: ${{ secrets.IDEALISTA_FTP_USER }}
           IDEALISTA_FTP_PASSWORD: ${{ secrets.IDEALISTA_FTP_PASSWORD }}
 
+      - name: Generate sitemap
+        run: npm run generate:sitemap
+
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code public/idealista-properties.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --exit-code public/idealista-properties.json public/sitemap.xml || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         if: steps.git-check.outputs.changed == 'true'
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add public/idealista-properties.json
-          git commit -m "🔄 Auto-update Idealista properties [$(date +'%Y-%m-%d %H:%M UTC')]"
+          git add public/idealista-properties.json public/sitemap.xml
+          git commit -m "🔄 Auto-update Idealista properties and sitemap [$(date +'%Y-%m-%d %H:%M UTC')]"
           git push
