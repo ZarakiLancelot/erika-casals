@@ -3,6 +3,142 @@
   "data": {
     "properties": [
       {
+        "propertyId": "109939320",
+        "reference": "ec-2035",
+        "operation": "sale",
+        "price": 695000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 121,
+        "rooms": 3,
+        "bathrooms": 2,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Vivienda ubicada en Boadilla del Monte, Sector B.\n\nLa misma cuenta con amplio salón comedor, que además, al hacer esquina, se beneficia de la luz y el sol por la orientación privilegiada que tiene Sur-Este. Magníficas y abiertas vistas. Desde alí, podemos acceder a una terraza de unos 7 mts2.\n\nA entrar a la vivienda, nos encontramos con una amplio vestíbulo con armario de gran tamaño, cocina independiente, muy espaciosa y en excelente estado de conservación que da paso al área de lavadero.\n\nEn la zona de noche, debidamente separada por una puerta de acceso, encontramos 3 maravillosos dormitorios, todos ellos exteriores y con grandes ventanales. Así como 2 baños de muy buen tamaño. El dormitorio principal, por supuesto tiene su baño en suite.\n\nPlaza de garaje muy bien ubicada en el sótano del edificio y de buen tamaño incluida en el precio \n\nAire acondicionado por splits. \nCalefacción individual por gas natural.\nAscensor.\nPortero Físico\nPiscina\nCancha de Padel\nParque infantil\nZonas comunes\n\nBoadilla del Monte se caracteriza por ser una zona residencial, con una amplia oferta de colegios (públicos y privados), zonas verdes, restauración, tiendas y ocio. Así como buena conexión con Madrid centro."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": true,
+          "hasGarden": true,
+          "hasSwimmingPool": true,
+          "parkingAvailable": true
+        },
+        "images": [
+          {
+            "id": "1390336254",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0d/9f/e5/1390336254.jpg",
+            "position": 1
+          },
+          {
+            "id": "1390336259",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6b/e6/49/1390336259.jpg",
+            "position": 2
+          },
+          {
+            "id": "1390336285",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a4/8c/8b/1390336285.jpg",
+            "position": 3
+          },
+          {
+            "id": "1390336266",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/eb/41/fd/1390336266.jpg",
+            "position": 4
+          },
+          {
+            "id": "1390336288",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7e/c9/94/1390336288.jpg",
+            "position": 5
+          },
+          {
+            "id": "1390336252",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f7/3a/58/1390336252.jpg",
+            "position": 6
+          },
+          {
+            "id": "1390336256",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b4/04/4f/1390336256.jpg",
+            "position": 7
+          },
+          {
+            "id": "1390336251",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/96/88/66/1390336251.jpg",
+            "position": 8
+          },
+          {
+            "id": "1390336124",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0f/79/99/1390336124.jpg",
+            "position": 9
+          },
+          {
+            "id": "1390336267",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/22/14/48/1390336267.jpg",
+            "position": 10
+          },
+          {
+            "id": "1390336253",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/24/c6/ac/1390336253.jpg",
+            "position": 11
+          },
+          {
+            "id": "1390336295",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/d8/79/89/1390336295.jpg",
+            "position": 12
+          },
+          {
+            "id": "1390336258",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/99/c3/a7/1390336258.jpg",
+            "position": 13
+          },
+          {
+            "id": "1390336153",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7a/77/58/1390336153.jpg",
+            "position": 14
+          },
+          {
+            "id": "1390337493",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f4/88/29/1390337493.jpg",
+            "position": 15
+          },
+          {
+            "id": "1390337509",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/27/af/91/1390337509.jpg",
+            "position": 16
+          },
+          {
+            "id": "1390337510",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ca/c9/4a/1390337510.jpg",
+            "position": 17
+          },
+          {
+            "id": "1390337512",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b1/ba/0d/1390337512.jpg",
+            "position": 18
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "2000",
+        "energyCertification": "10",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-11-23T19:00:08.000Z",
+        "creationDate": "2025-11-22T10:43:46.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
         "propertyId": "109939542",
         "reference": "EC-8011",
         "operation": "sale",
@@ -175,142 +311,6 @@
         "state": "active",
         "modificationDate": "2025-11-22T12:45:19.000Z",
         "creationDate": "2025-11-22T11:41:50.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      },
-      {
-        "propertyId": "109939320",
-        "reference": "ec-2035",
-        "operation": "sale",
-        "price": 695000,
-        "currency": "EUR",
-        "propertyType": "flat",
-        "size": 121,
-        "rooms": 3,
-        "bathrooms": 2,
-        "address": "",
-        "addressVisibility": "hidden_address",
-        "municipality": "",
-        "district": "",
-        "neighborhood": "",
-        "latitude": null,
-        "longitude": null,
-        "descriptions": [
-          {
-            "language": "es",
-            "comment": "Vivienda ubicada en Boadilla del Monte, Sector B.\n\nLa misma cuenta con amplio salón comedor, que además, al hacer esquina, se beneficia de la luz y el sol por la orientación privilegiada que tiene Sur-Este. Magníficas y abiertas vistas. Desde alí, podemos acceder a una terraza de unos 7 mts2.\n\nA entrar a la vivienda, nos encontramos con una amplio vestíbulo con armario de gran tamaño, cocina independiente, muy espaciosa y en excelente estado de conservación que da paso al área de lavadero.\n\nEn la zona de noche, debidamente separada por una puerta de acceso, encontramos 3 maravillosos dormitorios, todos ellos exteriores y con grandes ventanales. Así como 2 baños de muy buen tamaño. El dormitorio principal, por supuesto tiene su baño en suite.\n\nPlaza de garaje muy bien ubicada en el sótano del edificio y de buen tamaño incluida en el precio \n\nAire acondicionado por splits. \nCalefacción individual por gas natural.\nAscensor.\nPortero Físico\nPiscina\nCancha de Padel\nParque infantil\nZonas comunes\n\nBoadilla del Monte se caracteriza por ser una zona residencial, con una amplia oferta de colegios (públicos y privados), zonas verdes, restauración, tiendas y ocio. Así como buena conexión con Madrid centro."
-          }
-        ],
-        "features": {
-          "hasLift": true,
-          "hasAirConditioning": true,
-          "hasWardrobe": true,
-          "hasTerrace": true,
-          "hasGarden": true,
-          "hasSwimmingPool": true,
-          "parkingAvailable": true
-        },
-        "images": [
-          {
-            "id": "1390336259",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6b/e6/49/1390336259.jpg",
-            "position": 1
-          },
-          {
-            "id": "1390336285",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a4/8c/8b/1390336285.jpg",
-            "position": 2
-          },
-          {
-            "id": "1390336254",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0d/9f/e5/1390336254.jpg",
-            "position": 3
-          },
-          {
-            "id": "1390336266",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/eb/41/fd/1390336266.jpg",
-            "position": 4
-          },
-          {
-            "id": "1390336288",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7e/c9/94/1390336288.jpg",
-            "position": 5
-          },
-          {
-            "id": "1390336252",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f7/3a/58/1390336252.jpg",
-            "position": 6
-          },
-          {
-            "id": "1390336256",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b4/04/4f/1390336256.jpg",
-            "position": 7
-          },
-          {
-            "id": "1390336251",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/96/88/66/1390336251.jpg",
-            "position": 8
-          },
-          {
-            "id": "1390336124",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0f/79/99/1390336124.jpg",
-            "position": 9
-          },
-          {
-            "id": "1390336267",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/22/14/48/1390336267.jpg",
-            "position": 10
-          },
-          {
-            "id": "1390336253",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/24/c6/ac/1390336253.jpg",
-            "position": 11
-          },
-          {
-            "id": "1390336295",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/d8/79/89/1390336295.jpg",
-            "position": 12
-          },
-          {
-            "id": "1390336258",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/99/c3/a7/1390336258.jpg",
-            "position": 13
-          },
-          {
-            "id": "1390336153",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7a/77/58/1390336153.jpg",
-            "position": 14
-          },
-          {
-            "id": "1390337493",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f4/88/29/1390337493.jpg",
-            "position": 15
-          },
-          {
-            "id": "1390337509",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/27/af/91/1390337509.jpg",
-            "position": 16
-          },
-          {
-            "id": "1390337510",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ca/c9/4a/1390337510.jpg",
-            "position": 17
-          },
-          {
-            "id": "1390337512",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b1/ba/0d/1390337512.jpg",
-            "position": 18
-          }
-        ],
-        "tours3D": [],
-        "floor": "",
-        "constructionYear": "2000",
-        "energyCertification": "13",
-        "communityCosts": 0,
-        "builtType": "second_hand_good_condition",
-        "state": "active",
-        "modificationDate": "2025-11-22T11:04:05.000Z",
-        "creationDate": "2025-11-22T10:43:46.000Z",
         "source": "idealista-ftp",
         "status": "active"
       },
@@ -14550,7 +14550,7 @@
       }
     ],
     "total": 111,
-    "lastUpdate": "2025-11-23T16:45:04.794Z"
+    "lastUpdate": "2025-11-24T02:28:43.955Z"
   },
   "pagination": {
     "page": 1,
