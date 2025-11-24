@@ -22,7 +22,7 @@
         "descriptions": [
           {
             "language": "es",
-            "comment": "Vivienda ubicada en Boadilla del Monte, Sector B.\n\nLa misma cuenta con amplio salón comedor, que además, al hacer esquina, se beneficia de la luz y el sol por la orientación privilegiada que tiene Sur-Este. Magníficas y abiertas vistas. Desde alí, podemos acceder a una terraza de unos 7 mts2.\n\nA entrar a la vivienda, nos encontramos con una amplio vestíbulo con armario de gran tamaño, cocina independiente, muy espaciosa y en excelente estado de conservación que da paso al área de lavadero.\n\nEn la zona de noche, debidamente separada por una puerta de acceso, encontramos 3 maravillosos dormitorios, todos ellos exteriores y con grandes ventanales. Así como 2 baños de muy buen tamaño. El dormitorio principal, por supuesto tiene su baño en suite.\n\nPlaza de garaje muy bien ubicada en el sótano del edificio y de buen tamaño incluida en el precio \n\nAire acondicionado por splits. \nCalefacción individual por gas natural.\nAscensor.\nPortero Físico\nPiscina\nCancha de Padel\nParque infantil\nZonas comunes\n\nBoadilla del Monte se caracteriza por ser una zona residencial, con una amplia oferta de colegios (públicos y privados), zonas verdes, restauración, tiendas y ocio. Así como buena conexión con Madrid centro."
+            "comment": "Vivienda ubicada en Boadilla del Monte, Sector B.\n\nLa misma cuenta con amplio salón comedor, que además, al hacer esquina, se beneficia de la luz y el sol por la orientación privilegiada que tiene Sur-Este. Magníficas y abiertas vistas. Desde alí, podemos acceder a una terraza de unos 7 mts2.\n\nA entrar a la vivienda, nos encontramos con una amplio vestíbulo con armario de gran tamaño, cocina independiente, muy espaciosa y en excelente estado de conservación que da paso al área de lavadero.\n\nEn la zona de noche, debidamente separada por una puerta de acceso, encontramos 3 maravillosos dormitorios, todos ellos exteriores y con grandes ventanales. Así como 2 baños de muy buen tamaño. El dormitorio principal, por supuesto tiene su baño en suite.\n\nAmplio trastero, plaza de garaje muy bien ubicada en el sótano del edificio y de buen tamaño incluida en el precio \n\nAire acondicionado por splits. \nCalefacción individual por gas natural.\nAscensor.\nPortero Físico\nPiscina\nCancha de Padel\nParque infantil\nZonas comunes\n\nBoadilla del Monte se caracteriza por ser una zona residencial, con una amplia oferta de colegios (públicos y privados), zonas verdes, restauración, tiendas y ocio. Así como buena conexión con Madrid centro."
           }
         ],
         "features": {
@@ -133,7 +133,7 @@
         "communityCosts": 0,
         "builtType": "second_hand_good_condition",
         "state": "active",
-        "modificationDate": "2025-11-23T19:00:08.000Z",
+        "modificationDate": "2025-11-24T15:32:02.000Z",
         "creationDate": "2025-11-22T10:43:46.000Z",
         "source": "idealista-ftp",
         "status": "active"
@@ -309,7 +309,7 @@
         "communityCosts": 106,
         "builtType": "second_hand_good_condition",
         "state": "active",
-        "modificationDate": "2025-11-22T12:45:19.000Z",
+        "modificationDate": "2025-11-24T12:33:10.000Z",
         "creationDate": "2025-11-22T11:41:50.000Z",
         "source": "idealista-ftp",
         "status": "active"
@@ -12215,87 +12215,6 @@
         "status": "active"
       },
       {
-        "propertyId": "108209635",
-        "reference": "ec-5027V",
-        "operation": "sale",
-        "price": 2550000,
-        "currency": "EUR",
-        "propertyType": "flat",
-        "size": 269,
-        "rooms": 4,
-        "bathrooms": 4,
-        "address": "",
-        "addressVisibility": "hidden_address",
-        "municipality": "",
-        "district": "",
-        "neighborhood": "",
-        "latitude": null,
-        "longitude": null,
-        "descriptions": [
-          {
-            "language": "es",
-            "comment": "Vivienda exterior, totalmente reformada ubicada en el Distrito Salamanca barrio Goya.\n\nAmplio salón comedor con acceso a la terraza. Cocina totalmente equipada con electrodomésticos de alta gama.\n\nDispone de cuatro dormitorios, dos de ellos con baños en suite. Tercer baño y aseo de cortesía.\n\nEl piso tiene trastero y la finca dispone de portero físico."
-          }
-        ],
-        "features": {
-          "hasLift": true,
-          "hasAirConditioning": true,
-          "hasWardrobe": true,
-          "hasTerrace": true,
-          "hasGarden": false,
-          "hasSwimmingPool": false,
-          "parkingAvailable": false
-        },
-        "images": [
-          {
-            "id": "1337189617",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a2/1c/a5/1337189617.jpg",
-            "position": 1
-          },
-          {
-            "id": "1337189618",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0a/f9/44/1337189618.jpg",
-            "position": 2
-          },
-          {
-            "id": "1337189629",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/21/e4/f0/1337189629.jpg",
-            "position": 3
-          },
-          {
-            "id": "1337189581",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7c/22/21/1337189581.jpg",
-            "position": 4
-          },
-          {
-            "id": "1337189583",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/13/4f/69/1337189583.jpg",
-            "position": 5
-          },
-          {
-            "id": "1337189619",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/69/0c/40/1337189619.jpg",
-            "position": 6
-          },
-          {
-            "id": "1337189737",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e1/33/24/1337189737.jpg",
-            "position": 7
-          }
-        ],
-        "tours3D": [],
-        "floor": "",
-        "constructionYear": "",
-        "energyCertification": "9",
-        "communityCosts": 0,
-        "builtType": "second_hand_good_condition",
-        "state": "active",
-        "modificationDate": "2025-06-25T08:54:32.000Z",
-        "creationDate": "2025-05-19T10:39:56.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      },
-      {
         "propertyId": "108192382",
         "reference": "ec-5025V",
         "operation": "sale",
@@ -12398,6 +12317,87 @@
         "state": "active",
         "modificationDate": "2025-06-25T08:54:32.000Z",
         "creationDate": "2025-05-16T10:59:08.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
+        "propertyId": "108209635",
+        "reference": "ec-5027V",
+        "operation": "sale",
+        "price": 2550000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 269,
+        "rooms": 4,
+        "bathrooms": 4,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Vivienda exterior, totalmente reformada ubicada en el Distrito Salamanca barrio Goya.\n\nAmplio salón comedor con acceso a la terraza. Cocina totalmente equipada con electrodomésticos de alta gama.\n\nDispone de cuatro dormitorios, dos de ellos con baños en suite. Tercer baño y aseo de cortesía.\n\nEl piso tiene trastero y la finca dispone de portero físico."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": true,
+          "hasGarden": false,
+          "hasSwimmingPool": false,
+          "parkingAvailable": false
+        },
+        "images": [
+          {
+            "id": "1337189617",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a2/1c/a5/1337189617.jpg",
+            "position": 1
+          },
+          {
+            "id": "1337189618",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0a/f9/44/1337189618.jpg",
+            "position": 2
+          },
+          {
+            "id": "1337189629",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/21/e4/f0/1337189629.jpg",
+            "position": 3
+          },
+          {
+            "id": "1337189581",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7c/22/21/1337189581.jpg",
+            "position": 4
+          },
+          {
+            "id": "1337189583",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/13/4f/69/1337189583.jpg",
+            "position": 5
+          },
+          {
+            "id": "1337189619",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/69/0c/40/1337189619.jpg",
+            "position": 6
+          },
+          {
+            "id": "1337189737",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e1/33/24/1337189737.jpg",
+            "position": 7
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "",
+        "energyCertification": "9",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-06-25T08:54:32.000Z",
+        "creationDate": "2025-05-19T10:39:56.000Z",
         "source": "idealista-ftp",
         "status": "active"
       },
@@ -14550,7 +14550,7 @@
       }
     ],
     "total": 111,
-    "lastUpdate": "2025-11-24T08:52:24.278Z"
+    "lastUpdate": "2025-11-24T16:46:51.303Z"
   },
   "pagination": {
     "page": 1,
