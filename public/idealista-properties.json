@@ -188,7 +188,7 @@
         "communityCosts": 0,
         "builtType": "second_hand_good_condition",
         "state": "active",
-        "modificationDate": "2025-11-28T16:04:23.000Z",
+        "modificationDate": "2025-11-28T16:21:27.000Z",
         "creationDate": "2025-11-25T13:01:32.000Z",
         "source": "idealista-ftp",
         "status": "active"
@@ -14968,7 +14968,7 @@
       }
     ],
     "total": 114,
-    "lastUpdate": "2025-11-28T16:47:33.678Z"
+    "lastUpdate": "2025-11-29T02:18:17.162Z"
   },
   "pagination": {
     "page": 1,
