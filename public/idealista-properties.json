@@ -3,13 +3,179 @@
   "data": {
     "properties": [
       {
+        "propertyId": "110006077",
+        "reference": "ec-2023",
+        "operation": "sale",
+        "price": 695000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 147,
+        "rooms": 3,
+        "bathrooms": 2,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Vivienda ubicada en Boadilla del Monte, Sector B\n\nEste espectacular piso de 147 m² construidos se encuentra en el Sector B y ofrece todo lo que necesitas para disfrutar de una vida cómoda y plena. Con un amplio salón comedor orientado al Sur-Este, la luz natural inunda cada rincón, creando un ambiente cálido y acogedor. \n\nLas magníficas vistas desde la terraza de 7 m² son perfectas para relajarse después de un largo día.\n\nLa vivienda cuenta con tres dormitorios exteriores, todos ellos con grandes ventanales que permiten disfrutar de la luz y el aire fresco. El dormitorio principal incluye un baño en suite, ideal para mayor privacidad. La cocina independiente está en excelente estado y ofrece un área de lavadero, perfecta para mantener el orden en el hogar. Además, el vestíbulo amplio con armario empotrado proporciona un espacio extra para almacenamiento.\n\nEl edificio cuenta con ascensor, portero físico y acceso adaptado para personas con movilidad reducida. Disfruta de las zonas comunes que incluyen piscina, cancha de pádel y parque infantil, ideales para compartir momentos inolvidables con familia y amigos. La ubicación es inmejorable, rodeada de colegios, zonas verdes, restaurantes y tiendas, además de tener una excelente conexión con el centro de Madrid.\n\nNo dejes pasar la oportunidad de vivir en este maravilloso piso. ¡Ven a visitarlo y enamórate! La plaza de garaje y el trastero están incluidos en el precio. ¡Tu nuevo hogar te espera!"
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": true,
+          "hasGarden": true,
+          "hasSwimmingPool": true,
+          "parkingAvailable": true
+        },
+        "images": [
+          {
+            "id": "1392419872",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ee/eb/25/1392419872.jpg",
+            "position": 1
+          },
+          {
+            "id": "1392419116",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/88/e6/eb/1392419116.jpg",
+            "position": 2
+          },
+          {
+            "id": "1392419519",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/bf/dd/38/1392419519.jpg",
+            "position": 3
+          },
+          {
+            "id": "1392419117",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c3/fc/d3/1392419117.jpg",
+            "position": 4
+          },
+          {
+            "id": "1392419125",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6c/00/ff/1392419125.jpg",
+            "position": 5
+          },
+          {
+            "id": "1392419062",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/1c/ba/b3/1392419062.jpg",
+            "position": 6
+          },
+          {
+            "id": "1392419118",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/4f/e5/c9/1392419118.jpg",
+            "position": 7
+          },
+          {
+            "id": "1392419112",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b8/9f/e1/1392419112.jpg",
+            "position": 8
+          },
+          {
+            "id": "1392419119",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/12/8a/e9/1392419119.jpg",
+            "position": 9
+          },
+          {
+            "id": "1392419082",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a0/5c/6e/1392419082.jpg",
+            "position": 10
+          },
+          {
+            "id": "1392419083",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c4/1e/f6/1392419083.jpg",
+            "position": 11
+          },
+          {
+            "id": "1392419115",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/57/ee/ce/1392419115.jpg",
+            "position": 12
+          },
+          {
+            "id": "1392419110",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/99/ae/5e/1392419110.jpg",
+            "position": 13
+          },
+          {
+            "id": "1392419126",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/02/74/9d/1392419126.jpg",
+            "position": 14
+          },
+          {
+            "id": "1392419064",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b3/6a/1a/1392419064.jpg",
+            "position": 15
+          },
+          {
+            "id": "1392419103",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6c/3a/a8/1392419103.jpg",
+            "position": 16
+          },
+          {
+            "id": "1392419084",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3a/ae/19/1392419084.jpg",
+            "position": 17
+          },
+          {
+            "id": "1392419121",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/34/87/b4/1392419121.jpg",
+            "position": 18
+          },
+          {
+            "id": "1392419120",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b2/18/ac/1392419120.jpg",
+            "position": 19
+          },
+          {
+            "id": "1392419122",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/2f/d3/0e/1392419122.jpg",
+            "position": 20
+          },
+          {
+            "id": "1392419063",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b1/5c/e9/1392419063.jpg",
+            "position": 21
+          },
+          {
+            "id": "1392419127",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0d/bc/67/1392419127.jpg",
+            "position": 22
+          },
+          {
+            "id": "1392419123",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/37/df/fe/1392419123.jpg",
+            "position": 23
+          },
+          {
+            "id": "1392419113",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b7/32/c9/1392419113.jpg",
+            "position": 24
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "",
+        "energyCertification": "10",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-11-30T10:08:30.000Z",
+        "creationDate": "2025-11-30T09:55:43.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
         "propertyId": "109962972",
         "reference": "ec-2035",
         "operation": "sale",
         "price": 695000,
         "currency": "EUR",
         "propertyType": "flat",
-        "size": 147,
+        "size": 146,
         "rooms": 3,
         "bathrooms": 2,
         "address": "",
@@ -188,7 +354,7 @@
         "communityCosts": 0,
         "builtType": "second_hand_good_condition",
         "state": "active",
-        "modificationDate": "2025-11-28T16:21:27.000Z",
+        "modificationDate": "2025-11-30T10:00:58.000Z",
         "creationDate": "2025-11-25T13:01:32.000Z",
         "source": "idealista-ftp",
         "status": "active"
@@ -14967,12 +15133,12 @@
         "status": "active"
       }
     ],
-    "total": 114,
-    "lastUpdate": "2025-11-30T08:45:43.275Z"
+    "total": 115,
+    "lastUpdate": "2025-11-30T16:46:17.508Z"
   },
   "pagination": {
     "page": 1,
-    "size": 114,
-    "total": 114
+    "size": 115,
+    "total": 115
   }
 }
