@@ -24,7 +24,7 @@ const WhoIs = () => {
 					</StyledTitle>
 					<StyledDescription>
 						<b>
-							No publico casas. Acompaño a personas a verder su propiedad con
+							No publico casas. Acompaño a personas a vender y comprar su propiedad con
 							claridad, estrategia y confianza.
 						</b>
 						<br />

@@ -218,6 +218,37 @@ const Properties = () => {
 		localFilters.location
 	]);
 
+	// Función auxiliar para obtener título y descripción de una propiedad
+	const getPropertyTitleAndDescription = useCallback((property) => {
+		let title = '';
+		let description = '';
+		
+		if (property.source === 'contentful' || property.source === 'newDevelopments') {
+			title = property.title || '';
+			description = property.description || '';
+		} else {
+			// Para propiedades de Idealista, obtener título desde la descripción
+			const desc = 
+				property.descriptions?.find(d => d.language === 'es')?.comment ||
+				property.descriptions?.find(d => d.language === 'es')?.text ||
+				property.descriptions?.[0]?.comment ||
+				property.descriptions?.[0]?.text ||
+				'';
+			
+			if (desc) {
+				// El título es la primera frase hasta el primer punto
+				title = desc.trim().split('.')[0].trim();
+				description = desc;
+			} else {
+				// Fallback al título genérico
+				title = getPropertyTitle(property);
+				description = property.description || '';
+			}
+		}
+		
+		return { title, description };
+	}, [getPropertyTitle]);
+
 	// Generar tipos de propiedades disponibles
 	useEffect(() => {
 		const allProps = [
@@ -232,9 +263,18 @@ const Properties = () => {
 					types.add(property.propertyType);
 				}
 			});
+			// Agregar el filtro especial "local" si hay propiedades que lo contengan
+			const hasLocalProperties = allProps.some(property => {
+				const { title, description } = getPropertyTitleAndDescription(property);
+				const searchText = `${title} ${description}`.toLowerCase();
+				return searchText.includes('local') || searchText.includes('locales');
+			});
+			if (hasLocalProperties) {
+				types.add('local');
+			}
 			setAvailablePropertyTypes(Array.from(types).sort());
 		}
-	}, [properties, contentfulProperties, newDevelopments]);
+	}, [properties, contentfulProperties, newDevelopments, getPropertyTitleAndDescription]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
@@ -646,8 +686,27 @@ const Properties = () => {
 
 		// Filtro por tipo de propiedad
 		if (localFilters.propertyType && localFilters.propertyType !== '') {
-			if (property.propertyType !== localFilters.propertyType) {
-				return false;
+			// Filtro especial para "local" que busca en título y descripción
+			if (localFilters.propertyType === 'local') {
+				// Obtener título y descripción según el tipo de propiedad
+				const { title, description } = getPropertyTitleAndDescription(property);
+				
+				// Buscar las palabras: local, Local, locales, Locales (case-sensitive)
+				const searchText = `${title} ${description}`;
+				const hasLocal = 
+					searchText.includes('local') || 
+					searchText.includes('Local') ||
+					searchText.includes('locales') ||
+					searchText.includes('Locales');
+				
+				if (!hasLocal) {
+					return false;
+				}
+			} else {
+				// Para otros tipos de propiedad, usar la lógica normal
+				if (property.propertyType !== localFilters.propertyType) {
+					return false;
+				}
 			}
 		}
 
@@ -752,7 +811,8 @@ const Properties = () => {
 			storage: 'Trastero',
 			land: 'Terreno',
 			building: 'Edificio',
-			'country-house': 'Casa de campo'
+			'country-house': 'Casa de campo',
+			local: 'Local'
 		};
 		return labels[type] || type.charAt(0).toUpperCase() + type.slice(1);
 	};
