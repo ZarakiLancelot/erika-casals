@@ -3,6 +3,443 @@
   "data": {
     "properties": [
       {
+        "propertyId": "110282580",
+        "reference": "ec-LAM",
+        "operation": "sale",
+        "price": 650000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 260,
+        "rooms": 4,
+        "bathrooms": 3,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Sin duda la luz, los espacios abiertos, diseño y vistas, son los puntos fuertes de esta vivienda.\n\nSituada cerca de Alpedrete ( Guadarrama), la vivienda cuenta además con amplia parcela para poder edificar piscina y jardines desde donde podrás tener también maravillosas vistas a la sierra.\n\nLa vivienda cuenta en la planta principal con amplio salón/comedor, jardín interior con apertura de techo, cocina, baño completo, dormitorio y zonas de almacenaje\n\nTechos altos, persianas eléctricas, suelo radiante en ambas plantas.\n\nEn la planta superior, tenemos 3 dormitorios mas y un baño. El dormitorio principal cuenta con amplio vestidor, y baño en suite con bañera.\n\nZona residencial pero con excelente comunicación por transporte público."
+          }
+        ],
+        "features": {
+          "hasLift": false,
+          "hasAirConditioning": false,
+          "hasWardrobe": true,
+          "hasTerrace": true,
+          "hasGarden": true,
+          "hasSwimmingPool": false,
+          "parkingAvailable": true
+        },
+        "images": [
+          {
+            "id": "1400655996",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/03/e0/87/1400655996.jpg",
+            "position": 1
+          },
+          {
+            "id": "1400654291",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7e/78/36/1400654291.jpg",
+            "position": 2
+          },
+          {
+            "id": "1400655977",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/bf/3c/0b/1400655977.jpg",
+            "position": 3
+          },
+          {
+            "id": "1400654311",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c1/02/bb/1400654311.jpg",
+            "position": 4
+          },
+          {
+            "id": "1400655972",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/2e/0b/21/1400655972.jpg",
+            "position": 5
+          },
+          {
+            "id": "1400654290",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/5a/23/20/1400654290.jpg",
+            "position": 6
+          },
+          {
+            "id": "1400655989",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0d/0d/91/1400655989.jpg",
+            "position": 7
+          },
+          {
+            "id": "1400654299",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/cf/cd/f5/1400654299.jpg",
+            "position": 8
+          },
+          {
+            "id": "1400655960",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/59/d3/cd/1400655960.jpg",
+            "position": 9
+          },
+          {
+            "id": "1400654300",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/de/66/c8/1400654300.jpg",
+            "position": 10
+          },
+          {
+            "id": "1400655988",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/23/c0/58/1400655988.jpg",
+            "position": 11
+          },
+          {
+            "id": "1400654312",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/11/4a/bb/1400654312.jpg",
+            "position": 12
+          },
+          {
+            "id": "1400655991",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6e/23/fb/1400655991.jpg",
+            "position": 13
+          },
+          {
+            "id": "1400654301",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/94/15/18/1400654301.jpg",
+            "position": 14
+          },
+          {
+            "id": "1400655968",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/fc/f2/34/1400655968.jpg",
+            "position": 15
+          },
+          {
+            "id": "1400655995",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/1d/39/c7/1400655995.jpg",
+            "position": 16
+          },
+          {
+            "id": "1400655959",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/88/8c/be/1400655959.jpg",
+            "position": 17
+          },
+          {
+            "id": "1400655969",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/22/5d/29/1400655969.jpg",
+            "position": 18
+          },
+          {
+            "id": "1400655997",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/49/2d/ef/1400655997.jpg",
+            "position": 19
+          },
+          {
+            "id": "1400655998",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6b/6b/f2/1400655998.jpg",
+            "position": 20
+          },
+          {
+            "id": "1400655970",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/64/c0/85/1400655970.jpg",
+            "position": 21
+          },
+          {
+            "id": "1400655986",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/35/bd/76/1400655986.jpg",
+            "position": 22
+          },
+          {
+            "id": "1400656000",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/b3/c6/2d/1400656000.jpg",
+            "position": 23
+          },
+          {
+            "id": "1400655980",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/f2/cc/b0/1400655980.jpg",
+            "position": 24
+          },
+          {
+            "id": "1400656012",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/4c/be/de/1400656012.jpg",
+            "position": 25
+          },
+          {
+            "id": "1400656013",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/06/56/ac/1400656013.jpg",
+            "position": 26
+          },
+          {
+            "id": "1400656001",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/17/b5/f3/1400656001.jpg",
+            "position": 27
+          },
+          {
+            "id": "1400655973",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/26/be/56/1400655973.jpg",
+            "position": 28
+          },
+          {
+            "id": "1400655974",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6d/c9/42/1400655974.jpg",
+            "position": 29
+          },
+          {
+            "id": "1400655990",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7e/54/01/1400655990.jpg",
+            "position": 30
+          },
+          {
+            "id": "1400656015",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/df/c1/8a/1400656015.jpg",
+            "position": 31
+          },
+          {
+            "id": "1400656002",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/4b/b5/f6/1400656002.jpg",
+            "position": 32
+          },
+          {
+            "id": "1400656003",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/8e/cd/d6/1400656003.jpg",
+            "position": 33
+          },
+          {
+            "id": "1400655981",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/6a/ba/ed/1400655981.jpg",
+            "position": 34
+          },
+          {
+            "id": "1400656014",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ab/0f/a8/1400656014.jpg",
+            "position": 35
+          },
+          {
+            "id": "1400656016",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/eb/45/8f/1400656016.jpg",
+            "position": 36
+          },
+          {
+            "id": "1400656004",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7d/6c/ee/1400656004.jpg",
+            "position": 37
+          },
+          {
+            "id": "1400656045",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/28/2b/3c/1400656045.jpg",
+            "position": 38
+          },
+          {
+            "id": "1400655994",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0e/90/55/1400655994.jpg",
+            "position": 39
+          },
+          {
+            "id": "1400656031",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/9f/d9/bb/1400656031.jpg",
+            "position": 40
+          },
+          {
+            "id": "1400656055",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/09/07/ba/1400656055.jpg",
+            "position": 41
+          },
+          {
+            "id": "1400656065",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/06/9b/a9/1400656065.jpg",
+            "position": 42
+          },
+          {
+            "id": "1400656075",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/51/0b/6f/1400656075.jpg",
+            "position": 43
+          },
+          {
+            "id": "1400656066",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/3d/36/a6/1400656066.jpg",
+            "position": 44
+          },
+          {
+            "id": "1400656046",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/74/49/82/1400656046.jpg",
+            "position": 45
+          },
+          {
+            "id": "1400656056",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/39/f2/8a/1400656056.jpg",
+            "position": 46
+          },
+          {
+            "id": "1400656032",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/fe/c7/01/1400656032.jpg",
+            "position": 47
+          },
+          {
+            "id": "1400656047",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/d9/06/dc/1400656047.jpg",
+            "position": 48
+          },
+          {
+            "id": "1400656048",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/18/6b/ee/1400656048.jpg",
+            "position": 49
+          },
+          {
+            "id": "1400656051",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/11/29/fc/1400656051.jpg",
+            "position": 50
+          },
+          {
+            "id": "1400656059",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/fa/d9/f1/1400656059.jpg",
+            "position": 51
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "2009",
+        "energyCertification": "10",
+        "communityCosts": 98,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2026-01-11T18:11:10.000Z",
+        "creationDate": "2026-01-11T17:52:34.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
+        "propertyId": "110282583",
+        "reference": "ec-4147",
+        "operation": "rent",
+        "price": 2400,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 56,
+        "rooms": 2,
+        "bathrooms": 1,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Piso en alquiler en zona Lista, Distrito Salamanca.\n\nDisponibilidad inmediata! En alquiler temporal.\n\nVivienda exterior, totalmente amueblada\n\nCuenta con salón y comedor amplios.\n\nCocina independiente con todos los electrodomésticos.\n\nDos dormitorios con camas de 1.35, armarios y mesas de trabajo.\n\nAmplio baño con ducha.\n\nLa vivienda se encuentra ubicada en muy buena zona. En los alrededores muy buena restauración y tiendas diversas.\n\nMuy bien comunicado por metro y autobús."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": false,
+          "hasWardrobe": true,
+          "hasTerrace": false,
+          "hasGarden": false,
+          "hasSwimmingPool": false,
+          "parkingAvailable": false
+        },
+        "images": [
+          {
+            "id": "1400654949",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/ea/e0/2f/1400654949.jpg",
+            "position": 1
+          },
+          {
+            "id": "1400654942",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/8f/60/a5/1400654942.jpg",
+            "position": 2
+          },
+          {
+            "id": "1400654861",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/33/12/e9/1400654861.jpg",
+            "position": 3
+          },
+          {
+            "id": "1400654921",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/fe/84/73/1400654921.jpg",
+            "position": 4
+          },
+          {
+            "id": "1400654938",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/43/b0/c9/1400654938.jpg",
+            "position": 5
+          },
+          {
+            "id": "1400654948",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/76/2a/95/1400654948.jpg",
+            "position": 6
+          },
+          {
+            "id": "1400654922",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/5b/7f/53/1400654922.jpg",
+            "position": 7
+          },
+          {
+            "id": "1400654955",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/9b/c6/e7/1400654955.jpg",
+            "position": 8
+          },
+          {
+            "id": "1400654928",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/14/e9/b9/1400654928.jpg",
+            "position": 9
+          },
+          {
+            "id": "1400654930",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/4b/0c/f7/1400654930.jpg",
+            "position": 10
+          },
+          {
+            "id": "1400654920",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/4c/60/cb/1400654920.jpg",
+            "position": 11
+          },
+          {
+            "id": "1400654919",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/51/46/1c/1400654919.jpg",
+            "position": 12
+          },
+          {
+            "id": "1400654945",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/23/3e/8d/1400654945.jpg",
+            "position": 13
+          },
+          {
+            "id": "1400654939",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/c2/c8/b6/1400654939.jpg",
+            "position": 14
+          },
+          {
+            "id": "1400654931",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/1d/a7/39/1400654931.jpg",
+            "position": 15
+          },
+          {
+            "id": "1400654708",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/d4/d2/43/1400654708.jpg",
+            "position": 16
+          },
+          {
+            "id": "1400654944",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/8b/cc/e5/1400654944.jpg",
+            "position": 17
+          },
+          {
+            "id": "1400654947",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/2e/d9/55/1400654947.jpg",
+            "position": 18
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "",
+        "energyCertification": "9",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2026-01-11T18:09:36.000Z",
+        "creationDate": "2026-01-11T17:53:41.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
         "propertyId": "110246005",
         "reference": "ec-2023",
         "operation": "sale",
@@ -18023,6 +18460,87 @@
         "status": "active"
       },
       {
+        "propertyId": "108209635",
+        "reference": "ec-5027V",
+        "operation": "sale",
+        "price": 2550000,
+        "currency": "EUR",
+        "propertyType": "flat",
+        "size": 269,
+        "rooms": 4,
+        "bathrooms": 4,
+        "address": "",
+        "addressVisibility": "hidden_address",
+        "municipality": "",
+        "district": "",
+        "neighborhood": "",
+        "latitude": null,
+        "longitude": null,
+        "descriptions": [
+          {
+            "language": "es",
+            "comment": "Vivienda exterior, totalmente reformada ubicada en el Distrito Salamanca barrio Goya.\n\nAmplio salón comedor con acceso a la terraza. Cocina totalmente equipada con electrodomésticos de alta gama.\n\nDispone de cuatro dormitorios, dos de ellos con baños en suite. Tercer baño y aseo de cortesía.\n\nEl piso tiene trastero y la finca dispone de portero físico."
+          }
+        ],
+        "features": {
+          "hasLift": true,
+          "hasAirConditioning": true,
+          "hasWardrobe": true,
+          "hasTerrace": true,
+          "hasGarden": false,
+          "hasSwimmingPool": false,
+          "parkingAvailable": false
+        },
+        "images": [
+          {
+            "id": "1337189617",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a2/1c/a5/1337189617.jpg",
+            "position": 1
+          },
+          {
+            "id": "1337189618",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0a/f9/44/1337189618.jpg",
+            "position": 2
+          },
+          {
+            "id": "1337189629",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/21/e4/f0/1337189629.jpg",
+            "position": 3
+          },
+          {
+            "id": "1337189581",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7c/22/21/1337189581.jpg",
+            "position": 4
+          },
+          {
+            "id": "1337189583",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/13/4f/69/1337189583.jpg",
+            "position": 5
+          },
+          {
+            "id": "1337189619",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/69/0c/40/1337189619.jpg",
+            "position": 6
+          },
+          {
+            "id": "1337189737",
+            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e1/33/24/1337189737.jpg",
+            "position": 7
+          }
+        ],
+        "tours3D": [],
+        "floor": "",
+        "constructionYear": "",
+        "energyCertification": "9",
+        "communityCosts": 0,
+        "builtType": "second_hand_good_condition",
+        "state": "active",
+        "modificationDate": "2025-06-25T08:54:32.000Z",
+        "creationDate": "2025-05-19T10:39:56.000Z",
+        "source": "idealista-ftp",
+        "status": "active"
+      },
+      {
         "propertyId": "108192382",
         "reference": "ec-5025V",
         "operation": "sale",
@@ -18125,87 +18643,6 @@
         "state": "active",
         "modificationDate": "2025-06-25T08:54:32.000Z",
         "creationDate": "2025-05-16T10:59:08.000Z",
-        "source": "idealista-ftp",
-        "status": "active"
-      },
-      {
-        "propertyId": "108209635",
-        "reference": "ec-5027V",
-        "operation": "sale",
-        "price": 2550000,
-        "currency": "EUR",
-        "propertyType": "flat",
-        "size": 269,
-        "rooms": 4,
-        "bathrooms": 4,
-        "address": "",
-        "addressVisibility": "hidden_address",
-        "municipality": "",
-        "district": "",
-        "neighborhood": "",
-        "latitude": null,
-        "longitude": null,
-        "descriptions": [
-          {
-            "language": "es",
-            "comment": "Vivienda exterior, totalmente reformada ubicada en el Distrito Salamanca barrio Goya.\n\nAmplio salón comedor con acceso a la terraza. Cocina totalmente equipada con electrodomésticos de alta gama.\n\nDispone de cuatro dormitorios, dos de ellos con baños en suite. Tercer baño y aseo de cortesía.\n\nEl piso tiene trastero y la finca dispone de portero físico."
-          }
-        ],
-        "features": {
-          "hasLift": true,
-          "hasAirConditioning": true,
-          "hasWardrobe": true,
-          "hasTerrace": true,
-          "hasGarden": false,
-          "hasSwimmingPool": false,
-          "parkingAvailable": false
-        },
-        "images": [
-          {
-            "id": "1337189617",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/a2/1c/a5/1337189617.jpg",
-            "position": 1
-          },
-          {
-            "id": "1337189618",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/0a/f9/44/1337189618.jpg",
-            "position": 2
-          },
-          {
-            "id": "1337189629",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/21/e4/f0/1337189629.jpg",
-            "position": 3
-          },
-          {
-            "id": "1337189581",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/7c/22/21/1337189581.jpg",
-            "position": 4
-          },
-          {
-            "id": "1337189583",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/13/4f/69/1337189583.jpg",
-            "position": 5
-          },
-          {
-            "id": "1337189619",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/69/0c/40/1337189619.jpg",
-            "position": 6
-          },
-          {
-            "id": "1337189737",
-            "url": "https://img4.idealista.com/blur/HOME_WI_1500/0/id.pro.es.image.master/e1/33/24/1337189737.jpg",
-            "position": 7
-          }
-        ],
-        "tours3D": [],
-        "floor": "",
-        "constructionYear": "",
-        "energyCertification": "9",
-        "communityCosts": 0,
-        "builtType": "second_hand_good_condition",
-        "state": "active",
-        "modificationDate": "2025-06-25T08:54:32.000Z",
-        "creationDate": "2025-05-19T10:39:56.000Z",
         "source": "idealista-ftp",
         "status": "active"
       },
@@ -20251,12 +20688,12 @@
         "status": "active"
       }
     ],
-    "total": 148,
-    "lastUpdate": "2026-01-11T16:48:41.819Z"
+    "total": 150,
+    "lastUpdate": "2026-01-12T02:39:24.034Z"
   },
   "pagination": {
     "page": 1,
-    "size": 148,
-    "total": 148
+    "size": 150,
+    "total": 150
   }
 }
