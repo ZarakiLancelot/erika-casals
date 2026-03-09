@@ -259,6 +259,19 @@ export const useIdealistaProperties = () => {
 			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
 		}
 
+		// Para propiedades de Inmovilla XML (mismo formato que idealista-ftp)
+		if (property.source === 'inmovilla') {
+			if (!property.price) return 'Precio no disponible';
+			const formattedPrice = new Intl.NumberFormat('es-ES', {
+				style: 'currency',
+				currency: 'EUR',
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0
+			}).format(property.price);
+			const isRent = property.operation === 'rent';
+			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
+		}
+
 		// Para propiedades de Idealista FTP (nuevo formato)
 		if (property.source === 'idealista-ftp') {
 			if (!property.price) return 'Precio no disponible';

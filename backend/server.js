@@ -19,11 +19,24 @@ app.use(express.json());
 // CONTENTFUL CLIENT CONFIGURATION
 // =================================
 
-const contentfulClient = createClient({
-	space: process.env.CONTENTFUL_SPACE_ID,
-	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-	environment: 'master'
-});
+let contentfulClient = null;
+
+if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
+	contentfulClient = createClient({
+		space: process.env.CONTENTFUL_SPACE_ID,
+		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+		environment: 'master'
+	});
+	console.log('✅ Contentful configurado');
+} else {
+	console.log('ℹ️ Contentful no configurado (opcional)');
+}
+
+// const contentfulClient = createClient({
+// 	space: process.env.CONTENTFUL_SPACE_ID,
+// 	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+// 	environment: 'master'
+// });
 
 // =================================
 // IDEALISTA PARTNERS API SERVICE - VERSIÓN OFICIAL
