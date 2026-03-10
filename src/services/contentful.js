@@ -286,6 +286,50 @@ const getMockProperties = (type = null) => {
 	return mockProperties;
 };
 
+// Función para obtener nuevos desarrollos desde Contentful
+// Usa el content type 'newDevelopment'; si no existe, devuelve [] silenciosamente
+export const getNewDevelopments = async () => {
+	try {
+		if (!client) return [];
+		const response = await client.getEntries({
+			content_type: 'newDevelopment',
+			order: '-sys.createdAt',
+			include: 2
+		});
+		return response.items.map(item => ({
+			id: item.sys.id,
+			title: item.fields.title,
+			description:
+				item.fields.description?.content?.[0]?.content?.[0]?.value ||
+				item.fields.description ||
+				'',
+			price: item.fields.price || item.fields.minPrice,
+			minPrice: item.fields.minPrice,
+			maxPrice: item.fields.maxPrice,
+			minSize: item.fields.minSize,
+			maxSize: item.fields.maxSize,
+			location: item.fields.address || item.fields.location || null,
+			propertyZone: item.fields.propertyZone,
+			rooms: item.fields.rooms,
+			bathrooms: item.fields.bathrooms,
+			size: item.fields.size,
+			features: item.fields.features || [],
+			images:
+				item.fields.images?.map(image => ({
+					url: image.fields?.file?.url || '',
+					title: image.fields?.title || ''
+				})) || [],
+			featured: item.fields.featured || false,
+			status: item.fields.status || 'available',
+			createdAt: item.sys.createdAt,
+			source: 'newDevelopments'
+		}));
+	} catch (error) {
+		// Si el content type no existe en Contentful, devolver vacío sin ruido
+		return [];
+	}
+};
+
 // Funciones específicas para propiedades de venta y alquiler
 export const getSaleProperties = async () => {
 	return await getProperties('En venta');
@@ -300,6 +344,7 @@ export default {
 	getProperties,
 	getProperty,
 	getFeaturedProperties,
+	getNewDevelopments,
 	getSaleProperties,
 	getRentProperties
 };

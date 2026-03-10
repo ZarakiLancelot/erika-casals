@@ -93,43 +93,21 @@ export const useContentfulRentProperties = () => {
 	return useContentfulProperties('En alquiler');
 };
 
-// Hook para obtener nuevos desarrollos del backend
+// Hook para obtener nuevos desarrollos desde Contentful
 export const useNewDevelopments = () => {
 	const [newDevelopments, setNewDevelopments] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	// useCallback para obtener nuevos desarrollos
 	const fetchNewDevelopments = useCallback(async () => {
 		setLoading(true);
 		setError(null);
-		
 		try {
-			// En producción usar rutas relativas, en desarrollo usar BACKEND_URL
-			const baseUrl = import.meta.env.PROD
-				? ''
-				: import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
-			const url = `${baseUrl}/api/newDevelopments`;
-			
-			console.log('🏗️ Fetching new developments from:', url);
-			
-			const response = await fetch(url);
-			
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-			
-			const result = await response.json();
-			console.log('✅ New developments loaded:', result);
-			
-			if (result.success && result.data) {
-				setNewDevelopments(result.data);
-			} else {
-				setNewDevelopments([]);
-			}
+			const { getNewDevelopments } = await import('../services/contentful');
+			const data = await getNewDevelopments();
+			setNewDevelopments(data);
 		} catch (err) {
-			console.error('❌ Error fetching new developments:', err);
-			setError(err.message);
+			// No es crítico: puede que no haya nuevos desarrollos en Contentful todavía
 			setNewDevelopments([]);
 		} finally {
 			setLoading(false);

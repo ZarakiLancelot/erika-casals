@@ -213,6 +213,7 @@ const Properties = () => {
 		}
 	}, [
 		properties,
+		newDev,
 		contentfulProperties,
 		newDevelopments,
 		localFilters.location
@@ -222,19 +223,19 @@ const Properties = () => {
 	const getPropertyTitleAndDescription = useCallback((property) => {
 		let title = '';
 		let description = '';
-		
+
 		if (property.source === 'contentful' || property.source === 'newDevelopments') {
 			title = property.title || '';
 			description = property.description || '';
 		} else {
 			// Para propiedades de Idealista, obtener título desde la descripción
-			const desc = 
+			const desc =
 				property.descriptions?.find(d => d.language === 'es')?.comment ||
 				property.descriptions?.find(d => d.language === 'es')?.text ||
 				property.descriptions?.[0]?.comment ||
 				property.descriptions?.[0]?.text ||
 				'';
-			
+
 			if (desc) {
 				// El título es la primera frase hasta el primer punto
 				title = desc.trim().split('.')[0].trim();
@@ -245,7 +246,7 @@ const Properties = () => {
 				description = property.description || '';
 			}
 		}
-		
+
 		return { title, description };
 	}, [getPropertyTitle]);
 
@@ -690,15 +691,15 @@ const Properties = () => {
 			if (localFilters.propertyType === 'local') {
 				// Obtener título y descripción según el tipo de propiedad
 				const { title, description } = getPropertyTitleAndDescription(property);
-				
+
 				// Buscar las palabras: local, Local, locales, Locales (case-sensitive)
 				const searchText = `${title} ${description}`;
-				const hasLocal = 
-					searchText.includes('local') || 
+				const hasLocal =
+					searchText.includes('local') ||
 					searchText.includes('Local') ||
 					searchText.includes('locales') ||
 					searchText.includes('Locales');
-				
+
 				if (!hasLocal) {
 					return false;
 				}

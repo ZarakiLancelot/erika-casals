@@ -1,91 +1,145 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import {
-	formatAddressByVisibility,
-	shouldShowAddress
-} from '../utils/addressUtils';
 
-// NUEVO: Leer del JSON estático generado por el sistema FTP de Idealista
-// El archivo se actualiza cada 8 horas mediante el script npm run update:idealista
-const STATIC_JSON_PATH = '/idealista-properties.json';
+const API_BASE = 'https://api.erikacasals.com/api.php';
+const NUMAGENCIA = '13731';
 
+// ─── Mapeo de tipos Inmovilla → formato interno ───────────────────────────────
+const TIPO_MAP = {
+	Piso: 'flat',
+	Apartamento: 'flat',
+	Estudio: 'studio',
+	Loft: 'loft',
+	'Ático': 'penthouse',
+	Atico: 'penthouse',
+	'Dúplex': 'duplex',
+	Duplex: 'duplex',
+	'Casa / Chalet': 'house',
+	Casa: 'house',
+	Chalet: 'house',
+	'Villa / Chalet': 'house',
+	Adosado: 'house',
+	Local: 'premises',
+	Oficina: 'office',
+	Garaje: 'garage',
+	Trastero: 'storage',
+	Terreno: 'land',
+	'Nave industrial': 'warehouse',
+	Nave: 'warehouse',
+	Edificio: 'building'
+};
+
+// ─── Construir URLs de imágenes ───────────────────────────────────────────────
+function buildImages(codOfer, numFotos, fotoBase) {
+	if (numFotos && numFotos > 0) {
+		return Array.from({ length: numFotos }, (_, i) => ({
+			url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${codOfer}/${i + 1}-1.jpg`,
+			id: `${codOfer}-${i + 1}`,
+			position: i + 1
+		}));
+	}
+	if (fotoBase) {
+		return [{ url: fotoBase, id: `${codOfer}-1`, position: 1 }];
+	}
+	return [];
+}
+
+// ─── Transformar un item de paginación Inmovilla al formato interno ──────────
+function transformInmovillaItem(item) {
+	if (!item || !item.cod_ofer) return null;
+
+	const isRent = item.keyacci === 2;
+	const price = isRent ? item.precioalq : item.precioinmo;
+	const images = buildImages(item.cod_ofer, item.numfotos, item.foto);
+	const description = item.observaciones || item.texto || '';
+
+	return {
+		propertyId: String(item.cod_ofer),
+		source: 'inmovilla',
+		price,
+		operation: isRent ? 'rent' : 'sale',
+		size: item.m_cons || item.m_uties || null,
+		rooms: item.habitaciones || null,
+		bathrooms: item.banyos || null,
+		images,
+		description,
+		descriptions: description ? [{ language: 'es', text: description }] : [],
+		propertyType: TIPO_MAP[item.nbtipo] || 'flat',
+		reference: String(item.cod_ofer),
+		address: {
+			town: item.ciudad || 'Madrid',
+			district: item.zona || '',
+			latitude: item.latitud || null,
+			longitude: item.altitud || null
+		},
+		municipality: item.ciudad || 'Madrid',
+		district: item.zona || '',
+		latitude: item.latitud || null,
+		longitude: item.altitud || null,
+		features: item.features || {}
+	};
+}
+
+// ─── Hook principal ───────────────────────────────────────────────────────────
 export const useIdealistaProperties = () => {
 	const [properties, setProperties] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [selectedProperty, setSelectedProperty] = useState(null);
 	const [propertyImages, setPropertyImages] = useState({});
-	const [filter, setFilter] = useState('all'); // 'all', 'sale', 'rent'
+	const [filter, setFilter] = useState('all');
 
-	// Función para obtener todas las propiedades desde el JSON estático
 	const fetchAllProperties = useCallback(async () => {
 		setLoading(true);
 		setError(null);
-
 		try {
-			// Leer del archivo JSON estático en /public
-			const response = await fetch(STATIC_JSON_PATH);
-
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-
+			const url = `${API_BASE}?accion=paginacion&pagina=1&por_pagina=200`;
+			const response = await fetch(url);
+			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			const result = await response.json();
-
-			if (result.success && result.data) {
-				const allProperties = result.data.properties || result.data || [];
-				setProperties(allProperties);
-			} else {
-				throw new Error('Formato de datos inválido');
-			}
+			if (!result.ok) throw new Error(result.error || 'Error en la API');
+			const items = (result.data?.paginacion || []).filter(
+				item => item.cod_ofer !== undefined
+			);
+			setProperties(items.map(transformInmovillaItem).filter(Boolean));
 		} catch (err) {
-			console.error('Error cargando propiedades:', err);
-			setError('Error cargando propiedades desde Idealista');
+			console.error('Error cargando propiedades Inmovilla:', err);
+			setError('Error cargando propiedades');
 			setProperties([]);
 		} finally {
 			setLoading(false);
 		}
 	}, []);
 
-	// Función para obtener todas las propiedades
 	const fetchProperties = useCallback(
-		async (options = {}) => {
-			// Ahora simplemente redirige a fetchAllProperties ya que todo está en un archivo
-			return fetchAllProperties();
-		},
+		async (_options = {}) => fetchAllProperties(),
 		[fetchAllProperties]
 	);
 
-	// Función para obtener una propiedad específica
 	const fetchProperty = useCallback(
 		async propertyId => {
+			// Buscar en las ya cargadas
+			if (properties.length > 0) {
+				const found = properties.find(p => p.propertyId === String(propertyId));
+				if (found) {
+					setSelectedProperty(found);
+					return found;
+				}
+			}
+			// Fallback: traer todas y buscar
 			try {
-				// Buscar en las propiedades ya cargadas
-				if (properties.length > 0) {
-					const property = properties.find(p => p.propertyId === propertyId);
-					if (property) {
-						setSelectedProperty(property);
-						return property;
-					}
-				}
-
-				// Si no están cargadas, cargarlas primero
-				const response = await fetch(STATIC_JSON_PATH);
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-
+				const url = `${API_BASE}?accion=paginacion&pagina=1&por_pagina=200`;
+				const response = await fetch(url);
 				const result = await response.json();
-				if (result.success && result.data) {
-					const allProperties = result.data.properties || [];
-					const property = allProperties.find(p => p.propertyId === propertyId);
-
-					if (property) {
-						setSelectedProperty(property);
-						return property;
-					}
+				const items = (result.data?.paginacion || []).filter(
+					i => i.cod_ofer !== undefined
+				);
+				const found = items.find(i => String(i.cod_ofer) === String(propertyId));
+				if (found) {
+					const property = transformInmovillaItem(found);
+					setSelectedProperty(property);
+					return property;
 				}
-
-				throw new Error('Propiedad no encontrada');
+				return null;
 			} catch (err) {
 				console.error('Error al cargar la propiedad:', err);
 				setError('Error al cargar los detalles de la propiedad');
@@ -95,247 +149,92 @@ export const useIdealistaProperties = () => {
 		[properties]
 	);
 
-	// Función para obtener imágenes de una propiedad
+	// Las imágenes ya vienen en el objeto; esta función es para compatibilidad
 	const fetchPropertyImages = useCallback(
 		async propertyId => {
-			try {
-				// Las imágenes ya vienen en el JSON de la propiedad
-				const property = properties.find(p => p.propertyId === propertyId);
-
-				if (property && property.images) {
-					const images = property.images.map(img => ({
-						url: img.url,
-						id: img.id,
-						position: img.position,
-						tag: img.tag || 'unknown'
-					}));
-
-					setPropertyImages(prev => ({
-						...prev,
-						[propertyId]: images
-					}));
-
-					return images;
-				}
-
-				// Si no está en properties, intentar cargar del JSON
-				const response = await fetch(STATIC_JSON_PATH);
-				if (!response.ok) {
-					return [];
-				}
-
-				const result = await response.json();
-				if (result.success && result.data) {
-					const allProperties = result.data.properties || [];
-					const foundProperty = allProperties.find(
-						p => p.propertyId === propertyId
-					);
-
-					if (foundProperty && foundProperty.images) {
-						const images = foundProperty.images.map(img => ({
-							url: img.url,
-							id: img.id,
-							position: img.position,
-							tag: img.tag || 'unknown'
-						}));
-
-						setPropertyImages(prev => ({
-							...prev,
-							[propertyId]: images
-						}));
-
-						return images;
-					}
-				}
-
-				return [];
-			} catch (err) {
-				console.error('Error al cargar imágenes:', err);
-				return [];
-			}
+			const property = properties.find(p => p.propertyId === String(propertyId));
+			if (!property) return [];
+			const images = property.images || [];
+			setPropertyImages(prev => ({ ...prev, [propertyId]: images }));
+			return images;
 		},
 		[properties]
 	);
-	// Función para obtener la primera imagen de una propiedad para el grid
+
 	const getPropertyMainImage = useCallback(
 		propertyId => {
 			if (!propertyId) return null;
-			const images = propertyImages[propertyId];
-			if (images && images.length > 0) {
-				return images[0].url || images[0].link;
-			}
-			return null; // Retorna null si no hay imagen, para usar placeholder
+			const cached = propertyImages[propertyId];
+			if (cached && cached.length > 0) return cached[0].url;
+			const property = properties.find(p => p.propertyId === String(propertyId));
+			return property?.images?.[0]?.url || null;
 		},
-		[propertyImages]
+		[propertyImages, properties]
 	);
 
-	// Función para generar título informativo de la propiedad
 	const getPropertyTitle = useCallback(property => {
 		if (!property) return 'Propiedad';
-
-		// Traducir el tipo de propiedad
-		const propertyTypeMap = {
-			flat: 'Piso',
-			house: 'Casa',
-			commercial: 'Local comercial',
-			garage: 'Plaza de garaje',
-			land: 'Terreno',
-			office: 'Oficina',
-			premises: 'Local',
-			store: 'Local comercial',
-			warehouse: 'Nave industrial'
+		const typeMap = {
+			flat: 'Piso', house: 'Casa', penthouse: 'Ático', duplex: 'Dúplex',
+			studio: 'Estudio', loft: 'Loft', premises: 'Local', office: 'Oficina',
+			garage: 'Garaje', storage: 'Trastero', land: 'Terreno',
+			warehouse: 'Nave industrial', building: 'Edificio'
 		};
-
-		// Usar propertyType o type según esté disponible
-		const propertyType = property.propertyType || property.type || 'flat';
-		const type = propertyTypeMap[propertyType] || 'Propiedad';
-
-		// Construir dirección respetando la configuración de visibilidad
-		let location = '';
-		if (property.address && shouldShowAddress(property.address)) {
-			location = formatAddressByVisibility(property.address);
-		} else if (property.address) {
-			// Si no se puede mostrar la dirección completa, mostrar solo distrito/zona
-			const district = property.address.district;
-			const town = property.address.town;
-
-			if (district && town) {
-				location = `${district}, ${town}`;
-			} else if (town) {
-				location = town;
-			} else if (district) {
-				location = district;
-			}
-		}
-
-		// Si no hay dirección, usar un texto genérico
-		if (!location) {
-			location = 'Madrid';
-		}
-
-		return `${type} en calle ${location}`;
+		const type = typeMap[property.propertyType] || 'Propiedad';
+		const location = property.district || property.address?.district || property.municipality || 'Madrid';
+		return `${type} en ${location}`;
 	}, []);
 
-	// Estado derivado para las propiedades filtradas - se actualiza cuando cambia filter o properties
-	const filteredProperties = useMemo(() => {
-		if (filter === 'all') {
-			return properties;
-		}
-
-		const filtered = properties.filter(property => {
-			if (!property.operation) {
-				return false;
-			}
-
-			// Soportar tanto el formato nuevo (string) como el antiguo (objeto)
-			const operationType =
-				typeof property.operation === 'string'
-					? property.operation
-					: property.operation.type;
-
-			return operationType === filter;
-		});
-
-		return filtered;
-	}, [properties, filter]);
-
-	// Función para formatear precio
 	const formatPrice = useCallback(property => {
 		if (!property) return 'Precio no disponible';
 
-		// Para propiedades de Contentful, el precio está directamente en property.price
 		if (property.source === 'contentful') {
 			if (!property.price) return 'Precio no disponible';
-
-			const formattedPrice = new Intl.NumberFormat('es-ES', {
-				style: 'currency',
-				currency: 'EUR',
-				minimumFractionDigits: 0,
-				maximumFractionDigits: 0
-			}).format(property.price);
-
-			// Determinar si es alquiler por el tipo
-			const isRent = property.type === 'En alquiler';
-			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
+			const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(property.price);
+			return `${fmt}${property.type === 'En alquiler' ? ' / mes' : ''}`;
 		}
 
-		// Para propiedades de Inmovilla XML (mismo formato que idealista-ftp)
-		if (property.source === 'inmovilla') {
+		if (property.source === 'inmovilla' || property.source === 'idealista-ftp') {
 			if (!property.price) return 'Precio no disponible';
-			const formattedPrice = new Intl.NumberFormat('es-ES', {
-				style: 'currency',
-				currency: 'EUR',
-				minimumFractionDigits: 0,
-				maximumFractionDigits: 0
-			}).format(property.price);
-			const isRent = property.operation === 'rent';
-			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
+			const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(property.price);
+			const isRent = property.operation === 'rent' || property.operation === 'rent_to_own';
+			return `${fmt}${isRent ? ' / mes' : ''}`;
 		}
 
-		// Para propiedades de Idealista FTP (nuevo formato)
-		if (property.source === 'idealista-ftp') {
-			if (!property.price) return 'Precio no disponible';
-
-			const formattedPrice = new Intl.NumberFormat('es-ES', {
-				style: 'currency',
-				currency: 'EUR',
-				minimumFractionDigits: 0,
-				maximumFractionDigits: 0
-			}).format(property.price);
-
-			// operation es un string: 'sale', 'rent', 'rent_to_own'
-			const isRent =
-				property.operation === 'rent' || property.operation === 'rent_to_own';
-			return `${formattedPrice}${isRent ? ' / mes' : ''}`;
-		}
-
-		// Para propiedades de Idealista API (formato antiguo con objeto operation)
+		// Legado Idealista API
 		if (!property.operation) return 'Precio no disponible';
-
-		// Soportar tanto formato string como objeto
-		const price =
-			typeof property.operation === 'object'
-				? property.operation.price
-				: property.price;
-		const operationType =
-			typeof property.operation === 'string'
-				? property.operation
-				: property.operation.type;
-
+		const price = typeof property.operation === 'object' ? property.operation.price : property.price;
+		const opType = typeof property.operation === 'string' ? property.operation : property.operation.type;
 		if (!price) return 'Precio no disponible';
-
-		const formattedPrice = new Intl.NumberFormat('es-ES', {
-			style: 'currency',
-			currency: 'EUR',
-			minimumFractionDigits: 0,
-			maximumFractionDigits: 0
-		}).format(price);
-
-		return `${formattedPrice}${operationType === 'rent' ? ' / mes' : ''}`;
+		const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(price);
+		return `${fmt}${opType === 'rent' ? ' / mes' : ''}`;
 	}, []);
 
-	// Cargar propiedades al montar el componente
+	const filteredProperties = useMemo(() => {
+		if (filter === 'all') return properties;
+		return properties.filter(p => {
+			const op = typeof p.operation === 'string' ? p.operation : p.operation?.type;
+			return op === filter;
+		});
+	}, [properties, filter]);
+
 	useEffect(() => {
-		fetchAllProperties(); // Usar la nueva función que carga todas las propiedades
+		fetchAllProperties();
 	}, [fetchAllProperties]);
 
 	return {
-		// Estado
 		properties: filteredProperties,
 		loading,
 		error,
 		selectedProperty,
 		propertyImages,
 		filter,
-		// Acciones
 		fetchProperties,
-		fetchAllProperties, // Nueva función para cargar todas las propiedades
+		fetchAllProperties,
 		fetchProperty,
 		fetchPropertyImages,
 		setSelectedProperty,
 		setFilter,
-
-		// Utilidades
 		formatPrice,
 		getPropertyMainImage,
 		getPropertyTitle
