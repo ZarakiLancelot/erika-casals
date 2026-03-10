@@ -197,7 +197,7 @@ const PropertiesRent = () => {
 
 		// Búsqueda por características específicas
 		if (term.includes('ascensor') || term.includes('elevador')) {
-			return property.features?.liftAvailable === true;
+			return property.features?.liftAvailable === true || property.features?.hasLift === true;
 		}
 
 		if (
@@ -205,15 +205,15 @@ const PropertiesRent = () => {
 			term.includes('aire') ||
 			term.includes('ac')
 		) {
-			return property.features?.conditionedAir === true;
+			return property.features?.conditionedAir === true || property.features?.hasAirConditioning === true;
 		}
 
 		if (term.includes('terraza')) {
-			return property.features?.terrace === true;
+			return property.features?.terrace === true || property.features?.hasTerrace === true;
 		}
 
 		if (term.includes('balcon') || term.includes('balcón')) {
-			return property.features?.balcony === true;
+			return property.features?.balcony === true || property.features?.hasBalcony === true;
 		}
 
 		if (
@@ -225,11 +225,11 @@ const PropertiesRent = () => {
 		}
 
 		if (term.includes('piscina')) {
-			return property.features?.pool === true;
+			return property.features?.pool === true || property.features?.hasSwimmingPool === true;
 		}
 
 		if (term.includes('jardin') || term.includes('jardín')) {
-			return property.features?.garden === true;
+			return property.features?.garden === true || property.features?.hasGarden === true;
 		}
 
 		if (term.includes('trastero') || term.includes('storage')) {
@@ -237,7 +237,7 @@ const PropertiesRent = () => {
 		}
 
 		if (term.includes('armarios empotrados') || term.includes('armarios')) {
-			return property.features?.wardrobes === true;
+			return property.features?.wardrobes === true || property.features?.hasWardrobe === true;
 		}
 
 		if (term.includes('calefaccion') || term.includes('calefacción')) {
@@ -563,7 +563,7 @@ const PropertiesRent = () => {
 		if (property.source === 'contentful') {
 			return property.size;
 		}
-		return property.features?.areaConstructed || property.features?.builtArea;
+		return property.size || property.features?.areaConstructed || property.features?.builtArea;
 	};
 
 	// Función para obtener el número de habitaciones
@@ -571,7 +571,7 @@ const PropertiesRent = () => {
 		if (property.source === 'contentful') {
 			return property.rooms;
 		}
-		return property.features?.rooms;
+		return property.rooms || property.features?.rooms;
 	};
 
 	// Función para obtener el número de baños
@@ -579,7 +579,7 @@ const PropertiesRent = () => {
 		if (property.source === 'contentful') {
 			return property.bathrooms;
 		}
-		return property.features?.bathroomNumber;
+		return property.bathrooms || property.features?.bathroomNumber;
 	};
 
 	// Función para obtener etiquetas legibles de tipos de propiedad

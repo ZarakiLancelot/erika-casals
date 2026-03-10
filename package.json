@@ -16,7 +16,8 @@
 		"parse:idealista": "node scripts/parseIdealistaXML.js",
 		"download:idealista": "node scripts/downloadIdealistaFTP.js",
 		"update:idealista": "node scripts/updateIdealistaFeed.js",
-		"generate:sitemap": "node scripts/generateSitemap.js"
+		"generate:sitemap": "node scripts/generateSitemap.js",
+		"update:inmovilla": "node --env-file=.env scripts/updateInmovillaFeed.js"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",

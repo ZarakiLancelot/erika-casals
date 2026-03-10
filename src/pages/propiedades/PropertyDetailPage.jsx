@@ -12,57 +12,70 @@ const PropertyDetailPage = () => {
 	const [hasSearched, setHasSearched] = useState(!!location.state?.property);
 	const [propertyImages, setPropertyImages] = useState([]);
 
-	// Función para cargar una propiedad específica desde el archivo JSON local
+	// Función para cargar una propiedad específica desde el API de Inmovilla
 	const loadIdealistaProperty = useCallback(async propertyId => {
 		try {
-			console.log('🔄 loadIdealistaProperty: Loading property', propertyId);
-
-			// Cargar desde el archivo JSON estático local
-			const url = '/idealista-properties.json';
-			console.log('🔄 loadIdealistaProperty: Fetching from', url);
-
+			// Traer todas las propiedades y buscar por cod_ofer
+			const url = `https://api.erikacasals.com/api.php?accion=paginacion&pagina=1&por_pagina=200`;
 			const response = await fetch(url);
-			console.log(
-				'📡 loadIdealistaProperty: Response status',
-				response.status,
-				response.ok
-			);
-
-			if (!response.ok) {
-				console.log('❌ loadIdealistaProperty: Response not ok');
-				return null;
-			}
+			if (!response.ok) return null;
 
 			const result = await response.json();
-			console.log('📦 loadIdealistaProperty: Response data received');
+			if (!result.ok) return null;
 
-			if (result.success && result.data && result.data.properties) {
-				console.log(
-					'✅ loadIdealistaProperty: Searching for property in array'
-				);
-				// Buscar la propiedad por propertyId en el array
-				const foundProperty = result.data.properties.find(
-					prop =>
-						prop.propertyId === propertyId ||
-						prop.propertyId === String(propertyId)
-				);
+			const items = (result.data?.paginacion || []).filter(
+				i => i.cod_ofer !== undefined
+			);
+			const item = items.find(i => String(i.cod_ofer) === String(propertyId));
+			if (!item) return null;
 
-				if (foundProperty) {
-					console.log(
-						'✅ loadIdealistaProperty: Property found',
-						foundProperty.propertyId
-					);
-					return foundProperty;
-				} else {
-					console.log('❌ loadIdealistaProperty: Property not found in array');
-					return null;
-				}
-			} else {
-				console.log('❌ loadIdealistaProperty: Invalid response format');
-				return null;
-			}
+			// Transformar al formato interno
+			const NUMAGENCIA = '13731';
+			const TIPO_MAP = {
+				Piso: 'flat', Apartamento: 'flat', Estudio: 'studio', Loft: 'loft',
+				'Ático': 'penthouse', Atico: 'penthouse', 'Dúplex': 'duplex', Duplex: 'duplex',
+				'Casa / Chalet': 'house', Casa: 'house', Chalet: 'house',
+				Local: 'premises', Oficina: 'office', Garaje: 'garage',
+				Trastero: 'storage', Terreno: 'land', Nave: 'warehouse', Edificio: 'building'
+			};
+			const isRent = item.keyacci === 2;
+			const numFotos = item.numfotos || 0;
+			const images = numFotos > 0
+				? Array.from({ length: numFotos }, (_, i) => ({
+						url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${item.cod_ofer}/${i + 1}-1.jpg`,
+						id: `${item.cod_ofer}-${i + 1}`,
+						position: i + 1
+					}))
+				: item.foto ? [{ url: item.foto, id: `${item.cod_ofer}-1`, position: 1 }] : [];
+			const description = item.observaciones || item.texto || '';
+
+			return {
+				propertyId: String(item.cod_ofer),
+				source: 'inmovilla',
+				price: isRent ? item.precioalq : item.precioinmo,
+				operation: isRent ? 'rent' : 'sale',
+				size: item.m_cons || item.m_uties || null,
+				rooms: item.habitaciones || null,
+				bathrooms: item.banyos || null,
+				images,
+				description,
+				descriptions: description ? [{ language: 'es', text: description }] : [],
+				propertyType: TIPO_MAP[item.nbtipo] || 'flat',
+				reference: String(item.cod_ofer),
+				address: {
+					town: item.ciudad || 'Madrid',
+					district: item.zona || '',
+					latitude: item.latitud || null,
+					longitude: item.altitud || null
+				},
+				municipality: item.ciudad || 'Madrid',
+				district: item.zona || '',
+				latitude: item.latitud || null,
+				longitude: item.altitud || null,
+				features: {}
+			};
 		} catch (err) {
-			console.error('❌ loadIdealistaProperty: Error', err);
+			console.error('Error al cargar la propiedad desde Inmovilla:', err);
 			return null;
 		}
 	}, []);
@@ -222,7 +235,7 @@ const PropertyDetailPage = () => {
 	}, [property, propertyImages.length, loadPropertyImages]);
 
 	const handleBack = () => {
-		navigate(-1); // Navegar hacia atrás en el historial
+		navigate(-1);
 	};
 
 	if (loading || !hasSearched) {

@@ -657,15 +657,9 @@ const Footer = () => {
 				<StyledRightBottom>
 					<StyledQuickLinksTitle>Enlaces rápidos</StyledQuickLinksTitle>
 					<StyledQuickLinks>
-						<StyledQuickLink>
-							<Link to='/'>Inicio</Link>
-						</StyledQuickLink>
-						<StyledQuickLink>
-							<Link to='/servicios'>Servicios</Link>
-						</StyledQuickLink>
-						<StyledQuickLink>
-							<Link to='/aboutme'>Sobre mí</Link>
-						</StyledQuickLink>
+						<StyledQuickLink as={Link} to='/'>Inicio</StyledQuickLink>
+						<StyledQuickLink as={Link} to='/servicios'>Servicios</StyledQuickLink>
+						<StyledQuickLink as={Link} to='/aboutme'>Sobre mí</StyledQuickLink>
 					</StyledQuickLinks>
 				</StyledRightBottom>
 			</StyledBottomSection>

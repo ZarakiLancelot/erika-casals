@@ -6,6 +6,8 @@ import PropiedadesPage from '../../pages/propiedades/PropiedadesPage';
 import PropiedadesRentPage from '../../pages/propiedades/PropiedadesRentPage';
 import PropertyDetailPage from '../../pages/propiedades/PropertyDetailPage';
 import AboutMe from '../pages/aboutme/AboutMe';
+import FichaPage from '../../pages/ficha/FichaPage';
+import ClientePage from '../../pages/cliente/ClientePage';
 
 const Router = () => {
 	return (
@@ -18,6 +20,11 @@ const Router = () => {
 				<Route path='/sales' element={<PropiedadesPage />} />
 			</Route>
 			<Route path='/property/:propertyId' element={<PropertyDetailPage />} />
+			{/* Ruta para fichas individuales que envía Inmovilla desde su CRM */}
+			<Route path='/ficha/index.php' element={<FichaPage />} />
+			<Route path='/ficha' element={<FichaPage />} />
+			<Route path='/cliente' element={<ClientePage />} />
+			<Route path='/cliente/index.php' element={<ClientePage />} />
 		</Routes>
 	);
 };
