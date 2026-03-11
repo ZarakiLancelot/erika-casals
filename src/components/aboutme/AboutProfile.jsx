@@ -4,10 +4,6 @@ import {
 	StyledInfoContainer,
 	StyledInfoContent,
 	StyledInfoDiv,
-	StyledNumber,
-	StyledNumberDescription,
-	StyledNumbersContainer,
-	StyledNumbersContent,
 	ContactInfo,
 	ContactItem,
 	ProfileText,
@@ -22,7 +18,7 @@ const AboutProfile = () => {
 		<StyledInfoContainer>
 			<StyledInfoContent>
 				<StyledInfoDiv>
-					<img src='/images/erika-photo.jpg' alt='Erika Casals' />
+					<img src='/images/erika.jpeg' alt='Erika Casals' />
 				</StyledInfoDiv>
 				<StyledInfoDiv>
 					<StyledTitle style={{ fontSize: '50px', marginBottom: '0px' }}>

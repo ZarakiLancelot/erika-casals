@@ -15,7 +15,7 @@ const WhoIs = () => {
 		<StyledInfoContainer>
 			<StyledInfoContent>
 				<StyledInfoDiv>
-					<img src='/images/erika-photo.jpg' alt='Who is Erika Casals' />
+					<img src='/images/erika.jpeg' alt='Who is Erika Casals' />
 				</StyledInfoDiv>
 				<StyledInfoDiv>
 					<StyledTitle>
