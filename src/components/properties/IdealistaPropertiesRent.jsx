@@ -41,7 +41,10 @@ import {
 	PropertyIcon,
 	LoadingSpinner,
 	ErrorMessage,
-	EmptyState
+	EmptyState,
+	PaginationContainer,
+	PaginationButton,
+	PaginationInfo
 } from './styles';
 import Footer from '../footer/Footer';
 import ResponsiveNavbar from '../common/ResponsiveNavbar';
@@ -79,6 +82,8 @@ const PropertiesRent = () => {
 		features: ''
 	});
 	const [loadedImages, setLoadedImages] = useState(new Set());
+	const [currentPage, setCurrentPage] = useState(1);
+	const ITEMS_PER_PAGE = 12;
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
 	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
@@ -634,6 +639,53 @@ const PropertiesRent = () => {
 		});
 	};
 
+	// Paginación
+	const totalPages = Math.ceil(filteredProperties.length / ITEMS_PER_PAGE);
+	const paginatedProperties = filteredProperties.slice(
+		(currentPage - 1) * ITEMS_PER_PAGE,
+		currentPage * ITEMS_PER_PAGE
+	);
+
+	const renderPagination = () => {
+		const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
+			.filter(page => page === 1 || page === totalPages || Math.abs(page - currentPage) <= 2)
+			.reduce((acc, page, idx, arr) => {
+				if (idx > 0 && page - arr[idx - 1] > 1) acc.push('...');
+				acc.push(page);
+				return acc;
+			}, []);
+
+		return (
+			<PaginationContainer>
+				<PaginationButton
+					onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+					disabled={currentPage === 1}
+				>
+					← Anterior
+				</PaginationButton>
+				{pages.map((page, idx) =>
+					page === '...' ? (
+						<PaginationInfo key={`ellipsis-${idx}`}>…</PaginationInfo>
+					) : (
+						<PaginationButton
+							key={page}
+							$active={currentPage === page}
+							onClick={() => setCurrentPage(page)}
+						>
+							{page}
+						</PaginationButton>
+					)
+				)}
+				<PaginationButton
+					onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+					disabled={currentPage === totalPages}
+				>
+					Siguiente →
+				</PaginationButton>
+			</PaginationContainer>
+		);
+	};
+
 	return (
 		<div>
 			<ResponsiveNavbar />
@@ -823,8 +875,9 @@ const PropertiesRent = () => {
 									!error &&
 									!contentfulError &&
 									filteredProperties.length > 0 && (
-										<PropertiesGrid>
-											{filteredProperties.map((property, index) => {
+										<>
+											<PropertiesGrid>
+												{paginatedProperties.map((property, index) => {
 												// Para propiedades de Idealista
 												const propertyId = property.propertyId;
 												if (propertyId && !loadedImages.has(propertyId)) {
@@ -950,8 +1003,10 @@ const PropertiesRent = () => {
 													</ScrollAnimation>
 												);
 											})}
-										</PropertiesGrid>
-									)}{' '}
+											</PropertiesGrid>
+											{totalPages > 1 && renderPagination()}
+										</>
+									)}
 							</PropertiesSection>
 						</MainContainer>
 					</ContentWrapper>
