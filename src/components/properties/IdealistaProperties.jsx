@@ -45,7 +45,10 @@ import {
 	PropertyIcon,
 	LoadingSpinner,
 	ErrorMessage,
-	EmptyState
+	EmptyState,
+	PaginationContainer,
+	PaginationButton,
+	PaginationInfo
 } from './styles';
 import Footer from '../footer/Footer';
 import ResponsiveNavbar from '../common/ResponsiveNavbar';
@@ -99,6 +102,8 @@ const Properties = () => {
 	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
 	const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]); // Tipos de propiedades disponibles
 	const [newDev, setNewDev] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const ITEMS_PER_PAGE = 5; // Número de propiedades por página
 	// Establecer filtro a 'sale' al montar el componente y limpiar filtros locales
 	useEffect(() => {
 		setFilter('sale');
@@ -220,35 +225,41 @@ const Properties = () => {
 	]);
 
 	// Función auxiliar para obtener título y descripción de una propiedad
-	const getPropertyTitleAndDescription = useCallback((property) => {
-		let title = '';
-		let description = '';
+	const getPropertyTitleAndDescription = useCallback(
+		property => {
+			let title = '';
+			let description = '';
 
-		if (property.source === 'contentful' || property.source === 'newDevelopments') {
-			title = property.title || '';
-			description = property.description || '';
-		} else {
-			// Para propiedades de Idealista, obtener título desde la descripción
-			const desc =
-				property.descriptions?.find(d => d.language === 'es')?.comment ||
-				property.descriptions?.find(d => d.language === 'es')?.text ||
-				property.descriptions?.[0]?.comment ||
-				property.descriptions?.[0]?.text ||
-				'';
-
-			if (desc) {
-				// El título es la primera frase hasta el primer punto
-				title = desc.trim().split('.')[0].trim();
-				description = desc;
-			} else {
-				// Fallback al título genérico
-				title = getPropertyTitle(property);
+			if (
+				property.source === 'contentful' ||
+				property.source === 'newDevelopments'
+			) {
+				title = property.title || '';
 				description = property.description || '';
-			}
-		}
+			} else {
+				// Para propiedades de Idealista, obtener título desde la descripción
+				const desc =
+					property.descriptions?.find(d => d.language === 'es')?.comment ||
+					property.descriptions?.find(d => d.language === 'es')?.text ||
+					property.descriptions?.[0]?.comment ||
+					property.descriptions?.[0]?.text ||
+					'';
 
-		return { title, description };
-	}, [getPropertyTitle]);
+				if (desc) {
+					// El título es la primera frase hasta el primer punto
+					title = desc.trim().split('.')[0].trim();
+					description = desc;
+				} else {
+					// Fallback al título genérico
+					title = getPropertyTitle(property);
+					description = property.description || '';
+				}
+			}
+
+			return { title, description };
+		},
+		[getPropertyTitle]
+	);
 
 	// Generar tipos de propiedades disponibles
 	useEffect(() => {
@@ -275,7 +286,12 @@ const Properties = () => {
 			}
 			setAvailablePropertyTypes(Array.from(types).sort());
 		}
-	}, [properties, contentfulProperties, newDevelopments, getPropertyTitleAndDescription]);
+	}, [
+		properties,
+		contentfulProperties,
+		newDevelopments,
+		getPropertyTitleAndDescription
+	]);
 
 	// Función para verificar si una propiedad tiene una característica específica
 	const hasFeature = (property, searchTerm) => {
@@ -305,7 +321,10 @@ const Properties = () => {
 
 		// Búsqueda por características específicas para Idealista
 		if (term.includes('ascensor') || term.includes('elevador')) {
-			return property.features?.liftAvailable === true || property.features?.hasLift === true;
+			return (
+				property.features?.liftAvailable === true ||
+				property.features?.hasLift === true
+			);
 		}
 
 		if (
@@ -313,15 +332,24 @@ const Properties = () => {
 			term.includes('aire') ||
 			term.includes('ac')
 		) {
-			return property.features?.conditionedAir === true || property.features?.hasAirConditioning === true;
+			return (
+				property.features?.conditionedAir === true ||
+				property.features?.hasAirConditioning === true
+			);
 		}
 
 		if (term.includes('terraza')) {
-			return property.features?.terrace === true || property.features?.hasTerrace === true;
+			return (
+				property.features?.terrace === true ||
+				property.features?.hasTerrace === true
+			);
 		}
 
 		if (term.includes('balcon') || term.includes('balcón')) {
-			return property.features?.balcony === true || property.features?.hasBalcony === true;
+			return (
+				property.features?.balcony === true ||
+				property.features?.hasBalcony === true
+			);
 		}
 
 		if (
@@ -333,11 +361,17 @@ const Properties = () => {
 		}
 
 		if (term.includes('piscina')) {
-			return property.features?.pool === true || property.features?.hasSwimmingPool === true;
+			return (
+				property.features?.pool === true ||
+				property.features?.hasSwimmingPool === true
+			);
 		}
 
 		if (term.includes('jardin') || term.includes('jardín')) {
-			return property.features?.garden === true || property.features?.hasGarden === true;
+			return (
+				property.features?.garden === true ||
+				property.features?.hasGarden === true
+			);
 		}
 
 		if (term.includes('trastero') || term.includes('storage')) {
@@ -345,14 +379,16 @@ const Properties = () => {
 		}
 
 		if (term.includes('armarios empotrados') || term.includes('armarios')) {
-			return property.features?.wardrobes === true || property.features?.hasWardrobe === true;
+			return (
+				property.features?.wardrobes === true ||
+				property.features?.hasWardrobe === true
+			);
 		}
 
 		if (term.includes('calefaccion') || term.includes('calefacción')) {
-			return (
-				property.features?.heatingType || property.features?.hasHeating ? true :
-				property.features.heatingType !== 'none'
-			);
+			return property.features?.heatingType || property.features?.hasHeating
+				? true
+				: property.features.heatingType !== 'none';
 		}
 
 		if (term.includes('atico') || term.includes('ático')) {
@@ -746,6 +782,56 @@ const Properties = () => {
 	// Usar las propiedades filtradas y ordenadas
 	const finalFilteredProperties = sortedFilteredProperties;
 
+	// Paginación
+	const totalPages = Math.ceil(finalFilteredProperties.length / ITEMS_PER_PAGE);
+	const paginatedProperties = finalFilteredProperties.slice(
+		(currentPage - 1) * ITEMS_PER_PAGE,
+		currentPage * ITEMS_PER_PAGE
+	);
+
+	const renderPagination = () => {
+		const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
+			.filter(
+				page =>
+					page === 1 || page === totalPages || Math.abs(page - currentPage) <= 2
+			)
+			.reduce((acc, page, idx, arr) => {
+				if (idx > 0 && page - arr[idx - 1] > 1) acc.push('...');
+				acc.push(page);
+				return acc;
+			}, []);
+
+		return (
+			<PaginationContainer>
+				<PaginationButton
+					onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+					disabled={currentPage === 1}
+				>
+					← Anterior
+				</PaginationButton>
+				{pages.map((page, idx) =>
+					page === '...' ? (
+						<PaginationInfo key={`ellipsis-${idx}`}>…</PaginationInfo>
+					) : (
+						<PaginationButton
+							key={page}
+							$active={currentPage === page}
+							onClick={() => setCurrentPage(page)}
+						>
+							{page}
+						</PaginationButton>
+					)
+				)}
+				<PaginationButton
+					onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+					disabled={currentPage === totalPages}
+				>
+					Siguiente →
+				</PaginationButton>
+			</PaginationContainer>
+		);
+	};
+
 	// Función para obtener el título correcto de la propiedad (Idealista o Contentful)
 	const getPropertyTitleUnified = property => {
 		if (
@@ -783,7 +869,11 @@ const Properties = () => {
 		) {
 			return property.size;
 		}
-		return property.size || property.features?.areaConstructed || property.features?.builtArea;
+		return (
+			property.size ||
+			property.features?.areaConstructed ||
+			property.features?.builtArea
+		);
 	};
 
 	// Función para obtener el número de habitaciones
@@ -830,6 +920,7 @@ const Properties = () => {
 	};
 
 	const handleFilterChange = (filterName, value) => {
+		setCurrentPage(1);
 		setLocalFilters(prev => {
 			const newFilters = {
 				...prev,
@@ -1101,170 +1192,176 @@ const Properties = () => {
 								{!(loading || contentfulLoading) &&
 									!(error || contentfulError) &&
 									finalFilteredProperties.length > 0 && (
-										<PropertiesGrid>
-											{' '}
-											{finalFilteredProperties.map((property, index) => {
-												if (property.source === 'newDevelopments') {
-													return (
-														<NewDevelopmentCard
-															key={property.id || index}
-															property={property}
-															index={index}
-															onClick={handlePropertyClick}
-														/>
-													);
-												}
-												// Para propiedades de Idealista
-												const propertyId = property.propertyId;
-
-												// Cargar imagen si es de Idealista y no está cargada
-												if (propertyId && !loadedImages.has(propertyId)) {
-													loadPropertyImage(propertyId);
-												}
-
-												// Determinar la imagen a mostrar
-												let imageSrc = '/images/home-image-1.png'; // fallback
-												if (
-													property.source === 'contentful' ||
-													property.source === 'newDevelopments'
-												) {
-													// Para propiedades de Contentful
-													if (
-														property.images &&
-														property.images.length > 0 &&
-														property.images[0].url
-													) {
-														const imageUrl = property.images[0].url;
-														imageSrc = imageUrl.startsWith('//')
-															? `https:${imageUrl}`
-															: imageUrl;
-													} else {
-														imageSrc = '/images/home-image-1.png';
+										<>
+											<PropertiesGrid>
+												{' '}
+												{paginatedProperties.map((property, index) => {
+													if (property.source === 'newDevelopments') {
+														return (
+															<NewDevelopmentCard
+																key={property.id || index}
+																property={property}
+																index={index}
+																onClick={handlePropertyClick}
+															/>
+														);
 													}
-												} else {
 													// Para propiedades de Idealista
-													imageSrc =
-														getPropertyMainImage(propertyId) ||
-														'/images/home-image-1.png';
-												}
+													const propertyId = property.propertyId;
 
-												return (
-													<ScrollAnimation
-														key={property.id || propertyId || index}
-														delay={index * 0.1}
-														type='scaleIn'
-													>
-														<StyledPropertyCard
+													// Cargar imagen si es de Idealista y no está cargada
+													if (propertyId && !loadedImages.has(propertyId)) {
+														loadPropertyImage(propertyId);
+													}
+
+													// Determinar la imagen a mostrar
+													let imageSrc = '/images/home-image-1.png'; // fallback
+													if (
+														property.source === 'contentful' ||
+														property.source === 'newDevelopments'
+													) {
+														// Para propiedades de Contentful
+														if (
+															property.images &&
+															property.images.length > 0 &&
+															property.images[0].url
+														) {
+															const imageUrl = property.images[0].url;
+															imageSrc = imageUrl.startsWith('//')
+																? `https:${imageUrl}`
+																: imageUrl;
+														} else {
+															imageSrc = '/images/home-image-1.png';
+														}
+													} else {
+														// Para propiedades de Idealista
+														imageSrc =
+															getPropertyMainImage(propertyId) ||
+															'/images/home-image-1.png';
+													}
+
+													return (
+														<ScrollAnimation
 															key={property.id || propertyId || index}
-															onClick={() => handlePropertyClick(property)}
+															delay={index * 0.1}
+															type='scaleIn'
 														>
-															{/* Mostrar loader mientras no esté cargada la imagen de Idealista */}
-															{property.source !== 'contentful' &&
-															property.source !== 'newDevelopments' &&
-															!loadedImages.has(propertyId) ? (
-																<ImageLoader />
-															) : (
-																<PropertyImage
-																	src={imageSrc}
-																	alt={getPropertyTitleUnified(property)}
-																/>
-															)}{' '}
-															<PropertyContent>
-																<PropertyIcon />
-																<PropertyTitle>
-																	{getPropertyTitleUnified(property)}
-																</PropertyTitle>
-																<PropertyPrice>
-																	{property.source === 'contentful' ||
-																	property.source === 'newDevelopments'
-																		? `${property.price?.toLocaleString(
-																				'es-ES'
-																		  )} €`
-																		: formatPrice(property)}
-																	<span>
-																		{' '}
-																		Ref.{' '}
-																		{property.source === 'contentful'
-																			? 'ex-' + property.id.slice(-4)
-																			: property.reference ||
-																			  propertyId?.toString().slice(-4) ||
-																			  '1024'}
-																	</span>
-																</PropertyPrice>{' '}
-																<PropertyDescription>
-																	{(() => {
-																		if (property.source === 'contentful') {
-																			const description =
-																				property.description ||
-																				'Propiedad exclusiva con características únicas.';
-																			return description.length > 150
-																				? description.substring(0, 150) + '...'
-																				: description;
-																		}
+															<StyledPropertyCard
+																key={property.id || propertyId || index}
+																onClick={() => handlePropertyClick(property)}
+															>
+																{/* Mostrar loader mientras no esté cargada la imagen de Idealista */}
+																{property.source !== 'contentful' &&
+																property.source !== 'newDevelopments' &&
+																!loadedImages.has(propertyId) ? (
+																	<ImageLoader />
+																) : (
+																	<PropertyImage
+																		src={imageSrc}
+																		alt={getPropertyTitleUnified(property)}
+																	/>
+																)}{' '}
+																<PropertyContent>
+																	<PropertyIcon />
+																	<PropertyTitle>
+																		{getPropertyTitleUnified(property)}
+																	</PropertyTitle>
+																	<PropertyPrice>
+																		{property.source === 'contentful' ||
+																		property.source === 'newDevelopments'
+																			? `${property.price?.toLocaleString(
+																					'es-ES'
+																			  )} €`
+																			: formatPrice(property)}
+																		<span>
+																			{' '}
+																			Ref.{' '}
+																			{property.source === 'contentful'
+																				? 'ex-' + property.id.slice(-4)
+																				: property.reference ||
+																				  propertyId?.toString().slice(-4) ||
+																				  '1024'}
+																		</span>
+																	</PropertyPrice>{' '}
+																	<PropertyDescription>
+																		{(() => {
+																			if (property.source === 'contentful') {
+																				const description =
+																					property.description ||
+																					'Propiedad exclusiva con características únicas.';
+																				return description.length > 150
+																					? description.substring(0, 150) +
+																							'...'
+																					: description;
+																			}
 
-																		if (
-																			property.descriptions &&
-																			property.descriptions.length > 0
-																		) {
-																			const esDesc = property.descriptions.find(
-																				desc => desc.language === 'es'
+																			if (
+																				property.descriptions &&
+																				property.descriptions.length > 0
+																			) {
+																				const esDesc =
+																					property.descriptions.find(
+																						desc => desc.language === 'es'
+																					);
+																				// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
+																				const description = esDesc
+																					? esDesc.text || esDesc.comment
+																					: property.descriptions[0].text ||
+																					  property.descriptions[0].comment;
+																				// Limitar a 150 caracteres
+																				return description &&
+																					description.length > 150
+																					? description.substring(0, 150) +
+																							'...'
+																					: description ||
+																							'Excelente propiedad en una ubicación privilegiada.';
+																			}
+																			return (
+																				property.description ||
+																				'Excelente propiedad en una ubicación privilegiada con acabados de calidad.'
 																			);
-																			// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
-																			const description = esDesc
-																				? esDesc.text || esDesc.comment
-																				: property.descriptions[0].text ||
-																				  property.descriptions[0].comment;
-																			// Limitar a 150 caracteres
-																			return description &&
-																				description.length > 150
-																				? description.substring(0, 150) + '...'
-																				: description ||
-																						'Excelente propiedad en una ubicación privilegiada.';
-																		}
-																		return (
-																			property.description ||
-																			'Excelente propiedad en una ubicación privilegiada con acabados de calidad.'
-																		);
-																	})()}
-																</PropertyDescription>{' '}
-																<PropertyBottom>
-																	<PropertyFeatures>
-																		<img src='/icons/house.png' alt='' />
-																		{getPropertySizeUnified(property) && (
-																			<PropertyFeature>
-																				{getPropertySizeUnified(property)}m²
-																			</PropertyFeature>
-																		)}
-																		{getRoomsUnified(property) && (
-																			<PropertyFeature>
-																				{getRoomsUnified(property)} hab.
-																			</PropertyFeature>
-																		)}
-																		{getBathroomsUnified(property) && (
-																			<PropertyFeature>
-																				{getBathroomsUnified(property)} baños
-																			</PropertyFeature>
-																		)}
-																		{property.source === 'contentful' && (
-																			<PropertyFeature
-																				style={{
-																					color: '#2c5aa0',
-																					fontWeight: 'bold',
-																					fontSize: '10px'
-																				}}
-																			>
-																				✨ Exclusiva
-																			</PropertyFeature>
-																		)}
-																	</PropertyFeatures>
-																</PropertyBottom>
-															</PropertyContent>
-														</StyledPropertyCard>
-													</ScrollAnimation>
-												);
-											})}
-										</PropertiesGrid>
-									)}{' '}
+																		})()}
+																	</PropertyDescription>{' '}
+																	<PropertyBottom>
+																		<PropertyFeatures>
+																			<img src='/icons/house.png' alt='' />
+																			{getPropertySizeUnified(property) && (
+																				<PropertyFeature>
+																					{getPropertySizeUnified(property)}m²
+																				</PropertyFeature>
+																			)}
+																			{getRoomsUnified(property) && (
+																				<PropertyFeature>
+																					{getRoomsUnified(property)} hab.
+																				</PropertyFeature>
+																			)}
+																			{getBathroomsUnified(property) && (
+																				<PropertyFeature>
+																					{getBathroomsUnified(property)} baños
+																				</PropertyFeature>
+																			)}
+																			{property.source === 'contentful' && (
+																				<PropertyFeature
+																					style={{
+																						color: '#2c5aa0',
+																						fontWeight: 'bold',
+																						fontSize: '10px'
+																					}}
+																				>
+																					✨ Exclusiva
+																				</PropertyFeature>
+																			)}
+																		</PropertyFeatures>
+																	</PropertyBottom>
+																</PropertyContent>
+															</StyledPropertyCard>
+														</ScrollAnimation>
+													);
+												})}
+											</PropertiesGrid>
+											{totalPages > 1 && renderPagination()}
+										</>
+									)}
 							</PropertiesSection>
 						</MainContainer>
 					</ContentWrapper>

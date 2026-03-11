@@ -630,3 +630,42 @@ export const EmptyState = styled.div`
 		opacity: 0.8;
 	}
 `;
+
+export const PaginationContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	padding: 32px 0 16px;
+	flex-wrap: wrap;
+`;
+
+export const PaginationButton = styled.button`
+	min-width: 40px;
+	height: 40px;
+	padding: 0 12px;
+	border: 1px solid ${props => props.$active ? '#16243e' : '#ddd'};
+	background: ${props => props.$active ? '#16243e' : '#fff'};
+	color: ${props => props.$active ? '#fff' : '#16243e'};
+	border-radius: 6px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-family: inherit;
+
+	&:hover:not(:disabled) {
+		background: ${props => props.$active ? '#16243e' : '#f5f5f5'};
+		border-color: #16243e;
+	}
+
+	&:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+`;
+
+export const PaginationInfo = styled.span`
+	font-size: 14px;
+	color: #666;
+	padding: 0 8px;
+`;
