@@ -4,7 +4,7 @@
 
 Para gestionar los posts de Instagram desde Contentful, necesitas crear un nuevo **Content Type** llamado `instagramPost` con los siguientes campos:
 
-### Campos Requeridos:
+### Campos Requeridos
 
 1. **Title** (Título)
 
@@ -38,7 +38,7 @@ Para gestionar los posts de Instagram desde Contentful, necesitas crear un nuevo
    - Description: Orden de aparición en el slider (números más bajos aparecen primero)
    - Default: `0`
 
-## Cómo Usar
+## Cómo Usar?
 
 ### 1. Crear un Nuevo Post de Instagram
 
@@ -97,7 +97,7 @@ El sistema convierte automáticamente las URLs de Instagram al formato embed nec
 
 Asegúrate de que estas variables estén configuradas en tu archivo `.env`:
 
-```
+```bash
 VITE_CONTENTFUL_SPACE_ID=your_space_id
 VITE_CONTENTFUL_ACCESS_TOKEN=your_access_token
 ```
@@ -111,18 +111,18 @@ VITE_CONTENTFUL_ACCESS_TOKEN=your_access_token
 
 ## Solución de Problemas
 
-### Los posts no aparecen:
+### Los posts no aparecen
 
 - Verifica que `Is Active` esté en `true`
 - Confirma que la URL de Instagram sea válida
 - Revisa que las variables de entorno estén configuradas
 
-### Error de carga:
+### Error de carga
 
 - El sistema mostrará posts de fallback automáticamente
 - Verifica la conexión a internet y la configuración de Contentful
 
-### Posts en orden incorrecto:
+### Posts en orden incorrecto
 
 - Revisa los valores del campo `Order`
 - Números más bajos aparecen primero (0, 1, 2, 3...)
