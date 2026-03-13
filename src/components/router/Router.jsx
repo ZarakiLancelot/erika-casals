@@ -8,6 +8,7 @@ import PropertyDetailPage from '../../pages/propiedades/PropertyDetailPage';
 import AboutMe from '../pages/aboutme/AboutMe';
 import FichaPage from '../../pages/ficha/FichaPage';
 import ClientePage from '../../pages/cliente/ClientePage';
+import AdminPage from '../../pages/admin/AdminPage';
 
 const Router = () => {
 	return (
@@ -25,6 +26,7 @@ const Router = () => {
 			<Route path='/ficha' element={<FichaPage />} />
 			<Route path='/cliente' element={<ClientePage />} />
 			<Route path='/cliente/index.php' element={<ClientePage />} />
+			<Route path='/admin' element={<AdminPage />} />
 		</Routes>
 	);
 };

@@ -155,11 +155,19 @@ async function main() {
 	try {
 		const properties = await fetchAllProperties();
 
-		mkdirSync(join(__dirname, '..', 'public'), { recursive: true });
-		writeFileSync(OUTPUT_PATH, JSON.stringify(properties, null, 2), 'utf-8');
-
 		const rent = properties.filter(p => p.operation === 'rent').length;
 		const sale = properties.filter(p => p.operation === 'sale').length;
+
+		const output = {
+			generatedAt: new Date().toISOString(),
+			total: properties.length,
+			sale,
+			rent,
+			properties
+		};
+
+		mkdirSync(join(__dirname, '..', 'public'), { recursive: true });
+		writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2), 'utf-8');
 
 		console.log('\n✓ Archivo generado:', OUTPUT_PATH);
 		console.log(`  Total: ${properties.length} propiedades`);

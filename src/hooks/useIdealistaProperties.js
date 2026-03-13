@@ -18,7 +18,9 @@ export const useIdealistaProperties = () => {
 			const response = await fetch(STATIC_JSON);
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			const data = await response.json();
-			setProperties(Array.isArray(data) ? data : []);
+			// Soporta formato array (legado) y objeto con metadata { properties: [...] }
+			const list = Array.isArray(data) ? data : (data.properties || []);
+			setProperties(list);
 		} catch (err) {
 			console.error('Error cargando propiedades Inmovilla:', err);
 			setError('Error cargando propiedades');
@@ -47,7 +49,8 @@ export const useIdealistaProperties = () => {
 			try {
 				const response = await fetch(STATIC_JSON);
 				const data = await response.json();
-				const found = (Array.isArray(data) ? data : []).find(
+				const list = Array.isArray(data) ? data : (data.properties || []);
+				const found = list.find(
 					p => p.propertyId === String(propertyId)
 				);
 				if (found) {
