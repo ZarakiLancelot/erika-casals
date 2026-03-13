@@ -20,7 +20,7 @@ const WhoIs = () => {
 				<StyledInfoDiv>
 					<StyledTitle>
 						Quién es Erika Casals
-						<img src='/images/logo-whois.png' alt='' />
+						<img src='/images/logo-erika-casals-whois.png' alt='' />
 					</StyledTitle>
 					<StyledDescription>
 						<b>
