@@ -147,7 +147,7 @@ const PropertiesRent = () => {
 				organized.madridCiudad.districts.length > 0 ||
 				organized.madridCiudad.otherLocations.length > 0
 			) {
-				mainLocations.push('Madrid ciudad');
+				mainLocations.push('Madrid');
 			}
 
 			// Agregar Comunidad de Madrid si hay municipios
@@ -166,7 +166,7 @@ const PropertiesRent = () => {
 			setAvailableLocations(mainLocations.sort());
 
 			// Configurar filtros secundarios según la ubicación seleccionada
-			if (localFilters.location.toLowerCase() === 'madrid ciudad') {
+			if (localFilters.location.toLowerCase() === 'madrid') {
 				setAvailableDistricts(organized.madridCiudad.districts);
 				setAvailableMunicipalities([]);
 			} else if (
@@ -328,7 +328,7 @@ const PropertiesRent = () => {
 						'';
 					const lowerDesc = description.toLowerCase();
 
-					if (locationFilter === 'madrid ciudad') {
+					if (locationFilter === 'madrid') {
 						// Buscar menciones de "madrid" pero no "comunidad de madrid"
 						if (
 							lowerDesc.includes('madrid') &&
@@ -347,9 +347,9 @@ const PropertiesRent = () => {
 					} else if (
 						locationFilter === 'comunidad de madrid y resto de españa'
 					) {
-						// Para comunidad de madrid, aceptar propiedades que no mencionan "madrid ciudad"
+						// Para comunidad de madrid, aceptar propiedades que no mencionan "madrid"
 						if (
-							lowerDesc.includes('madrid ciudad') ||
+							lowerDesc.includes('madrid') ||
 							(lowerDesc.includes('madrid') && !lowerDesc.includes('comunidad'))
 						) {
 							return false;
@@ -362,7 +362,7 @@ const PropertiesRent = () => {
 					}
 				} else {
 					// Hay datos de ubicación, usar la lógica normal
-					if (locationFilter === 'madrid ciudad') {
+					if (locationFilter === 'madrid') {
 						if (
 							!isInMadrid({
 								address: { latitude: lat, longitude: lon },
@@ -430,7 +430,7 @@ const PropertiesRent = () => {
 				const location = property.location?.toLowerCase() || '';
 				let matchesLocation = false;
 
-				if (locationFilter === 'madrid ciudad') {
+				if (locationFilter === 'madrid') {
 					// Para Madrid ciudad, solo incluir si la location sugiere que es Madrid ciudad
 					matchesLocation =
 						location.includes('madrid') && !property.propertyZone;
@@ -616,7 +616,7 @@ const PropertiesRent = () => {
 
 			// Si cambia la ubicación, limpiar los filtros secundarios
 			if (filterName === 'location') {
-				if (value.toLowerCase() !== 'madrid ciudad') {
+				if (value.toLowerCase() !== 'madrid') {
 					newFilters.district = '';
 				}
 				if (value.toLowerCase() !== 'comunidad de madrid y resto de españa') {
@@ -730,7 +730,7 @@ const PropertiesRent = () => {
 										)}
 									</FilterGroup>
 									{/* Mostrar filtro de distrito solo si Madrid ciudad está seleccionado */}
-									{localFilters.location.toLowerCase() === 'madrid ciudad' &&
+									{localFilters.location.toLowerCase() === 'madrid' &&
 										availableDistricts.length > 0 && (
 											<FilterGroup>
 												<FilterLabel>Distrito de Madrid</FilterLabel>

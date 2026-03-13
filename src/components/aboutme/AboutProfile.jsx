@@ -28,10 +28,10 @@ const AboutProfile = () => {
 
 					<ContactInfo>
 						<ContactItem>
-							<img src='/icons/sms-edit.png' alt='' /> erikacasals@gmail.com
+							<img src='/icons/sms-edit.png' alt='' /> erika@erikacasals.com
 						</ContactItem>
 						<ContactItem>
-							<img src='/icons/call.png' alt='' /> +34 655 89 17 36
+							<img src='/icons/call.png' alt='' /> +34 655 98 17 58
 						</ContactItem>
 						<SocialLinks>
 							<SocialButton
