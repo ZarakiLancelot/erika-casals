@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useContentfulProperties } from '../../hooks/useContentfulProperties';
 import {
 	StyledContainer,
 	StyledContent,
@@ -10,105 +11,106 @@ import {
 	StyledDescription
 } from './styles';
 
+const LOCATIONS = [
+	{
+		key: 'Florida',
+		zone: 'Florida',
+		title: 'Florida',
+		image: '/images/costa-espanola.png',
+		alt: 'Florida Properties',
+		saleLink: '/sales?location=Florida',
+		rentLink: '/rent?location=Florida',
+		description: (
+			<>
+				Vivir o invertir en Florida no es solo una decisión inmobiliaria, es una
+				apuesta por un estilo de vida dinámico, internacional y con un mercado en
+				constante crecimiento. Te mostraré las{' '}
+				<b>zonas que realmente valen la pena,</b> más allá de lo que aparece en
+				los portales. Además, te acompaño en todo el proceso si vienes desde el
+				extranjero: trámites, contratos, visitas y más.
+			</>
+		)
+	},
+	{
+		key: 'Costa',
+		zone: 'Costa',
+		title: 'Costa Española',
+		image: '/images/en-alquiler.png',
+		alt: 'Costa Española Properties',
+		saleLink: '/sales?location=Costa Española',
+		rentLink: '/rent?location=Costa Española',
+		description: (
+			<>
+				Las costas del Mediterráneo no solo ofrecen sol, mar y relax. También son
+				una oportunidad perfecta para encontrar calidad de vida, descanso o
+				inversión. Trabajo con propiedades en zonas estratégicas de la{' '}
+				<b>
+					Costa Blanca, Costa del Sol y otras ubicaciones con alta demanda y
+					calidad de vida.
+				</b>
+			</>
+		)
+	}
+];
+
 const MiamiCosta = () => {
+	const { properties } = useContentfulProperties();
+
 	return (
 		<StyledContainer>
 			<StyledContent>
-				{/* Sección Florida */}
-				<StyledSection>
-					<StyledSectionTitle>Florida</StyledSectionTitle>
-					<StyledDescription>
-						Vivir o invertir en Florida no es solo una decisión inmobiliaria, es
-						una apuesta por un estilo de vida dinámico, internacional y con un
-						mercado en constante crecimiento. Te mostraré las{' '}
-						<b>zonas que realmente valen la pena,</b> más allá de lo que aparece
-						en los portales. Además, te acompaño en todo el proceso si vienes
-						desde el extranjero: trámites, contratos, visitas y más.
-					</StyledDescription>
-					<StyledImageContainer>
-						<StyledImage
-							src='/images/costa-espanola.png'
-							alt='Florida Properties'
-						/>
-						<div
-							style={{
-								position: 'absolute',
-								top: '50%',
-								left: '50%',
-								transform: 'translate(-50%, -50%)',
-								display: 'flex',
-								gap: '15px',
-								flexWrap: 'wrap',
-								justifyContent: 'center',
-								zIndex: 3
-							}}
-						>
-							<Link to='/sales?location=Florida'>
-								<StyledViewButton
-									style={{ position: 'static', transform: 'none' }}
-								>
-									En venta
-								</StyledViewButton>
-							</Link>
-							<Link to='/rent?location=Florida'>
-								<StyledViewButton
-									style={{ position: 'static', transform: 'none' }}
-								>
-									En alquiler
-								</StyledViewButton>
-							</Link>
-						</div>
-					</StyledImageContainer>
-				</StyledSection>
+				{LOCATIONS.map(loc => {
+					const hasSale = properties.some(
+						p => p.propertyZone === loc.zone && p.type === 'En venta'
+					);
+					const hasRent = properties.some(
+						p => p.propertyZone === loc.zone && p.type === 'En alquiler'
+					);
 
-				{/* Sección Costa Española */}
-				<StyledSection>
-					<StyledSectionTitle>Costa Española</StyledSectionTitle>
-					<StyledDescription>
-						Las costas del Mediterráneo no solo ofrecen sol, mar y relax.
-						También son una oportunidad perfecta para encontrar calidad de vida,
-						descanso o inversión. Trabajo con propiedades en zonas estratégicas
-						de la{' '}
-						<b>
-							Costa Blanca, Costa del Sol y otras ubicaciones con alta demanda y
-							calidad de vida.
-						</b>
-					</StyledDescription>
-					<StyledImageContainer>
-						<StyledImage
-							src='/images/en-alquiler.png'
-							alt='Costa Española Properties'
-						/>
-						<div
-							style={{
-								position: 'absolute',
-								top: '50%',
-								left: '50%',
-								transform: 'translate(-50%, -50%)',
-								display: 'flex',
-								gap: '15px',
-								flexWrap: 'wrap',
-								justifyContent: 'center',
-								zIndex: 3
-							}}
-						>
-							<Link to='/sales?location=Costa Española'>
-								<StyledViewButton
-									style={{ position: 'static', transform: 'none' }}
-								>
-									En venta
-								</StyledViewButton>
-							</Link>
-							<Link to='/rent?location=Costa Española'>
-								<StyledViewButton
-									style={{ position: 'static', transform: 'none' }}
-								>
-									En alquiler
-								</StyledViewButton>
-							</Link>
-						</div>
-					</StyledImageContainer>
-				</StyledSection>
+					return (
+						<StyledSection key={loc.key}>
+							<StyledSectionTitle>{loc.title}</StyledSectionTitle>
+							<StyledDescription>{loc.description}</StyledDescription>
+							<StyledImageContainer>
+								<StyledImage src={loc.image} alt={loc.alt} />
+								{(hasSale || hasRent) && (
+									<div
+										style={{
+											position: 'absolute',
+											top: '50%',
+											left: '50%',
+											transform: 'translate(-50%, -50%)',
+											display: 'flex',
+											gap: '15px',
+											flexWrap: 'wrap',
+											justifyContent: 'center',
+											zIndex: 3
+										}}
+									>
+										{hasSale && (
+											<Link to={loc.saleLink}>
+												<StyledViewButton
+													style={{ position: 'static', transform: 'none' }}
+												>
+													En venta
+												</StyledViewButton>
+											</Link>
+										)}
+										{hasRent && (
+											<Link to={loc.rentLink}>
+												<StyledViewButton
+													style={{ position: 'static', transform: 'none' }}
+												>
+													En alquiler
+												</StyledViewButton>
+											</Link>
+										)}
+									</div>
+								)}
+							</StyledImageContainer>
+						</StyledSection>
+					);
+				})}
 			</StyledContent>
 		</StyledContainer>
 	);
