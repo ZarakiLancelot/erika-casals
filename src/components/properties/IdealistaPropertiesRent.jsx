@@ -707,19 +707,27 @@ const PropertiesRent = () => {
 									<FilterTitle>Filtros de búsqueda</FilterTitle> {/* Filtros */}
 									<FilterGroup>
 										<FilterLabel>Localización</FilterLabel>
-										<FilterSelect
-											value={localFilters.location}
-											onChange={e =>
-												handleFilterChange('location', e.target.value)
-											}
-										>
-											<option value=''>Todas las ubicaciones</option>
-											{availableLocations.map(location => (
-												<option key={location} value={location}>
-													{location}
-												</option>
-											))}
-										</FilterSelect>
+										{searchParams.get('location') ? (
+											<FilterInput
+												value={localFilters.location}
+												readOnly
+												style={{ cursor: 'default', background: '#f5f5f5' }}
+											/>
+										) : (
+											<FilterSelect
+												value={localFilters.location}
+												onChange={e =>
+													handleFilterChange('location', e.target.value)
+												}
+											>
+												<option value=''>Todas las ubicaciones</option>
+												{availableLocations.map(location => (
+													<option key={location} value={location}>
+														{location}
+													</option>
+												))}
+											</FilterSelect>
+										)}
 									</FilterGroup>
 									{/* Mostrar filtro de distrito solo si Madrid ciudad está seleccionado */}
 									{localFilters.location.toLowerCase() === 'madrid ciudad' &&

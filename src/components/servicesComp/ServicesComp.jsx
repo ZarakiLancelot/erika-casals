@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useContentfulProperties } from '../../hooks/useContentfulProperties';
 import {
 	StyledContainer,
 	StyledContent,
@@ -13,6 +14,13 @@ import {
 } from './styles';
 
 const ServicesComp = () => {
+	const { properties } = useContentfulProperties();
+
+	const hasFloridaSale = properties.some(p => p.propertyZone === 'Florida' && p.type === 'En venta');
+	const hasFloridaRent = properties.some(p => p.propertyZone === 'Florida' && p.type === 'En alquiler');
+	const hasCostaeSale = properties.some(p => p.propertyZone === 'Costa' && p.type === 'En venta');
+	const hasCostaeRent = properties.some(p => p.propertyZone === 'Costa' && p.type === 'En alquiler');
+
 	return (
 		<StyledContainer>
 			<StyledContent>
@@ -52,24 +60,24 @@ const ServicesComp = () => {
 							Vivir en Florida es una declaración de estilo de vida. Te muestro
 							las zonas que realmente valen la pena.
 						</StyledServiceDescription>
-						<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-							<Link to='/sales?location=Florida'>
-								<StyledServiceButton
-									as='span'
-									style={{ fontSize: '12px', padding: '8px 12px' }}
-								>
-									Venta
-								</StyledServiceButton>
-							</Link>
-							<Link to='/rent?location=Florida'>
-								<StyledServiceButton
-									as='span'
-									style={{ fontSize: '12px', padding: '8px 12px' }}
-								>
-									Alquiler
-								</StyledServiceButton>
-							</Link>
-						</div>
+						{(hasFloridaSale || hasFloridaRent) && (
+							<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+								{hasFloridaSale && (
+									<Link to='/sales?location=Florida'>
+										<StyledServiceButton as='span' style={{ fontSize: '12px', padding: '8px 12px' }}>
+											Venta
+										</StyledServiceButton>
+									</Link>
+								)}
+								{hasFloridaRent && (
+									<Link to='/rent?location=Florida'>
+										<StyledServiceButton as='span' style={{ fontSize: '12px', padding: '8px 12px' }}>
+											Alquiler
+										</StyledServiceButton>
+									</Link>
+								)}
+							</div>
+						)}
 					</StyledServiceCard>
 					<StyledServiceCard>
 						<StyledServiceIcon src='/images/costa.png' alt='Costa Española' />
@@ -77,24 +85,24 @@ const ServicesComp = () => {
 						<StyledServiceDescription>
 							A orillas del Mediterráneo hay más que sol: hay hogares con alma.
 						</StyledServiceDescription>
-						<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-							<Link to='/sales?location=Costa Española'>
-								<StyledServiceButton
-									as='span'
-									style={{ fontSize: '12px', padding: '8px 12px' }}
-								>
-									Venta
-								</StyledServiceButton>
-							</Link>
-							<Link to='/rent?location=Costa Española'>
-								<StyledServiceButton
-									as='span'
-									style={{ fontSize: '12px', padding: '8px 12px' }}
-								>
-									Alquiler
-								</StyledServiceButton>
-							</Link>
-						</div>
+						{(hasCostaeSale || hasCostaeRent) && (
+							<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+								{hasCostaeSale && (
+									<Link to='/sales?location=Costa Española'>
+										<StyledServiceButton as='span' style={{ fontSize: '12px', padding: '8px 12px' }}>
+											Venta
+										</StyledServiceButton>
+									</Link>
+								)}
+								{hasCostaeRent && (
+									<Link to='/rent?location=Costa Española'>
+										<StyledServiceButton as='span' style={{ fontSize: '12px', padding: '8px 12px' }}>
+											Alquiler
+										</StyledServiceButton>
+									</Link>
+								)}
+							</div>
+						)}
 					</StyledServiceCard>
 				</StyledGridContainer>
 			</StyledContent>
