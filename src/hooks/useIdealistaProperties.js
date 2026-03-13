@@ -1,83 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 
-const API_BASE = 'https://api.erikacasals.com/api.php';
-const NUMAGENCIA = '13731';
-
-// ─── Mapeo de tipos Inmovilla → formato interno ───────────────────────────────
-const TIPO_MAP = {
-	Piso: 'flat',
-	Apartamento: 'flat',
-	Estudio: 'studio',
-	Loft: 'loft',
-	'Ático': 'penthouse',
-	Atico: 'penthouse',
-	'Dúplex': 'duplex',
-	Duplex: 'duplex',
-	'Casa / Chalet': 'house',
-	Casa: 'house',
-	Chalet: 'house',
-	'Villa / Chalet': 'house',
-	Adosado: 'house',
-	Local: 'premises',
-	Oficina: 'office',
-	Garaje: 'garage',
-	Trastero: 'storage',
-	Terreno: 'land',
-	'Nave industrial': 'warehouse',
-	Nave: 'warehouse',
-	Edificio: 'building'
-};
-
-// ─── Construir URLs de imágenes ───────────────────────────────────────────────
-function buildImages(codOfer, numFotos, fotoBase) {
-	if (numFotos && numFotos > 0) {
-		return Array.from({ length: numFotos }, (_, i) => ({
-			url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${codOfer}/${i + 1}-1.jpg`,
-			id: `${codOfer}-${i + 1}`,
-			position: i + 1
-		}));
-	}
-	if (fotoBase) {
-		return [{ url: fotoBase, id: `${codOfer}-1`, position: 1 }];
-	}
-	return [];
-}
-
-// ─── Transformar un item de paginación Inmovilla al formato interno ──────────
-function transformInmovillaItem(item) {
-	if (!item || !item.cod_ofer) return null;
-
-	const isRent = item.keyacci === 2;
-	const price = isRent ? item.precioalq : item.precioinmo;
-	const images = buildImages(item.cod_ofer, item.numfotos, item.foto);
-	const description = item.observaciones || item.texto || '';
-
-	return {
-		propertyId: String(item.cod_ofer),
-		source: 'inmovilla',
-		price,
-		operation: isRent ? 'rent' : 'sale',
-		size: item.m_cons || item.m_uties || null,
-		rooms: item.habitaciones || null,
-		bathrooms: item.banyos || null,
-		images,
-		description,
-		descriptions: description ? [{ language: 'es', text: description }] : [],
-		propertyType: TIPO_MAP[item.nbtipo] || 'flat',
-		reference: String(item.cod_ofer),
-		address: {
-			town: item.ciudad || 'Madrid',
-			district: item.zona || '',
-			latitude: item.latitud || null,
-			longitude: item.altitud || null
-		},
-		municipality: item.ciudad || 'Madrid',
-		district: item.zona || '',
-		latitude: item.latitud || null,
-		longitude: item.altitud || null,
-		features: item.features || {}
-	};
-}
+const STATIC_JSON = '/inmovilla-properties-all.json';
 
 // ─── Hook principal ───────────────────────────────────────────────────────────
 export const useIdealistaProperties = () => {
@@ -92,15 +15,12 @@ export const useIdealistaProperties = () => {
 		setLoading(true);
 		setError(null);
 		try {
-			const url = `${API_BASE}?accion=paginacion&pagina=1&por_pagina=200`;
-			const response = await fetch(url);
+			const response = await fetch(STATIC_JSON);
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
-			const result = await response.json();
-			if (!result.ok) throw new Error(result.error || 'Error en la API');
-			const items = (result.data?.paginacion || []).filter(
-				item => item.cod_ofer !== undefined
-			);
-			setProperties(items.map(transformInmovillaItem).filter(Boolean));
+			const data = await response.json();
+			// Soporta formato array (legado) y objeto con metadata { properties: [...] }
+			const list = Array.isArray(data) ? data : (data.properties || []);
+			setProperties(list);
 		} catch (err) {
 			console.error('Error cargando propiedades Inmovilla:', err);
 			setError('Error cargando propiedades');
@@ -125,19 +45,17 @@ export const useIdealistaProperties = () => {
 					return found;
 				}
 			}
-			// Fallback: traer todas y buscar
+			// Fallback: cargar el JSON estático y buscar en él
 			try {
-				const url = `${API_BASE}?accion=paginacion&pagina=1&por_pagina=200`;
-				const response = await fetch(url);
-				const result = await response.json();
-				const items = (result.data?.paginacion || []).filter(
-					i => i.cod_ofer !== undefined
+				const response = await fetch(STATIC_JSON);
+				const data = await response.json();
+				const list = Array.isArray(data) ? data : (data.properties || []);
+				const found = list.find(
+					p => p.propertyId === String(propertyId)
 				);
-				const found = items.find(i => String(i.cod_ofer) === String(propertyId));
 				if (found) {
-					const property = transformInmovillaItem(found);
-					setSelectedProperty(property);
-					return property;
+					setSelectedProperty(found);
+					return found;
 				}
 				return null;
 			} catch (err) {
@@ -149,7 +67,6 @@ export const useIdealistaProperties = () => {
 		[properties]
 	);
 
-	// Las imágenes ya vienen en el objeto; esta función es para compatibilidad
 	const fetchPropertyImages = useCallback(
 		async propertyId => {
 			const property = properties.find(p => p.propertyId === String(propertyId));
@@ -186,28 +103,20 @@ export const useIdealistaProperties = () => {
 	}, []);
 
 	const formatPrice = useCallback(property => {
-		if (!property) return 'Precio no disponible';
+		if (!property?.price) return 'Precio no disponible';
+		const fmt = new Intl.NumberFormat('es-ES', {
+			style: 'currency',
+			currency: 'EUR',
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0
+		}).format(property.price);
 
 		if (property.source === 'contentful') {
-			if (!property.price) return 'Precio no disponible';
-			const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(property.price);
 			return `${fmt}${property.type === 'En alquiler' ? ' / mes' : ''}`;
 		}
 
-		if (property.source === 'inmovilla' || property.source === 'idealista-ftp') {
-			if (!property.price) return 'Precio no disponible';
-			const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(property.price);
-			const isRent = property.operation === 'rent' || property.operation === 'rent_to_own';
-			return `${fmt}${isRent ? ' / mes' : ''}`;
-		}
-
-		// Legado Idealista API
-		if (!property.operation) return 'Precio no disponible';
-		const price = typeof property.operation === 'object' ? property.operation.price : property.price;
-		const opType = typeof property.operation === 'string' ? property.operation : property.operation.type;
-		if (!price) return 'Precio no disponible';
-		const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(price);
-		return `${fmt}${opType === 'rent' ? ' / mes' : ''}`;
+		const isRent = property.operation === 'rent' || property.operation === 'rent_to_own';
+		return `${fmt}${isRent ? ' / mes' : ''}`;
 	}, []);
 
 	const filteredProperties = useMemo(() => {
