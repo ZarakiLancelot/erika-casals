@@ -53,7 +53,7 @@ const MobileNavbar = ({ isScrolled }) => {
 
 				<MobileNavCenter>
 					<Link to='/'>
-						<img src='/images/logo-nav.png' alt='Logo' />
+						<img src='/images/logo-erika-casals.png' alt='Logo' />
 					</Link>
 				</MobileNavCenter>
 
@@ -80,7 +80,7 @@ const MobileNavbar = ({ isScrolled }) => {
 				<MobileMenuContent $isOpen={isMenuOpen}>
 					<MobileMenuHeader>
 						<Link to='/' onClick={closeMenu}>
-							<img src='/images/logo-nav.png' alt='Logo' />
+							<img src='/images/logo-erika-casals.png' alt='Logo' />
 						</Link>
 						<CloseButton onClick={closeMenu} aria-label='Cerrar menú'>
 							×
@@ -125,7 +125,7 @@ const DesktopNavbar = ({ isScrolled }) => {
 		<StyledDesktopNavbar $isScrolled={isScrolled}>
 			<StyledNavLeft>
 				<Link to='/'>
-					<img src='/images/logo-nav.png' alt='Logo' />
+					<img src='/images/logo-erika-casals.png' alt='Logo' />
 				</Link>
 			</StyledNavLeft>
 			<StyledNavCenter>

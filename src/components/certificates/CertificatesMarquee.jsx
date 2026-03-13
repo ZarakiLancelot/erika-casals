@@ -60,7 +60,8 @@ const CertificatesMarquee = () => {
 		{ id: 3, src: '/images/certificado-3.png', alt: 'Certificado 3' },
 		{ id: 4, src: '/images/certificado-4.png', alt: 'Certificado 4' },
 		{ id: 5, src: '/images/certificado-5.png', alt: 'Certificado 5' },
-		{ id: 6, src: '/images/certificado-6.png', alt: 'Certificado 6' }
+		{ id: 6, src: '/images/certificado-6.png', alt: 'Certificado 6' },
+		{ id: 7, src: '/images/luxury-homes.png', alt: 'Luxury Homes' }
 	];
 
 	return (

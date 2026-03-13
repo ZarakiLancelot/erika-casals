@@ -23,7 +23,7 @@ const AboutProfile = () => {
 				<StyledInfoDiv>
 					<StyledTitle style={{ fontSize: '50px', marginBottom: '0px' }}>
 						Erika Casals
-						<img src='/images/logo-whois.png' alt='' />
+						<img src='/images/logo-erika-casals-whois.png' alt='' />
 					</StyledTitle>
 
 					<ContactInfo>
