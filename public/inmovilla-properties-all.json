@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T19:15:31.911Z",
+  "generatedAt": "2026-03-16T21:21:24.217Z",
   "total": 97,
   "sale": 95,
   "rent": 2,
@@ -96,7 +96,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669643",
@@ -195,7 +196,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "28476654",
@@ -309,7 +311,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-13 16:05:51"
     },
     {
       "propertyId": "27670033",
@@ -369,7 +372,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3320b",
+      "reference": "ec-3320B",
       "address": {
         "town": "Madrid",
         "district": "Centro",
@@ -388,7 +391,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 18:32:05"
     },
     {
       "propertyId": "27669599",
@@ -478,7 +482,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2030b",
+      "reference": "ec-2030B",
       "address": {
         "town": "Madrid",
         "district": "Arapiles",
@@ -497,7 +501,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 12:58:02"
     },
     {
       "propertyId": "27669613",
@@ -557,7 +562,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2020b",
+      "reference": "ec-2020B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -576,7 +581,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-27 16:15:22"
     },
     {
       "propertyId": "27669667",
@@ -676,7 +682,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6072b",
+      "reference": "ec-6072B",
       "address": {
         "town": "Madrid",
         "district": "Fuente del Berro",
@@ -695,7 +701,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-27 12:40:54"
     },
     {
       "propertyId": "27669615",
@@ -750,7 +757,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2015b",
+      "reference": "ec-2015B",
       "address": {
         "town": "Madrid",
         "district": "Chueca",
@@ -769,7 +776,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669605",
@@ -879,7 +887,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2025b",
+      "reference": "ec-2025B",
       "address": {
         "town": "Madrid",
         "district": "Fuente del Berro",
@@ -898,7 +906,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 13:06:53"
     },
     {
       "propertyId": "27669621",
@@ -958,7 +967,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2009b",
+      "reference": "ec-2009B",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -977,7 +986,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 19:37:06"
     },
     {
       "propertyId": "27669931",
@@ -1042,7 +1052,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3369b",
+      "reference": "ec-3369B",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -1061,7 +1071,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 13:02:49"
     },
     {
       "propertyId": "27669593",
@@ -1121,7 +1132,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6069b",
+      "reference": "ec-6069B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -1140,7 +1151,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669616",
@@ -1330,7 +1342,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2014b",
+      "reference": "ec-2014B",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -1349,7 +1361,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-19 11:45:35"
     },
     {
       "propertyId": "27669612",
@@ -1449,7 +1462,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2019b",
+      "reference": "ec-2019B",
       "address": {
         "town": "Madrid",
         "district": "Vallehermoso",
@@ -1468,7 +1481,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-17 10:50:15"
     },
     {
       "propertyId": "28476783",
@@ -1562,7 +1576,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-13 16:59:27"
     },
     {
       "propertyId": "27669626",
@@ -1632,7 +1647,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3275b",
+      "reference": "ec-3275B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -1651,7 +1666,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669641",
@@ -1855,7 +1871,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-02 11:40:02"
     },
     {
       "propertyId": "27669618",
@@ -1975,7 +1992,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-1003w",
+      "reference": "ec-1003W",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -1994,7 +2011,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669617",
@@ -2054,7 +2072,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2013b",
+      "reference": "ec-2013B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2073,7 +2091,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "28150460",
@@ -2188,7 +2207,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5037b",
+      "reference": "ec-5037B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2207,7 +2226,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-05 17:48:04"
     },
     {
       "propertyId": "27775220",
@@ -2327,7 +2347,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6090b",
+      "reference": "ec-6090B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2346,7 +2366,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-04 11:15:47"
     },
     {
       "propertyId": "27669601",
@@ -2401,7 +2422,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2018b",
+      "reference": "ec-2018B",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -2420,7 +2441,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 13:05:22"
     },
     {
       "propertyId": "28336779",
@@ -2565,7 +2587,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6093b",
+      "reference": "ec-6093B",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -2584,7 +2606,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-05 18:16:19"
     },
     {
       "propertyId": "27669583",
@@ -2779,7 +2802,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3131b",
+      "reference": "ec-3131B",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -2798,7 +2821,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669591",
@@ -3033,7 +3057,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2031b",
+      "reference": "ec-2031B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3052,7 +3076,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-19 10:13:22"
     },
     {
       "propertyId": "27669607",
@@ -3112,7 +3137,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2023b",
+      "reference": "ec-2023B",
       "address": {
         "town": "Madrid",
         "district": "Fuente del Berro",
@@ -3131,7 +3156,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 11:19:46"
     },
     {
       "propertyId": "28003188",
@@ -3201,7 +3227,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2028b",
+      "reference": "ec-2028B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3220,7 +3246,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-10 12:17:04"
     },
     {
       "propertyId": "27925427",
@@ -3275,7 +3302,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6140b",
+      "reference": "ec-6140B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3294,7 +3321,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 17:17:35"
     },
     {
       "propertyId": "28385968",
@@ -3454,7 +3482,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3192b",
+      "reference": "ec-3192B",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -3473,7 +3501,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-10 13:46:43"
     },
     {
       "propertyId": "27669629",
@@ -3578,7 +3607,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-1004w",
+      "reference": "ec-1004W",
       "address": {
         "town": "Madrid",
         "district": "Chueca",
@@ -3597,7 +3626,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669581",
@@ -3672,7 +3702,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5049b",
+      "reference": "ec-5049B",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -3691,7 +3721,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669578",
@@ -3756,7 +3787,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6073b",
+      "reference": "ec-6073B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3775,7 +3806,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-22 19:05:37"
     },
     {
       "propertyId": "27669650",
@@ -3920,7 +3952,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6152b",
+      "reference": "ec-6152B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -3939,7 +3971,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 18:31:20"
     },
     {
       "propertyId": "27669633",
@@ -4014,7 +4047,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3371b",
+      "reference": "ec-3371B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -4033,7 +4066,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 15:32:14"
     },
     {
       "propertyId": "27669630",
@@ -4113,7 +4147,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-1005w",
+      "reference": "ec-1005W",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -4132,7 +4166,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669602",
@@ -4267,7 +4302,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2027b",
+      "reference": "ec-2027B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -4286,7 +4321,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 20:33:24"
     },
     {
       "propertyId": "27669610",
@@ -4321,7 +4357,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6061b",
+      "reference": "ec-6061B",
       "address": {
         "town": "Madrid",
         "district": "Chueca",
@@ -4340,7 +4376,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669624",
@@ -4445,7 +4482,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3300b",
+      "reference": "ec-3300B",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -4464,7 +4501,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669937",
@@ -4593,7 +4631,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 18:32:27"
     },
     {
       "propertyId": "28512512",
@@ -4663,7 +4702,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6122b",
+      "reference": "ec-6122B",
       "address": {
         "town": "Madrid",
         "district": "Embajadores",
@@ -4682,7 +4721,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 18:17:29"
     },
     {
       "propertyId": "27669611",
@@ -4772,7 +4812,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2022b",
+      "reference": "ec-2022B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -4791,7 +4831,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669614",
@@ -4826,7 +4867,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6062b",
+      "reference": "ec-6062B",
       "address": {
         "town": "Madrid",
         "district": "Madrid",
@@ -4845,7 +4886,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669632",
@@ -4950,7 +4992,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-lom",
+      "reference": "ec-loM",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -4969,7 +5011,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669577",
@@ -5034,7 +5077,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6074b",
+      "reference": "ec-6074B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -5053,7 +5096,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-22 19:05:37"
     },
     {
       "propertyId": "28197406",
@@ -5228,7 +5272,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6111b",
+      "reference": "ec-6111B",
       "address": {
         "town": "Madrid",
         "district": "Argüelles",
@@ -5247,7 +5291,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-03 09:58:14"
     },
     {
       "propertyId": "27669574",
@@ -5387,7 +5432,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6081b",
+      "reference": "ec-6081B",
       "address": {
         "town": "Madrid",
         "district": "Centro",
@@ -5406,7 +5451,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-22 19:05:37"
     },
     {
       "propertyId": "27669711",
@@ -5476,7 +5522,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2003b",
+      "reference": "ec-2003B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -5495,7 +5541,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 18:33:17"
     },
     {
       "propertyId": "28189742",
@@ -5565,7 +5612,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6134b",
+      "reference": "ec-6134B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -5584,7 +5631,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-11 10:12:20"
     },
     {
       "propertyId": "27669653",
@@ -5754,7 +5802,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6075b",
+      "reference": "ec-6075B",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -5773,7 +5821,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 08:15:43"
     },
     {
       "propertyId": "27669588",
@@ -5888,7 +5937,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3327b",
+      "reference": "ec-3327B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -5907,7 +5956,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "28396584",
@@ -6097,7 +6147,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6123b",
+      "reference": "ec-6123B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -6116,7 +6166,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-11 10:32:32"
     },
     {
       "propertyId": "27669603",
@@ -6271,7 +6322,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6067b",
+      "reference": "ec-6067B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -6290,7 +6341,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "28049391",
@@ -6405,7 +6457,7 @@
         }
       ],
       "propertyType": "penthouse",
-      "reference": "ec-6083b",
+      "reference": "ec-6083B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -6424,7 +6476,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-04 12:28:51"
     },
     {
       "propertyId": "27669651",
@@ -6489,7 +6542,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6144b",
+      "reference": "ec-6144B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -6508,7 +6561,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 18:28:50"
     },
     {
       "propertyId": "27670331",
@@ -6663,7 +6717,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2008b",
+      "reference": "ec-2008B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -6682,7 +6736,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 19:32:02"
     },
     {
       "propertyId": "27669595",
@@ -6757,7 +6812,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5023v",
+      "reference": "ec-5023V",
       "address": {
         "town": "Madrid",
         "district": "Arapiles",
@@ -6776,7 +6831,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-23 15:27:38"
     },
     {
       "propertyId": "27669608",
@@ -6871,7 +6927,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3366b",
+      "reference": "ec-3366B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -6890,7 +6946,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 20:41:22"
     },
     {
       "propertyId": "27669682",
@@ -7015,7 +7072,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5038b",
+      "reference": "ec-5038B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7034,7 +7091,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-28 19:46:14"
     },
     {
       "propertyId": "27669586",
@@ -7179,7 +7237,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3354b",
+      "reference": "ec-3354B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7198,7 +7256,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669592",
@@ -7278,7 +7337,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5034v",
+      "reference": "ec-5034V",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -7297,7 +7356,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-23 14:00:46"
     },
     {
       "propertyId": "27669620",
@@ -7392,7 +7452,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2006b",
+      "reference": "ec-2006B",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -7411,7 +7471,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 19:22:05"
     },
     {
       "propertyId": "28335255",
@@ -7621,7 +7682,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6094b",
+      "reference": "ec-6094B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7640,7 +7701,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-12 13:14:19"
     },
     {
       "propertyId": "28493818",
@@ -7710,7 +7772,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6133b",
+      "reference": "ec-6133B",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -7729,7 +7791,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 17:30:56"
     },
     {
       "propertyId": "27669585",
@@ -7829,7 +7892,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3039b",
+      "reference": "ec-3039B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7848,7 +7911,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27773347",
@@ -8018,7 +8082,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6089b",
+      "reference": "ec-6089B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8037,7 +8101,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-23 11:54:20"
     },
     {
       "propertyId": "28125471",
@@ -8312,7 +8377,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6091b",
+      "reference": "ec-6091B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8331,7 +8396,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-05 14:15:18"
     },
     {
       "propertyId": "27669628",
@@ -8606,7 +8672,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-1002w",
+      "reference": "ec-1002W",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8625,7 +8691,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-09 18:16:30"
     },
     {
       "propertyId": "27669584",
@@ -8725,7 +8792,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3344b",
+      "reference": "ec-3344B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8744,7 +8811,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-22 19:00:46"
     },
     {
       "propertyId": "27669708",
@@ -8914,7 +8982,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2007b",
+      "reference": "ec-2007B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -8933,7 +9001,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-06 13:09:00"
     },
     {
       "propertyId": "27669625",
@@ -9078,7 +9147,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-3364b",
+      "reference": "ec-3364B",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -9097,7 +9166,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-22 17:59:15"
     },
     {
       "propertyId": "27912135",
@@ -9162,7 +9232,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-1006w",
+      "reference": "ec-1006W",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -9181,7 +9251,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-09 19:50:05"
     },
     {
       "propertyId": "27669675",
@@ -9366,7 +9437,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5045b",
+      "reference": "ec-5045B",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -9385,7 +9456,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-20 10:09:21"
     },
     {
       "propertyId": "28303039",
@@ -9629,7 +9701,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-13 16:57:45"
     },
     {
       "propertyId": "28176621",
@@ -9794,7 +9867,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-201b",
+      "reference": "ec-201B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -9813,7 +9886,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-25 16:55:10"
     },
     {
       "propertyId": "27669594",
@@ -9903,7 +9977,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5029v",
+      "reference": "ec-5029V",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -9922,7 +9996,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-23 14:02:13"
     },
     {
       "propertyId": "27669579",
@@ -10052,7 +10127,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6071b",
+      "reference": "ec-6071B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -10071,7 +10146,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-22 19:05:37"
     },
     {
       "propertyId": "27669598",
@@ -10146,7 +10222,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-jb",
+      "reference": "ec-jB",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -10165,7 +10241,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669636",
@@ -10237,10 +10314,15 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso ubicado en el Distrito Salamanca - Recoletos.\nAmplio salon comedor con cocina integrada y acceso a aplia terraza.\n2 Dormitorios, 2 Baños en suite y aseo de cortesia\nTotalemnte Amueblado y Cocina Equipada, Cuarto de lavado.\nCalefacción Comunitaria.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso ubicado en el Distrito Salamanca - Recoletos.\nAmplio salon comedor con cocina integrada y acceso a aplia terraza.\n2 Dormitorios, 2 Baños en suite y aseo de cortesia\nTotalemnte Amueblado y Cocina Equipada, Cuarto de lavado.\nCalefacción Comunitaria."
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-3381b",
+      "reference": "ec-3381B",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -10259,7 +10341,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27669596",
@@ -10321,10 +10404,15 @@
           "position": 10
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-5032v",
+      "reference": "ec-5032V",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -10343,7 +10431,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-23 14:17:04"
     },
     {
       "propertyId": "27669582",
@@ -10435,10 +10524,15 @@
           "position": 16
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso en Venta en Zona Goya, Distrito Salamanca\nEl piso cuenta con amplio salón - comedor.\nCocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nInmueble completamente reformado amueblado con muebles de diseño.\n3 dormitorios y 3 baños todos ellos en suite.\nVivienda totalmente reformada en el prestigioso barrio de Lista, Distrito Salamanca\nSuelos de Tarima y aire Acondicionado en toda la vivienda\nLa finca cuenta con ascensor y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. Rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso en Venta en Zona Goya, Distrito Salamanca\nEl piso cuenta con amplio salón - comedor.\nCocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nInmueble completamente reformado amueblado con muebles de diseño.\n3 dormitorios y 3 baños todos ellos en suite.\nVivienda totalmente reformada en el prestigioso barrio de Lista, Distrito Salamanca\nSuelos de Tarima y aire Acondicionado en toda la vivienda\nLa finca cuenta con ascensor y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. Rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte."
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-3382b",
+      "reference": "ec-3382B",
       "address": {
         "town": "Madrid",
         "district": "Recoletos",
@@ -10457,7 +10551,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "27768288",
@@ -10719,10 +10814,15 @@
           "position": 50
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a la terraza.\nCuenta con cuatro dormitorios y cuatro baños. Tres de ellos en suite. \n Calefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a la terraza.\nCuenta con cuatro dormitorios y cuatro baños. Tres de ellos en suite. \n Calefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-6087b",
+      "reference": "ec-6087B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -10741,7 +10841,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-27 10:13:23"
     },
     {
       "propertyId": "27669590",
@@ -10813,10 +10914,15 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y tres baños, dos de ellos en suite. Amplia terraza\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería. Plaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y tres baños, dos de ellos en suite. Amplia terraza\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería. Plaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-5036b",
+      "reference": "ec-5036B",
       "address": {
         "town": "Madrid",
         "district": "Jerónimos",
@@ -10835,7 +10941,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 13:03:52"
     },
     {
       "propertyId": "27669587",
@@ -10892,10 +10999,15 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería y trastero\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería y trastero\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-5033v",
+      "reference": "ec-5033V",
       "address": {
         "town": "Madrid",
         "district": "Metro bilbao",
@@ -10914,7 +11026,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-23 14:00:09"
     },
     {
       "propertyId": "27669672",
@@ -11041,10 +11154,15 @@
           "position": 23
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y dos baños dos de ellos en suite. Dormitorio principal con acceso a la terraza.\n Calefacción individual con suelo radiante y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y dos baños dos de ellos en suite. Dormitorio principal con acceso a la terraza.\n Calefacción individual con suelo radiante y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-5048b",
+      "reference": "ec-5048B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11063,7 +11181,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-23 11:17:09"
     },
     {
       "propertyId": "28453756",
@@ -11320,10 +11439,15 @@
           "position": 49
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplia terraza de 55m².\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños, dos de ellos en suite. \nCalefacción central y aire acondicionado. Área de lavandería.  Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplia terraza de 55m².\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños, dos de ellos en suite. \nCalefacción central y aire acondicionado. Área de lavandería.  Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
       "propertyType": "flat",
-      "reference": "ec-6103b",
+      "reference": "ec-6103B",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -11342,7 +11466,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 17:17:12"
     },
     {
       "propertyId": "27765765",
@@ -11472,7 +11597,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6086b",
+      "reference": "ec-6086B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11491,7 +11616,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-26 20:43:02"
     },
     {
       "propertyId": "27669676",
@@ -11551,7 +11677,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5044b",
+      "reference": "ec-5044B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11570,7 +11696,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-02-10 18:46:44"
     },
     {
       "propertyId": "27669604",
@@ -11665,7 +11792,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2026b",
+      "reference": "ec-2026B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -11684,7 +11811,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "28254206",
@@ -11774,7 +11902,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6092b",
+      "reference": "ec-6092B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11793,7 +11921,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 12:48:03"
     },
     {
       "propertyId": "27769302",
@@ -11933,7 +12062,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6088b",
+      "reference": "ec-6088B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -11952,7 +12081,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-27 11:16:15"
     },
     {
       "propertyId": "28454806",
@@ -12017,7 +12147,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6137b",
+      "reference": "ec-6137B",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -12036,7 +12166,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-12 19:15:55"
     },
     {
       "propertyId": "27669589",
@@ -12306,7 +12437,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5035b",
+      "reference": "ec-5035B",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -12325,7 +12456,8 @@
         "parkingAvailable": false,
         "pool": true,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-16 13:50:58"
     },
     {
       "propertyId": "28136926",
@@ -12465,7 +12597,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2005b",
+      "reference": "ec-2005B",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -12484,7 +12616,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 13:26:33"
     },
     {
       "propertyId": "27669600",
@@ -12699,7 +12832,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-2000b",
+      "reference": "ec-2000B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -12718,7 +12851,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-02 15:08:42"
     },
     {
       "propertyId": "28493019",
@@ -12823,7 +12957,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6084b",
+      "reference": "ec-6084B",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -12842,7 +12976,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-16 17:37:07"
     },
     {
       "propertyId": "27669575",
@@ -12962,7 +13097,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-5010v",
+      "reference": "ec-5010V",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -12981,7 +13116,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-01-23 15:40:20"
     },
     {
       "propertyId": "28455433",
@@ -13046,7 +13182,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-6139b",
+      "reference": "ec-6139B",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -13065,7 +13201,8 @@
         "parkingAvailable": false,
         "pool": false,
         "storage": false
-      }
+      },
+      "_fechacambio": "2026-03-12 19:14:27"
     }
   ]
 }

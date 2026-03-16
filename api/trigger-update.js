@@ -3,7 +3,7 @@
  * Verifica el PIN y dispara un nuevo deploy en Vercel vía deploy hook.
  *
  * Variables de entorno requeridas (Vercel > Settings > Environment Variables):
- *   ADMIN_PIN            — PIN numérico que usan Erika y su hermana
+ *   ADMIN_PIN            — PIN numérico que usan Erika y Lorena para autorizar el trigger
  *   VERCEL_DEPLOY_HOOK   — URL del deploy hook (Vercel > Settings > Git > Deploy Hooks)
  */
 export default async function handler(req, res) {
