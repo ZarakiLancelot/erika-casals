@@ -114,6 +114,19 @@ const Properties = () => {
 		lowestPrice: false, // Filtro para precio más bajo
 		highestPrice: false // Filtro para precio más alto
 	});
+	const clearFilters = () => setLocalFilters({
+		location: '',
+		district: '', // Filtro para distritos de Madrid ciudad
+		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
+		propertyType: '', // Nuevo filtro para tipo de propiedad
+		minPrice: '',
+		maxPrice: '',
+		minArea: '',
+		maxArea: '',
+		features: '',
+		lowestPrice: false, // Filtro para precio más bajo
+		highestPrice: false // Filtro para precio más alto
+	});
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
@@ -976,7 +989,31 @@ const Properties = () => {
 							{/* Sidebar de filtros */}
 							<FilterSidebar>
 								<FilterCard>
-									<FilterTitle>Filtros de búsqueda</FilterTitle> {/* Filtros */}
+									<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+									<FilterTitle style={{ marginBottom: 0 }}>Filtros de búsqueda</FilterTitle>
+									<button
+										onClick={clearFilters}
+										style={{
+											background: '#e8f0fe',
+											border: '1.5px solid #4a6fa5',
+											borderRadius: '8px',
+											padding: '6px 14px',
+											fontSize: '13px',
+											fontWeight: '600',
+											color: '#4a6fa5',
+											cursor: 'pointer',
+											whiteSpace: 'nowrap',
+											display: 'flex',
+											alignItems: 'center',
+											gap: '5px',
+											transition: 'all 0.2s ease',
+										}}
+										onMouseEnter={e => { e.currentTarget.style.background = '#4a6fa5'; e.currentTarget.style.color = '#fff'; }}
+										onMouseLeave={e => { e.currentTarget.style.background = '#e8f0fe'; e.currentTarget.style.color = '#4a6fa5'; }}
+									>
+										✕ Limpiar filtros
+									</button>
+								</div>
 									<FilterGroup>
 										<FilterLabel>Localización</FilterLabel>
 										{searchParams.get('location') ? (
