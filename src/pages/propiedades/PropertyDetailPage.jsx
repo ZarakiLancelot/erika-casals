@@ -40,10 +40,11 @@ const PropertyDetailPage = () => {
 			};
 			const isRent = item.keyacci === 2;
 			const numFotos = item.numfotos || 0;
+			const fotoletra = item.fotoletra || 1;
 			const images = numFotos > 0
 				? Array.from({ length: numFotos }, (_, i) => ({
-						url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${item.cod_ofer}/${i + 1}-1.jpg`,
-						id: `${item.cod_ofer}-${i + 1}`,
+						url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${item.cod_ofer}/${fotoletra}-${i + 1}.jpg`,
+						id: `${item.cod_ofer}-${fotoletra}-${i + 1}`,
 						position: i + 1
 					}))
 				: item.foto ? [{ url: item.foto, id: `${item.cod_ofer}-1`, position: 1 }] : [];

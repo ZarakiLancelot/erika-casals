@@ -20,11 +20,11 @@ const API_BASE = 'https://api.erikacasals.com/api.php';
 const NUMAGENCIA = '13731';
 
 // ─── Construir URLs de imágenes ───────────────────────────────────────────────
-function buildImages(codOfer, numFotos, fotoBase) {
+function buildImages(codOfer, numFotos, fotoBase, fotoletra = 1) {
 	if (numFotos && numFotos > 0) {
 		return Array.from({ length: numFotos }, (_, i) => ({
-			url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${codOfer}/${i + 1}-1.jpg`,
-			id: `${codOfer}-${i + 1}`,
+			url: `https://fotos15.apinmo.com/${NUMAGENCIA}/${codOfer}/${fotoletra}-${i + 1}.jpg`,
+			id: `${codOfer}-${fotoletra}-${i + 1}`,
 			position: i + 1
 		}));
 	}
@@ -77,7 +77,7 @@ function transformItem(item, description = '') {
 	if (!item?.cod_ofer) return null;
 	const isRent = item.keyacci === 2;
 	const price = isRent ? item.precioalq : item.precioinmo;
-	const images = buildImages(item.cod_ofer, item.numfotos, item.foto);
+	const images = buildImages(item.cod_ofer, item.numfotos, item.foto, item.fotoletra || 1);
 
 	return {
 		propertyId: String(item.cod_ofer),

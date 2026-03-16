@@ -895,6 +895,8 @@ const PropertyDetail = ({ property, onBack, images }) => {
 		if (images && images.length > 0) {
 			// Usar las imágenes pasadas como prop (cargadas específicamente para esta propiedad)
 			return images;
+		} else if (property.source === 'inmovilla' && property.images?.length > 0) {
+			return property.images.map(img => ({ url: img.url, alt: 'Imagen de la propiedad' }));
 		} else if (
 			property.source === 'contentful' &&
 			property.images &&
