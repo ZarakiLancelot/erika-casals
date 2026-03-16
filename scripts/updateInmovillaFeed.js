@@ -8,6 +8,9 @@
  * O via npm:  npm run update:inmovilla
  */
 
+// El servidor de api.erikacasals.com usa un certificado SSL con CA no reconocida
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const { writeFileSync, mkdirSync } = require('fs');
 const { join } = require('path');
 
@@ -56,12 +59,19 @@ const TIPO_MAP = {
 	Edificio: 'building'
 };
 
-function transformItem(item) {
+function cleanDescription(text) {
+	if (!text) return '';
+	return text
+		.replace(/~~+/g, '\n')
+		.replace(/<br\s*\/?>/gi, '')
+		.trim();
+}
+
+function transformItem(item, description = '') {
 	if (!item?.cod_ofer) return null;
 	const isRent = item.keyacci === 2;
 	const price = isRent ? item.precioalq : item.precioinmo;
 	const images = buildImages(item.cod_ofer, item.numfotos, item.foto);
-	const description = item.observaciones || item.texto || '';
 
 	return {
 		propertyId: String(item.cod_ofer),
@@ -86,29 +96,52 @@ function transformItem(item) {
 		district: item.zona || '',
 		latitude: item.latitud || null,
 		longitude: item.altitud || null,
-		features: item.features || {}
+		features: {
+			liftAvailable: item.ascensor === 1,
+			terrace: item.terraza === 1,
+			conditionedAir: item.aire_con === 1,
+			balcony: item.balcon === 1,
+			parkingAvailable: item.plaza_gara === 1 || item.parking === 1,
+			pool: item.piscina_com === 1 || item.piscina_prop === 1,
+			storage: item.trastero === 1,
+		}
 	};
 }
 
 // ─── Fetch con reintentos ante rate-limit ────────────────────────────────────
-async function fetchPage(page, retries = 5) {
-	const url = `${API_BASE}?accion=paginacion&pagina=${page}&por_pagina=50`;
+async function fetchWithRetry(url, label, retries = 5) {
 	for (let attempt = 1; attempt <= retries; attempt++) {
 		const response = await fetch(url);
 		if (response.ok) {
 			const result = await response.json();
 			if (result.ok) return result;
-			// Rate-limit u otro error de la API: esperar y reintentar
 			const waitMs = attempt * 15000;
-			console.log(`  ⚠ API error en página ${page}: "${result.error}" — reintento ${attempt}/${retries} en ${waitMs / 1000}s`);
+			console.log(`  ⚠ API error en ${label}: "${result.error}" — reintento ${attempt}/${retries} en ${waitMs / 1000}s`);
 			await new Promise(resolve => setTimeout(resolve, waitMs));
 		} else {
 			const waitMs = attempt * 15000;
-			console.log(`  ⚠ HTTP ${response.status} en página ${page} — reintento ${attempt}/${retries} en ${waitMs / 1000}s`);
+			console.log(`  ⚠ HTTP ${response.status} en ${label} — reintento ${attempt}/${retries} en ${waitMs / 1000}s`);
 			await new Promise(resolve => setTimeout(resolve, waitMs));
 		}
 	}
-	throw new Error(`No se pudo cargar la página ${page} tras ${retries} intentos`);
+	throw new Error(`No se pudo cargar ${label} tras ${retries} intentos`);
+}
+
+async function fetchPage(page, retries = 5) {
+	const url = `${API_BASE}?accion=paginacion&pagina=${page}&por_pagina=50`;
+	return fetchWithRetry(url, `página ${page}`, retries);
+}
+
+async function fetchFichaDescription(codOfer) {
+	try {
+		const url = `${API_BASE}?accion=ficha&cod_ofer=${codOfer}`;
+		const result = await fetchWithRetry(url, `ficha ${codOfer}`, 3);
+		const descripciones = result.data?.descripciones?.[codOfer];
+		const raw = descripciones?.['1']?.descrip || '';
+		return cleanDescription(raw);
+	} catch {
+		return '';
+	}
 }
 
 // ─── Paginación completa con deduplicación ────────────────────────────────────
@@ -147,7 +180,20 @@ async function fetchAllProperties() {
 		page++;
 	}
 
-	return Array.from(seen.values()).map(transformItem).filter(Boolean);
+	const items = Array.from(seen.values());
+
+	console.log(`\nDescargando descripciones (${items.length} fichas)...`);
+	const properties = [];
+	for (let i = 0; i < items.length; i++) {
+		const item = items[i];
+		const description = await fetchFichaDescription(item.cod_ofer);
+		properties.push(transformItem(item, description));
+		if ((i + 1) % 10 === 0) console.log(`  ${i + 1}/${items.length} fichas procesadas`);
+		// Pequeña pausa para no saturar la API
+		await new Promise(resolve => setTimeout(resolve, 300));
+	}
+
+	return properties.filter(Boolean);
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
