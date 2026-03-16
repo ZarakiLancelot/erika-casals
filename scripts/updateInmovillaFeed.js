@@ -11,7 +11,7 @@
 // El servidor de api.erikacasals.com usa un certificado SSL con CA no reconocida
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-const { writeFileSync, mkdirSync } = require('fs');
+const { writeFileSync, mkdirSync, existsSync, readFileSync } = require('fs');
 const { join } = require('path');
 
 const OUTPUT_PATH = join(__dirname, '..', 'public', 'inmovilla-properties-all.json');
@@ -183,21 +183,57 @@ async function fetchAllProperties() {
 			break;
 		}
 
-		page++;
+		page += 50;
 	}
 
 	const items = Array.from(seen.values());
 
-	console.log(`\nDescargando descripciones (${items.length} fichas)...`);
-	const properties = [];
-	for (let i = 0; i < items.length; i++) {
-		const item = items[i];
+	// ─── Cargar descripciones del JSON anterior para reutilizar las no modificadas
+	const prevDescriptions = new Map();
+	if (existsSync(OUTPUT_PATH)) {
+		try {
+			const prev = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'));
+			for (const p of prev.properties || []) {
+				prevDescriptions.set(Number(p.propertyId), {
+					description: p.description || '',
+					fechacambio: p._fechacambio || ''
+				});
+			}
+		} catch { /* si el JSON está corrupto, ignorar */ }
+	}
+
+	const toFetch = items.filter(item => {
+		const prev = prevDescriptions.get(item.cod_ofer);
+		return !prev || prev.fechacambio !== item.fechacambio;
+	});
+
+	const removedCount = prevDescriptions.size > 0 ? prevDescriptions.size - items.length : 0;
+	const hasChanges = toFetch.length > 0 || removedCount !== 0;
+
+	if (!hasChanges) {
+		console.log('\n✓ Sin cambios desde la última actualización — JSON no modificado.');
+		return null;
+	}
+
+	console.log(`\nDescripciones: ${toFetch.length} fichas nuevas/modificadas (${items.length - toFetch.length} reutilizadas del JSON anterior)`);
+
+	const fetchedDescriptions = new Map();
+	for (let i = 0; i < toFetch.length; i++) {
+		const item = toFetch[i];
 		const description = await fetchFichaDescription(item.cod_ofer);
-		properties.push(transformItem(item, description));
-		if ((i + 1) % 10 === 0) console.log(`  ${i + 1}/${items.length} fichas procesadas`);
-		// Pequeña pausa para no saturar la API
+		fetchedDescriptions.set(item.cod_ofer, description);
+		if ((i + 1) % 10 === 0) console.log(`  ${i + 1}/${toFetch.length} fichas procesadas`);
 		await new Promise(resolve => setTimeout(resolve, 300));
 	}
+
+	const properties = items.map(item => {
+		const description = fetchedDescriptions.has(item.cod_ofer)
+			? fetchedDescriptions.get(item.cod_ofer)
+			: (prevDescriptions.get(item.cod_ofer)?.description || '');
+		const transformed = transformItem(item, description);
+		if (transformed) transformed._fechacambio = item.fechacambio || '';
+		return transformed;
+	});
 
 	return properties.filter(Boolean);
 }
@@ -206,6 +242,8 @@ async function fetchAllProperties() {
 async function main() {
 	try {
 		const properties = await fetchAllProperties();
+
+		if (properties === null) return; // sin cambios
 
 		const rent = properties.filter(p => p.operation === 'rent').length;
 		const sale = properties.filter(p => p.operation === 'sale').length;
