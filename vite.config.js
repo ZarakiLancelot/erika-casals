@@ -8,6 +8,17 @@ export default defineConfig({
 			'/api': 'http://localhost:3001'
 		}
 	},
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+					'ui-vendor': ['styled-components', 'framer-motion'],
+					'contentful': ['contentful'],
+				}
+			}
+		}
+	},
 	plugins: [
 		react(),
 		{

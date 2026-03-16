@@ -52,6 +52,25 @@ import {
 } from './styles';
 import Footer from '../footer/Footer';
 import ResponsiveNavbar from '../common/ResponsiveNavbar';
+import RangeSelect from './RangeSelect';
+
+const PROPERTY_TYPE_MAP = {
+	Piso: 'flat', Apartamento: 'flat', Estudio: 'studio', Loft: 'loft',
+	'Ático': 'penthouse', Atico: 'penthouse',
+	Casa: 'house', Chalet: 'house', 'Casa / Chalet': 'house', 'Villa / Chalet': 'house', Villa: 'house', Adosado: 'house',
+	'Dúplex': 'duplex', Duplex: 'duplex',
+	Local: 'premises', 'Local comercial': 'premises',
+	Oficina: 'office', Garaje: 'garage', Trastero: 'storage',
+	Terreno: 'land', 'Terreno urbano': 'land',
+	Nave: 'warehouse', 'Nave industrial': 'warehouse',
+	Edificio: 'building',
+};
+const normalizePropertyType = type => PROPERTY_TYPE_MAP[type] || type;
+
+const SALE_PRICE_PRESETS = [50000, 100000, 150000, 200000, 300000, 400000, 500000, 750000, 1000000, 1500000, 2000000];
+const AREA_PRESETS = [30, 40, 50, 60, 70, 80, 100, 120, 150, 200, 300];
+const priceLabel = p => p.toLocaleString('es-ES') + ' €';
+const areaLabel = p => p + ' m²';
 
 const Properties = () => {
 	const location = useLocation();
@@ -272,7 +291,7 @@ const Properties = () => {
 			const types = new Set();
 			allProps.forEach(property => {
 				if (property.propertyType) {
-					types.add(property.propertyType);
+					types.add(normalizePropertyType(property.propertyType));
 				}
 			});
 			// Agregar el filtro especial "local" si hay propiedades que lo contengan
@@ -319,12 +338,10 @@ const Properties = () => {
 			);
 		}
 
-		// Búsqueda por características específicas para Idealista
+		// Búsqueda por características específicas — si el flag está activo retorna true,
+		// si no, cae al buscador de descripción como fallback
 		if (term.includes('ascensor') || term.includes('elevador')) {
-			return (
-				property.features?.liftAvailable === true ||
-				property.features?.hasLift === true
-			);
+			if (property.features?.liftAvailable === true || property.features?.hasLift === true) return true;
 		}
 
 		if (
@@ -332,24 +349,15 @@ const Properties = () => {
 			term.includes('aire') ||
 			term.includes('ac')
 		) {
-			return (
-				property.features?.conditionedAir === true ||
-				property.features?.hasAirConditioning === true
-			);
+			if (property.features?.conditionedAir === true || property.features?.hasAirConditioning === true) return true;
 		}
 
 		if (term.includes('terraza')) {
-			return (
-				property.features?.terrace === true ||
-				property.features?.hasTerrace === true
-			);
+			if (property.features?.terrace === true || property.features?.hasTerrace === true) return true;
 		}
 
 		if (term.includes('balcon') || term.includes('balcón')) {
-			return (
-				property.features?.balcony === true ||
-				property.features?.hasBalcony === true
-			);
+			if (property.features?.balcony === true || property.features?.hasBalcony === true) return true;
 		}
 
 		if (
@@ -357,46 +365,36 @@ const Properties = () => {
 			term.includes('parking') ||
 			term.includes('aparcamiento')
 		) {
-			return property.features?.parkingAvailable === true;
+			if (property.features?.parkingAvailable === true) return true;
 		}
 
 		if (term.includes('piscina')) {
-			return (
-				property.features?.pool === true ||
-				property.features?.hasSwimmingPool === true
-			);
+			if (property.features?.pool === true || property.features?.hasSwimmingPool === true) return true;
 		}
 
 		if (term.includes('jardin') || term.includes('jardín')) {
-			return (
-				property.features?.garden === true ||
-				property.features?.hasGarden === true
-			);
+			if (property.features?.garden === true || property.features?.hasGarden === true) return true;
 		}
 
 		if (term.includes('trastero') || term.includes('storage')) {
-			return property.features?.storage === true;
+			if (property.features?.storage === true) return true;
 		}
 
 		if (term.includes('armarios empotrados') || term.includes('armarios')) {
-			return (
-				property.features?.wardrobes === true ||
-				property.features?.hasWardrobe === true
-			);
+			if (property.features?.wardrobes === true || property.features?.hasWardrobe === true) return true;
 		}
 
 		if (term.includes('calefaccion') || term.includes('calefacción')) {
-			return property.features?.heatingType || property.features?.hasHeating
-				? true
-				: property.features.heatingType !== 'none';
+			if (property.features?.heatingType && property.features.heatingType !== 'none') return true;
+			if (property.features?.hasHeating === true) return true;
 		}
 
 		if (term.includes('atico') || term.includes('ático')) {
-			return property.features?.penthouse === true;
+			if (property.features?.penthouse === true) return true;
 		}
 
 		if (term.includes('duplex') || term.includes('dúplex')) {
-			return property.features?.duplex === true;
+			if (property.features?.duplex === true) return true;
 		}
 
 		// Si no es una característica específica, buscar en la descripción, dirección, distrito, referencia o id
@@ -741,7 +739,7 @@ const Properties = () => {
 				}
 			} else {
 				// Para otros tipos de propiedad, usar la lógica normal
-				if (property.propertyType !== localFilters.propertyType) {
+				if (normalizePropertyType(property.propertyType) !== localFilters.propertyType) {
 					return false;
 				}
 			}
@@ -1066,22 +1064,20 @@ const Properties = () => {
 									<FilterGroup>
 										<FilterLabel>Precio</FilterLabel>
 										<PriceRangeGroup>
-											<PriceInput
-												placeholder='Precio mín €'
+											<RangeSelect
+												presets={SALE_PRICE_PRESETS}
 												value={localFilters.minPrice}
-												onChange={e =>
-													handleFilterChange('minPrice', e.target.value)
-												}
-												type='number'
+												onChange={v => handleFilterChange('minPrice', v)}
+												placeholder='Precio mín €'
+												formatLabel={priceLabel}
 											/>
 											<PriceSeparator>—</PriceSeparator>
-											<PriceInput
-												placeholder='Precio máx €'
+											<RangeSelect
+												presets={SALE_PRICE_PRESETS}
 												value={localFilters.maxPrice}
-												onChange={e =>
-													handleFilterChange('maxPrice', e.target.value)
-												}
-												type='number'
+												onChange={v => handleFilterChange('maxPrice', v)}
+												placeholder='Precio máx €'
+												formatLabel={priceLabel}
 											/>
 										</PriceRangeGroup>
 										{/* Checkboxes para filtros de precio */}
@@ -1135,22 +1131,20 @@ const Properties = () => {
 									<FilterGroup>
 										<FilterLabel>Superficie (m²)</FilterLabel>
 										<PriceRangeGroup>
-											<PriceInput
-												placeholder='m² min'
+											<RangeSelect
+												presets={AREA_PRESETS}
 												value={localFilters.minArea}
-												onChange={e =>
-													handleFilterChange('minArea', e.target.value)
-												}
-												type='number'
+												onChange={v => handleFilterChange('minArea', v)}
+												placeholder='m² min'
+												formatLabel={areaLabel}
 											/>
 											<PriceSeparator>—</PriceSeparator>
-											<PriceInput
-												placeholder='m² max'
+											<RangeSelect
+												presets={AREA_PRESETS}
 												value={localFilters.maxArea}
-												onChange={e =>
-													handleFilterChange('maxArea', e.target.value)
-												}
-												type='number'
+												onChange={v => handleFilterChange('maxArea', v)}
+												placeholder='m² max'
+												formatLabel={areaLabel}
 											/>
 										</PriceRangeGroup>
 									</FilterGroup>

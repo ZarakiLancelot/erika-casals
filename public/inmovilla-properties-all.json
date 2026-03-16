@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-13T05:15:30.463Z",
-  "total": 92,
-  "sale": 90,
+  "generatedAt": "2026-03-16T16:14:22.196Z",
+  "total": 94,
+  "sale": 92,
   "rent": 2,
   "properties": [
     {
@@ -69,8 +69,13 @@
           "position": 11
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Se alquila amplia vivienda en zona Chueca, Distrito Centro.\nReformada y totalmente amueblada y equipada.\nCocina con todos los electrodomésticos y completamente equipada, con ventana a patio interior, y abierta al comedor.\nAmplio salón con dos sofás, uno de ellos con chaise longue y butaca con reposapiés. \nEl comedor, con acceso desde el salón dispone de una gran cristalera con acceso a una amplia terraza, ajardinada y semicubierta, amueblada con sofá y butacas.\nEl dormitorio principal, con dos amplias ventanas a la terraza, dispone de una cama con canapé doble de 180cm. , amplios armarios y caja fuerte.\nEl segundo dormitorio, con dos ventanas a un patio interior, tiene dos camas con canapé individuales de 90cm. que pueden unirse mediante un sistema de cremallera para convertirlas en una cama doble de 180cm. , dispone también de amplios armarios.\nEl tercer dormitorio con cama individual con canapé de 90cm. , armario de dos puertas y ventana a patio interior. \nEl apartamento tiene tres cuartos de baño completos con ducha, todos ellos en suite, en cada uno de los dormitorios.\nSuelo de madera de roble en toda la vivienda, salvo cocina y cuartos de baño, que disponen de pavimento con motivos de tipo hidráulico, geométricos y/u orgánicos. Ventanas y balconeras con cierre hermético e insonorizado, y con doble acristalamiento, en color gris.\nAire acondicionado por conductos, frío y calor, central para toda la vivienda. Calefacción de gas, por caldera y radiadores, con termostato central. Conexión gratuita a internet del edificio mediante sistema WIFI.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Se alquila amplia vivienda en zona Chueca, Distrito Centro.\nReformada y totalmente amueblada y equipada.\nCocina con todos los electrodomésticos y completamente equipada, con ventana a patio interior, y abierta al comedor.\nAmplio salón con dos sofás, uno de ellos con chaise longue y butaca con reposapiés. \nEl comedor, con acceso desde el salón dispone de una gran cristalera con acceso a una amplia terraza, ajardinada y semicubierta, amueblada con sofá y butacas.\nEl dormitorio principal, con dos amplias ventanas a la terraza, dispone de una cama con canapé doble de 180cm. , amplios armarios y caja fuerte.\nEl segundo dormitorio, con dos ventanas a un patio interior, tiene dos camas con canapé individuales de 90cm. que pueden unirse mediante un sistema de cremallera para convertirlas en una cama doble de 180cm. , dispone también de amplios armarios.\nEl tercer dormitorio con cama individual con canapé de 90cm. , armario de dos puertas y ventana a patio interior. \nEl apartamento tiene tres cuartos de baño completos con ducha, todos ellos en suite, en cada uno de los dormitorios.\nSuelo de madera de roble en toda la vivienda, salvo cocina y cuartos de baño, que disponen de pavimento con motivos de tipo hidráulico, geométricos y/u orgánicos. Ventanas y balconeras con cierre hermético e insonorizado, y con doble acristalamiento, en color gris.\nAire acondicionado por conductos, frío y calor, central para toda la vivienda. Calefacción de gas, por caldera y radiadores, con termostato central. Conexión gratuita a internet del edificio mediante sistema WIFI."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669642",
       "address": {
@@ -83,7 +88,15 @@
       "district": "Chamberí",
       "latitude": 40.4282228,
       "longitude": -3.6997011,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669643",
@@ -155,8 +168,13 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Se alquila amplia vivienda en zona Chueca, Distrito Centro.\nReformada y totalmente amueblada y equipada.\nCocina con todos los electrodomésticos y completamente equipada, con ventana a patio interior, y abierta al comedor.\nSalón muy amplio con gran cristalera.\nEl apartamento dispone de tres cuartos de baño completos con ducha, todos ellos en suite.\nEl dormitorio principal, con dos amplias ventanas, tiene cama con canapé doble de 180cm, amplios armarios y caja fuerte. \nEl segundo dormitorio, dispone de dos camas con canapé individuales de 90cm que pueden unirse mediante un sistema de cremallera para convertirlas en una cama doble de 180cm, dispone también de amplios armarios.\nEl tercer dormitorio con cama individual con canapé de 90cm, armario de dos puertas.\nSuelo de madera de roble en toda la vivienda, salvo cocina-comedor y cuartos de baño, que disponen de pavimento con motivos de tipo hidráulico, geométricos y/o orgánicos.\nVentanas y balconeras con cierre hermético e insonorizado, y con doble acristalamiento, en color gris.\nAire acondicionado por conductos, frio y calor, central para toda la vivienda. Calefacción de gas, por caldera y radiadores, con termostato central. Conexión gratuita a internet del edificio mediante sistema WIFI.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Se alquila amplia vivienda en zona Chueca, Distrito Centro.\nReformada y totalmente amueblada y equipada.\nCocina con todos los electrodomésticos y completamente equipada, con ventana a patio interior, y abierta al comedor.\nSalón muy amplio con gran cristalera.\nEl apartamento dispone de tres cuartos de baño completos con ducha, todos ellos en suite.\nEl dormitorio principal, con dos amplias ventanas, tiene cama con canapé doble de 180cm, amplios armarios y caja fuerte. \nEl segundo dormitorio, dispone de dos camas con canapé individuales de 90cm que pueden unirse mediante un sistema de cremallera para convertirlas en una cama doble de 180cm, dispone también de amplios armarios.\nEl tercer dormitorio con cama individual con canapé de 90cm, armario de dos puertas.\nSuelo de madera de roble en toda la vivienda, salvo cocina-comedor y cuartos de baño, que disponen de pavimento con motivos de tipo hidráulico, geométricos y/o orgánicos.\nVentanas y balconeras con cierre hermético e insonorizado, y con doble acristalamiento, en color gris.\nAire acondicionado por conductos, frio y calor, central para toda la vivienda. Calefacción de gas, por caldera y radiadores, con termostato central. Conexión gratuita a internet del edificio mediante sistema WIFI."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669643",
       "address": {
@@ -169,7 +187,129 @@
       "district": "Chamberí",
       "latitude": 40.4282228,
       "longitude": -3.6997011,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
+    },
+    {
+      "propertyId": "28476654",
+      "source": "inmovilla",
+      "price": 370000,
+      "operation": "sale",
+      "size": null,
+      "rooms": null,
+      "bathrooms": null,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/1-1.jpg",
+          "id": "28476654-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/2-1.jpg",
+          "id": "28476654-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/3-1.jpg",
+          "id": "28476654-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/4-1.jpg",
+          "id": "28476654-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/5-1.jpg",
+          "id": "28476654-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/6-1.jpg",
+          "id": "28476654-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/7-1.jpg",
+          "id": "28476654-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/8-1.jpg",
+          "id": "28476654-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/9-1.jpg",
+          "id": "28476654-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/10-1.jpg",
+          "id": "28476654-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/11-1.jpg",
+          "id": "28476654-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/12-1.jpg",
+          "id": "28476654-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/13-1.jpg",
+          "id": "28476654-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/14-1.jpg",
+          "id": "28476654-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476654/15-1.jpg",
+          "id": "28476654-15",
+          "position": 15
+        }
+      ],
+      "description": "Venta Terreno en Casco Histórico Arganda\nParcela de 371mts2 en el corazón del casco histórico de Arganda.\nSituada en la Calle Peñón de Gibraltar 14, en el centro histórico de Arganda a 220 m de la plaza del Ayuntamiento\nLa parcela tiene acceso por 2 calles y en ambos laterales ya se han construido los accesos como se puede apreciar en las fotos y vídeos.\nFachada de 16 m en la calle Santiago Apostos y fachada de 12 m en la calle Peñón de Gibraltar. Permite construir bajo + 3 plantas o vivienda independiente. Terreno urbano para que puedas construir a tu gusto. Muchas posibilidades de acuerdo a las necesidades de cada cliente.\nMuy bien comunicado con el centro y con los accesos y/o salidas principales de la ciudad.\nPara más información no dude en contactarnos.\nCaracterísticas básicas:\nSuperficie total del terreno: 371 m2~Superficie edificable 821 m2~Acceso a dos vías urbanas (C/Peñón de Gibraltar y C/Santiago Apóstol)~Distancia municipio más cercano: En núcleo urbano~Equipamiento:\nAgua~Luz~Alcantarillado~Gas natural~Alumbrado público~Aceras~Situación urbanística\nUrbano (solar)~Residencial en altura (bloques)~Residencial unifamiliar (chalets)~Otra~Bajo + 3 plantas edificables~Ubicación~Arganda, Madrid.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Venta Terreno en Casco Histórico Arganda\nParcela de 371mts2 en el corazón del casco histórico de Arganda.\nSituada en la Calle Peñón de Gibraltar 14, en el centro histórico de Arganda a 220 m de la plaza del Ayuntamiento\nLa parcela tiene acceso por 2 calles y en ambos laterales ya se han construido los accesos como se puede apreciar en las fotos y vídeos.\nFachada de 16 m en la calle Santiago Apostos y fachada de 12 m en la calle Peñón de Gibraltar. Permite construir bajo + 3 plantas o vivienda independiente. Terreno urbano para que puedas construir a tu gusto. Muchas posibilidades de acuerdo a las necesidades de cada cliente.\nMuy bien comunicado con el centro y con los accesos y/o salidas principales de la ciudad.\nPara más información no dude en contactarnos.\nCaracterísticas básicas:\nSuperficie total del terreno: 371 m2~Superficie edificable 821 m2~Acceso a dos vías urbanas (C/Peñón de Gibraltar y C/Santiago Apóstol)~Distancia municipio más cercano: En núcleo urbano~Equipamiento:\nAgua~Luz~Alcantarillado~Gas natural~Alumbrado público~Aceras~Situación urbanística\nUrbano (solar)~Residencial en altura (bloques)~Residencial unifamiliar (chalets)~Otra~Bajo + 3 plantas edificables~Ubicación~Arganda, Madrid.~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "28476654",
+      "address": {
+        "town": "Arganda del Rey",
+        "district": "Centro",
+        "latitude": 40.30023062,
+        "longitude": -3.440601437
+      },
+      "municipality": "Arganda del Rey",
+      "district": "Centro",
+      "latitude": 40.30023062,
+      "longitude": -3.440601437,
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27670033",
@@ -221,8 +361,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Esta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Esta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27670033",
       "address": {
@@ -235,7 +380,15 @@
       "district": "Centro",
       "latitude": 40.4139158,
       "longitude": -3.6984282,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669599",
@@ -317,8 +470,13 @@
           "position": 14
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, zona Arapiles. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. Calefacción individual y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, zona Arapiles. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. Calefacción individual y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669599",
       "address": {
@@ -331,7 +489,15 @@
       "district": "Arapiles",
       "latitude": 40.432743,
       "longitude": -3.7106809,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669613",
@@ -383,8 +549,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama. \nDormitorio principal, segundo dormitorio individual y un baño. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama. \nDormitorio principal, segundo dormitorio individual y un baño. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669613",
       "address": {
@@ -397,7 +568,15 @@
       "district": "Goya",
       "latitude": 40.425166,
       "longitude": -3.672459,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669667",
@@ -489,8 +668,13 @@
           "position": 16
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Fuente del Berro. \nEste inmueble en una tercera planta, se vende completamente reformado y equipado. \nLa vivienda cuenta con salón/comedor, cocina totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño.\nCalefacción individual gas natural y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Fuente del Berro. \nEste inmueble en una tercera planta, se vende completamente reformado y equipado. \nLa vivienda cuenta con salón/comedor, cocina totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño.\nCalefacción individual gas natural y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669667",
       "address": {
@@ -503,7 +687,15 @@
       "district": "Fuente del Berro",
       "latitude": 40.4271396,
       "longitude": -3.6660077,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669615",
@@ -550,8 +742,13 @@
           "position": 7
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Centro, zona Malasaña. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nDos dormitorios y un baño, Acceso a patio interior desde el dormitorio principal.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Centro, zona Malasaña. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nDos dormitorios y un baño, Acceso a patio interior desde el dormitorio principal.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669615",
       "address": {
@@ -564,7 +761,15 @@
       "district": "Chueca",
       "latitude": 40.4238619,
       "longitude": -3.70125,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669605",
@@ -666,8 +871,13 @@
           "position": 18
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Fuente del Berro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. calefacción individual y aire acondicionado.\nLa finca cuenta con servicio de portería.~Ubicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Fuente del Berro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. calefacción individual y aire acondicionado.\nLa finca cuenta con servicio de portería.~Ubicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669605",
       "address": {
@@ -680,7 +890,15 @@
       "district": "Fuente del Berro",
       "latitude": 40.4253189,
       "longitude": -3.6671517,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669621",
@@ -732,8 +950,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. \nDiseño y confort en cada detalle. Electrodomésticos de alta gama y domótica. \nLa vivienda cuenta con salón/comedor, cocina integrada. Dos dormitorios y un baño.\n Ubicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. \nDiseño y confort en cada detalle. Electrodomésticos de alta gama y domótica. \nLa vivienda cuenta con salón/comedor, cocina integrada. Dos dormitorios y un baño.\n Ubicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669621",
       "address": {
@@ -746,7 +969,15 @@
       "district": "Ibiza",
       "latitude": 40.4171149,
       "longitude": -3.6766662,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669931",
@@ -803,8 +1034,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Centro, zona Palacio. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños, uno de ellos en suite. \n Calefacción individual y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Centro, zona Palacio. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños, uno de ellos en suite. \n Calefacción individual y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669931",
       "address": {
@@ -817,7 +1053,15 @@
       "district": "Sol",
       "latitude": 40.4211322,
       "longitude": -3.709263,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669593",
@@ -869,8 +1113,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso en venta totalmente reformado ubicado en el Distrito de Salamanca, zona Goya.\nCuenta con dos dormitorios y un baño.\nSalón comedor con cocina integrada.\nSuelos de Tarima. Aire acondicionado por ductos y calefacción individual por gas natural.\nAmueblado, listo para entrar a vivir.\nRodeado de las mejores tiendas, restaurantes y servicios de la ciudad.\nLa zona de Goya combina tranquilidad y sofisticación, con excelentes conexiones de transporte y proximidad a lugares icónicos como el Parque del Retiro. Este es el lugar perfecto para aquellos que valoran la calidad de vida en un entorno exclusivo.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso en venta totalmente reformado ubicado en el Distrito de Salamanca, zona Goya.\nCuenta con dos dormitorios y un baño.\nSalón comedor con cocina integrada.\nSuelos de Tarima. Aire acondicionado por ductos y calefacción individual por gas natural.\nAmueblado, listo para entrar a vivir.\nRodeado de las mejores tiendas, restaurantes y servicios de la ciudad.\nLa zona de Goya combina tranquilidad y sofisticación, con excelentes conexiones de transporte y proximidad a lugares icónicos como el Parque del Retiro. Este es el lugar perfecto para aquellos que valoran la calidad de vida en un entorno exclusivo."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669593",
       "address": {
@@ -883,7 +1132,15 @@
       "district": "Goya",
       "latitude": 40.4277,
       "longitude": -3.6783319,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669616",
@@ -1065,8 +1322,13 @@
           "position": 34
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama.\nDos dormitorios y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama.\nDos dormitorios y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669616",
       "address": {
@@ -1079,7 +1341,15 @@
       "district": "Ibiza",
       "latitude": 40.4230368,
       "longitude": -3.6735825,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669612",
@@ -1171,8 +1441,13 @@
           "position": 16
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Chamberí, zona Gaztambide. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nDormitorio principal, segundo dormitorio individual y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Chamberí, zona Gaztambide. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nDormitorio principal, segundo dormitorio individual y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669612",
       "address": {
@@ -1185,7 +1460,109 @@
       "district": "Vallehermoso",
       "latitude": 40.4370454,
       "longitude": -3.7162808,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
+    },
+    {
+      "propertyId": "28476783",
+      "source": "inmovilla",
+      "price": 775000,
+      "operation": "sale",
+      "size": 113,
+      "rooms": null,
+      "bathrooms": null,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/1-1.jpg",
+          "id": "28476783-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/2-1.jpg",
+          "id": "28476783-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/3-1.jpg",
+          "id": "28476783-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/4-1.jpg",
+          "id": "28476783-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/5-1.jpg",
+          "id": "28476783-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/6-1.jpg",
+          "id": "28476783-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/7-1.jpg",
+          "id": "28476783-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/8-1.jpg",
+          "id": "28476783-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/9-1.jpg",
+          "id": "28476783-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/10-1.jpg",
+          "id": "28476783-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28476783/11-1.jpg",
+          "id": "28476783-11",
+          "position": 11
+        }
+      ],
+      "description": "Descubre este excepcional local comercial situado en una ubicación privilegiada del distrito de Moncloa. Con salida de humos y a pie de calle, esta propiedad presenta un diseño cuadrado que maximiza su versatilidad para diversos usos comerciales.~La amplia fachada acristalada de seis metros lineales aporta gran visibilidad y luminosidad al espacio, ideal para atraer tanto a clientes locales como turistas gracias al alto tráfico peatonal.\nEl interior cuenta con tres estancias y un baño adaptado para personas con discapacidad, lo que garantiza funcionalidad sin comprometer el estilo. Los techos altos (más de 3.5 metros) brindan una sensación espacial única e incrementan las posibilidades creativas del negocio o actividad futura.\nReformado hace doce años específicamente para su uso actual.\nCon una superficie construida total aproximada de 113 m² distribuidos eficientemente sobre planta baja; es la oportunidad perfecta no solo por sus características físicas sino también por estar ubicado estratégicamente entre zonas emblemáticas.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Descubre este excepcional local comercial situado en una ubicación privilegiada del distrito de Moncloa. Con salida de humos y a pie de calle, esta propiedad presenta un diseño cuadrado que maximiza su versatilidad para diversos usos comerciales.~La amplia fachada acristalada de seis metros lineales aporta gran visibilidad y luminosidad al espacio, ideal para atraer tanto a clientes locales como turistas gracias al alto tráfico peatonal.\nEl interior cuenta con tres estancias y un baño adaptado para personas con discapacidad, lo que garantiza funcionalidad sin comprometer el estilo. Los techos altos (más de 3.5 metros) brindan una sensación espacial única e incrementan las posibilidades creativas del negocio o actividad futura.\nReformado hace doce años específicamente para su uso actual.\nCon una superficie construida total aproximada de 113 m² distribuidos eficientemente sobre planta baja; es la oportunidad perfecta no solo por sus características físicas sino también por estar ubicado estratégicamente entre zonas emblemáticas."
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "28476783",
+      "address": {
+        "town": "Madrid",
+        "district": "Argüelles",
+        "latitude": 40.426254431,
+        "longitude": -3.714821161
+      },
+      "municipality": "Madrid",
+      "district": "Argüelles",
+      "latitude": 40.426254431,
+      "longitude": -3.714821161,
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669626",
@@ -1247,8 +1624,13 @@
           "position": 10
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda en el Barrio de Salamanca.\nCompletamente totalmente reformado y equipado con electrodomésticos de alta gama.\nCon dos amplias habitaciones, armarios empotrados y dos baños modernos.\nCalefacción a gas y el aire acondicionado.\nEste piso se entrega completamente amueblado.\nLa propiedad incluye una plaza de garaje.\nEl Barrio de Salamanca es conocido por su oferta cultural diversa, rodeado de museos, galerías de arte, teatros, y excelente restauración.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda en el Barrio de Salamanca.\nCompletamente totalmente reformado y equipado con electrodomésticos de alta gama.\nCon dos amplias habitaciones, armarios empotrados y dos baños modernos.\nCalefacción a gas y el aire acondicionado.\nEste piso se entrega completamente amueblado.\nLa propiedad incluye una plaza de garaje.\nEl Barrio de Salamanca es conocido por su oferta cultural diversa, rodeado de museos, galerías de arte, teatros, y excelente restauración."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669626",
       "address": {
@@ -1261,7 +1643,15 @@
       "district": "Goya",
       "latitude": 40.4273864,
       "longitude": -3.6801479,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669641",
@@ -1438,8 +1828,13 @@
           "position": 33
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Venta de inmueble recién reformado por grupo arquitectónico de renombre, utilizando altas calidades y acabados.\nLa vivienda Cuenta con tres habitaciones, una de ellas con baño en suite. Amplio Salón/comedor con cocina integrada.\n La cocina está equipada con electrodomésticos de alta gama.\nSe vende completamente amueblado con muebles de diseño hechos a medida, acabados en madera y una excelente iluminación mediante luces LED y decorado.\nZona residencial con excelente comercio, restauración y ocio. Cuenta con todos los servicios y comunicaciones tanto en metro como en autobús.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Venta de inmueble recién reformado por grupo arquitectónico de renombre, utilizando altas calidades y acabados.\nLa vivienda Cuenta con tres habitaciones, una de ellas con baño en suite. Amplio Salón/comedor con cocina integrada.\n La cocina está equipada con electrodomésticos de alta gama.\nSe vende completamente amueblado con muebles de diseño hechos a medida, acabados en madera y una excelente iluminación mediante luces LED y decorado.\nZona residencial con excelente comercio, restauración y ocio. Cuenta con todos los servicios y comunicaciones tanto en metro como en autobús."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669641",
       "address": {
@@ -1452,7 +1847,15 @@
       "district": "Sol",
       "latitude": 40.4186977,
       "longitude": -3.7021371,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669618",
@@ -1564,8 +1967,13 @@
           "position": 20
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso totalmente reformado, ubicado en el Distrito Salamanca, barrio Lista.\nAmplio salón con acceso a la terraza. Cocina independiente\nDos dormitorios y dos baños uno de ellos en suite.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso totalmente reformado, ubicado en el Distrito Salamanca, barrio Lista.\nAmplio salón con acceso a la terraza. Cocina independiente\nDos dormitorios y dos baños uno de ellos en suite."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669618",
       "address": {
@@ -1578,7 +1986,15 @@
       "district": "Goya",
       "latitude": 40.4289899,
       "longitude": -3.6698473,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669617",
@@ -1630,8 +2046,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama.\nDos dormitorios y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama.\nDos dormitorios y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669617",
       "address": {
@@ -1644,7 +2065,15 @@
       "district": "Goya",
       "latitude": 40.4287454,
       "longitude": -3.6728456,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28150460",
@@ -1751,8 +2180,13 @@
           "position": 19
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ático Reformado en el Barrio de Goya, Distrito Salamanca\nÁtico completamente reformado, exterior y se localiza en la séptima planta de un edificio clásico construido en 1930, en pleno corazón del barrio de Goya.\nGracias a su orientación sur, el inmueble disfruta de una excelente luminosidad natural.\nEl proyecto de reforma ha sido diseñado para aprovechar al máximo cada rincón, con un enfoque funcional y contemporáneo.\nSe compone de un salón-comedor integrado con la cocina, creando un ambiente diáfano y bien resuelto. La cocina se encuentra totalmente equipada..\nLa propiedad dispone de dos dormitorios y dos baños completos, lo que permite una distribución cómoda y versátil, ideal tanto para residencia habitual como para inversión.\nEl ático se entrega completamente amueblado y cuenta con calefacción individual de gas y aire acondicionado, garantizando así un confort integral durante todo el año.\nLa finca está equipada con ascensor y ofrece servicio de portería, aportando comodidad y seguridad a los residentes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ático Reformado en el Barrio de Goya, Distrito Salamanca\nÁtico completamente reformado, exterior y se localiza en la séptima planta de un edificio clásico construido en 1930, en pleno corazón del barrio de Goya.\nGracias a su orientación sur, el inmueble disfruta de una excelente luminosidad natural.\nEl proyecto de reforma ha sido diseñado para aprovechar al máximo cada rincón, con un enfoque funcional y contemporáneo.\nSe compone de un salón-comedor integrado con la cocina, creando un ambiente diáfano y bien resuelto. La cocina se encuentra totalmente equipada..\nLa propiedad dispone de dos dormitorios y dos baños completos, lo que permite una distribución cómoda y versátil, ideal tanto para residencia habitual como para inversión.\nEl ático se entrega completamente amueblado y cuenta con calefacción individual de gas y aire acondicionado, garantizando así un confort integral durante todo el año.\nLa finca está equipada con ascensor y ofrece servicio de portería, aportando comodidad y seguridad a los residentes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28150460",
       "address": {
@@ -1765,7 +2199,15 @@
       "district": "Goya",
       "latitude": 40.428722100868,
       "longitude": -3.6776666082544,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27775220",
@@ -1877,8 +2319,13 @@
           "position": 20
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. \n Calefacción central y aire acondicionado. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. \n Calefacción central y aire acondicionado. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "27775220",
       "address": {
@@ -1891,7 +2338,15 @@
       "district": "Goya",
       "latitude": 40.427977537,
       "longitude": -3.676831407,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669601",
@@ -1938,8 +2393,13 @@
           "position": 7
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nAmplio dormitorio principal, segundo dormitorio individual y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nAmplio dormitorio principal, segundo dormitorio individual y un baño.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669601",
       "address": {
@@ -1952,7 +2412,15 @@
       "district": "Lista",
       "latitude": 40.4321296,
       "longitude": -3.6791627,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28336779",
@@ -2089,8 +2557,13 @@
           "position": 25
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nAmplia terraza de 9m²-\nCuenta con dos dormitorios dobles y un baño.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nAmplia terraza de 9m²-\nCuenta con dos dormitorios dobles y un baño.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28336779",
       "address": {
@@ -2103,7 +2576,15 @@
       "district": "Chamberí",
       "latitude": 40.431313783,
       "longitude": -3.69592959,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669583",
@@ -2290,8 +2771,13 @@
           "position": 35
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Inmueble en venta en zona Centro, Zona Sol.\nLa vivienda Cuenta con tres dormitorios, uno de ellas con baño en suite.\nAmplio Salón con cocina integrada.\n La cocina abierta al comedor está equipada con electrodomésticos de alta gama.\nSe vende completamente amueblado con muebles de diseño hechos a medida, acabados en madera y una excelente iluminación mediante luces LED y decorado.\nZona residencial con excelente comercio, restauración y ocio. Cuenta con todos los servicios y comunicaciones tanto en metro como en autobús.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Inmueble en venta en zona Centro, Zona Sol.\nLa vivienda Cuenta con tres dormitorios, uno de ellas con baño en suite.\nAmplio Salón con cocina integrada.\n La cocina abierta al comedor está equipada con electrodomésticos de alta gama.\nSe vende completamente amueblado con muebles de diseño hechos a medida, acabados en madera y una excelente iluminación mediante luces LED y decorado.\nZona residencial con excelente comercio, restauración y ocio. Cuenta con todos los servicios y comunicaciones tanto en metro como en autobús."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669583",
       "address": {
@@ -2304,7 +2790,15 @@
       "district": "Sol",
       "latitude": 40.4191443,
       "longitude": -3.7021314,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669591",
@@ -2531,8 +3025,13 @@
           "position": 43
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669591",
       "address": {
@@ -2545,7 +3044,15 @@
       "district": "Goya",
       "latitude": 40.4297277,
       "longitude": -3.6747063,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669607",
@@ -2597,8 +3104,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Fuente del Berro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. calefacción central gas natural y aire acondicionado.\nTerraza y la finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Fuente del Berro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. calefacción central gas natural y aire acondicionado.\nTerraza y la finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669607",
       "address": {
@@ -2611,7 +3123,15 @@
       "district": "Fuente del Berro",
       "latitude": 40.4295287,
       "longitude": -3.6652325,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28003188",
@@ -2673,8 +3193,13 @@
           "position": 10
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle.\nDispone de salón con acceso a amplia terraza de 60m², cocina equipada con electrodomésticos de alta gama.\nUn dormitorio doble y un baño completo.\nTotalmente amueblada, con calefacción individual y aire acondicionado\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle.\nDispone de salón con acceso a amplia terraza de 60m², cocina equipada con electrodomésticos de alta gama.\nUn dormitorio doble y un baño completo.\nTotalmente amueblada, con calefacción individual y aire acondicionado\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28003188",
       "address": {
@@ -2687,7 +3212,15 @@
       "district": "Goya",
       "latitude": 40.424366514,
       "longitude": -3.679086179,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27925427",
@@ -2734,8 +3267,13 @@
           "position": 7
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor. \n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor. \n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "27925427",
       "address": {
@@ -2748,7 +3286,15 @@
       "district": "Goya",
       "latitude": 40.431011743,
       "longitude": -3.674980878,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28385968",
@@ -2900,8 +3446,13 @@
           "position": 28
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Inmueble en venta en zona Centro - Sol\nLa vivienda cuenta con amplio salón muy luminoso con balcón.\nCocina abierta, totalmente equipada con electrodomésticos de alta gama y una isla.\nComedor con mesa de hasta 6 comensales.\nDormitorio principal exterior con balcón y baño en suite\nOtro dormitorio con baño en suite y tercer dormitorio.\nOtro baño completo.\nLa vivienda cuenta con aire acondicionado y se entrega totalmente amueblada.\nEn la zona buena restauración, lugares culturales de interés y buena comunicación por metro y autobús.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Inmueble en venta en zona Centro - Sol\nLa vivienda cuenta con amplio salón muy luminoso con balcón.\nCocina abierta, totalmente equipada con electrodomésticos de alta gama y una isla.\nComedor con mesa de hasta 6 comensales.\nDormitorio principal exterior con balcón y baño en suite\nOtro dormitorio con baño en suite y tercer dormitorio.\nOtro baño completo.\nLa vivienda cuenta con aire acondicionado y se entrega totalmente amueblada.\nEn la zona buena restauración, lugares culturales de interés y buena comunicación por metro y autobús.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28385968",
       "address": {
@@ -2914,7 +3465,15 @@
       "district": "Sol",
       "latitude": 40.41765883,
       "longitude": -3.703385607,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669629",
@@ -3011,8 +3570,13 @@
           "position": 17
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso totalmente reformado en una primera planta.\nUbicado en el Distrito Centro barrio Justicia.\nAmplio salón con puerta de acceso a los balcones. Comedor con cocina integrada.\nDos dormitorios con dos baños en suite.\nCómodo despacho y baño de cortesía.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso totalmente reformado en una primera planta.\nUbicado en el Distrito Centro barrio Justicia.\nAmplio salón con puerta de acceso a los balcones. Comedor con cocina integrada.\nDos dormitorios con dos baños en suite.\nCómodo despacho y baño de cortesía."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669629",
       "address": {
@@ -3025,7 +3589,15 @@
       "district": "Chueca",
       "latitude": 40.4239035,
       "longitude": -3.6975328,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669581",
@@ -3092,8 +3664,13 @@
           "position": 11
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños, uno de ellos en suite. \n Calefacción central y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños, uno de ellos en suite. \n Calefacción central y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669581",
       "address": {
@@ -3106,7 +3683,15 @@
       "district": "Ibiza",
       "latitude": 40.4171108,
       "longitude": -3.6758189,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669578",
@@ -3163,8 +3748,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños en suite.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños en suite.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669578",
       "address": {
@@ -3177,7 +3767,15 @@
       "district": "Goya",
       "latitude": 40.4256491,
       "longitude": -3.6716934,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669650",
@@ -3314,8 +3912,13 @@
           "position": 25
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños. Dormitorio principal con baño en suite. \n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños. Dormitorio principal con baño en suite. \n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669650",
       "address": {
@@ -3328,7 +3931,15 @@
       "district": "Castellana",
       "latitude": 40.4366925,
       "longitude": -3.6835838,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669633",
@@ -3395,8 +4006,13 @@
           "position": 11
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Situada en barrio de Lista, Distrito Salamanca.\nEsta vivienda cuenta con dos habitaciones y dos baños, ubno de ellos en suite.\nAmplio salon comedor con la cocina integrada y totalmente equipada.\nSu ubicación en una de las zonas más exclusivas de Madrid la convierte en una excelente opción para inversión o residencia, con acceso a una amplia oferta de comercios, gastronomía y excelentes conexiones de transporte.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Situada en barrio de Lista, Distrito Salamanca.\nEsta vivienda cuenta con dos habitaciones y dos baños, ubno de ellos en suite.\nAmplio salon comedor con la cocina integrada y totalmente equipada.\nSu ubicación en una de las zonas más exclusivas de Madrid la convierte en una excelente opción para inversión o residencia, con acceso a una amplia oferta de comercios, gastronomía y excelentes conexiones de transporte."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669633",
       "address": {
@@ -3409,7 +4025,15 @@
       "district": "Goya",
       "latitude": 40.4303282,
       "longitude": -3.6775588,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669630",
@@ -3481,8 +4105,13 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso exterior totalmente reformado.\nUbicado en el Distrito Centro barrio Malasaña\nAmplio salón con acceso a los balcones de la casa.\nComedor con cocina integrada totalmente equipada.\nTres dormitorios. Dos baños uno de ellos en suite. Aseo de cortesía.\nTrastero en la misma finca.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso exterior totalmente reformado.\nUbicado en el Distrito Centro barrio Malasaña\nAmplio salón con acceso a los balcones de la casa.\nComedor con cocina integrada totalmente equipada.\nTres dormitorios. Dos baños uno de ellos en suite. Aseo de cortesía.\nTrastero en la misma finca."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669630",
       "address": {
@@ -3495,7 +4124,15 @@
       "district": "Chamberí",
       "latitude": 40.4273922,
       "longitude": -3.7043409,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669602",
@@ -3622,8 +4259,13 @@
           "position": 23
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor con acceso al balcón, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. calefacción central y aire acondicionado.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor con acceso al balcón, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. calefacción central y aire acondicionado.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669602",
       "address": {
@@ -3636,7 +4278,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4333338,
       "longitude": -3.6763935,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669610",
@@ -3663,8 +4313,13 @@
           "position": 3
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en Distrito Centro, Zona Malasaña.\n3 Dormitorios \n3 Baños \nCocina Equipada\nAmueblado \nCalefacción RadiadorEléctrico\nClimatización\n1ª PlantaExterior\n1900.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en Distrito Centro, Zona Malasaña.\n3 Dormitorios \n3 Baños \nCocina Equipada\nAmueblado \nCalefacción RadiadorEléctrico\nClimatización\n1ª PlantaExterior\n1900."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669610",
       "address": {
@@ -3677,7 +4332,15 @@
       "district": "Chueca",
       "latitude": 40.4231387,
       "longitude": -3.7022659,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669624",
@@ -3774,8 +4437,13 @@
           "position": 17
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Se vende piso totalmente reformado en zona recoletos, Distrito Salamanca.\nEl piso cuenta con salón independiente. \nCocina abierta totalmente equipada con modernos electrodomésticos.\nDos amplias habitaciones, cada una equipada con armarios empotrados y dos baños uno de ellos en suite.\nAire acondicionado frio calor en toda la casa\nEl piso se vende amueblado con muebles de diseño.\nLa finca cuenta con ascensor y se encuentra ubicada en una de las mejores zonas del Distrito Salamanca. \nAdemás, cuenta una encantadora terraza, perfecto para disfrutar de momentos al aire libre.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Se vende piso totalmente reformado en zona recoletos, Distrito Salamanca.\nEl piso cuenta con salón independiente. \nCocina abierta totalmente equipada con modernos electrodomésticos.\nDos amplias habitaciones, cada una equipada con armarios empotrados y dos baños uno de ellos en suite.\nAire acondicionado frio calor en toda la casa\nEl piso se vende amueblado con muebles de diseño.\nLa finca cuenta con ascensor y se encuentra ubicada en una de las mejores zonas del Distrito Salamanca. \nAdemás, cuenta una encantadora terraza, perfecto para disfrutar de momentos al aire libre."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669624",
       "address": {
@@ -3788,7 +4456,15 @@
       "district": "Salamanca",
       "latitude": 40.4255599,
       "longitude": -3.6867902,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669937",
@@ -3890,8 +4566,13 @@
           "position": 18
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Se vende piso totalmente reformado en zona recoletos, Distrito Salamanca.\nEl piso cuenta con salón - comedor amplios.\nCocina abierta totalmente equipada con modernos electrodomésticos.\nDos amplias habitaciones, cada una equipada con armarios empotrados y dos baños \nCalefacción de gas natural y el aire acondicionado.\nEl piso se vende amueblado con muebles de diseño.\nLa finca cuenta con ascensor y se encuentra ubicada en una de las mejores zonas del Distrito Salamanca. \nAdemás, cuenta una encantadora terraza, perfecto para disfrutar de momentos al aire libre.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Se vende piso totalmente reformado en zona recoletos, Distrito Salamanca.\nEl piso cuenta con salón - comedor amplios.\nCocina abierta totalmente equipada con modernos electrodomésticos.\nDos amplias habitaciones, cada una equipada con armarios empotrados y dos baños \nCalefacción de gas natural y el aire acondicionado.\nEl piso se vende amueblado con muebles de diseño.\nLa finca cuenta con ascensor y se encuentra ubicada en una de las mejores zonas del Distrito Salamanca. \nAdemás, cuenta una encantadora terraza, perfecto para disfrutar de momentos al aire libre."
+        }
+      ],
       "propertyType": "duplex",
       "reference": "27669937",
       "address": {
@@ -3904,7 +4585,15 @@
       "district": "Salamanca",
       "latitude": 40.4252538,
       "longitude": -3.6821995,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669611",
@@ -3986,8 +4675,13 @@
           "position": 14
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Trastero en la misma finca y servicio de porteria.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. calefacción central gas natural y are acondicionado.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Trastero en la misma finca y servicio de porteria.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. calefacción central gas natural y are acondicionado.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669611",
       "address": {
@@ -4000,7 +4694,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4357431,
       "longitude": -3.6767299,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669614",
@@ -4027,8 +4729,13 @@
           "position": 3
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito de Retiro, zona Ibiza.\n3 Dormitorios\n3 Baños\nCocina Equipada\nAmueblado\nCalefacción Comunitaria\nClimatización\n2° Planta\nInterior\nAscensor.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito de Retiro, zona Ibiza.\n3 Dormitorios\n3 Baños\nCocina Equipada\nAmueblado\nCalefacción Comunitaria\nClimatización\n2° Planta\nInterior\nAscensor."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669614",
       "address": {
@@ -4041,7 +4748,15 @@
       "district": "Madrid",
       "latitude": 40.4177083,
       "longitude": -3.670702,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669632",
@@ -4138,8 +4853,13 @@
           "position": 17
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda exterior, recién reformada y equipada cuidando ytodos los detalles de calidad, lujo y confort. \nDomótica, aerotermia, persianas eléctricas.\nSe distribuye en hall de acceso con armario para abrigos, aseo de cortesía; cocina integrada con electrodomésticos de alta gama, nevera XXL. Salón/comedor exteriores. Cuarto de lavado con lavadora/secadora.\nEn el área de dormir, encontramos 3 dormitorios y 2 baños. Dormitorio principal con balo en suite y vestidor. Segundo dormitorio con cama queen, baño completo y tercer dormitorio con cama individual pero en la que se puede poner una cama queen perfectamente.\nZona residencial con excelente comercio, restauración y ocio.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior, recién reformada y equipada cuidando ytodos los detalles de calidad, lujo y confort. \nDomótica, aerotermia, persianas eléctricas.\nSe distribuye en hall de acceso con armario para abrigos, aseo de cortesía; cocina integrada con electrodomésticos de alta gama, nevera XXL. Salón/comedor exteriores. Cuarto de lavado con lavadora/secadora.\nEn el área de dormir, encontramos 3 dormitorios y 2 baños. Dormitorio principal con balo en suite y vestidor. Segundo dormitorio con cama queen, baño completo y tercer dormitorio con cama individual pero en la que se puede poner una cama queen perfectamente.\nZona residencial con excelente comercio, restauración y ocio."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669632",
       "address": {
@@ -4152,7 +4872,15 @@
       "district": "Goya",
       "latitude": 40.425166,
       "longitude": -3.672459,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669577",
@@ -4209,8 +4937,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños uno de ellos en suite.\n Calefacción Central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños uno de ellos en suite.\n Calefacción Central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669577",
       "address": {
@@ -4223,7 +4956,15 @@
       "district": "Goya",
       "latitude": 40.4290372,
       "longitude": -3.6730311,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28197406",
@@ -4390,8 +5131,13 @@
           "position": 31
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, zona Gaztambide. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños. Dormitorio principal con baño en suite y vestidor. Segundo dormitorio con baño en suite.\n Calefacción individual y aire acondicionado. Cuarto de lavandería. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, zona Gaztambide. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños. Dormitorio principal con baño en suite y vestidor. Segundo dormitorio con baño en suite.\n Calefacción individual y aire acondicionado. Cuarto de lavandería. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28197406",
       "address": {
@@ -4404,7 +5150,15 @@
       "district": "Argüelles",
       "latitude": 40.432659218,
       "longitude": -3.717462208,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669574",
@@ -4536,8 +5290,13 @@
           "position": 24
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños, dormitorio principal con vestidor y baño en suite.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños, dormitorio principal con vestidor y baño en suite.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669574",
       "address": {
@@ -4550,7 +5309,15 @@
       "district": "Centro",
       "latitude": 40.4137574,
       "longitude": -3.6910232,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669711",
@@ -4612,8 +5379,13 @@
           "position": 10
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca barrio Lista.\nCuarta planta. Cuenta con dos dormitorios y dos baños, uno de ellos en suite.\nEl salón-comedor, amplio y muy luminoso, integra una cocina abierta equipada con muebles de alta gama y electrodomésticos de primeras marcas.\nPiso con aire acondicionado, calefaccion centra y domótica.\nLa finca cuenta con servicio de porteria.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca barrio Lista.\nCuarta planta. Cuenta con dos dormitorios y dos baños, uno de ellos en suite.\nEl salón-comedor, amplio y muy luminoso, integra una cocina abierta equipada con muebles de alta gama y electrodomésticos de primeras marcas.\nPiso con aire acondicionado, calefaccion centra y domótica.\nLa finca cuenta con servicio de porteria."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669711",
       "address": {
@@ -4626,7 +5398,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4334184,
       "longitude": -3.676724,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28189742",
@@ -4688,8 +5468,13 @@
           "position": 10
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños. Dormitorio principal con baño en suite y vestidor. \n Calefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños. Dormitorio principal con baño en suite y vestidor. \n Calefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28189742",
       "address": {
@@ -4702,7 +5487,15 @@
       "district": "Goya",
       "latitude": 40.430153667,
       "longitude": -3.677577009,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669653",
@@ -4864,9 +5657,14 @@
           "position": 30
         }
       ],
-      "description": "",
-      "descriptions": [],
-      "propertyType": "house",
+      "description": "Vivienda ubicada en el Distrito Centro, zona Malasaña. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños, dos de ellos en suite.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Centro, zona Malasaña. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños, dos de ellos en suite.\n Calefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
+      "propertyType": "flat",
       "reference": "27669653",
       "address": {
         "town": "Madrid",
@@ -4878,7 +5676,15 @@
       "district": "Chamberí",
       "latitude": 40.4284861,
       "longitude": -3.7030759,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669588",
@@ -4985,8 +5791,13 @@
           "position": 19
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Vivienda inteligente.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite.\n Calefacción individual por suelo radiante y aire acondicionado. Vivienda inteligente.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Vivienda inteligente.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite.\n Calefacción individual por suelo radiante y aire acondicionado. Vivienda inteligente.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669588",
       "address": {
@@ -4999,7 +5810,15 @@
       "district": "Goya",
       "latitude": 40.424127,
       "longitude": -3.6785595,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28396584",
@@ -5181,8 +6000,13 @@
           "position": 34
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños dos de ellos en suite. Zona de lavanderia.\n Calefacción central y aire acondicionado por conductos. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños dos de ellos en suite. Zona de lavanderia.\n Calefacción central y aire acondicionado por conductos. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28396584",
       "address": {
@@ -5195,7 +6019,15 @@
       "district": "Goya",
       "latitude": 40.427648022,
       "longitude": -3.673992731,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669603",
@@ -5342,8 +6174,13 @@
           "position": 27
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso totalmente reformado ubicado en el Distrito de Salamanca, zona Castellana.\nTres dormitorios y dos baños. Dormitorio principal con baño en Suite y salida al balcón.\nAmplio salón comedor con cocina abierta y acceso al balcón. Cocina totalmente equipada con electrodomésticos de primeras marcas\nArmarios empotrados y aire acondicionado en toda la casa. Zona de lavanderia.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso totalmente reformado ubicado en el Distrito de Salamanca, zona Castellana.\nTres dormitorios y dos baños. Dormitorio principal con baño en Suite y salida al balcón.\nAmplio salón comedor con cocina abierta y acceso al balcón. Cocina totalmente equipada con electrodomésticos de primeras marcas\nArmarios empotrados y aire acondicionado en toda la casa. Zona de lavanderia."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669603",
       "address": {
@@ -5356,7 +6193,15 @@
       "district": "Castellana",
       "latitude": 40.4368192,
       "longitude": -3.6827205,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28049391",
@@ -5463,8 +6308,13 @@
           "position": 19
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ático ubicado en el Distrito Salamanca, zona Lista.\nEste inmueble se vende completamente reformado y equipado.\nLa vivienda cuenta con salón/comedor y cocina integrada con salida a una espléndida terraza de 43m².\nCocina integrada y totalmente equipada con electrodomésticos de alta gama.\nCuenta con dos dormitorios dobles. Dos baños uno de ellos en suite.~Dormitorio principal con amplio vestidor y acceso al balcón.~Calefacción centralizada y aire acondicionado.\nLa finca cuenta con Servicio de portería. Y tres ascensores.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ático ubicado en el Distrito Salamanca, zona Lista.\nEste inmueble se vende completamente reformado y equipado.\nLa vivienda cuenta con salón/comedor y cocina integrada con salida a una espléndida terraza de 43m².\nCocina integrada y totalmente equipada con electrodomésticos de alta gama.\nCuenta con dos dormitorios dobles. Dos baños uno de ellos en suite.~Dormitorio principal con amplio vestidor y acceso al balcón.~Calefacción centralizada y aire acondicionado.\nLa finca cuenta con Servicio de portería. Y tres ascensores.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "penthouse",
       "reference": "28049391",
       "address": {
@@ -5477,7 +6327,15 @@
       "district": "Goya",
       "latitude": 40.428856235,
       "longitude": -3.676669711,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669651",
@@ -5534,8 +6392,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Balcón.\nCuenta con tres dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor. \n Calefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Balcón.\nCuenta con tres dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor. \n Calefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669651",
       "address": {
@@ -5548,7 +6411,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4339375,
       "longitude": -3.6746911,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27670331",
@@ -5695,8 +6566,13 @@
           "position": 27
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito de Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. \nDiseño y confort en cada detalle. Electrodomésticos de alta gama.\nLa vivienda cuenta con amplio salón/comedor, cocina integrada. Dos dormitorios ambos con baños en suite. Aseo de cortesía.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito de Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. \nDiseño y confort en cada detalle. Electrodomésticos de alta gama.\nLa vivienda cuenta con amplio salón/comedor, cocina integrada. Dos dormitorios ambos con baños en suite. Aseo de cortesía.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27670331",
       "address": {
@@ -5709,7 +6585,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4326407,
       "longitude": -3.6736733,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669595",
@@ -5776,8 +6660,13 @@
           "position": 11
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, Zona Arapiles.\nCuarta planta exterior con terraza.\nVivienda totalmente reformada y amueblada.\nDistribuidos en Amplio salón comedor con cocina integrada y acceso a la terraza.\n3 habitaciones y 3 baños en suite y 1 aseo de cortesía.\nDispone de trastero en la misma finca y además cuenta con portero físico\n• 4ª Planta~ • Ascensor~ • Terraza~ • Trastero~ • Conserje.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, Zona Arapiles.\nCuarta planta exterior con terraza.\nVivienda totalmente reformada y amueblada.\nDistribuidos en Amplio salón comedor con cocina integrada y acceso a la terraza.\n3 habitaciones y 3 baños en suite y 1 aseo de cortesía.\nDispone de trastero en la misma finca y además cuenta con portero físico\n• 4ª Planta~ • Ascensor~ • Terraza~ • Trastero~ • Conserje."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669595",
       "address": {
@@ -5790,7 +6679,15 @@
       "district": "Arapiles",
       "latitude": 40.4337604,
       "longitude": -3.7067072,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669608",
@@ -5877,8 +6774,13 @@
           "position": 15
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso totalmente reformado ubicado en el Distrito de Salamanca, zona Lista.\nConsta de un amplio salon comedro con cocina integrada que puede independizar con un cerramiento de vidrio. Zona de lavanderia\nTres dormitrios y tres baños dos de ellos en suite. Aseo de Cortesia\nAire acondicionado en toda la casa y calefaccion central.\nFinca con ascensor, trastero y portero fisico.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso totalmente reformado ubicado en el Distrito de Salamanca, zona Lista.\nConsta de un amplio salon comedro con cocina integrada que puede independizar con un cerramiento de vidrio. Zona de lavanderia\nTres dormitrios y tres baños dos de ellos en suite. Aseo de Cortesia\nAire acondicionado en toda la casa y calefaccion central.\nFinca con ascensor, trastero y portero fisico."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669608",
       "address": {
@@ -5891,7 +6793,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4340953,
       "longitude": -3.6766843,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669682",
@@ -6008,8 +6918,13 @@
           "position": 21
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Vivienda inteligente.\nLa vivienda cuenta con salón/comedor, con acceso al balcon, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. Aseo de cortesía y cuardo de lavanderia.\n Calefacción central y aire acondicionado. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Vivienda inteligente.\nLa vivienda cuenta con salón/comedor, con acceso al balcon, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y dos baños, uno de ellos en suite. Aseo de cortesía y cuardo de lavanderia.\n Calefacción central y aire acondicionado. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669682",
       "address": {
@@ -6022,7 +6937,15 @@
       "district": "Goya",
       "latitude": 40.4249355,
       "longitude": -3.6742681,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669586",
@@ -6159,8 +7082,13 @@
           "position": 25
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso exterior en 2º planta, ubicado en el distrito Salamanca zona Lista. Además de este inmueble, contamos con otros en la misma zona de 2 y 3 dormitorios, todos ellos para entrar a vivir. Recién reformados.\nConsta de 3 dormitorios y tres baños, dos de ellos en suite.\nAmplio salón comedor con cocina integrada.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso exterior en 2º planta, ubicado en el distrito Salamanca zona Lista. Además de este inmueble, contamos con otros en la misma zona de 2 y 3 dormitorios, todos ellos para entrar a vivir. Recién reformados.\nConsta de 3 dormitorios y tres baños, dos de ellos en suite.\nAmplio salón comedor con cocina integrada."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669586",
       "address": {
@@ -6173,7 +7101,15 @@
       "district": "Goya",
       "latitude": 40.4277561,
       "longitude": -3.6722375,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669592",
@@ -6245,8 +7181,13 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños, dos de ellos en suite.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nPlaza de garaje, Trastero y piscina\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños, dos de ellos en suite.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nPlaza de garaje, Trastero y piscina\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669592",
       "address": {
@@ -6259,7 +7200,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4329207,
       "longitude": -3.6753786,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669620",
@@ -6346,8 +7295,13 @@
           "position": 15
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito de Salamanca, zona Recoletos.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle.\nElectrodomésticos de alta gama y domótica.\nLa vivienda cuenta con amplio salón/comedor, cocina integrada. Dos dormitorios y 2 baños. Dormitorio principal con baño en suite. \nOrientación sur. portero físico y ascensor.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito de Salamanca, zona Recoletos.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle.\nElectrodomésticos de alta gama y domótica.\nLa vivienda cuenta con amplio salón/comedor, cocina integrada. Dos dormitorios y 2 baños. Dormitorio principal con baño en suite. \nOrientación sur. portero físico y ascensor.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669620",
       "address": {
@@ -6360,7 +7314,15 @@
       "district": "Salamanca",
       "latitude": 40.4278988,
       "longitude": -3.682704,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28335255",
@@ -6562,8 +7524,13 @@
           "position": 38
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios dobles con baños en suite. Un dormitorio individual. Tercer baño completo.\n Calefacción central y aire acondicionado. Cuarto de lavandería. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios dobles con baños en suite. Un dormitorio individual. Tercer baño completo.\n Calefacción central y aire acondicionado. Cuarto de lavandería. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28335255",
       "address": {
@@ -6576,7 +7543,15 @@
       "district": "Goya",
       "latitude": 40.422238254,
       "longitude": -3.673130348,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669585",
@@ -6668,8 +7643,13 @@
           "position": 16
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda en venta en el Distrito de Salamanca, Zona Lista.\nInmueble completamente reformado, y equipado y con 3 dormitorios y 3 baños todos ellos en suite. Aseo de cortesía. \nEl piso cuenta con amplio salón - comedor.\nEl piso se vende amueblado con muebles de diseño. El suelo, de tarima, con dibujo de espiga, hace que los ambientes se vean amplios y lujosos.\nTres dormitorios, con armarios empotrados y tres baños. Cocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nLa finca cuenta con ascensor, aire acondicionado y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. A pocos pasos del emblemático Parque del Retiro y rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda en venta en el Distrito de Salamanca, Zona Lista.\nInmueble completamente reformado, y equipado y con 3 dormitorios y 3 baños todos ellos en suite. Aseo de cortesía. \nEl piso cuenta con amplio salón - comedor.\nEl piso se vende amueblado con muebles de diseño. El suelo, de tarima, con dibujo de espiga, hace que los ambientes se vean amplios y lujosos.\nTres dormitorios, con armarios empotrados y tres baños. Cocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nLa finca cuenta con ascensor, aire acondicionado y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. A pocos pasos del emblemático Parque del Retiro y rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669585",
       "address": {
@@ -6682,7 +7662,15 @@
       "district": "Goya",
       "latitude": 40.4309469,
       "longitude": -3.6728835,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27773347",
@@ -6844,8 +7832,13 @@
           "position": 30
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en la zona de Goya, Barrio de Salamanca.\nExterior con terraza, la vivienda cuenta con amplio salón/comedor, 3 dormitorios y 3 baños. Dos de los dormitorios con baño en suite. Gran espacio de almacenaje en toda la vivienda.\nToda la vivienda reformada a estrenar y completamente equipada y amueblada. Cocina equipada con electrodomésticos de alta gama\nZona residencial con excelente comercio, restauración y ocio. Muy cerca del Parque.\nExcelente comunicación con el resto de la ciudad a través de transporte público ( varias líneas de bus y tren)",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en la zona de Goya, Barrio de Salamanca.\nExterior con terraza, la vivienda cuenta con amplio salón/comedor, 3 dormitorios y 3 baños. Dos de los dormitorios con baño en suite. Gran espacio de almacenaje en toda la vivienda.\nToda la vivienda reformada a estrenar y completamente equipada y amueblada. Cocina equipada con electrodomésticos de alta gama\nZona residencial con excelente comercio, restauración y ocio. Muy cerca del Parque.\nExcelente comunicación con el resto de la ciudad a través de transporte público ( varias líneas de bus y tren)"
+        }
+      ],
       "propertyType": "flat",
       "reference": "27773347",
       "address": {
@@ -6858,7 +7851,15 @@
       "district": "Goya",
       "latitude": 40.426796768,
       "longitude": -3.674082563,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28125471",
@@ -7125,8 +8126,13 @@
           "position": 51
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nCuenta con dos dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor.\nCalefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama.\nCuenta con dos dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor.\nCalefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28125471",
       "address": {
@@ -7139,7 +8145,15 @@
       "district": "Goya",
       "latitude": 40.428444347,
       "longitude": -3.672627292,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669628",
@@ -7406,8 +8420,13 @@
           "position": 51
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso totalmente reformado, ubicado en el Distrito Salamanca barrio Lista\nExterior en una segunda planta.\nCuenta con amplio salón comedor y cocina integrada, totalmente equipada.\nTres dormitorios y tres baños, dos de ellos en suite. Además cuenta con aseo de cortesía.\nPlaza de garaje y trastero.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso totalmente reformado, ubicado en el Distrito Salamanca barrio Lista\nExterior en una segunda planta.\nCuenta con amplio salón comedor y cocina integrada, totalmente equipada.\nTres dormitorios y tres baños, dos de ellos en suite. Además cuenta con aseo de cortesía.\nPlaza de garaje y trastero."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669628",
       "address": {
@@ -7420,7 +8439,15 @@
       "district": "Goya",
       "latitude": 40.4303856,
       "longitude": -3.6716076,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669584",
@@ -7512,8 +8539,13 @@
           "position": 16
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el distinguido barrio de Salamanca-Lista.\nPiso totalmente reformado, distribuido en 3 dormitorios y 3 baños en suite, mas aseo de cortesía. El piso, completamente amueblado y con cocina equipada, ofrece comodidades modernas como calefacción comunitaria, aire acondicionado y servicio de portería.\nLa zona de Salamanca-Lista ofrece una mezcla de estilo y funcionalidad, con una amplia gama de servicios, boutiques de alta gama y opciones gastronómicas.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el distinguido barrio de Salamanca-Lista.\nPiso totalmente reformado, distribuido en 3 dormitorios y 3 baños en suite, mas aseo de cortesía. El piso, completamente amueblado y con cocina equipada, ofrece comodidades modernas como calefacción comunitaria, aire acondicionado y servicio de portería.\nLa zona de Salamanca-Lista ofrece una mezcla de estilo y funcionalidad, con una amplia gama de servicios, boutiques de alta gama y opciones gastronómicas."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669584",
       "address": {
@@ -7526,7 +8558,15 @@
       "district": "Goya",
       "latitude": 40.4309469,
       "longitude": -3.6728835,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669708",
@@ -7688,8 +8728,13 @@
           "position": 30
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ubicado en el Distrito de Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. \nDiseño y confort en cada detalle. Electrodomésticos de alta gama y domótica. \nLa vivienda cuenta con amplio salón/comedor con salida al balcón, cocina integrada. Tres dormitorios y tres baños, dos de ellos en suite. portero físico y ascensor. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ubicado en el Distrito de Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. \nDiseño y confort en cada detalle. Electrodomésticos de alta gama y domótica. \nLa vivienda cuenta con amplio salón/comedor con salida al balcón, cocina integrada. Tres dormitorios y tres baños, dos de ellos en suite. portero físico y ascensor. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669708",
       "address": {
@@ -7702,7 +8747,15 @@
       "district": "Castellana",
       "latitude": 40.4375125,
       "longitude": -3.6839371,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669625",
@@ -7839,8 +8892,13 @@
           "position": 25
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso totalmente reformado en el Distrito Salamanca barrio Lista\nAmplio salón comedor con cocina integrada totalmente equipada y acceso a la terraza. Cuenta con cuarto de Lavandería.\nTiene tres habitaciones y tres baños, todos ellos en suite, aseo de cortesía. \n Calefacción central y A/C en toda la casa.\nEl barrio de Lista, en el distrito de Salamanca, es conocido por su exclusividad y elegancia. Vivir aquí significa estar cerca de lugares emblemáticos como el Parque de María Eva Duarte de Perón, que ofrece un entorno natural para el ocio y la recreación, y el Mercado de la Paz, un destino culinario de renombre.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso totalmente reformado en el Distrito Salamanca barrio Lista\nAmplio salón comedor con cocina integrada totalmente equipada y acceso a la terraza. Cuenta con cuarto de Lavandería.\nTiene tres habitaciones y tres baños, todos ellos en suite, aseo de cortesía. \n Calefacción central y A/C en toda la casa.\nEl barrio de Lista, en el distrito de Salamanca, es conocido por su exclusividad y elegancia. Vivir aquí significa estar cerca de lugares emblemáticos como el Parque de María Eva Duarte de Perón, que ofrece un entorno natural para el ocio y la recreación, y el Mercado de la Paz, un destino culinario de renombre."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669625",
       "address": {
@@ -7853,7 +8911,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4344264,
       "longitude": -3.6783252,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27912135",
@@ -7910,8 +8976,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda completamente reformada, ofrece 3 amplios dormitorios, 3 baños completos y un aseo de cortesía.\nEl piso ha sido diseñado para ofrecer el máximo confort, diferenciando claramente dos ambientes. Por un lado, una zona social amplia y luminosa,  compuesta por un elegante salón-comedor de gran amplitud y una cocina totalmente equipada con electrodomésticos de primeras marcas y acabados premium.\nPor otro lado, se encuentra la zona de descanso, completamente independiente, donde cada dormitorio cuenta con armarios completamente vestidos  hasta el techo, ofreciendo una capacidad de almacenamiento excepcional.\nLa vivienda dispone de aire acondicionado por conductos y calefacción individual, garantizando el máximo confort durante todo el año. Además, cuenta con un trastero que proporciona espacio adicional de almacenamiento.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda completamente reformada, ofrece 3 amplios dormitorios, 3 baños completos y un aseo de cortesía.\nEl piso ha sido diseñado para ofrecer el máximo confort, diferenciando claramente dos ambientes. Por un lado, una zona social amplia y luminosa,  compuesta por un elegante salón-comedor de gran amplitud y una cocina totalmente equipada con electrodomésticos de primeras marcas y acabados premium.\nPor otro lado, se encuentra la zona de descanso, completamente independiente, donde cada dormitorio cuenta con armarios completamente vestidos  hasta el techo, ofreciendo una capacidad de almacenamiento excepcional.\nLa vivienda dispone de aire acondicionado por conductos y calefacción individual, garantizando el máximo confort durante todo el año. Además, cuenta con un trastero que proporciona espacio adicional de almacenamiento."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27912135",
       "address": {
@@ -7924,7 +8995,15 @@
       "district": "Goya",
       "latitude": 40.428911153,
       "longitude": -3.672384747,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669675",
@@ -8101,8 +9180,13 @@
           "position": 33
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y tres baños dos de ellos en suite. \n Calefacción central y aire acondicionado. Cuarto de lavandería\nPlaza de garaje y trastero.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y tres baños dos de ellos en suite. \n Calefacción central y aire acondicionado. Cuarto de lavandería\nPlaza de garaje y trastero.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669675",
       "address": {
@@ -8115,7 +9199,15 @@
       "district": "Lista",
       "latitude": 40.4328871,
       "longitude": -3.6782045,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28303039",
@@ -8332,8 +9424,13 @@
           "position": 41
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Balcón.\nCuenta con tres dormitorios y tres baños. Dormitorio principal con baño en suite y vestidor. Segundo dormitorio doble con baño en suite.\nCalefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Balcón.\nCuenta con tres dormitorios y tres baños. Dormitorio principal con baño en suite y vestidor. Segundo dormitorio doble con baño en suite.\nCalefacción individual y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28303039",
       "address": {
@@ -8346,7 +9443,15 @@
       "district": "Goya",
       "latitude": 40.427140017,
       "longitude": -3.674405956,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": true,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28176621",
@@ -8503,8 +9608,13 @@
           "position": 29
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Cuarto de lavandería. \nCuenta con tres dormitorios y tres baños, dos de ellos en suite. \n Calefacción central y aire acondicionado. Domótica.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Cuarto de lavandería. \nCuenta con tres dormitorios y tres baños, dos de ellos en suite. \n Calefacción central y aire acondicionado. Domótica.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28176621",
       "address": {
@@ -8517,7 +9627,15 @@
       "district": "Goya",
       "latitude": 40.428046185,
       "longitude": -3.675672581,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669594",
@@ -8599,8 +9717,13 @@
           "position": 14
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669594",
       "address": {
@@ -8613,7 +9736,15 @@
       "district": "Salamanca",
       "latitude": 40.4264222,
       "longitude": -3.6927246,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669579",
@@ -8735,8 +9866,13 @@
           "position": 22
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a terraza.\nCuenta con tres dormitorios y tres baños.\nCalefacción centralizada y aire acondicionado. Servicio de porteria.\nPlaza de garaje incluida en el precio.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a terraza.\nCuenta con tres dormitorios y tres baños.\nCalefacción centralizada y aire acondicionado. Servicio de porteria.\nPlaza de garaje incluida en el precio.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669579",
       "address": {
@@ -8749,7 +9885,15 @@
       "district": "Goya",
       "latitude": 40.4259974,
       "longitude": -3.6752524,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669598",
@@ -8816,8 +9960,13 @@
           "position": 11
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Ático ubicado en el Distrito de Salamanca, zona Lista.\nExclusivo ático dúplex exterior de 150 m², recién reformado, ubicado en una de las zonas más prestigiosas y demandadas de Madrid.\nSituado en la última planta de un edificio representativo que cuenta con ascensor y servicio de conserjería, este inmueble combina funcionalidad y una excelente distribución, ideal tanto para residencia habitual como inversión de alto nivel.\nSu orientación y altura permiten disfrutar de una magnífica luminosidad durante todo el día, aportando calidez y amplitud a todos los espacios.\nPLANTA PRINCIPAL:~● Cocina moderna y funcional totalmente equipada.~● Amplio salón-comedor con gran entrada de luz natural.~● Dos dormitorios exteriores.~● Un baño completo.\nPLANTA SUPERIOR:~● Dos dormitorios adicionales.~● Un baño completo.~● Terraza privada, ideal para zona chill out.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Ático ubicado en el Distrito de Salamanca, zona Lista.\nExclusivo ático dúplex exterior de 150 m², recién reformado, ubicado en una de las zonas más prestigiosas y demandadas de Madrid.\nSituado en la última planta de un edificio representativo que cuenta con ascensor y servicio de conserjería, este inmueble combina funcionalidad y una excelente distribución, ideal tanto para residencia habitual como inversión de alto nivel.\nSu orientación y altura permiten disfrutar de una magnífica luminosidad durante todo el día, aportando calidez y amplitud a todos los espacios.\nPLANTA PRINCIPAL:~● Cocina moderna y funcional totalmente equipada.~● Amplio salón-comedor con gran entrada de luz natural.~● Dos dormitorios exteriores.~● Un baño completo.\nPLANTA SUPERIOR:~● Dos dormitorios adicionales.~● Un baño completo.~● Terraza privada, ideal para zona chill out."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669598",
       "address": {
@@ -8830,7 +9979,15 @@
       "district": "Barrio de Salamanca",
       "latitude": 40.4321733,
       "longitude": -3.6746241,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669636",
@@ -8902,8 +10059,13 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso ubicado en el Distrito Salamanca - Recoletos.\nAmplio salon comedor con cocina integrada y acceso a aplia terraza.\n2 Dormitorios, 2 Baños en suite y aseo de cortesia\nTotalemnte Amueblado y Cocina Equipada, Cuarto de lavado.\nCalefacción Comunitaria.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso ubicado en el Distrito Salamanca - Recoletos.\nAmplio salon comedor con cocina integrada y acceso a aplia terraza.\n2 Dormitorios, 2 Baños en suite y aseo de cortesia\nTotalemnte Amueblado y Cocina Equipada, Cuarto de lavado.\nCalefacción Comunitaria."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669636",
       "address": {
@@ -8916,7 +10078,15 @@
       "district": "Salamanca",
       "latitude": 40.4268732,
       "longitude": -3.6884421,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669596",
@@ -8978,8 +10148,13 @@
           "position": 10
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669596",
       "address": {
@@ -8992,7 +10167,15 @@
       "district": "Ibiza",
       "latitude": 40.4213356,
       "longitude": -3.677013,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669582",
@@ -9084,8 +10267,13 @@
           "position": 16
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso en Venta en Zona Goya, Distrito Salamanca\nEl piso cuenta con amplio salón - comedor.\nCocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nInmueble completamente reformado amueblado con muebles de diseño.\n3 dormitorios y 3 baños todos ellos en suite.\nVivienda totalmente reformada en el prestigioso barrio de Lista, Distrito Salamanca\nSuelos de Tarima y aire Acondicionado en toda la vivienda\nLa finca cuenta con ascensor y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. Rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso en Venta en Zona Goya, Distrito Salamanca\nEl piso cuenta con amplio salón - comedor.\nCocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nInmueble completamente reformado amueblado con muebles de diseño.\n3 dormitorios y 3 baños todos ellos en suite.\nVivienda totalmente reformada en el prestigioso barrio de Lista, Distrito Salamanca\nSuelos de Tarima y aire Acondicionado en toda la vivienda\nLa finca cuenta con ascensor y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. Rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669582",
       "address": {
@@ -9098,7 +10286,15 @@
       "district": "Recoletos",
       "latitude": 40.4248592,
       "longitude": -3.6819287,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27768288",
@@ -9360,8 +10556,13 @@
           "position": 50
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a la terraza.\nCuenta con cuatro dormitorios y cuatro baños. Tres de ellos en suite. \n Calefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a la terraza.\nCuenta con cuatro dormitorios y cuatro baños. Tres de ellos en suite. \n Calefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "27768288",
       "address": {
@@ -9374,7 +10575,15 @@
       "district": "Castellana",
       "latitude": 40.436482576,
       "longitude": -3.680433652,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669590",
@@ -9446,8 +10655,13 @@
           "position": 12
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y tres baños, dos de ellos en suite. Amplia terraza\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería. Plaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y tres baños, dos de ellos en suite. Amplia terraza\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería. Plaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669590",
       "address": {
@@ -9460,7 +10674,15 @@
       "district": "Jerónimos",
       "latitude": 40.4081992,
       "longitude": -3.6789437,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669587",
@@ -9517,8 +10739,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería y trastero\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería y trastero\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669587",
       "address": {
@@ -9531,7 +10758,15 @@
       "district": "Metro bilbao",
       "latitude": 40.4364514,
       "longitude": -3.6942587,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669672",
@@ -9658,8 +10893,13 @@
           "position": 23
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y dos baños dos de ellos en suite. Dormitorio principal con acceso a la terraza.\n Calefacción individual con suelo radiante y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y dos baños dos de ellos en suite. Dormitorio principal con acceso a la terraza.\n Calefacción individual con suelo radiante y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669672",
       "address": {
@@ -9672,7 +10912,15 @@
       "district": "Goya",
       "latitude": 40.429568,
       "longitude": -3.6767491,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28453756",
@@ -9929,8 +11177,13 @@
           "position": 49
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplia terraza de 55m².\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños, dos de ellos en suite. \nCalefacción central y aire acondicionado. Área de lavandería.  Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplia terraza de 55m².\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños, dos de ellos en suite. \nCalefacción central y aire acondicionado. Área de lavandería.  Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28453756",
       "address": {
@@ -9943,7 +11196,15 @@
       "district": "Lista",
       "latitude": 40.433421161,
       "longitude": -3.676229536,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27765765",
@@ -10065,8 +11326,13 @@
           "position": 22
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños. Dos de ellos en suite. Dormitorio principal con amplio vestidor y acceso a la terraza.\n Calefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños. Dos de ellos en suite. Dormitorio principal con amplio vestidor y acceso a la terraza.\n Calefacción central y aire acondicionado. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "27765765",
       "address": {
@@ -10079,7 +11345,15 @@
       "district": "Goya",
       "latitude": 40.426089669,
       "longitude": -3.673274079,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669676",
@@ -10131,8 +11405,13 @@
           "position": 8
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y tres baños en suite. Aseo de cortesía.\n Calefacción central y aire acondicionado. Cuarto de lavandería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y tres baños en suite. Aseo de cortesía.\n Calefacción central y aire acondicionado. Cuarto de lavandería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669676",
       "address": {
@@ -10145,7 +11424,15 @@
       "district": "Goya",
       "latitude": 40.4300285,
       "longitude": -3.6740054,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669604",
@@ -10232,8 +11519,13 @@
           "position": 15
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Casa inteligente.\nLa vivienda cuenta con salón/comedor con acceso al balcón, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con Tres dormitorios y tres baños, dos de ellos en suite. calefacción central y aire acondicionado.\nTiene plaza de garaje y trastero.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Casa inteligente.\nLa vivienda cuenta con salón/comedor con acceso al balcón, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con Tres dormitorios y tres baños, dos de ellos en suite. calefacción central y aire acondicionado.\nTiene plaza de garaje y trastero.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669604",
       "address": {
@@ -10246,7 +11538,15 @@
       "district": "Castellana",
       "latitude": 40.434281,
       "longitude": -3.6804432,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28254206",
@@ -10328,8 +11628,13 @@
           "position": 14
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica instalada\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor. Aseo de cortesia.\n Calefacción central y aire acondicionado. Cuarto de lavandería. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica instalada\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y dos baños. Dormitorio principal con baño en suite y vestidor. Aseo de cortesia.\n Calefacción central y aire acondicionado. Cuarto de lavandería. Servicio de portería\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28254206",
       "address": {
@@ -10342,7 +11647,15 @@
       "district": "Goya",
       "latitude": 40.427345965,
       "longitude": -3.674136462,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27769302",
@@ -10474,8 +11787,13 @@
           "position": 24
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Zona de lavandería y office.\nCuenta con cinco dormitorios y cinco baños. Cuatro de ellos en suite. Aseo de cortesía\n Calefacción central y aire acondicionado. Domótica.\nPlaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Zona de lavandería y office.\nCuenta con cinco dormitorios y cinco baños. Cuatro de ellos en suite. Aseo de cortesía\n Calefacción central y aire acondicionado. Domótica.\nPlaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "27769302",
       "address": {
@@ -10488,7 +11806,15 @@
       "district": "Castellana",
       "latitude": 40.438342694,
       "longitude": -3.679355673,
-      "features": {}
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28454806",
@@ -10545,8 +11871,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado. Area de lavandería. \nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado. Area de lavandería. \nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28454806",
       "address": {
@@ -10559,7 +11890,15 @@
       "district": "Salamanca",
       "latitude": 40.430208584,
       "longitude": -3.685428285,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669589",
@@ -10821,8 +12160,13 @@
           "position": 50
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda de lujo ubicada en el Distrito Centro, zona Palacio. \nEste inmueble único en dos plantas se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta en la planta de vivienda con salón/comedor amplios, cocina integrada y totalmente equipada con electrodomésticos de alta gama. El salón tiene acceso a una terraza de 11mts2.~Cuenta con cuatro dormitorios y cuatro baños, tres de ellos en suite.~Calefacción centralizada y aire acondicionado por ductos.\nEn la planta de arriba Espectacular Terraza de 301 mts2. , en la cual podemos encontrar: una Zona de Barbacoa, una Zona Chill out, Piscina, Duchas y Aseos. Ademas de unas vistas increíbles de la ciudad de Madrid.\nLa finca cuenta con servicio de portería.\nUbicado en zona excelente comercio con firmas de marca, la mejor restauración y cerca de galerías de arte y museos.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda de lujo ubicada en el Distrito Centro, zona Palacio. \nEste inmueble único en dos plantas se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta en la planta de vivienda con salón/comedor amplios, cocina integrada y totalmente equipada con electrodomésticos de alta gama. El salón tiene acceso a una terraza de 11mts2.~Cuenta con cuatro dormitorios y cuatro baños, tres de ellos en suite.~Calefacción centralizada y aire acondicionado por ductos.\nEn la planta de arriba Espectacular Terraza de 301 mts2. , en la cual podemos encontrar: una Zona de Barbacoa, una Zona Chill out, Piscina, Duchas y Aseos. Ademas de unas vistas increíbles de la ciudad de Madrid.\nLa finca cuenta con servicio de portería.\nUbicado en zona excelente comercio con firmas de marca, la mejor restauración y cerca de galerías de arte y museos."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669589",
       "address": {
@@ -10835,7 +12179,15 @@
       "district": "Sol",
       "latitude": 40.4219571,
       "longitude": -3.7100646,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": true,
+        "storage": false
+      }
     },
     {
       "propertyId": "28136926",
@@ -10967,8 +12319,13 @@
           "position": 24
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama.\nCuenta con cuatro dormitorios y cuatro baños, todos ellos en suite. Además, tiene un aseo de cortesía y zona de lavandería.\nCalefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda ubicada en el Distrito Salamanca, zona Goya.\nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina independiente y totalmente equipada con electrodomésticos de alta gama.\nCuenta con cuatro dormitorios y cuatro baños, todos ellos en suite. Además, tiene un aseo de cortesía y zona de lavandería.\nCalefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
+        }
+      ],
       "propertyType": "flat",
       "reference": "28136926",
       "address": {
@@ -10981,7 +12338,15 @@
       "district": "Goya",
       "latitude": 40.425979828,
       "longitude": -3.673489675,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": true,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669600",
@@ -11188,8 +12553,13 @@
           "position": 39
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Piso ubicado en el Distrito Salamanca barrio Castellana.\nUbicada en una tercera planta exterior. Cuenta con 5 dormitorios, todos ellos con baño en suite. \nEl salón-comedor, amplio y muy luminoso, integra una cocina abierta equipada con muebles de alta gama y electrodomésticos de primeras marcas. \nDesde esta zona se accede a una amplia terraza con vistas.\nAdemás, la vivienda incluye un trastero asociado, ideal para almacenamiento adicional. \nUna propiedad exclusiva, lista para entrar a vivir, en una de las zonas más cotizadas de Madrid.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Piso ubicado en el Distrito Salamanca barrio Castellana.\nUbicada en una tercera planta exterior. Cuenta con 5 dormitorios, todos ellos con baño en suite. \nEl salón-comedor, amplio y muy luminoso, integra una cocina abierta equipada con muebles de alta gama y electrodomésticos de primeras marcas. \nDesde esta zona se accede a una amplia terraza con vistas.\nAdemás, la vivienda incluye un trastero asociado, ideal para almacenamiento adicional. \nUna propiedad exclusiva, lista para entrar a vivir, en una de las zonas más cotizadas de Madrid."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669600",
       "address": {
@@ -11202,7 +12572,15 @@
       "district": "Castellana",
       "latitude": 40.4345357,
       "longitude": -3.6800142,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "27669575",
@@ -11314,8 +12692,13 @@
           "position": 20
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Distrito Salamanca barrio Castellana\nPiso exterior totalmente reformado en quinta planta\nConsta de un amplio salón comedor con chimenea, cocina independiente equipada con electrodomésticos de alta gama\nCuatro dormitorios todos ellos con baños en suite. Aseo de cortesía.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Distrito Salamanca barrio Castellana\nPiso exterior totalmente reformado en quinta planta\nConsta de un amplio salón comedor con chimenea, cocina independiente equipada con electrodomésticos de alta gama\nCuatro dormitorios todos ellos con baños en suite. Aseo de cortesía."
+        }
+      ],
       "propertyType": "flat",
       "reference": "27669575",
       "address": {
@@ -11328,7 +12711,15 @@
       "district": "Castellana",
       "latitude": 40.4375915,
       "longitude": -3.6854156,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     },
     {
       "propertyId": "28455433",
@@ -11385,8 +12776,13 @@
           "position": 9
         }
       ],
-      "description": "",
-      "descriptions": [],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y cuatro baños, todos ellos en suite. Aseo de cortesía\nCalefacción central y aire acondicionado. Área de lavandería. Domótica. Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y cuatro baños, todos ellos en suite. Aseo de cortesía\nCalefacción central y aire acondicionado. Área de lavandería. Domótica. Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
+        }
+      ],
       "propertyType": "flat",
       "reference": "28455433",
       "address": {
@@ -11399,7 +12795,15 @@
       "district": "Castellana",
       "latitude": 40.436839503,
       "longitude": -3.686596094,
-      "features": {}
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
     }
   ]
 }
