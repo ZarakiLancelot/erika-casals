@@ -59,6 +59,12 @@ const TIPO_MAP = {
 	Edificio: 'building'
 };
 
+function formatRef(ref) {
+	const s = ref.toLowerCase();
+	const last = s[s.length - 1];
+	return /[a-z]/.test(last) ? s.slice(0, -1) + last.toUpperCase() : s;
+}
+
 function cleanDescription(text) {
 	if (!text) return '';
 	return text
@@ -85,7 +91,7 @@ function transformItem(item, description = '') {
 		description,
 		descriptions: description ? [{ language: 'es', text: description }] : [],
 		propertyType: TIPO_MAP[item.nbtipo] || 'flat',
-		reference: item.ref ? item.ref.toLowerCase() : String(item.cod_ofer),
+		reference: item.ref ? formatRef(item.ref) : String(item.cod_ofer),
 		address: {
 			town: item.ciudad || 'Madrid',
 			district: item.zona || '',

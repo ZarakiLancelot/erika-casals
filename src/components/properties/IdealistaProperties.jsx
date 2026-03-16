@@ -66,6 +66,7 @@ const PROPERTY_TYPE_MAP = {
 	Edificio: 'building',
 };
 const normalizePropertyType = type => PROPERTY_TYPE_MAP[type] || type;
+const formatRef = ref => { const s = ref.toLowerCase(); const last = s[s.length - 1]; return /[a-z]/.test(last) ? s.slice(0, -1) + last.toUpperCase() : s; };
 
 const SALE_PRICE_PRESETS = [50000, 100000, 150000, 200000, 300000, 400000, 500000, 750000, 1000000, 1500000, 2000000];
 const AREA_PRESETS = [30, 40, 50, 60, 70, 80, 100, 120, 150, 200, 300];
@@ -1317,9 +1318,7 @@ const Properties = () => {
 																			Ref.{' '}
 																			{property.source === 'contentful'
 																				? 'ex-' + property.id.slice(-4)
-																				: property.reference ||
-																				  propertyId?.toString().slice(-4) ||
-																				  '1024'}
+																				: formatRef(property.reference || propertyId?.toString().slice(-4) || '1024')}
 																		</span>
 																	</PropertyPrice>{' '}
 																	<PropertyDescription>

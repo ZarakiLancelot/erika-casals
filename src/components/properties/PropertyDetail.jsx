@@ -762,6 +762,8 @@ const FooterWrapper = styled.div`
 	}
 `;
 
+const formatRef = ref => { const s = ref.toLowerCase(); const last = s[s.length - 1]; return /[a-z]/.test(last) ? s.slice(0, -1) + last.toUpperCase() : s; };
+
 const PropertyDetail = ({ property, onBack, images }) => {
 	const componentRef = useRef();
 	const {
@@ -1527,11 +1529,7 @@ const PropertyDetail = ({ property, onBack, images }) => {
 										Ref.{' '}
 										{property.source === 'contentful'
 											? 'ex-' + (property.id ? property.id.slice(-4) : '')
-											: property.reference && property.reference.trim() !== ''
-											? property.reference
-											: property.propertyId
-											? 'ec-' + property.propertyId.toString().slice(-4)
-											: 'ec-1024'}
+											: formatRef(property.reference && property.reference.trim() !== '' ? property.reference : property.propertyId ? 'ec-' + property.propertyId.toString().slice(-4) : 'ec-1024')}
 									</span>
 								</PropertyPrice>{' '}
 								{(property.size || property.features?.areaConstructed) && (
