@@ -85,7 +85,7 @@ function transformItem(item, description = '') {
 		description,
 		descriptions: description ? [{ language: 'es', text: description }] : [],
 		propertyType: TIPO_MAP[item.nbtipo] || 'flat',
-		reference: String(item.cod_ofer),
+		reference: item.ref ? item.ref.toLowerCase() : String(item.cod_ofer),
 		address: {
 			town: item.ciudad || 'Madrid',
 			district: item.zona || '',

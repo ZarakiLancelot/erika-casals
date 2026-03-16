@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-16T16:14:22.196Z",
-  "total": 94,
-  "sale": 92,
+  "generatedAt": "2026-03-16T19:15:31.911Z",
+  "total": 97,
+  "sale": 95,
   "rent": 2,
   "properties": [
     {
@@ -77,7 +77,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669642",
+      "reference": "ec-sa2",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -176,7 +176,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669643",
+      "reference": "ec-sa1",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -290,7 +290,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28476654",
+      "reference": "ec_-3048",
       "address": {
         "town": "Arganda del Rey",
         "district": "Centro",
@@ -369,7 +369,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27670033",
+      "reference": "ec-3320b",
       "address": {
         "town": "Madrid",
         "district": "Centro",
@@ -478,7 +478,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669599",
+      "reference": "ec-2030b",
       "address": {
         "town": "Madrid",
         "district": "Arapiles",
@@ -557,7 +557,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669613",
+      "reference": "ec-2020b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -676,7 +676,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669667",
+      "reference": "ec-6072b",
       "address": {
         "town": "Madrid",
         "district": "Fuente del Berro",
@@ -750,7 +750,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669615",
+      "reference": "ec-2015b",
       "address": {
         "town": "Madrid",
         "district": "Chueca",
@@ -879,7 +879,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669605",
+      "reference": "ec-2025b",
       "address": {
         "town": "Madrid",
         "district": "Fuente del Berro",
@@ -958,7 +958,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669621",
+      "reference": "ec-2009b",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -1042,7 +1042,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669931",
+      "reference": "ec-3369b",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -1121,7 +1121,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669593",
+      "reference": "ec-6069b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -1330,7 +1330,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669616",
+      "reference": "ec-2014b",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -1449,7 +1449,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669612",
+      "reference": "ec-2019b",
       "address": {
         "town": "Madrid",
         "district": "Vallehermoso",
@@ -1543,7 +1543,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28476783",
+      "reference": "ec-6072",
       "address": {
         "town": "Madrid",
         "district": "Argüelles",
@@ -1632,7 +1632,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669626",
+      "reference": "ec-3275b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -1836,7 +1836,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669641",
+      "reference": "102567510",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -1975,7 +1975,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669618",
+      "reference": "ec-1003w",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2054,7 +2054,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669617",
+      "reference": "ec-2013b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2188,7 +2188,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28150460",
+      "reference": "ec-5037b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2327,7 +2327,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27775220",
+      "reference": "ec-6090b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -2401,7 +2401,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669601",
+      "reference": "ec-2018b",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -2565,7 +2565,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28336779",
+      "reference": "ec-6093b",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -2779,7 +2779,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669583",
+      "reference": "ec-3131b",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -3033,7 +3033,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669591",
+      "reference": "ec-2031b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3112,7 +3112,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669607",
+      "reference": "ec-2023b",
       "address": {
         "town": "Madrid",
         "district": "Fuente del Berro",
@@ -3201,7 +3201,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28003188",
+      "reference": "ec-2028b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3275,7 +3275,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27925427",
+      "reference": "ec-6140b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3454,7 +3454,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28385968",
+      "reference": "ec-3192b",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -3578,7 +3578,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669629",
+      "reference": "ec-1004w",
       "address": {
         "town": "Madrid",
         "district": "Chueca",
@@ -3672,7 +3672,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669581",
+      "reference": "ec-5049b",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -3756,7 +3756,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669578",
+      "reference": "ec-6073b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -3920,7 +3920,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669650",
+      "reference": "ec-6152b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -4014,7 +4014,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669633",
+      "reference": "ec-3371b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -4113,7 +4113,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669630",
+      "reference": "ec-1005w",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -4267,7 +4267,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669602",
+      "reference": "ec-2027b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -4321,7 +4321,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669610",
+      "reference": "ec-6061b",
       "address": {
         "town": "Madrid",
         "district": "Chueca",
@@ -4445,7 +4445,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669624",
+      "reference": "ec-3300b",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -4574,7 +4574,7 @@
         }
       ],
       "propertyType": "duplex",
-      "reference": "27669937",
+      "reference": "107178808",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -4588,6 +4588,95 @@
       "features": {
         "liftAvailable": true,
         "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
+    },
+    {
+      "propertyId": "28512512",
+      "source": "inmovilla",
+      "price": 1269000,
+      "operation": "sale",
+      "size": 191,
+      "rooms": null,
+      "bathrooms": 5,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/1-1.jpg",
+          "id": "28512512-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/2-1.jpg",
+          "id": "28512512-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/3-1.jpg",
+          "id": "28512512-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/4-1.jpg",
+          "id": "28512512-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/5-1.jpg",
+          "id": "28512512-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/6-1.jpg",
+          "id": "28512512-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/7-1.jpg",
+          "id": "28512512-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/8-1.jpg",
+          "id": "28512512-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/9-1.jpg",
+          "id": "28512512-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28512512/10-1.jpg",
+          "id": "28512512-10",
+          "position": 10
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Centro, zona Embajadores. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con amplio salón/comedor y cocina integrada totalmente equipada. Amplios ventanales a la calle. Zona de lavandería.\n Cuenta con cinco dormitorios dobles dormitorios y cinco baños, cuatro de ellos en suite.\nCalefacción y aire acondicionad. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Centro, zona Embajadores. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con amplio salón/comedor y cocina integrada totalmente equipada. Amplios ventanales a la calle. Zona de lavandería.\n Cuenta con cinco dormitorios dobles dormitorios y cinco baños, cuatro de ellos en suite.\nCalefacción y aire acondicionad. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-6122b",
+      "address": {
+        "town": "Madrid",
+        "district": "Embajadores",
+        "latitude": 40.41235125,
+        "longitude": -3.702918483
+      },
+      "municipality": "Madrid",
+      "district": "Embajadores",
+      "latitude": 40.41235125,
+      "longitude": -3.702918483,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
         "conditionedAir": true,
         "balcony": false,
         "parkingAvailable": false,
@@ -4683,7 +4772,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669611",
+      "reference": "ec-2022b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -4737,7 +4826,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669614",
+      "reference": "ec-6062b",
       "address": {
         "town": "Madrid",
         "district": "Madrid",
@@ -4861,7 +4950,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669632",
+      "reference": "ec-lom",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -4945,7 +5034,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669577",
+      "reference": "ec-6074b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -5139,7 +5228,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28197406",
+      "reference": "ec-6111b",
       "address": {
         "town": "Madrid",
         "district": "Argüelles",
@@ -5298,7 +5387,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669574",
+      "reference": "ec-6081b",
       "address": {
         "town": "Madrid",
         "district": "Centro",
@@ -5387,7 +5476,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669711",
+      "reference": "ec-2003b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -5476,7 +5565,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28189742",
+      "reference": "ec-6134b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -5665,7 +5754,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669653",
+      "reference": "ec-6075b",
       "address": {
         "town": "Madrid",
         "district": "Chamberí",
@@ -5799,7 +5888,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669588",
+      "reference": "ec-3327b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -6008,7 +6097,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28396584",
+      "reference": "ec-6123b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -6182,7 +6271,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669603",
+      "reference": "ec-6067b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -6316,7 +6405,7 @@
         }
       ],
       "propertyType": "penthouse",
-      "reference": "28049391",
+      "reference": "ec-6083b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -6400,7 +6489,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669651",
+      "reference": "ec-6144b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -6574,7 +6663,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27670331",
+      "reference": "ec-2008b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -6668,7 +6757,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669595",
+      "reference": "ec-5023v",
       "address": {
         "town": "Madrid",
         "district": "Arapiles",
@@ -6782,7 +6871,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669608",
+      "reference": "ec-3366b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -6926,7 +7015,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669682",
+      "reference": "ec-5038b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7090,7 +7179,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669586",
+      "reference": "ec-3354b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7189,7 +7278,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669592",
+      "reference": "ec-5034v",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -7303,7 +7392,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669620",
+      "reference": "ec-2006b",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -7532,7 +7621,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28335255",
+      "reference": "ec-6094b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7546,6 +7635,95 @@
       "features": {
         "liftAvailable": true,
         "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
+    },
+    {
+      "propertyId": "28493818",
+      "source": "inmovilla",
+      "price": 1899000,
+      "operation": "sale",
+      "size": 114,
+      "rooms": null,
+      "bathrooms": 2,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/1-1.jpg",
+          "id": "28493818-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/2-1.jpg",
+          "id": "28493818-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/3-1.jpg",
+          "id": "28493818-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/4-1.jpg",
+          "id": "28493818-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/5-1.jpg",
+          "id": "28493818-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/6-1.jpg",
+          "id": "28493818-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/7-1.jpg",
+          "id": "28493818-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/8-1.jpg",
+          "id": "28493818-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/9-1.jpg",
+          "id": "28493818-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493818/10-1.jpg",
+          "id": "28493818-10",
+          "position": 10
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con amplio salón/comedor con acceso a la terraza y cocina integrada.\n Cuenta con tres dormitorios y dos baños, uno ellos en suite.\nCalefacción y aire acondicionad. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con amplio salón/comedor con acceso a la terraza y cocina integrada.\n Cuenta con tres dormitorios y dos baños, uno ellos en suite.\nCalefacción y aire acondicionad. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-6133b",
+      "address": {
+        "town": "Madrid",
+        "district": "Ibiza",
+        "latitude": 40.417926601,
+        "longitude": -3.672384747
+      },
+      "municipality": "Madrid",
+      "district": "Ibiza",
+      "latitude": 40.417926601,
+      "longitude": -3.672384747,
+      "features": {
+        "liftAvailable": true,
+        "terrace": true,
         "conditionedAir": true,
         "balcony": false,
         "parkingAvailable": false,
@@ -7651,7 +7829,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669585",
+      "reference": "ec-3039b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -7840,7 +8018,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27773347",
+      "reference": "ec-6089b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8134,7 +8312,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28125471",
+      "reference": "ec-6091b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8428,7 +8606,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669628",
+      "reference": "ec-1002w",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8547,7 +8725,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669584",
+      "reference": "ec-3344b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -8736,7 +8914,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669708",
+      "reference": "ec-2007b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -8900,7 +9078,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669625",
+      "reference": "ec-3364b",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -8984,7 +9162,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27912135",
+      "reference": "ec-1006w",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -9188,7 +9366,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669675",
+      "reference": "ec-5045b",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -9432,7 +9610,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28303039",
+      "reference": "ec6135",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -9616,7 +9794,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28176621",
+      "reference": "ec-201b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -9725,7 +9903,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669594",
+      "reference": "ec-5029v",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -9874,7 +10052,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669579",
+      "reference": "ec-6071b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -9968,7 +10146,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669598",
+      "reference": "ec-jb",
       "address": {
         "town": "Madrid",
         "district": "Barrio de Salamanca",
@@ -10059,15 +10237,10 @@
           "position": 12
         }
       ],
-      "description": "Piso ubicado en el Distrito Salamanca - Recoletos.\nAmplio salon comedor con cocina integrada y acceso a aplia terraza.\n2 Dormitorios, 2 Baños en suite y aseo de cortesia\nTotalemnte Amueblado y Cocina Equipada, Cuarto de lavado.\nCalefacción Comunitaria.",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Piso ubicado en el Distrito Salamanca - Recoletos.\nAmplio salon comedor con cocina integrada y acceso a aplia terraza.\n2 Dormitorios, 2 Baños en suite y aseo de cortesia\nTotalemnte Amueblado y Cocina Equipada, Cuarto de lavado.\nCalefacción Comunitaria."
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27669636",
+      "reference": "ec-3381b",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -10148,15 +10321,10 @@
           "position": 10
         }
       ],
-      "description": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27669596",
+      "reference": "ec-5032v",
       "address": {
         "town": "Madrid",
         "district": "Ibiza",
@@ -10267,15 +10435,10 @@
           "position": 16
         }
       ],
-      "description": "Piso en Venta en Zona Goya, Distrito Salamanca\nEl piso cuenta con amplio salón - comedor.\nCocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nInmueble completamente reformado amueblado con muebles de diseño.\n3 dormitorios y 3 baños todos ellos en suite.\nVivienda totalmente reformada en el prestigioso barrio de Lista, Distrito Salamanca\nSuelos de Tarima y aire Acondicionado en toda la vivienda\nLa finca cuenta con ascensor y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. Rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte.",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Piso en Venta en Zona Goya, Distrito Salamanca\nEl piso cuenta con amplio salón - comedor.\nCocina abierta al comedor totalmente equipada con modernos electrodomésticos.\nInmueble completamente reformado amueblado con muebles de diseño.\n3 dormitorios y 3 baños todos ellos en suite.\nVivienda totalmente reformada en el prestigioso barrio de Lista, Distrito Salamanca\nSuelos de Tarima y aire Acondicionado en toda la vivienda\nLa finca cuenta con ascensor y servicio de portería.\nEl barrio de ofrece una amplia variedad de servicios y comodidades. Rodeado de tiendas, restaurantes gourmet y prestigiosas galerías de arte."
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27669582",
+      "reference": "ec-3382b",
       "address": {
         "town": "Madrid",
         "district": "Recoletos",
@@ -10556,15 +10719,10 @@
           "position": 50
         }
       ],
-      "description": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a la terraza.\nCuenta con cuatro dormitorios y cuatro baños. Tres de ellos en suite. \n Calefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda ubicada en el Distrito Salamanca, zona Castellana. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Acceso a la terraza.\nCuenta con cuatro dormitorios y cuatro baños. Tres de ellos en suite. \n Calefacción central y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.~"
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27768288",
+      "reference": "ec-6087b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -10655,15 +10813,10 @@
           "position": 12
         }
       ],
-      "description": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y tres baños, dos de ellos en suite. Amplia terraza\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería. Plaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda ubicada en el Distrito Retiro, zona Jerónimos. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Domótica.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y tres baños, dos de ellos en suite. Amplia terraza\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería. Plaza de garaje.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27669590",
+      "reference": "ec-5036b",
       "address": {
         "town": "Madrid",
         "district": "Jerónimos",
@@ -10739,15 +10892,10 @@
           "position": 9
         }
       ],
-      "description": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería y trastero\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda ubicada en el Distrito Chamberí, zona Almagro. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios todos ellos con baño en suite, y un baño de cortesía.\n Calefacción individual y aire acondicionado. \nLa finca cuenta con servicio de portería y trastero\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27669587",
+      "reference": "ec-5033v",
       "address": {
         "town": "Madrid",
         "district": "Metro bilbao",
@@ -10893,15 +11041,10 @@
           "position": 23
         }
       ],
-      "description": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y dos baños dos de ellos en suite. Dormitorio principal con acceso a la terraza.\n Calefacción individual con suelo radiante y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes.",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. balcón.\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Terraza\nCuenta con tres dormitorios y dos baños dos de ellos en suite. Dormitorio principal con acceso a la terraza.\n Calefacción individual con suelo radiante y aire acondicionado. \nFinca con servicio de portería. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes."
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "27669672",
+      "reference": "ec-5048b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11177,15 +11320,10 @@
           "position": 49
         }
       ],
-      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplia terraza de 55m².\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños, dos de ellos en suite. \nCalefacción central y aire acondicionado. Área de lavandería.  Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplia terraza de 55m².\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios dobles y tres baños, dos de ellos en suite. \nCalefacción central y aire acondicionado. Área de lavandería.  Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
-        }
-      ],
+      "description": "",
+      "descriptions": [],
       "propertyType": "flat",
-      "reference": "28453756",
+      "reference": "ec-6103b",
       "address": {
         "town": "Madrid",
         "district": "Lista",
@@ -11334,7 +11472,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27765765",
+      "reference": "ec-6086b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11413,7 +11551,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669676",
+      "reference": "ec-5044b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11527,7 +11665,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669604",
+      "reference": "ec-2026b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -11636,7 +11774,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28254206",
+      "reference": "ec-6092b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -11795,7 +11933,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27769302",
+      "reference": "ec-6088b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -11879,7 +12017,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28454806",
+      "reference": "ec-6137b",
       "address": {
         "town": "Madrid",
         "district": "Salamanca",
@@ -12168,7 +12306,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669589",
+      "reference": "ec-5035b",
       "address": {
         "town": "Madrid",
         "district": "Sol",
@@ -12327,7 +12465,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28136926",
+      "reference": "ec-2005b",
       "address": {
         "town": "Madrid",
         "district": "Goya",
@@ -12561,7 +12699,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669600",
+      "reference": "ec-2000b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -12577,6 +12715,130 @@
         "terrace": true,
         "conditionedAir": true,
         "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      }
+    },
+    {
+      "propertyId": "28493019",
+      "source": "inmovilla",
+      "price": 3959000,
+      "operation": "sale",
+      "size": 288,
+      "rooms": 2,
+      "bathrooms": 4,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/1-1.jpg",
+          "id": "28493019-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/2-1.jpg",
+          "id": "28493019-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/3-1.jpg",
+          "id": "28493019-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/4-1.jpg",
+          "id": "28493019-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/5-1.jpg",
+          "id": "28493019-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/6-1.jpg",
+          "id": "28493019-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/7-1.jpg",
+          "id": "28493019-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/8-1.jpg",
+          "id": "28493019-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/9-1.jpg",
+          "id": "28493019-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/10-1.jpg",
+          "id": "28493019-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/11-1.jpg",
+          "id": "28493019-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/12-1.jpg",
+          "id": "28493019-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/13-1.jpg",
+          "id": "28493019-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/14-1.jpg",
+          "id": "28493019-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/15-1.jpg",
+          "id": "28493019-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/16-1.jpg",
+          "id": "28493019-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28493019/17-1.jpg",
+          "id": "28493019-17",
+          "position": 17
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con amplio salón en esquina con dos ventanales. Comedor independiente,\nCocina totalmente equipada con electrodomésticos de alta gama. Area de lavandería. \nCuenta con cinco dormitorios y cuatro baños, tres ellos en suite, aseo de cortesía. \nCalefacción y aire acondicionado por ductos. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con amplio salón en esquina con dos ventanales. Comedor independiente,\nCocina totalmente equipada con electrodomésticos de alta gama. Area de lavandería. \nCuenta con cinco dormitorios y cuatro baños, tres ellos en suite, aseo de cortesía. \nCalefacción y aire acondicionado por ductos. Servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-6084b",
+      "address": {
+        "town": "Madrid",
+        "district": "Lista",
+        "latitude": 40.435631435,
+        "longitude": -3.677891419
+      },
+      "municipality": "Madrid",
+      "district": "Lista",
+      "latitude": 40.435631435,
+      "longitude": -3.677891419,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": true,
         "parkingAvailable": false,
         "pool": false,
         "storage": false
@@ -12700,7 +12962,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "27669575",
+      "reference": "ec-5010v",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
@@ -12784,7 +13046,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "28455433",
+      "reference": "ec-6139b",
       "address": {
         "town": "Madrid",
         "district": "Castellana",
