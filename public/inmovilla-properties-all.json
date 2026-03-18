@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T15:37:22.809Z",
+  "generatedAt": "2026-03-18T16:41:41.247Z",
   "total": 99,
   "sale": 97,
   "rent": 2,
@@ -209,78 +209,78 @@
       "bathrooms": null,
       "images": [
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-1.jpg",
-          "id": "28476654-16-1",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-1.jpg",
+          "id": "28476654-17-1",
           "position": 1
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-2.jpg",
-          "id": "28476654-16-2",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-2.jpg",
+          "id": "28476654-17-2",
           "position": 2
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-3.jpg",
-          "id": "28476654-16-3",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-3.jpg",
+          "id": "28476654-17-3",
           "position": 3
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-4.jpg",
-          "id": "28476654-16-4",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-4.jpg",
+          "id": "28476654-17-4",
           "position": 4
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-5.jpg",
-          "id": "28476654-16-5",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-5.jpg",
+          "id": "28476654-17-5",
           "position": 5
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-6.jpg",
-          "id": "28476654-16-6",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-6.jpg",
+          "id": "28476654-17-6",
           "position": 6
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-7.jpg",
-          "id": "28476654-16-7",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-7.jpg",
+          "id": "28476654-17-7",
           "position": 7
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-8.jpg",
-          "id": "28476654-16-8",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-8.jpg",
+          "id": "28476654-17-8",
           "position": 8
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-9.jpg",
-          "id": "28476654-16-9",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-9.jpg",
+          "id": "28476654-17-9",
           "position": 9
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-10.jpg",
-          "id": "28476654-16-10",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-10.jpg",
+          "id": "28476654-17-10",
           "position": 10
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-11.jpg",
-          "id": "28476654-16-11",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-11.jpg",
+          "id": "28476654-17-11",
           "position": 11
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-12.jpg",
-          "id": "28476654-16-12",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-12.jpg",
+          "id": "28476654-17-12",
           "position": 12
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-13.jpg",
-          "id": "28476654-16-13",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-13.jpg",
+          "id": "28476654-17-13",
           "position": 13
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-14.jpg",
-          "id": "28476654-16-14",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-14.jpg",
+          "id": "28476654-17-14",
           "position": 14
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/16-15.jpg",
-          "id": "28476654-16-15",
+          "url": "https://fotos15.apinmo.com/13731/28476654/17-15.jpg",
+          "id": "28476654-17-15",
           "position": 15
         }
       ],
@@ -292,7 +292,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec_-3048",
+      "reference": "ec-3048",
       "address": {
         "town": "Arganda del Rey",
         "district": "Centro",
@@ -312,7 +312,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-13 16:05:51"
+      "_fechacambio": "2026-03-18 17:11:46"
     },
     {
       "propertyId": "27670033",
@@ -364,11 +364,11 @@
           "position": 8
         }
       ],
-      "description": "Esta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal.",
+      "description": "Vivienda en Venta En el Distrito Centro, zona Cortes\nEsta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal.",
       "descriptions": [
         {
           "language": "es",
-          "text": "Esta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal."
+          "text": "Vivienda en Venta En el Distrito Centro, zona Cortes\nEsta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal."
         }
       ],
       "propertyType": "flat",
@@ -392,7 +392,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-02-10 18:32:05"
+      "_fechacambio": "2026-03-18 16:53:01"
     },
     {
       "propertyId": "27669599",
@@ -6907,7 +6907,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-18 15:52:22"
+      "_fechacambio": "2026-03-18 17:28:33"
     },
     {
       "propertyId": "27669608",
