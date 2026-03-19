@@ -2,7 +2,7 @@ name: Update Inmovilla properties
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # cada 15 minutos
+    - cron: '0 * * * *'  # cada hora
   workflow_dispatch:       # permite lanzarlo manualmente desde GitHub
 
 jobs:
