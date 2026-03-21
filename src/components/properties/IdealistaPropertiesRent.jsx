@@ -760,7 +760,7 @@ const PropertiesRent = () => {
 									</button>
 								</div>
 									<FilterGroup>
-										<FilterLabel>Localización</FilterLabel>
+										<FilterLabel htmlFor="filter-location">Localización</FilterLabel>
 										{searchParams.get('location') ? (
 											<FilterInput
 												value={localFilters.location}
@@ -787,7 +787,7 @@ const PropertiesRent = () => {
 									{localFilters.location.toLowerCase() === 'madrid' &&
 										availableDistricts.length > 0 && (
 											<FilterGroup>
-												<FilterLabel>Distrito de Madrid</FilterLabel>
+												<FilterLabel htmlFor="filter-district">Distrito de Madrid</FilterLabel>
 												<FilterSelect
 													value={localFilters.district}
 													onChange={e =>
@@ -808,7 +808,7 @@ const PropertiesRent = () => {
 										'comunidad de madrid y resto de españa' &&
 										availableMunicipalities.length > 0 && (
 											<FilterGroup>
-												<FilterLabel>Municipio</FilterLabel>
+												<FilterLabel htmlFor="filter-municipality">Municipio</FilterLabel>
 												<FilterSelect
 													value={localFilters.municipality}
 													onChange={e =>
@@ -827,7 +827,7 @@ const PropertiesRent = () => {
 									{/* Filtro de tipo de propiedad */}
 									{availablePropertyTypes.length > 1 && (
 										<FilterGroup>
-											<FilterLabel>Tipo de propiedad</FilterLabel>
+											<FilterLabel htmlFor="filter-property-type">Tipo de propiedad</FilterLabel>
 											<FilterSelect
 												value={localFilters.propertyType}
 												onChange={e =>
@@ -844,7 +844,7 @@ const PropertiesRent = () => {
 										</FilterGroup>
 									)}
 									<FilterGroup>
-										<FilterLabel>Precio mensual</FilterLabel>
+										<FilterLabel htmlFor="filter-price-min">Precio mensual</FilterLabel>
 										<PriceRangeGroup>
 											<RangeSelect
 												presets={RENT_PRICE_PRESETS}
@@ -884,8 +884,9 @@ const PropertiesRent = () => {
 										</PriceRangeGroup>
 									</FilterGroup>
 									<FilterGroup>
-										<FilterLabel>Características</FilterLabel>
+										<FilterLabel htmlFor="filter-features">Características</FilterLabel>
 										<FilterInput
+											id="filter-features"
 											placeholder='ej: ascensor, aire acondicionado, terraza...'
 											value={localFilters.features}
 											onChange={e =>
@@ -909,7 +910,7 @@ const PropertiesRent = () => {
 													filteredProperties.length === 1
 														? 'resultado'
 														: 'resultados'
-											  } encontrados`}
+													} encontrados`}
 									</ResultsCount>
 								</ResultsHeader>{' '}
 								{(loading || contentfulLoading) && (
@@ -977,6 +978,7 @@ const PropertiesRent = () => {
 																<PropertyImage
 																	src={imageSrc}
 																	alt={getPropertyTitleUnified(property)}
+																	loading="lazy"
 																/>
 															)}
 															<PropertyContent>
