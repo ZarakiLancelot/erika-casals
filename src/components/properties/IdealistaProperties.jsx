@@ -104,47 +104,45 @@ const Properties = () => {
 	// Estados para filtros locales
 	const [localFilters, setLocalFilters] = useState({
 		location: '',
-		district: '', // Filtro para distritos de Madrid ciudad
-		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
-		propertyType: '', // Nuevo filtro para tipo de propiedad
+		district: '',
+		municipality: '',
+		propertyType: '',
 		minPrice: '',
 		maxPrice: '',
 		minArea: '',
 		maxArea: '',
 		features: '',
-		lowestPrice: false, // Filtro para precio más bajo
-		highestPrice: false // Filtro para precio más alto
+		lowestPrice: false,
+		highestPrice: false
 	});
 	const clearFilters = () => setLocalFilters({
 		location: '',
-		district: '', // Filtro para distritos de Madrid ciudad
-		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
-		propertyType: '', // Nuevo filtro para tipo de propiedad
+		district: '',
+		municipality: '',
+		propertyType: '',
 		minPrice: '',
 		maxPrice: '',
 		minArea: '',
 		maxArea: '',
 		features: '',
-		lowestPrice: false, // Filtro para precio más bajo
-		highestPrice: false // Filtro para precio más alto
+		lowestPrice: false,
+		highestPrice: false
 	});
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
-	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
-	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
-	const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]); // Tipos de propiedades disponibles
+	const [availableDistricts, setAvailableDistricts] = useState([]);
+	const [availableMunicipalities, setAvailableMunicipalities] = useState([]);
+	const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]);
 	const [newDev, setNewDev] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const ITEMS_PER_PAGE = 5; // Número de propiedades por página
-	// Establecer filtro a 'sale' al montar el componente y limpiar filtros locales
+	const ITEMS_PER_PAGE = 5;
+
 	useEffect(() => {
 		setFilter('sale');
 
-		// Obtener el filtro de localización desde los parámetros de consulta
 		const locationParam = searchParams.get('location');
 
-		// Limpiar filtros locales cuando se cambia de página
 		setLocalFilters({
 			location: locationParam || '',
 			district: '',
@@ -156,12 +154,11 @@ const Properties = () => {
 			features: '',
 			lowestPrice: false,
 			highestPrice: false
-		}); // Limpiar imágenes cargadas para evitar conflictos
+		});
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
-	}, [setFilter, location.pathname, searchParams]); // Agregar searchParams como dependencia
+	}, [setFilter, location.pathname, searchParams]);
 
-	// Cargar nuevos desarrollos al montar el componente
 	useEffect(() => {
 		fetchNewDevelopments();
 	}, [fetchNewDevelopments]);
@@ -172,7 +169,6 @@ const Properties = () => {
 		}
 	}, [newDevelopments, newDevelopmentsLoading]);
 
-	// Función para cargar imagen de una propiedad cuando sea necesario
 	const loadPropertyImage = useCallback(
 		async propertyId => {
 			if (
@@ -193,7 +189,6 @@ const Properties = () => {
 		[loadedImages, loadingImages, fetchPropertyImages]
 	);
 
-	// Generar ubicaciones disponibles basadas en las propiedades de ambas fuentes
 	useEffect(() => {
 		const allProps = [
 			...properties,
@@ -201,17 +196,14 @@ const Properties = () => {
 			...newDevelopments
 		];
 		if (allProps.length > 0) {
-			// Usar el nuevo sistema de organización de ubicaciones
 			const organized = getOrganizedLocations(
 				properties,
 				contentfulProperties,
 				newDev
 			);
 
-			// Crear lista de ubicaciones principales para el primer filtro
 			const mainLocations = [];
 
-			// Agregar Madrid ciudad si hay distritos
 			if (
 				organized.madridCiudad.districts.length > 0 ||
 				organized.madridCiudad.otherLocations.length > 0
@@ -219,12 +211,10 @@ const Properties = () => {
 				mainLocations.push('Madrid');
 			}
 
-			// Agregar Comunidad de Madrid si hay municipios
 			if (organized.comunidadMadrid.municipalities.length > 0) {
 				mainLocations.push('Comunidad de Madrid y resto de España');
 			}
 
-			// Agregar ubicaciones internacionales
 			if (organized.international['Costa Española'].length > 0) {
 				mainLocations.push('Costa Española');
 			}
@@ -234,7 +224,6 @@ const Properties = () => {
 
 			setAvailableLocations(mainLocations.sort());
 
-			// Configurar filtros secundarios según la ubicación seleccionada
 			if (localFilters.location.toLowerCase() === 'madrid') {
 				setAvailableDistricts(organized.madridCiudad.districts);
 				setAvailableMunicipalities([]);
@@ -257,7 +246,6 @@ const Properties = () => {
 		localFilters.location
 	]);
 
-	// Función auxiliar para obtener título y descripción de una propiedad
 	const getPropertyTitleAndDescription = useCallback(
 		property => {
 			let title = '';
@@ -270,7 +258,6 @@ const Properties = () => {
 				title = property.title || '';
 				description = property.description || '';
 			} else {
-				// Para propiedades de Idealista, obtener título desde la descripción
 				const desc =
 					property.descriptions?.find(d => d.language === 'es')?.comment ||
 					property.descriptions?.find(d => d.language === 'es')?.text ||
@@ -279,11 +266,9 @@ const Properties = () => {
 					'';
 
 				if (desc) {
-					// El título es la primera frase hasta el primer punto
 					title = desc.trim().split('.')[0].trim();
 					description = desc;
 				} else {
-					// Fallback al título genérico
 					title = getPropertyTitle(property);
 					description = property.description || '';
 				}
@@ -341,7 +326,7 @@ const Properties = () => {
 				property.features && Array.isArray(property.features)
 					? property.features.some(feature =>
 							feature.toLowerCase().includes(term)
-					  )
+						)
 					: false;
 
 			return (
@@ -977,6 +962,7 @@ const Properties = () => {
 		<div>
 			<ResponsiveNavbar />
 			<PageTransition type='properties'>
+				<main>
 				<PropertiesContainer>
 					<ContentWrapper>
 						<HeaderSection
@@ -1111,6 +1097,7 @@ const Properties = () => {
 												value={localFilters.minPrice}
 												onChange={v => handleFilterChange('minPrice', v)}
 												placeholder='Precio mín €'
+												aria-label='Precio mínimo'
 												formatLabel={priceLabel}
 											/>
 											<PriceSeparator>—</PriceSeparator>
@@ -1119,6 +1106,7 @@ const Properties = () => {
 												value={localFilters.maxPrice}
 												onChange={v => handleFilterChange('maxPrice', v)}
 												placeholder='Precio máx €'
+												aria-label='Precio máximo'
 												formatLabel={priceLabel}
 											/>
 										</PriceRangeGroup>
@@ -1178,6 +1166,7 @@ const Properties = () => {
 												value={localFilters.minArea}
 												onChange={v => handleFilterChange('minArea', v)}
 												placeholder='m² min'
+												aria-label='Superficie mínima'
 												formatLabel={areaLabel}
 											/>
 											<PriceSeparator>—</PriceSeparator>
@@ -1186,6 +1175,7 @@ const Properties = () => {
 												value={localFilters.maxArea}
 												onChange={v => handleFilterChange('maxArea', v)}
 												placeholder='m² max'
+												aria-label='Superficie máxima'
 												formatLabel={areaLabel}
 											/>
 										</PriceRangeGroup>
@@ -1305,6 +1295,8 @@ const Properties = () => {
 																		src={imageSrc}
 																		alt={getPropertyTitleUnified(property)}
 																		loading='lazy'
+																		width='400'
+																		height='280'
 																	/>
 																)}{' '}
 																<PropertyContent>
@@ -1410,6 +1402,7 @@ const Properties = () => {
 						</MainContainer>
 					</ContentWrapper>
 				</PropertiesContainer>
+				</main>
 				<Footer />
 			</PageTransition>
 		</div>

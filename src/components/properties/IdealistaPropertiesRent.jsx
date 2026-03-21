@@ -89,12 +89,12 @@ const PropertiesRent = () => {
 		loading: contentfulLoading,
 		error: contentfulError
 	} = useContentfulRentProperties();
-	// Estados para filtros locales
+
 	const [localFilters, setLocalFilters] = useState({
 		location: '',
-		district: '', // Filtro para distritos de Madrid ciudad
-		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
-		propertyType: '', // Nuevo filtro para tipo de propiedad
+		district: '',
+		municipality: '',
+		propertyType: '',
 		minPrice: '',
 		maxPrice: '',
 		minArea: '',
@@ -103,9 +103,9 @@ const PropertiesRent = () => {
 	});
 	const clearFilters = () => setLocalFilters({
 		location: '',
-		district: '', // Filtro para distritos de Madrid ciudad
-		municipality: '', // Nuevo filtro para municipios de Comunidad de Madrid
-		propertyType: '', // Nuevo filtro para tipo de propiedad
+		district: '',
+		municipality: '',
+		propertyType: '',
 		minPrice: '',
 		maxPrice: '',
 		minArea: '',
@@ -117,11 +117,10 @@ const PropertiesRent = () => {
 	const ITEMS_PER_PAGE = 12;
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
-	const [availableDistricts, setAvailableDistricts] = useState([]); // Distritos para Madrid ciudad
-	const [availableMunicipalities, setAvailableMunicipalities] = useState([]); // Municipios para Comunidad de Madrid
-	const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]); // Tipos de propiedades disponibles
+	const [availableDistricts, setAvailableDistricts] = useState([]);
+	const [availableMunicipalities, setAvailableMunicipalities] = useState([]);
+	const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]);
 
-	// Función para cargar imagen de manera lazy solo cuando sea necesario
 	const loadPropertyImage = useCallback(
 		async propertyId => {
 			if (
@@ -146,10 +145,8 @@ const PropertiesRent = () => {
 	useEffect(() => {
 		setFilter('rent');
 
-		// Obtener el filtro de localización desde los parámetros de consulta
 		const locationParam = searchParams.get('location');
 
-		// Limpiar filtros locales cuando se cambia de página
 		setLocalFilters({
 			location: locationParam || '',
 			district: '',
@@ -159,21 +156,18 @@ const PropertiesRent = () => {
 			minArea: '',
 			maxArea: '',
 			features: ''
-		}); // Limpiar imágenes cargadas para evitar conflictos
+		});
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
-	}, [setFilter, location.pathname, searchParams]); // Agregar searchParams como dependencia
-	// Generar ubicaciones disponibles basadas en las propiedades organizadas jerárquicamente
+	}, [setFilter, location.pathname, searchParams]);
+
 	useEffect(() => {
 		const allProps = [...properties, ...contentfulProperties];
 		if (allProps.length > 0) {
-			// Usar el nuevo sistema de organización de ubicaciones
 			const organized = getOrganizedLocations(properties, contentfulProperties);
 
-			// Crear lista de ubicaciones principales para el primer filtro
 			const mainLocations = [];
 
-			// Agregar Madrid ciudad si hay distritos
 			if (
 				organized.madridCiudad.districts.length > 0 ||
 				organized.madridCiudad.otherLocations.length > 0
@@ -181,12 +175,10 @@ const PropertiesRent = () => {
 				mainLocations.push('Madrid');
 			}
 
-			// Agregar Comunidad de Madrid si hay municipios
 			if (organized.comunidadMadrid.municipalities.length > 0) {
 				mainLocations.push('Comunidad de Madrid y resto de España');
 			}
 
-			// Agregar ubicaciones internacionales
 			if (organized.international['Costa Española'].length > 0) {
 				mainLocations.push('Costa Española');
 			}
@@ -196,7 +188,6 @@ const PropertiesRent = () => {
 
 			setAvailableLocations(mainLocations.sort());
 
-			// Configurar filtros secundarios según la ubicación seleccionada
 			if (localFilters.location.toLowerCase() === 'madrid') {
 				setAvailableDistricts(organized.madridCiudad.districts);
 				setAvailableMunicipalities([]);
@@ -720,6 +711,7 @@ const PropertiesRent = () => {
 		<div>
 			<ResponsiveNavbar />
 			<PageTransition type='properties'>
+				<main>
 				<PropertiesContainer>
 					<ContentWrapper>
 						<HeaderSection
@@ -851,6 +843,7 @@ const PropertiesRent = () => {
 												value={localFilters.minPrice}
 												onChange={v => handleFilterChange('minPrice', v)}
 												placeholder='Precio mín €'
+												aria-label='Precio mínimo'
 												formatLabel={priceLabel}
 											/>
 											<PriceSeparator>—</PriceSeparator>
@@ -859,6 +852,7 @@ const PropertiesRent = () => {
 												value={localFilters.maxPrice}
 												onChange={v => handleFilterChange('maxPrice', v)}
 												placeholder='Precio máx €'
+												aria-label='Precio máximo'
 												formatLabel={priceLabel}
 											/>
 										</PriceRangeGroup>
@@ -871,6 +865,7 @@ const PropertiesRent = () => {
 												value={localFilters.minArea}
 												onChange={v => handleFilterChange('minArea', v)}
 												placeholder='m² min'
+												aria-label='Superficie mínima'
 												formatLabel={areaLabel}
 											/>
 											<PriceSeparator>—</PriceSeparator>
@@ -879,6 +874,7 @@ const PropertiesRent = () => {
 												value={localFilters.maxArea}
 												onChange={v => handleFilterChange('maxArea', v)}
 												placeholder='m² max'
+												aria-label='Superficie máxima'
 												formatLabel={areaLabel}
 											/>
 										</PriceRangeGroup>
@@ -979,6 +975,8 @@ const PropertiesRent = () => {
 																	src={imageSrc}
 																	alt={getPropertyTitleUnified(property)}
 																	loading="lazy"
+																	width="400"
+																	height="280"
 																/>
 															)}
 															<PropertyContent>
@@ -1069,6 +1067,7 @@ const PropertiesRent = () => {
 						</MainContainer>
 					</ContentWrapper>
 				</PropertiesContainer>
+				</main>
 				<Footer />
 			</PageTransition>
 		</div>
