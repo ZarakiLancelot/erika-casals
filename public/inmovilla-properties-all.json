@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T16:41:41.247Z",
+  "generatedAt": "2026-03-22T11:16:19.536Z",
   "total": 99,
   "sale": 97,
   "rent": 2,
@@ -202,7 +202,7 @@
     {
       "propertyId": "28476654",
       "source": "inmovilla",
-      "price": 370000,
+      "price": 369000,
       "operation": "sale",
       "size": null,
       "rooms": null,
@@ -312,7 +312,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-18 17:11:46"
+      "_fechacambio": "2026-03-22 11:48:48"
     },
     {
       "propertyId": "27670033",
@@ -364,11 +364,11 @@
           "position": 8
         }
       ],
-      "description": "Vivienda en Venta En el Distrito Centro, zona Cortes\nEsta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal.",
+      "description": "Vivienda en Venta En el Distrito Centro, zona Cortes.\nEsta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal.",
       "descriptions": [
         {
           "language": "es",
-          "text": "Vivienda en Venta En el Distrito Centro, zona Cortes\nEsta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal."
+          "text": "Vivienda en Venta En el Distrito Centro, zona Cortes.\nEsta vivienda situada en el corazón de Madrid, totalmente reformado cuenta con una habitación, un baño completo, y está completamente amueblado, listo para entrar a vivir. \nAdemás, su cocina está totalmente equipada y dispone de un sofá cama en el salón, perfecto para recibir visitas. \nLa vivienda, con una orientación noroeste, se beneficia de un sistema de climatización que proporciona calefacción y aire acondicionado, asegurando el confort durante todo el año. \nConstruido en 1890 y con una cuidada reforma, este apartamento combina el encanto de la arquitectura clásica madrileña con las comodidades modernas. \nSi buscas vivir en una de las zonas más vibrantes y céntricas de Madrid, esta es tu oportunidad ideal."
         }
       ],
       "propertyType": "flat",
@@ -392,7 +392,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-18 16:53:01"
+      "_fechacambio": "2026-03-22 11:46:36"
     },
     {
       "propertyId": "27669599",
