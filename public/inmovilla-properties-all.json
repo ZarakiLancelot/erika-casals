@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-22T11:16:19.536Z",
+  "generatedAt": "2026-03-22T12:29:51.107Z",
   "total": 99,
   "sale": 97,
   "rent": 2,
@@ -209,78 +209,78 @@
       "bathrooms": null,
       "images": [
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-1.jpg",
-          "id": "28476654-17-1",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-1.jpg",
+          "id": "28476654-18-1",
           "position": 1
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-2.jpg",
-          "id": "28476654-17-2",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-2.jpg",
+          "id": "28476654-18-2",
           "position": 2
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-3.jpg",
-          "id": "28476654-17-3",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-3.jpg",
+          "id": "28476654-18-3",
           "position": 3
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-4.jpg",
-          "id": "28476654-17-4",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-4.jpg",
+          "id": "28476654-18-4",
           "position": 4
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-5.jpg",
-          "id": "28476654-17-5",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-5.jpg",
+          "id": "28476654-18-5",
           "position": 5
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-6.jpg",
-          "id": "28476654-17-6",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-6.jpg",
+          "id": "28476654-18-6",
           "position": 6
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-7.jpg",
-          "id": "28476654-17-7",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-7.jpg",
+          "id": "28476654-18-7",
           "position": 7
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-8.jpg",
-          "id": "28476654-17-8",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-8.jpg",
+          "id": "28476654-18-8",
           "position": 8
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-9.jpg",
-          "id": "28476654-17-9",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-9.jpg",
+          "id": "28476654-18-9",
           "position": 9
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-10.jpg",
-          "id": "28476654-17-10",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-10.jpg",
+          "id": "28476654-18-10",
           "position": 10
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-11.jpg",
-          "id": "28476654-17-11",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-11.jpg",
+          "id": "28476654-18-11",
           "position": 11
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-12.jpg",
-          "id": "28476654-17-12",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-12.jpg",
+          "id": "28476654-18-12",
           "position": 12
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-13.jpg",
-          "id": "28476654-17-13",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-13.jpg",
+          "id": "28476654-18-13",
           "position": 13
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-14.jpg",
-          "id": "28476654-17-14",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-14.jpg",
+          "id": "28476654-18-14",
           "position": 14
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28476654/17-15.jpg",
-          "id": "28476654-17-15",
+          "url": "https://fotos15.apinmo.com/13731/28476654/18-15.jpg",
+          "id": "28476654-18-15",
           "position": 15
         }
       ],
@@ -312,7 +312,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-22 11:48:48"
+      "_fechacambio": "2026-03-22 12:23:48"
     },
     {
       "propertyId": "27670033",
