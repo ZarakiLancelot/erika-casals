@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-25T16:00:34.564Z",
-  "total": 100,
-  "sale": 98,
+  "generatedAt": "2026-03-25T17:50:34.652Z",
+  "total": 101,
+  "sale": 99,
   "rent": 2,
   "properties": [
     {
@@ -10693,6 +10693,91 @@
         "storage": false
       },
       "_fechacambio": "2026-01-23 14:17:04"
+    },
+    {
+      "propertyId": "28596059",
+      "source": "inmovilla",
+      "price": 2300000,
+      "operation": "sale",
+      "size": 168,
+      "rooms": null,
+      "bathrooms": 3,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-1.jpg",
+          "id": "28596059-2-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-2.jpg",
+          "id": "28596059-2-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-3.jpg",
+          "id": "28596059-2-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-4.jpg",
+          "id": "28596059-2-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-5.jpg",
+          "id": "28596059-2-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-6.jpg",
+          "id": "28596059-2-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-7.jpg",
+          "id": "28596059-2-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-8.jpg",
+          "id": "28596059-2-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28596059/2-9.jpg",
+          "id": "28596059-2-9",
+          "position": 9
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Amplio acceso al balcón de la vivienda.\nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado por Split. Servicio de portería.\nDomótica y trastero.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Amplio acceso al balcón de la vivienda.\nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado por Split. Servicio de portería.\nDomótica y trastero.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-6136D",
+      "address": {
+        "town": "Madrid",
+        "district": "Goya",
+        "latitude": 40.423405373,
+        "longitude": -3.672959668
+      },
+      "municipality": "Madrid",
+      "district": "Goya",
+      "latitude": 40.423405373,
+      "longitude": -3.672959668,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": true,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-03-25 18:46:25"
     },
     {
       "propertyId": "27669582",
