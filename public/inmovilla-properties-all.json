@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-26T16:03:36.514Z",
-  "total": 102,
-  "sale": 100,
+  "generatedAt": "2026-03-26T21:23:16.365Z",
+  "total": 103,
+  "sale": 101,
   "rent": 2,
   "properties": [
     {
@@ -6168,6 +6168,171 @@
         "storage": false
       },
       "_fechacambio": "2026-03-17 11:52:55"
+    },
+    {
+      "propertyId": "28616855",
+      "source": "inmovilla",
+      "price": 1500000,
+      "operation": "sale",
+      "size": 412,
+      "rooms": null,
+      "bathrooms": 5,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-1.jpg",
+          "id": "28616855-2-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-2.jpg",
+          "id": "28616855-2-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-3.jpg",
+          "id": "28616855-2-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-4.jpg",
+          "id": "28616855-2-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-5.jpg",
+          "id": "28616855-2-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-6.jpg",
+          "id": "28616855-2-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-7.jpg",
+          "id": "28616855-2-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-8.jpg",
+          "id": "28616855-2-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-9.jpg",
+          "id": "28616855-2-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-10.jpg",
+          "id": "28616855-2-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-11.jpg",
+          "id": "28616855-2-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-12.jpg",
+          "id": "28616855-2-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-13.jpg",
+          "id": "28616855-2-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-14.jpg",
+          "id": "28616855-2-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-15.jpg",
+          "id": "28616855-2-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-16.jpg",
+          "id": "28616855-2-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-17.jpg",
+          "id": "28616855-2-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-18.jpg",
+          "id": "28616855-2-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-19.jpg",
+          "id": "28616855-2-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-20.jpg",
+          "id": "28616855-2-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-21.jpg",
+          "id": "28616855-2-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-22.jpg",
+          "id": "28616855-2-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-23.jpg",
+          "id": "28616855-2-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-24.jpg",
+          "id": "28616855-2-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28616855/2-25.jpg",
+          "id": "28616855-2-25",
+          "position": 25
+        }
+      ],
+      "description": "Tecnología, diseño, ubicación y personalidad en Monte de la Villa, Villaviciosa de Odón. Así es este hogar, que podrás estrenar junto a tu familia.\nSobre una parcela de 525 m²,  podremos encontrar grandes ventanales, que dan luz durante todo el día y crean espacios perfectos durante la noche, ya que integran jardín privado, jardines exteriores, piscina y vistas. \nEn la planta principal nos encontramos con un amplio y elegante hall/recibidor, dormitorio de invitados, baño de cortesía. Más adelante entramos en un ampio salón  de 82 mts2con cocina de diseño de grandes y con acceso directo a un porche de 49 m² con vistas a la piscina.\nEn la planta superior encontramos una zona de estar muy luminosa con salida a una terraza de 32 m². Cuenta con cuatro dormitorios: suite principal con vestidor, una segunda suite y dos dormitorios adicionales que comparten un baño completo.\nEn la planta inferior se dejará un espacio libre, completamente acabado en donde se podrá contar o con gimnasio, o cine en casa o sala de juegos. Tiene además un baño completo, cuarto de instalaciones y un amplio trastero de 50 m².\nLa casa incorpora soluciones de última generación orientadas al confort y a la eficiencia energética:\nRevestimientos porcelánicos KERAMIKOS, firma italiana de referencia.\nPaneles solares y termo con apoyo solar para agua caliente sanitaria.\nPiscina privada 7 x 4 m con bomba de calor y cascada decorativa, apta para disfrutarla durante todo el año.\nCarpintería interior lacada en blanco, de líneas depuradas.\nSistema de suelo radiante y refrescante mediante aerotermia.\nVentanas de alta gama con rotura de puente térmico y aislamiento superior.\nUna vivienda que une arquitectura moderna, bienestar y eficiencia, en una zona en expansión, rodeada de naturaleza y con excelentes conexiones con Madrid.\nAl estar a punto de terminarse la obra de construcción podría haber diferencias entre los renders y la realidad.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Tecnología, diseño, ubicación y personalidad en Monte de la Villa, Villaviciosa de Odón. Así es este hogar, que podrás estrenar junto a tu familia.\nSobre una parcela de 525 m²,  podremos encontrar grandes ventanales, que dan luz durante todo el día y crean espacios perfectos durante la noche, ya que integran jardín privado, jardines exteriores, piscina y vistas. \nEn la planta principal nos encontramos con un amplio y elegante hall/recibidor, dormitorio de invitados, baño de cortesía. Más adelante entramos en un ampio salón  de 82 mts2con cocina de diseño de grandes y con acceso directo a un porche de 49 m² con vistas a la piscina.\nEn la planta superior encontramos una zona de estar muy luminosa con salida a una terraza de 32 m². Cuenta con cuatro dormitorios: suite principal con vestidor, una segunda suite y dos dormitorios adicionales que comparten un baño completo.\nEn la planta inferior se dejará un espacio libre, completamente acabado en donde se podrá contar o con gimnasio, o cine en casa o sala de juegos. Tiene además un baño completo, cuarto de instalaciones y un amplio trastero de 50 m².\nLa casa incorpora soluciones de última generación orientadas al confort y a la eficiencia energética:\nRevestimientos porcelánicos KERAMIKOS, firma italiana de referencia.\nPaneles solares y termo con apoyo solar para agua caliente sanitaria.\nPiscina privada 7 x 4 m con bomba de calor y cascada decorativa, apta para disfrutarla durante todo el año.\nCarpintería interior lacada en blanco, de líneas depuradas.\nSistema de suelo radiante y refrescante mediante aerotermia.\nVentanas de alta gama con rotura de puente térmico y aislamiento superior.\nUna vivienda que une arquitectura moderna, bienestar y eficiencia, en una zona en expansión, rodeada de naturaleza y con excelentes conexiones con Madrid.\nAl estar a punto de terminarse la obra de construcción podría haber diferencias entre los renders y la realidad."
+        }
+      ],
+      "propertyType": "house",
+      "reference": "ec-7001",
+      "address": {
+        "town": "Villaviciosa de Odon",
+        "district": "El Bosque",
+        "latitude": 40.370297104894,
+        "longitude": -3.9331424363358
+      },
+      "municipality": "Villaviciosa de Odon",
+      "district": "El Bosque",
+      "latitude": 40.370297104894,
+      "longitude": -3.9331424363358,
+      "features": {
+        "liftAvailable": false,
+        "terrace": true,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": true,
+        "storage": false
+      },
+      "_fechacambio": "2026-03-26 22:09:39"
     },
     {
       "propertyId": "28605669",
