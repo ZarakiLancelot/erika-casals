@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-26T21:23:16.365Z",
+  "generatedAt": "2026-03-27T18:51:28.171Z",
   "total": 103,
   "sale": 101,
   "rent": 2,
@@ -6332,7 +6332,7 @@
         "pool": true,
         "storage": false
       },
-      "_fechacambio": "2026-03-26 22:09:39"
+      "_fechacambio": "2026-03-27 18:34:03"
     },
     {
       "propertyId": "28605669",
@@ -10617,7 +10617,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-25 13:10:34"
+      "_fechacambio": "2026-03-27 18:33:36"
     },
     {
       "propertyId": "27669579",
