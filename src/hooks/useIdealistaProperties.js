@@ -76,23 +76,7 @@ export const useIdealistaProperties = () => {
 		setLoading(true);
 		setError(null);
 
-		// ── 1. Cargar JSON estático primero (instantáneo desde CDN) ──────────
-		const descriptionCache = new Map();
-		try {
-			const res = await fetch(STATIC_JSON);
-			if (res.ok) {
-				const data = await res.json();
-				const list = Array.isArray(data) ? data : (data.properties || []);
-				// Mostrar inmediatamente mientras llega la API
-				setProperties(list);
-				// Guardar descripciones en caché
-				for (const p of list) {
-					descriptionCache.set(p.propertyId, p.description || '');
-				}
-			}
-		} catch { /* sin JSON, continuar */ }
-
-		// ── 2. Fetch fresco desde la API (2 llamadas en paralelo) ────────────
+		// ── 1. Fetch en tiempo real desde la API (2 llamadas en paralelo) ────
 		try {
 			const [res1, res2] = await Promise.all([
 				fetch(`${API_BASE}?accion=paginacion&pagina=1&por_pagina=50`),
@@ -105,23 +89,32 @@ export const useIdealistaProperties = () => {
 			const items2 = (data2.data?.paginacion || []).filter(i => i.cod_ofer !== undefined);
 
 			const freshProperties = [...items1, ...items2]
-				.map(item => transformPaginationItem(
-					item,
-					descriptionCache.get(String(item.cod_ofer)) || ''
-				))
+				.map(item => transformPaginationItem(item, ''))
 				.filter(Boolean);
 
 			if (freshProperties.length > 0) {
 				setProperties(freshProperties);
+				setLoading(false);
+				return;
 			}
-		} catch {
-			// API caída — seguimos mostrando el JSON estático
-			if (descriptionCache.size === 0) {
-				setError('Error cargando propiedades');
+		} catch { /* API caída — usar fallback */ }
+
+		// ── 2. Fallback: JSON estático (última sincronización conocida) ───────
+		try {
+			const res = await fetch(STATIC_JSON);
+			if (res.ok) {
+				const data = await res.json();
+				const list = Array.isArray(data) ? data : (data.properties || []);
+				if (list.length > 0) {
+					setProperties(list);
+					setLoading(false);
+					return;
+				}
 			}
-		} finally {
-			setLoading(false);
-		}
+		} catch { /* sin JSON */ }
+
+		setError('Error cargando propiedades');
+		setLoading(false);
 	}, []);
 
 	const fetchProperties = useCallback(
@@ -131,18 +124,8 @@ export const useIdealistaProperties = () => {
 
 	const fetchProperty = useCallback(
 		async propertyId => {
-			if (properties.length > 0) {
-				const found = properties.find(p => p.propertyId === String(propertyId));
-				if (found) { setSelectedProperty(found); return found; }
-			}
-			// Fallback: buscar en JSON estático
-			try {
-				const res = await fetch(STATIC_JSON);
-				const data = await res.json();
-				const list = Array.isArray(data) ? data : (data.properties || []);
-				const found = list.find(p => p.propertyId === String(propertyId));
-				if (found) { setSelectedProperty(found); return found; }
-			} catch { /* ignorar */ }
+			const found = properties.find(p => p.propertyId === String(propertyId));
+			if (found) { setSelectedProperty(found); return found; }
 			return null;
 		},
 		[properties]

@@ -2,7 +2,7 @@ name: Update Inmovilla properties
 
 on:
   schedule:
-    - cron: '0 * * * *'  # cada hora
+    - cron: '0 6,12,18,0 * * *'  # 4 veces al día: 6am, 12pm, 6pm, 12am UTC
   workflow_dispatch:       # permite lanzarlo manualmente desde GitHub
 
 jobs:
