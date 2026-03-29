@@ -10,79 +10,61 @@ const PropertyDetailPage = () => {
 	const location = useLocation();
 	const [property, setProperty] = useState(location.state?.property || null);
 	const [loading, setLoading] = useState(!location.state?.property);
-	const [hasSearched, setHasSearched] = useState(!!location.state?.property);
 
-	const { fetchProperty } = useIdealistaProperties();
+	const { fetchProperty, fetchPropertyDescription } = useIdealistaProperties();
 
-	const loadContentfulProperty = useCallback(async propertyId => {
+	const loadContentfulProperty = useCallback(async id => {
 		try {
 			const { getProperty } = await import('../../services/contentful');
-			return await getProperty(propertyId);
+			return await getProperty(id);
 		} catch {
 			return null;
 		}
 	}, []);
 
-	// Resetear estado cuando cambia el propertyId
 	useEffect(() => {
 		setProperty(location.state?.property || null);
 		setLoading(!location.state?.property);
-		setHasSearched(!!location.state?.property);
 	}, [propertyId, location.state?.property]);
 
-	// Cargar la propiedad si no la tenemos en el state
 	useEffect(() => {
-		const findProperty = async () => {
-			if (!propertyId || hasSearched || property) return;
+		if (!propertyId) return;
 
-			setLoading(true);
+		const isContentfulId =
+			isNaN(propertyId) ||
+			propertyId.includes('-') ||
+			propertyId.includes('mock');
 
-			const isContentfulId =
-				isNaN(propertyId) ||
-				propertyId.includes('-') ||
-				propertyId.includes('mock');
-
-			if (isContentfulId) {
-				const contentfulProperty = await loadContentfulProperty(propertyId);
-				if (contentfulProperty) {
-					setProperty(contentfulProperty);
-					setHasSearched(true);
-					setLoading(false);
-					return;
-				}
-			}
-
-			// Buscar en el JSON estático (cache local)
-			const found = await fetchProperty(propertyId);
-			if (found) {
-				setProperty(found);
-				setHasSearched(true);
+		if (isContentfulId) {
+			loadContentfulProperty(propertyId).then(p => {
+				if (p) setProperty(p);
 				setLoading(false);
-				return;
-			}
+			});
+			return;
+		}
 
-			// Último recurso: Contentful por ID numérico
-			if (!isContentfulId) {
-				const contentfulProperty = await loadContentfulProperty(propertyId);
-				if (contentfulProperty) {
-					setProperty(contentfulProperty);
-					setHasSearched(true);
-					setLoading(false);
-					return;
-				}
-			}
-
-			setProperty(null);
-			setHasSearched(true);
+		// Siempre busca en la API en tiempo real (trae descripción actualizada).
+		// Si ya tenemos datos del state los mostramos mientras llega la ficha.
+		fetchProperty(propertyId).then(fresh => {
+			if (fresh) setProperty(fresh);
 			setLoading(false);
-		};
+		});
+	}, [propertyId]);
 
-		findProperty();
-	}, [propertyId, hasSearched, property, fetchProperty, loadContentfulProperty]);
+	// Fetch real-time description from ficha API (independent of properties list loading)
+	useEffect(() => {
+		const isContentfulId = !propertyId || isNaN(propertyId) || propertyId.includes('-') || propertyId.includes('mock');
+		if (isContentfulId) return;
+		fetchPropertyDescription(propertyId).then(description => {
+			if (description) {
+				setProperty(prev => prev ? { ...prev, description } : prev);
+			}
+		});
+	}, [propertyId, fetchPropertyDescription]);
 
 	const handleBack = () => navigate(-1);
 
-	if (loading || !hasSearched) {
+	if (loading) {
 		return (
 			<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontSize: '18px' }}>
 				Cargando propiedad...
@@ -90,7 +72,7 @@ const PropertyDetailPage = () => {
 		);
 	}
 
-	if (!property && hasSearched) {
+	if (!property) {
 		return (
 			<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', fontSize: '18px', gap: '20px' }}>
 				<h2>Propiedad no encontrada</h2>

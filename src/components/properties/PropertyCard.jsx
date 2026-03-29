@@ -196,15 +196,16 @@ const PropertyCard = ({
 	};
 
 	const getDescription = property => {
-		if (property.descriptions && property.descriptions.length > 0) {
-			// Buscar descripción en español primero
-			const esDesc = property.descriptions.find(desc => desc.language === 'es');
-			if (esDesc) return esDesc.text;
-
-			// Si no hay en español, tomar la primera disponible
-			return property.descriptions[0].text;
-		}
-		return 'Venta de locales en excelente zona. Las posibilidades son muchas dependiendo de las necesidades finales del cliente.';
+		const raw =
+			property.description ||
+			(property.descriptions?.find(d => d.language === 'es')?.text) ||
+			(property.descriptions?.[0]?.text) ||
+			(property.descriptions?.[0]?.comment) ||
+			'';
+		return raw
+			.replace(/<[^>]*>/g, '')
+			.replace(/~~/g, ' · ')
+			.trim();
 	};
 
 	return (

@@ -1271,22 +1271,18 @@ const PropertyDetail = ({ property, onBack, images }) => {
 
 		return equipment;
 	};
-	const getDescription = property => {
-		// Si viene de Contentful y tiene descripción, usarla
-		if (property.source === 'contentful' && property.description) {
-			return property.description;
-		}
-
-		// Para propiedades de Idealista, usar descriptions
-		if (property.descriptions && property.descriptions.length > 0) {
-			const esDesc = property.descriptions.find(desc => desc.language === 'es');
-			// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
-			if (esDesc) return esDesc.text || esDesc.comment;
-			return property.descriptions[0].text || property.descriptions[0].comment;
-		}
-
-		// Descripción por defecto
-		return `Venta de locales en excelente zona. Las posibilidades son muchas dependiendo de las necesidades finales del cliente. Actualmente un 60% de la superficie se destina. Con aproximadamente la mitad de locales de fachada Su distribución permite realizar locales distribuidos en una o dos plantas inferiores casatrasteras). Uno de los locales solo la fachada es acristalada y otros dos tienen amplias ventanas y puertas con acceso. Con ubicación, privilegiada a pocos metros del Ayuntamiento, centro comercial así como del metro línea 12) y fuente. Contactanos para más información.`;
+	const getDescriptionLines = property => {
+		const raw =
+			property.description ||
+			(property.descriptions?.find(d => d.language === 'es')?.text) ||
+			(property.descriptions?.[0]?.text) ||
+			(property.descriptions?.[0]?.comment) ||
+			'';
+		return raw
+			.replace(/<[^>]*>/g, '')  // eliminar etiquetas HTML
+			.split('~~')
+			.map(s => s.trim())
+			.filter(Boolean);
 	};
 	const getPropertyTitle = property => {
 		// Si viene de Contentful y tiene título, usarlo
@@ -1556,7 +1552,16 @@ const PropertyDetail = ({ property, onBack, images }) => {
 						</PropertyFeatures>
 						<DescriptionSection>
 							<h3>Descripción</h3>
-							<p>{getDescription(property)}</p>
+							{(() => {
+							const lines = getDescriptionLines(property);
+							if (lines.length === 0) return null;
+							if (lines.length === 1) return <p>{lines[0]}</p>;
+							return (
+								<ul style={{ paddingLeft: '1.2em', margin: 0 }}>
+									{lines.map((line, i) => <li key={i}>{line}</li>)}
+								</ul>
+							);
+						})()}
 						</DescriptionSection>{' '}
 						<CharacteristicsSection expanded={characteristicsExpanded}>
 							<h3

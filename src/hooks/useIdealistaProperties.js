@@ -122,6 +122,21 @@ export const useIdealistaProperties = () => {
 		[fetchAllProperties]
 	);
 
+	// Obtiene la descripción de una propiedad directamente desde el endpoint ficha.
+	// No depende de `properties`, siempre funciona aunque la lista no esté cargada.
+	const fetchPropertyDescription = useCallback(async propertyId => {
+		const id = String(propertyId);
+		try {
+			const res = await fetch(`${API_BASE}?accion=ficha&cod_ofer=${id}`);
+			if (!res.ok) return '';
+			const data = await res.json();
+			const descripciones = data.data?.descripciones?.[id];
+			return descripciones?.['1']?.descrip || '';
+		} catch {
+			return '';
+		}
+	}, []);
+
 	const fetchProperty = useCallback(
 		async propertyId => {
 			const found = properties.find(p => p.propertyId === String(propertyId));
@@ -202,6 +217,7 @@ export const useIdealistaProperties = () => {
 		fetchProperties,
 		fetchAllProperties,
 		fetchProperty,
+		fetchPropertyDescription,
 		fetchPropertyImages,
 		setSelectedProperty,
 		setFilter,
