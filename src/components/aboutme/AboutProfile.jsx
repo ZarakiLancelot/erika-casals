@@ -95,7 +95,7 @@ const AboutProfile = () => {
 
 					<StyledDescription>
 						<ProfileText>
-							Soy Erika Casals, representante inmobiliaria con más de 20 años de
+							Soy Erika Casals, asesora inmobiliaria con más de 20 años de
 							experiencia ayudando a personas a vender o encontrar su hogar
 							ideal.
 						</ProfileText>
