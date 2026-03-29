@@ -504,7 +504,7 @@ const Footer = () => {
 			{/* Sección superior con imagen de fondo */}
 			<StyledTopSection>
 				<StyledTopContent>
-					<StyledTitle>¿Listo para transformar tu espacio?</StyledTitle>
+					<StyledTitle>Vende y Compra tu propiedad con alguien que realmente te representa.</StyledTitle>
 					<StyledContactButton
 						as='a'
 						href='https://wa.me/34655981758'
@@ -523,8 +523,7 @@ const Footer = () => {
 			<StyledBottomSection>
 				<StyledLeftBottom>
 					<StyledDescription>
-						Descubre soluciones arquitectónicas inspiradas, adaptadas a tu
-						estilo y necesidades únicas.
+						Diseñamos estrategias personalizadas para tu proyecto de compra o de venta
 					</StyledDescription>
 					<StyledSocialIcons>
 						<StyledSocialIcon
@@ -606,6 +605,8 @@ const Footer = () => {
 						>
 							Wow Web Group
 						</a>
+						<br />
+						{'· Edwin Einsen Vásquez Velásquez'}
 						<br />
 						<a
 							href='#'

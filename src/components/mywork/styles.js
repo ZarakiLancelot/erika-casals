@@ -166,6 +166,7 @@ const StyledCardTitle = styled.h2`
 	}
 	@media (max-width: 900px) {
 		font-size: 1.6rem;
+		height: auto;
 	}
 `;
 
@@ -182,6 +183,7 @@ const StyledCardDescription = styled.p`
 
 	@media (max-width: 900px) {
 		font-size: 1.2rem;
+		height: auto;
 	}
 `;
 

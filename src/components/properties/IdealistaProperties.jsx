@@ -139,6 +139,10 @@ const Properties = () => {
 	const ITEMS_PER_PAGE = 5;
 
 	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}, [currentPage]);
+
+	useEffect(() => {
 		setFilter('sale');
 
 		const locationParam = searchParams.get('location');

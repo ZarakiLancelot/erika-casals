@@ -115,6 +115,10 @@ const PropertiesRent = () => {
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [currentPage, setCurrentPage] = useState(1);
 	const ITEMS_PER_PAGE = 12;
+
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}, [currentPage]);
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
 	const [availableDistricts, setAvailableDistricts] = useState([]);

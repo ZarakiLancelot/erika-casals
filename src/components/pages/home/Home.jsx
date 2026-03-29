@@ -30,7 +30,7 @@ const Home = () => {
 						</StyledFlexContainer>
 						<StyledFlexContainer>
 							<StyledTitle>
-								Vende tu propiedad con alguien que realmente te representa.
+								Vender es estrategia, comprar es emoción.
 							</StyledTitle>
 							<StyledDescription>
 								Soy Erika Casals, asesora inmobiliaria especializada en ventas
