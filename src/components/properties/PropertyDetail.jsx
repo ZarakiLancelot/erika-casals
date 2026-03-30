@@ -223,8 +223,8 @@ const LightboxOverlay = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	opacity: ${props => (props.show ? 1 : 0)};
-	visibility: ${props => (props.show ? 'visible' : 'hidden')};
+	opacity: ${props => (props.$show ? 1 : 0)};
+	visibility: ${props => (props.$show ? 'visible' : 'hidden')};
 	transition: all 0.3s ease;
 `;
 
@@ -1449,7 +1449,7 @@ const PropertyDetail = ({ property, onBack, images }) => {
 			<DetailContainer>
 				<BackButton onClick={onBack}>←</BackButton>
 				{/* Lightbox */}
-				<LightboxOverlay show={showLightbox} onClick={closeLightbox}>
+				<LightboxOverlay $show={showLightbox} onClick={closeLightbox}>
 					<LightboxContent onClick={e => e.stopPropagation()}>
 						<LightboxClose onClick={closeLightbox}>×</LightboxClose>
 						{allImages.length > 1 && (
