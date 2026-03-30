@@ -59,7 +59,9 @@ function transformPaginationItem(item, description = '') {
 			parkingAvailable: item.plaza_gara === 1 || item.parking === 1,
 			pool: item.piscina_com === 1 || item.piscina_prop === 1,
 			storage: item.trastero === 1,
-		}
+		},
+		createdAt: item.fecha || null,
+		updatedAt: item.fechaact || item.fechacambio || null,
 	};
 }
 

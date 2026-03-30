@@ -338,6 +338,33 @@ export const ResultsHeader = styled.div`
 	margin-bottom: 20px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(10px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+`;
+
+export const SortSelect = styled.select`
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	font-size: 14px;
+	background: white;
+	color: #333;
+	cursor: pointer;
+	min-width: 200px;
+
+	&:focus {
+		outline: none;
+		border-color: #2c5aa0;
+		box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+	}
+
+	@media (max-width: 480px) {
+		width: 100%;
+		min-width: unset;
+	}
 `;
 
 export const ResultsCount = styled.h2`
