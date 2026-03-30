@@ -48,7 +48,8 @@ import {
 	EmptyState,
 	PaginationContainer,
 	PaginationButton,
-	PaginationInfo
+	PaginationInfo,
+	SortSelect
 } from './styles';
 import Footer from '../footer/Footer';
 import ResponsiveNavbar from '../common/ResponsiveNavbar';
@@ -112,23 +113,23 @@ const Properties = () => {
 		maxPrice: '',
 		minArea: '',
 		maxArea: '',
-		features: '',
-		lowestPrice: false,
-		highestPrice: false
+		features: ''
 	});
-	const clearFilters = () => setLocalFilters({
-		location: '',
-		district: '',
-		municipality: '',
-		propertyType: '',
-		minPrice: '',
-		maxPrice: '',
-		minArea: '',
-		maxArea: '',
-		features: '',
-		lowestPrice: false,
-		highestPrice: false
-	});
+	const [sortOrder, setSortOrder] = useState('default');
+	const clearFilters = () => {
+		setLocalFilters({
+			location: '',
+			district: '',
+			municipality: '',
+			propertyType: '',
+			minPrice: '',
+			maxPrice: '',
+			minArea: '',
+			maxArea: '',
+			features: ''
+		});
+		setSortOrder('default');
+	};
 	const [loadedImages, setLoadedImages] = useState(new Set());
 	const [loadingImages, setLoadingImages] = useState(new Set());
 	const [availableLocations, setAvailableLocations] = useState([]);
@@ -157,10 +158,9 @@ const Properties = () => {
 			maxPrice: '',
 			minArea: '',
 			maxArea: '',
-			features: '',
-			lowestPrice: false,
-			highestPrice: false
+			features: ''
 		});
+		setSortOrder('default');
 		setLoadedImages(new Set());
 		setLoadingImages(new Set());
 	}, [setFilter, location.pathname, searchParams]);
@@ -759,28 +759,26 @@ const Properties = () => {
 		return true;
 	});
 
-	// Aplicar filtros de precio más bajo/alto después del filtrado inicial
-	let sortedFilteredProperties = [...filteredProperties];
+	// Ordenar según sortOrder
+	const getPrice = p => p.price || p.operation?.price || p.minPrice || 0;
+	const getDate = (p, field) => {
+		const val = field === 'updated' ? (p.updatedAt || p.createdAt) : (p.createdAt || p.updatedAt);
+		return val ? new Date(val).getTime() : 0;
+	};
+	const getCity = p => (p.municipality || p.address?.town || '').toLowerCase();
 
-	// Si se selecciona precio más bajo, ordenar por precio ascendente y tomar los primeros
-	if (localFilters.lowestPrice) {
-		sortedFilteredProperties = sortedFilteredProperties.sort((a, b) => {
-			// Soportar ambos formatos (API: operation.price, FTP: price directo)
-			const priceA = a.price || a.operation?.price || a.minPrice || 0;
-			const priceB = b.price || b.operation?.price || b.minPrice || 0;
-			return priceA - priceB;
-		});
-	}
-
-	// Si se selecciona precio más alto, ordenar por precio descendente y tomar los primeros
-	if (localFilters.highestPrice) {
-		sortedFilteredProperties = sortedFilteredProperties.sort((a, b) => {
-			// Soportar ambos formatos (API: operation.price, FTP: price directo)
-			const priceA = a.price || a.operation?.price || a.minPrice || 0;
-			const priceB = b.price || b.operation?.price || b.minPrice || 0;
-			return priceB - priceA;
-		});
-	}
+	const sortedFilteredProperties = [...filteredProperties].sort((a, b) => {
+		switch (sortOrder) {
+			case 'price_asc': return getPrice(a) - getPrice(b);
+			case 'price_desc': return getPrice(b) - getPrice(a);
+			case 'date_modified_desc': return getDate(b, 'updated') - getDate(a, 'updated');
+			case 'date_modified_asc': return getDate(a, 'updated') - getDate(b, 'updated');
+			case 'date_created_desc': return getDate(b, 'created') - getDate(a, 'created');
+			case 'date_created_asc': return getDate(a, 'created') - getDate(b, 'created');
+			case 'city_asc': return getCity(a).localeCompare(getCity(b), 'es');
+			default: return 0;
+		}
+	});
 
 	// Usar las propiedades filtradas y ordenadas
 	const finalFilteredProperties = sortedFilteredProperties;
@@ -959,13 +957,6 @@ const Properties = () => {
 				}
 			}
 
-			// Lógica para checkboxes de precio: solo uno puede estar activo
-			if (filterName === 'lowestPrice' && value) {
-				newFilters.highestPrice = false;
-			} else if (filterName === 'highestPrice' && value) {
-				newFilters.lowestPrice = false;
-			}
-
 			return newFilters;
 		});
 	};
@@ -1135,53 +1126,7 @@ const Properties = () => {
 												formatLabel={priceLabel}
 											/>
 										</PriceRangeGroup>
-										{/* Checkboxes para filtros de precio */}
-										<div
-											style={{
-												display: 'flex',
-												gap: '20px',
-												marginTop: '20px'
-											}}
-										>
-											<label
-												style={{
-													display: 'flex',
-													alignItems: 'center',
-													gap: '5px',
-													fontSize: '14px',
-													color: '#666'
-												}}
-											>
-												<input
-													type='checkbox'
-													checked={localFilters.lowestPrice}
-													onChange={e =>
-														handleFilterChange('lowestPrice', e.target.checked)
-													}
-													style={{ marginRight: '5px' }}
-												/>
-												Precio más bajo
-											</label>
-											<label
-												style={{
-													display: 'flex',
-													alignItems: 'center',
-													gap: '5px',
-													fontSize: '14px',
-													color: '#666'
-												}}
-											>
-												<input
-													type='checkbox'
-													checked={localFilters.highestPrice}
-													onChange={e =>
-														handleFilterChange('highestPrice', e.target.checked)
-													}
-													style={{ marginRight: '5px' }}
-												/>
-												Precio más alto
-											</label>
-										</div>
+
 									</FilterGroup>
 									<FilterGroup>
 										<FilterLabel>Superficie (m²)</FilterLabel>
@@ -1234,6 +1179,20 @@ const Properties = () => {
 														: 'resultados'
 											  } encontrados`}
 									</ResultsCount>
+									<SortSelect
+										value={sortOrder}
+										onChange={e => { setSortOrder(e.target.value); setCurrentPage(1); }}
+										aria-label='Ordenar propiedades'
+									>
+										<option value='default'>Ordenar por defecto</option>
+										<option value='price_asc'>Precio: menor a mayor</option>
+										<option value='price_desc'>Precio: mayor a menor</option>
+										<option value='date_modified_desc'>Modificación: más reciente</option>
+										<option value='date_modified_asc'>Modificación: más antigua</option>
+										<option value='date_created_desc'>Alta: más reciente</option>
+										<option value='date_created_asc'>Alta: más antigua</option>
+										<option value='city_asc'>Ciudad: A → Z</option>
+									</SortSelect>
 								</ResultsHeader>
 								{(loading || contentfulLoading) && (
 									<LoadingSpinner>Cargando propiedades...</LoadingSpinner>

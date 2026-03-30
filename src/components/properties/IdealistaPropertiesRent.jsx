@@ -44,7 +44,8 @@ import {
 	EmptyState,
 	PaginationContainer,
 	PaginationButton,
-	PaginationInfo
+	PaginationInfo,
+	SortSelect
 } from './styles';
 import Footer from '../footer/Footer';
 import ResponsiveNavbar from '../common/ResponsiveNavbar';
@@ -117,6 +118,7 @@ const PropertiesRent = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const ITEMS_PER_PAGE = 12;
 	const [descriptionCache, setDescriptionCache] = useState({});
+	const [sortOrder, setSortOrder] = useState('default');
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -666,9 +668,30 @@ const PropertiesRent = () => {
 		});
 	};
 
+	// Ordenar según sortOrder
+	const getPrice = p => p.price || p.operation?.price || p.minPrice || 0;
+	const getDate = (p, field) => {
+		const val = field === 'updated' ? (p.updatedAt || p.createdAt) : (p.createdAt || p.updatedAt);
+		return val ? new Date(val).getTime() : 0;
+	};
+	const getCity = p => (p.municipality || p.address?.town || '').toLowerCase();
+
+	const sortedFilteredProperties = [...filteredProperties].sort((a, b) => {
+		switch (sortOrder) {
+			case 'price_asc': return getPrice(a) - getPrice(b);
+			case 'price_desc': return getPrice(b) - getPrice(a);
+			case 'date_modified_desc': return getDate(b, 'updated') - getDate(a, 'updated');
+			case 'date_modified_asc': return getDate(a, 'updated') - getDate(b, 'updated');
+			case 'date_created_desc': return getDate(b, 'created') - getDate(a, 'created');
+			case 'date_created_asc': return getDate(a, 'created') - getDate(b, 'created');
+			case 'city_asc': return getCity(a).localeCompare(getCity(b), 'es');
+			default: return 0;
+		}
+	});
+
 	// Paginación
-	const totalPages = Math.ceil(filteredProperties.length / ITEMS_PER_PAGE);
-	const paginatedProperties = filteredProperties.slice(
+	const totalPages = Math.ceil(sortedFilteredProperties.length / ITEMS_PER_PAGE);
+	const paginatedProperties = sortedFilteredProperties.slice(
 		(currentPage - 1) * ITEMS_PER_PAGE,
 		currentPage * ITEMS_PER_PAGE
 	);
@@ -927,13 +950,27 @@ const PropertiesRent = () => {
 											? 'Cargando propiedades...'
 											: error
 											? 'Error al cargar propiedades'
-											: `${filteredProperties.length} ${
-													filteredProperties.length === 1
+											: `${sortedFilteredProperties.length} ${
+													sortedFilteredProperties.length === 1
 														? 'resultado'
 														: 'resultados'
 													} encontrados`}
 									</ResultsCount>
-								</ResultsHeader>{' '}
+									<SortSelect
+										value={sortOrder}
+										onChange={e => { setSortOrder(e.target.value); setCurrentPage(1); }}
+										aria-label='Ordenar propiedades'
+									>
+										<option value='default'>Ordenar por defecto</option>
+										<option value='price_asc'>Precio: menor a mayor</option>
+										<option value='price_desc'>Precio: mayor a menor</option>
+										<option value='date_modified_desc'>Modificación: más reciente</option>
+										<option value='date_modified_asc'>Modificación: más antigua</option>
+										<option value='date_created_desc'>Alta: más reciente</option>
+										<option value='date_created_asc'>Alta: más antigua</option>
+										<option value='city_asc'>Ciudad: A → Z</option>
+									</SortSelect>
+								</ResultsHeader>
 								{(loading || contentfulLoading) && (
 									<LoadingSpinner>Cargando propiedades...</LoadingSpinner>
 								)}
@@ -944,7 +981,7 @@ const PropertiesRent = () => {
 									!contentfulLoading &&
 									!error &&
 									!contentfulError &&
-									filteredProperties.length === 0 && (
+									sortedFilteredProperties.length === 0 && (
 										<EmptyState>
 											<h3>No se encontraron propiedades</h3>
 											<p>Intenta ajustar los filtros o verifica la conexión</p>
@@ -954,7 +991,7 @@ const PropertiesRent = () => {
 									!contentfulLoading &&
 									!error &&
 									!contentfulError &&
-									filteredProperties.length > 0 && (
+									sortedFilteredProperties.length > 0 && (
 										<>
 											<PropertiesGrid>
 												{paginatedProperties.map((property, index) => {
