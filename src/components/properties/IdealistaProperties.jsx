@@ -85,7 +85,8 @@ const Properties = () => {
 		formatPrice,
 		getPropertyMainImage,
 		getPropertyTitle,
-		fetchPropertyImages
+		fetchPropertyImages,
+		fetchPropertyDescription
 	} = useIdealistaProperties();
 	// Hook para obtener propiedades de Contentful
 	const {
@@ -137,6 +138,7 @@ const Properties = () => {
 	const [newDev, setNewDev] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const ITEMS_PER_PAGE = 5;
+	const [descriptionCache, setDescriptionCache] = useState({});
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -790,6 +792,25 @@ const Properties = () => {
 		currentPage * ITEMS_PER_PAGE
 	);
 
+	// Fetcha descripciones de la página actual desde accion=ficha (solo Inmovilla, solo las no cacheadas)
+	useEffect(() => {
+		const inmoPropiedades = paginatedProperties.filter(
+			p => p.source === 'inmovilla' && p.propertyId && !descriptionCache[p.propertyId]
+		);
+		if (inmoPropiedades.length === 0) return;
+		Promise.all(
+			inmoPropiedades.map(p =>
+				fetchPropertyDescription(p.propertyId).then(desc => ({ id: p.propertyId, desc }))
+			)
+		).then(results => {
+			const newEntries = {};
+			results.forEach(({ id, desc }) => { if (desc) newEntries[id] = desc; });
+			if (Object.keys(newEntries).length > 0) {
+				setDescriptionCache(prev => ({ ...prev, ...newEntries }));
+			}
+		});
+	}, [paginatedProperties, fetchPropertyDescription]);
+
 	const renderPagination = () => {
 		const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 			.filter(
@@ -1325,41 +1346,14 @@ const Properties = () => {
 																	</PropertyPrice>{' '}
 																	<PropertyDescription>
 																		{(() => {
-																			if (property.source === 'contentful') {
-																				const description =
-																					property.description ||
-																					'Propiedad exclusiva con características únicas.';
-																				return description.length > 150
-																					? description.substring(0, 150) +
-																							'...'
-																					: description;
-																			}
-
-																			if (
-																				property.descriptions &&
-																				property.descriptions.length > 0
-																			) {
-																				const esDesc =
-																					property.descriptions.find(
-																						desc => desc.language === 'es'
-																					);
-																				// Soportar tanto 'text' (Contentful) como 'comment' (Idealista FTP)
-																				const description = esDesc
-																					? esDesc.text || esDesc.comment
-																					: property.descriptions[0].text ||
-																						property.descriptions[0].comment;
-																				// Limitar a 150 caracteres
-																				return description &&
-																					description.length > 150
-																					? description.substring(0, 150) +
-																							'...'
-																					: description ||
-																							'Excelente propiedad en una ubicación privilegiada.';
-																			}
-																			return (
+																			const raw = (
+																				descriptionCache[property.propertyId] ||
 																				property.description ||
-																				'Excelente propiedad en una ubicación privilegiada con acabados de calidad.'
-																			);
+																				property.descriptions?.find(d => d.language === 'es')?.text ||
+																				property.descriptions?.[0]?.text ||
+																				''
+																			).replace(/<[^>]*>/g, '').replace(/~~/g, ' · ').trim();
+																			return raw.length > 150 ? raw.substring(0, 150) + '...' : raw;
 																		})()}
 																	</PropertyDescription>{' '}
 																	<PropertyBottom>
