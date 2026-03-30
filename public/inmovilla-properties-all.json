@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-29T18:37:23.059Z",
+  "generatedAt": "2026-03-30T02:06:30.371Z",
   "total": 103,
   "sale": 101,
   "rent": 2,
@@ -202,7 +202,7 @@
     {
       "propertyId": "28476654",
       "source": "inmovilla",
-      "price": 369000,
+      "price": 368000,
       "operation": "sale",
       "size": null,
       "rooms": null,
@@ -312,7 +312,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-29 20:23:09"
+      "_fechacambio": "2026-03-29 20:33:57"
     },
     {
       "propertyId": "27670033",
@@ -8012,7 +8012,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-26 17:00:00"
+      "_fechacambio": "2026-03-29 20:26:38"
     },
     {
       "propertyId": "28335255",
