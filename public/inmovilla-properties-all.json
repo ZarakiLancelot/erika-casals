@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T02:06:30.371Z",
+  "generatedAt": "2026-04-01T18:56:46.408Z",
   "total": 103,
   "sale": 101,
   "rent": 2,
@@ -5295,6 +5295,291 @@
       "_fechacambio": "2026-03-18 15:56:30"
     },
     {
+      "propertyId": "28676947",
+      "source": "inmovilla",
+      "price": 1350000,
+      "operation": "sale",
+      "size": 216,
+      "rooms": null,
+      "bathrooms": 3,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-1.jpg",
+          "id": "28676947-4-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-2.jpg",
+          "id": "28676947-4-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-3.jpg",
+          "id": "28676947-4-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-4.jpg",
+          "id": "28676947-4-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-5.jpg",
+          "id": "28676947-4-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-6.jpg",
+          "id": "28676947-4-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-7.jpg",
+          "id": "28676947-4-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-8.jpg",
+          "id": "28676947-4-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-9.jpg",
+          "id": "28676947-4-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-10.jpg",
+          "id": "28676947-4-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-11.jpg",
+          "id": "28676947-4-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-12.jpg",
+          "id": "28676947-4-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-13.jpg",
+          "id": "28676947-4-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-14.jpg",
+          "id": "28676947-4-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-15.jpg",
+          "id": "28676947-4-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-16.jpg",
+          "id": "28676947-4-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-17.jpg",
+          "id": "28676947-4-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-18.jpg",
+          "id": "28676947-4-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-19.jpg",
+          "id": "28676947-4-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-20.jpg",
+          "id": "28676947-4-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-21.jpg",
+          "id": "28676947-4-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-22.jpg",
+          "id": "28676947-4-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-23.jpg",
+          "id": "28676947-4-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-24.jpg",
+          "id": "28676947-4-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-25.jpg",
+          "id": "28676947-4-25",
+          "position": 25
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-26.jpg",
+          "id": "28676947-4-26",
+          "position": 26
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-27.jpg",
+          "id": "28676947-4-27",
+          "position": 27
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-28.jpg",
+          "id": "28676947-4-28",
+          "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-29.jpg",
+          "id": "28676947-4-29",
+          "position": 29
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-30.jpg",
+          "id": "28676947-4-30",
+          "position": 30
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-31.jpg",
+          "id": "28676947-4-31",
+          "position": 31
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-32.jpg",
+          "id": "28676947-4-32",
+          "position": 32
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-33.jpg",
+          "id": "28676947-4-33",
+          "position": 33
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-34.jpg",
+          "id": "28676947-4-34",
+          "position": 34
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-35.jpg",
+          "id": "28676947-4-35",
+          "position": 35
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-36.jpg",
+          "id": "28676947-4-36",
+          "position": 36
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-37.jpg",
+          "id": "28676947-4-37",
+          "position": 37
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-38.jpg",
+          "id": "28676947-4-38",
+          "position": 38
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-39.jpg",
+          "id": "28676947-4-39",
+          "position": 39
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-40.jpg",
+          "id": "28676947-4-40",
+          "position": 40
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-41.jpg",
+          "id": "28676947-4-41",
+          "position": 41
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-42.jpg",
+          "id": "28676947-4-42",
+          "position": 42
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-43.jpg",
+          "id": "28676947-4-43",
+          "position": 43
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-44.jpg",
+          "id": "28676947-4-44",
+          "position": 44
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-45.jpg",
+          "id": "28676947-4-45",
+          "position": 45
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-46.jpg",
+          "id": "28676947-4-46",
+          "position": 46
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-47.jpg",
+          "id": "28676947-4-47",
+          "position": 47
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-48.jpg",
+          "id": "28676947-4-48",
+          "position": 48
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28676947/4-49.jpg",
+          "id": "28676947-4-49",
+          "position": 49
+        }
+      ],
+      "description": "Elegante piso Levitt de 2001 en Aravaca, con suelos de mármol y excelentes zonas comunes\nEn una de las áreas residenciales más cotizadas de Aravaca, se sitúa este elegante piso Levitt construido en 2001, una vivienda que destaca por su amplitud, su cuidada distribución y la luminosidad que aporta su condición de totalmente exterior. La propiedad dispone de tres amplios dormitorios, tres baños, cocina independiente con zona de laundry y un magnífico salón-comedor, concebido como un espacio amplio y acogedor para disfrutar con total comodidad.\nEntre sus calidades destacan los suelos de mármol, que aportan distinción y carácter a la vivienda, así como las persianas eléctricas, la chimenea y el aire acondicionado, elementos que refuerzan el confort y la funcionalidad en el día a día.\nPlaza de Garaje doble y trastero. \nUbicada en una finca de gran calidad, la urbanización cuenta con piscina, amplias zonas verdes y portero físico, ofreciendo un entorno privado, cuidado y especialmente agradable para vivir.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Elegante piso Levitt de 2001 en Aravaca, con suelos de mármol y excelentes zonas comunes\nEn una de las áreas residenciales más cotizadas de Aravaca, se sitúa este elegante piso Levitt construido en 2001, una vivienda que destaca por su amplitud, su cuidada distribución y la luminosidad que aporta su condición de totalmente exterior. La propiedad dispone de tres amplios dormitorios, tres baños, cocina independiente con zona de laundry y un magnífico salón-comedor, concebido como un espacio amplio y acogedor para disfrutar con total comodidad.\nEntre sus calidades destacan los suelos de mármol, que aportan distinción y carácter a la vivienda, así como las persianas eléctricas, la chimenea y el aire acondicionado, elementos que refuerzan el confort y la funcionalidad en el día a día.\nPlaza de Garaje doble y trastero. \nUbicada en una finca de gran calidad, la urbanización cuenta con piscina, amplias zonas verdes y portero físico, ofreciendo un entorno privado, cuidado y especialmente agradable para vivir."
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-7002",
+      "address": {
+        "town": "Madrid",
+        "district": "Aravaca",
+        "latitude": 40.461682427,
+        "longitude": -3.783497364
+      },
+      "municipality": "Madrid",
+      "district": "Aravaca",
+      "latitude": 40.461682427,
+      "longitude": -3.783497364,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": true,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-01 17:35:43"
+    },
+    {
       "propertyId": "27669574",
       "source": "inmovilla",
       "price": 1379000,
@@ -7193,81 +7478,6 @@
         "storage": false
       },
       "_fechacambio": "2026-01-23 15:27:38"
-    },
-    {
-      "propertyId": "28522699",
-      "source": "inmovilla",
-      "price": 1650000,
-      "operation": "sale",
-      "size": 119,
-      "rooms": 1,
-      "bathrooms": 2,
-      "images": [
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-1.jpg",
-          "id": "28522699-5-1",
-          "position": 1
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-2.jpg",
-          "id": "28522699-5-2",
-          "position": 2
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-3.jpg",
-          "id": "28522699-5-3",
-          "position": 3
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-4.jpg",
-          "id": "28522699-5-4",
-          "position": 4
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-5.jpg",
-          "id": "28522699-5-5",
-          "position": 5
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-6.jpg",
-          "id": "28522699-5-6",
-          "position": 6
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28522699/5-7.jpg",
-          "id": "28522699-5-7",
-          "position": 7
-        }
-      ],
-      "description": "Vivienda  exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con amplio salón/comedor y cocina integrada totalmente equipada. Amplios ventanales a la calle. \n Cuenta con tres dormitorios, Principal Doble con vestidor y baño en suite. Segundo dormitorio doble y tercer dormitorio cama individual. Segundo baño completo.\nVentanas de aluminio oscilobatientes con rotura de puente térmico. Calefacción y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda  exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con amplio salón/comedor y cocina integrada totalmente equipada. Amplios ventanales a la calle. \n Cuenta con tres dormitorios, Principal Doble con vestidor y baño en suite. Segundo dormitorio doble y tercer dormitorio cama individual. Segundo baño completo.\nVentanas de aluminio oscilobatientes con rotura de puente térmico. Calefacción y aire acondicionado. \nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
-        }
-      ],
-      "propertyType": "flat",
-      "reference": "ec-1060D",
-      "address": {
-        "town": "Madrid",
-        "district": "Ibiza",
-        "latitude": 40.422842412,
-        "longitude": -3.674432906
-      },
-      "municipality": "Madrid",
-      "district": "Ibiza",
-      "latitude": 40.422842412,
-      "longitude": -3.674432906,
-      "features": {
-        "liftAvailable": true,
-        "terrace": false,
-        "conditionedAir": true,
-        "balcony": false,
-        "parkingAvailable": false,
-        "pool": false,
-        "storage": false
-      },
-      "_fechacambio": "2026-03-18 17:28:33"
     },
     {
       "propertyId": "27669608",
