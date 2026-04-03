@@ -34,7 +34,7 @@ function transformPaginationItem(item, description = '') {
 		price: isRent ? item.precioalq : item.precioinmo,
 		operation: isRent ? 'rent' : 'sale',
 		size: item.m_cons || item.m_uties || null,
-		rooms: item.habitaciones || null,
+		rooms: item.total_hab || item.habitaciones || null,
 		bathrooms: item.banyos || null,
 		images,
 		description,
