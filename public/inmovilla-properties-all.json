@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-08T13:13:56.719Z",
-  "total": 102,
-  "sale": 100,
+  "generatedAt": "2026-04-08T19:11:11.532Z",
+  "total": 104,
+  "sale": 102,
   "rent": 2,
   "properties": [
     {
@@ -3118,6 +3118,221 @@
         "storage": false
       },
       "_fechacambio": "2026-02-19 10:13:22"
+    },
+    {
+      "propertyId": "28735692",
+      "source": "inmovilla",
+      "price": 1050000,
+      "operation": "sale",
+      "size": 130,
+      "rooms": null,
+      "bathrooms": 2,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-1.jpg",
+          "id": "28735692-3-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-2.jpg",
+          "id": "28735692-3-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-3.jpg",
+          "id": "28735692-3-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-4.jpg",
+          "id": "28735692-3-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-5.jpg",
+          "id": "28735692-3-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-6.jpg",
+          "id": "28735692-3-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-7.jpg",
+          "id": "28735692-3-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-8.jpg",
+          "id": "28735692-3-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-9.jpg",
+          "id": "28735692-3-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-10.jpg",
+          "id": "28735692-3-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-11.jpg",
+          "id": "28735692-3-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-12.jpg",
+          "id": "28735692-3-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-13.jpg",
+          "id": "28735692-3-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-14.jpg",
+          "id": "28735692-3-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-15.jpg",
+          "id": "28735692-3-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-16.jpg",
+          "id": "28735692-3-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-17.jpg",
+          "id": "28735692-3-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-18.jpg",
+          "id": "28735692-3-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-19.jpg",
+          "id": "28735692-3-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-20.jpg",
+          "id": "28735692-3-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-21.jpg",
+          "id": "28735692-3-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-22.jpg",
+          "id": "28735692-3-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-23.jpg",
+          "id": "28735692-3-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-24.jpg",
+          "id": "28735692-3-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-25.jpg",
+          "id": "28735692-3-25",
+          "position": 25
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-26.jpg",
+          "id": "28735692-3-26",
+          "position": 26
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-27.jpg",
+          "id": "28735692-3-27",
+          "position": 27
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-28.jpg",
+          "id": "28735692-3-28",
+          "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-29.jpg",
+          "id": "28735692-3-29",
+          "position": 29
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-30.jpg",
+          "id": "28735692-3-30",
+          "position": 30
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-31.jpg",
+          "id": "28735692-3-31",
+          "position": 31
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-32.jpg",
+          "id": "28735692-3-32",
+          "position": 32
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-33.jpg",
+          "id": "28735692-3-33",
+          "position": 33
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-34.jpg",
+          "id": "28735692-3-34",
+          "position": 34
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28735692/3-35.jpg",
+          "id": "28735692-3-35",
+          "position": 35
+        }
+      ],
+      "description": "Vivienda en venta en Malasaña, distrito Centro.\nLa propiedad cuenta con un amplio salón con salida a una terraza acristalada, que aporta luminosidad y un espacio adicional muy agradable. La cocina, totalmente equipada, está abierta a un espacioso comedor, creando un ambiente cómodo y funcional para el día a día.\nDispone de tres dormitorios, uno de ellos en suite y con salida a una pequeña terraza. Se entrega totalmente amueblada y equipada, con materiales y acabados de alta calidad.\nLa vivienda cuenta con aire acondicionado y calefacción por gas natural. Además, incluye trastero.\nLa finca dispone de ascensor.\nUbicada en una zona muy céntrica, la vivienda está perfectamente comunicada y rodeada de todos los servicios, así como de una amplia oferta de ocio y restauración.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda en venta en Malasaña, distrito Centro.\nLa propiedad cuenta con un amplio salón con salida a una terraza acristalada, que aporta luminosidad y un espacio adicional muy agradable. La cocina, totalmente equipada, está abierta a un espacioso comedor, creando un ambiente cómodo y funcional para el día a día.\nDispone de tres dormitorios, uno de ellos en suite y con salida a una pequeña terraza. Se entrega totalmente amueblada y equipada, con materiales y acabados de alta calidad.\nLa vivienda cuenta con aire acondicionado y calefacción por gas natural. Además, incluye trastero.\nLa finca dispone de ascensor.\nUbicada en una zona muy céntrica, la vivienda está perfectamente comunicada y rodeada de todos los servicios, así como de una amplia oferta de ocio y restauración."
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "7003W",
+      "address": {
+        "town": "Madrid",
+        "district": "Centro",
+        "latitude": 40.42163409,
+        "longitude": -3.701786606
+      },
+      "municipality": "Madrid",
+      "district": "Centro",
+      "latitude": 40.42163409,
+      "longitude": -3.701786606,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-08 15:41:44"
     },
     {
       "propertyId": "27669607",
@@ -6833,6 +7048,261 @@
         "storage": false
       },
       "_fechacambio": "2026-03-26 11:47:01"
+    },
+    {
+      "propertyId": "28736317",
+      "source": "inmovilla",
+      "price": 1530000,
+      "operation": "sale",
+      "size": 157,
+      "rooms": null,
+      "bathrooms": 3,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-1.jpg",
+          "id": "28736317-2-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-2.jpg",
+          "id": "28736317-2-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-3.jpg",
+          "id": "28736317-2-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-4.jpg",
+          "id": "28736317-2-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-5.jpg",
+          "id": "28736317-2-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-6.jpg",
+          "id": "28736317-2-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-7.jpg",
+          "id": "28736317-2-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-8.jpg",
+          "id": "28736317-2-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-9.jpg",
+          "id": "28736317-2-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-10.jpg",
+          "id": "28736317-2-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-11.jpg",
+          "id": "28736317-2-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-12.jpg",
+          "id": "28736317-2-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-13.jpg",
+          "id": "28736317-2-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-14.jpg",
+          "id": "28736317-2-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-15.jpg",
+          "id": "28736317-2-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-16.jpg",
+          "id": "28736317-2-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-17.jpg",
+          "id": "28736317-2-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-18.jpg",
+          "id": "28736317-2-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-19.jpg",
+          "id": "28736317-2-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-20.jpg",
+          "id": "28736317-2-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-21.jpg",
+          "id": "28736317-2-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-22.jpg",
+          "id": "28736317-2-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-23.jpg",
+          "id": "28736317-2-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-24.jpg",
+          "id": "28736317-2-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-25.jpg",
+          "id": "28736317-2-25",
+          "position": 25
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-26.jpg",
+          "id": "28736317-2-26",
+          "position": 26
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-27.jpg",
+          "id": "28736317-2-27",
+          "position": 27
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-28.jpg",
+          "id": "28736317-2-28",
+          "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-29.jpg",
+          "id": "28736317-2-29",
+          "position": 29
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-30.jpg",
+          "id": "28736317-2-30",
+          "position": 30
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-31.jpg",
+          "id": "28736317-2-31",
+          "position": 31
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-32.jpg",
+          "id": "28736317-2-32",
+          "position": 32
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-33.jpg",
+          "id": "28736317-2-33",
+          "position": 33
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-34.jpg",
+          "id": "28736317-2-34",
+          "position": 34
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-35.jpg",
+          "id": "28736317-2-35",
+          "position": 35
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-36.jpg",
+          "id": "28736317-2-36",
+          "position": 36
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-37.jpg",
+          "id": "28736317-2-37",
+          "position": 37
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-38.jpg",
+          "id": "28736317-2-38",
+          "position": 38
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-39.jpg",
+          "id": "28736317-2-39",
+          "position": 39
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-40.jpg",
+          "id": "28736317-2-40",
+          "position": 40
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-41.jpg",
+          "id": "28736317-2-41",
+          "position": 41
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-42.jpg",
+          "id": "28736317-2-42",
+          "position": 42
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28736317/2-43.jpg",
+          "id": "28736317-2-43",
+          "position": 43
+        }
+      ],
+      "description": "Descubre esta exclusiva vivienda reformada de lujo ubicada en el corazón del prestigioso barrio de Trafalgar, dentro del distrito Chamberí.\nEste elegante inmueble exterior destaca por su amplio salón-comedor que ofrece una luminosidad excepcional y un ambiente acogedor.  La cocina abierta está completamente equipada con electrodomésticos modernos que facilitan la vida cotidiana.\nEl dormitorio principal es un verdadero oasis privado; se encuentra en una zona aislada y cuenta con baño en suite y un espacioso vestidor diseñado para satisfacer todas sus necesidades. Además, hay otro dormitorio también dotado de baño propio y vestidor, lo cual proporciona comodidad a los huéspedes o miembros adicionales de la familia. Un tercer dormitorio equipado con cama doble garantiza espacio suficiente para descansar cómodamente.\nLa propiedad incluye otro baño que hace a la vez la función como baño visitas, así como una conveniente zona destinada a lavandería. El aire acondicionado instalado por ductos asegura temperaturas agradables durante todo el año mientras que la calefacción funciona mediante gas natural asegurando eficiencia energética.\nEntre las comodidades ofrecidas por la finca se encuentran portero físico y ascensor, proporcionando seguridad and confort diario a los residentes. Situación inmejorable cerca supermercados locales excepcionales , restaurantes reconocidos además acceso cercano al metro e autobuses hace este lugar ideal tanto si busca inversión inmobiliaria como residencia personal.",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Descubre esta exclusiva vivienda reformada de lujo ubicada en el corazón del prestigioso barrio de Trafalgar, dentro del distrito Chamberí.\nEste elegante inmueble exterior destaca por su amplio salón-comedor que ofrece una luminosidad excepcional y un ambiente acogedor.  La cocina abierta está completamente equipada con electrodomésticos modernos que facilitan la vida cotidiana.\nEl dormitorio principal es un verdadero oasis privado; se encuentra en una zona aislada y cuenta con baño en suite y un espacioso vestidor diseñado para satisfacer todas sus necesidades. Además, hay otro dormitorio también dotado de baño propio y vestidor, lo cual proporciona comodidad a los huéspedes o miembros adicionales de la familia. Un tercer dormitorio equipado con cama doble garantiza espacio suficiente para descansar cómodamente.\nLa propiedad incluye otro baño que hace a la vez la función como baño visitas, así como una conveniente zona destinada a lavandería. El aire acondicionado instalado por ductos asegura temperaturas agradables durante todo el año mientras que la calefacción funciona mediante gas natural asegurando eficiencia energética.\nEntre las comodidades ofrecidas por la finca se encuentran portero físico y ascensor, proporcionando seguridad and confort diario a los residentes. Situación inmejorable cerca supermercados locales excepcionales , restaurantes reconocidos además acceso cercano al metro e autobuses hace este lugar ideal tanto si busca inversión inmobiliaria como residencia personal."
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "7004W",
+      "address": {
+        "town": "Madrid",
+        "district": "Chamberí",
+        "latitude": 40.431176492,
+        "longitude": -3.703493405
+      },
+      "municipality": "Madrid",
+      "district": "Chamberí",
+      "latitude": 40.431176492,
+      "longitude": -3.703493405,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-08 16:27:00"
     },
     {
       "propertyId": "27669603",
