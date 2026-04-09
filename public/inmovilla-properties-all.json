@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-08T19:11:11.532Z",
-  "total": 104,
-  "sale": 102,
+  "generatedAt": "2026-04-09T13:18:56.829Z",
+  "total": 105,
+  "sale": 103,
   "rent": 2,
   "properties": [
     {
@@ -763,6 +763,111 @@
         "storage": false
       },
       "_fechacambio": "2026-01-27 16:15:22"
+    },
+    {
+      "propertyId": "28743880",
+      "source": "inmovilla",
+      "price": 589000,
+      "operation": "sale",
+      "size": 44,
+      "rooms": null,
+      "bathrooms": 1,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-1.jpg",
+          "id": "28743880-3-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-2.jpg",
+          "id": "28743880-3-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-3.jpg",
+          "id": "28743880-3-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-4.jpg",
+          "id": "28743880-3-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-5.jpg",
+          "id": "28743880-3-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-6.jpg",
+          "id": "28743880-3-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-7.jpg",
+          "id": "28743880-3-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-8.jpg",
+          "id": "28743880-3-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-9.jpg",
+          "id": "28743880-3-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-10.jpg",
+          "id": "28743880-3-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-11.jpg",
+          "id": "28743880-3-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-12.jpg",
+          "id": "28743880-3-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28743880/3-13.jpg",
+          "id": "28743880-3-13",
+          "position": 13
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. \nCalefacción individual y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Goya. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con dos dormitorios y un baño. \nCalefacción individual y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-7006B",
+      "address": {
+        "town": "Madrid",
+        "district": "Goya",
+        "latitude": 40.425169743,
+        "longitude": -3.672438646
+      },
+      "municipality": "Madrid",
+      "district": "Goya",
+      "latitude": 40.425169743,
+      "longitude": -3.672438646,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-09 11:20:00"
     },
     {
       "propertyId": "27669667",
@@ -10950,6 +11055,166 @@
       "_fechacambio": "2026-03-13 16:57:45"
     },
     {
+      "propertyId": "28593394",
+      "source": "inmovilla",
+      "price": 2189000,
+      "operation": "sale",
+      "size": 153,
+      "rooms": 1,
+      "bathrooms": 3,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-1.jpg",
+          "id": "28593394-4-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-2.jpg",
+          "id": "28593394-4-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-3.jpg",
+          "id": "28593394-4-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-4.jpg",
+          "id": "28593394-4-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-5.jpg",
+          "id": "28593394-4-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-6.jpg",
+          "id": "28593394-4-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-7.jpg",
+          "id": "28593394-4-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-8.jpg",
+          "id": "28593394-4-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-9.jpg",
+          "id": "28593394-4-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-10.jpg",
+          "id": "28593394-4-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-11.jpg",
+          "id": "28593394-4-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-12.jpg",
+          "id": "28593394-4-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-13.jpg",
+          "id": "28593394-4-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-14.jpg",
+          "id": "28593394-4-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-15.jpg",
+          "id": "28593394-4-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-16.jpg",
+          "id": "28593394-4-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-17.jpg",
+          "id": "28593394-4-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-18.jpg",
+          "id": "28593394-4-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-19.jpg",
+          "id": "28593394-4-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-20.jpg",
+          "id": "28593394-4-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-21.jpg",
+          "id": "28593394-4-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-22.jpg",
+          "id": "28593394-4-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-23.jpg",
+          "id": "28593394-4-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28593394/4-24.jpg",
+          "id": "28593394-4-24",
+          "position": 24
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Amplio acceso al balcón de la vivienda.\nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado por ductos. Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Amplio acceso al balcón de la vivienda.\nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado por ductos. Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-6121D",
+      "address": {
+        "town": "Madrid",
+        "district": "Lista",
+        "latitude": 40.434800875,
+        "longitude": -3.676543946
+      },
+      "municipality": "Madrid",
+      "district": "Lista",
+      "latitude": 40.434800875,
+      "longitude": -3.676543946,
+      "features": {
+        "liftAvailable": false,
+        "terrace": false,
+        "conditionedAir": false,
+        "balcony": true,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-09 11:38:13"
+    },
+    {
       "propertyId": "28176621",
       "source": "inmovilla",
       "price": 2199000,
@@ -11243,86 +11508,6 @@
         "storage": false
       },
       "_fechacambio": "2026-01-23 14:02:13"
-    },
-    {
-      "propertyId": "28593394",
-      "source": "inmovilla",
-      "price": 2200000,
-      "operation": "sale",
-      "size": 153,
-      "rooms": 1,
-      "bathrooms": 3,
-      "images": [
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-1.jpg",
-          "id": "28593394-2-1",
-          "position": 1
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-2.jpg",
-          "id": "28593394-2-2",
-          "position": 2
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-3.jpg",
-          "id": "28593394-2-3",
-          "position": 3
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-4.jpg",
-          "id": "28593394-2-4",
-          "position": 4
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-5.jpg",
-          "id": "28593394-2-5",
-          "position": 5
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-6.jpg",
-          "id": "28593394-2-6",
-          "position": 6
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-7.jpg",
-          "id": "28593394-2-7",
-          "position": 7
-        },
-        {
-          "url": "https://fotos15.apinmo.com/13731/28593394/2-8.jpg",
-          "id": "28593394-2-8",
-          "position": 8
-        }
-      ],
-      "description": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Amplio acceso al balcón de la vivienda.\nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado por ductos. Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
-      "descriptions": [
-        {
-          "language": "es",
-          "text": "Vivienda exterior ubicada en el Distrito Salamanca, zona Lista. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. Amplio balcón\nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. Amplio acceso al balcón de la vivienda.\nCuenta con tres dormitorios y tres baños, dos ellos en suite. \nCalefacción central y aire acondicionado por ductos. Servicio de portería.\nLa propiedad destaca por su altura y su espectacular espacio exterior, un elemento poco habitual en la zona.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
-        }
-      ],
-      "propertyType": "flat",
-      "reference": "ec-6121D",
-      "address": {
-        "town": "Madrid",
-        "district": "Lista",
-        "latitude": 40.434800875,
-        "longitude": -3.676543946
-      },
-      "municipality": "Madrid",
-      "district": "Lista",
-      "latitude": 40.434800875,
-      "longitude": -3.676543946,
-      "features": {
-        "liftAvailable": false,
-        "terrace": false,
-        "conditionedAir": false,
-        "balcony": true,
-        "parkingAvailable": false,
-        "pool": false,
-        "storage": false
-      },
-      "_fechacambio": "2026-03-27 18:33:36"
     },
     {
       "propertyId": "27669579",
