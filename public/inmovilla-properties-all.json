@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-10T18:45:55.792Z",
-  "total": 105,
-  "sale": 103,
+  "generatedAt": "2026-04-13T19:10:05.321Z",
+  "total": 106,
+  "sale": 104,
   "rent": 2,
   "properties": [
     {
@@ -200,7 +200,7 @@
       "_fechacambio": "2026-01-16 13:50:58"
     },
     {
-      "propertyId": "28605246",
+      "propertyId": "28767152",
       "source": "inmovilla",
       "price": 248000,
       "operation": "sale",
@@ -209,144 +209,149 @@
       "bathrooms": 2,
       "images": [
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-1.jpg",
-          "id": "28605246-2-1",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-1.jpg",
+          "id": "28767152-10-1",
           "position": 1
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-2.jpg",
-          "id": "28605246-2-2",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-2.jpg",
+          "id": "28767152-10-2",
           "position": 2
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-3.jpg",
-          "id": "28605246-2-3",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-3.jpg",
+          "id": "28767152-10-3",
           "position": 3
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-4.jpg",
-          "id": "28605246-2-4",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-4.jpg",
+          "id": "28767152-10-4",
           "position": 4
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-5.jpg",
-          "id": "28605246-2-5",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-5.jpg",
+          "id": "28767152-10-5",
           "position": 5
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-6.jpg",
-          "id": "28605246-2-6",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-6.jpg",
+          "id": "28767152-10-6",
           "position": 6
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-7.jpg",
-          "id": "28605246-2-7",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-7.jpg",
+          "id": "28767152-10-7",
           "position": 7
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-8.jpg",
-          "id": "28605246-2-8",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-8.jpg",
+          "id": "28767152-10-8",
           "position": 8
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-9.jpg",
-          "id": "28605246-2-9",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-9.jpg",
+          "id": "28767152-10-9",
           "position": 9
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-10.jpg",
-          "id": "28605246-2-10",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-10.jpg",
+          "id": "28767152-10-10",
           "position": 10
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-11.jpg",
-          "id": "28605246-2-11",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-11.jpg",
+          "id": "28767152-10-11",
           "position": 11
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-12.jpg",
-          "id": "28605246-2-12",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-12.jpg",
+          "id": "28767152-10-12",
           "position": 12
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-13.jpg",
-          "id": "28605246-2-13",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-13.jpg",
+          "id": "28767152-10-13",
           "position": 13
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-14.jpg",
-          "id": "28605246-2-14",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-14.jpg",
+          "id": "28767152-10-14",
           "position": 14
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-15.jpg",
-          "id": "28605246-2-15",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-15.jpg",
+          "id": "28767152-10-15",
           "position": 15
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-16.jpg",
-          "id": "28605246-2-16",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-16.jpg",
+          "id": "28767152-10-16",
           "position": 16
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-17.jpg",
-          "id": "28605246-2-17",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-17.jpg",
+          "id": "28767152-10-17",
           "position": 17
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-18.jpg",
-          "id": "28605246-2-18",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-18.jpg",
+          "id": "28767152-10-18",
           "position": 18
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-19.jpg",
-          "id": "28605246-2-19",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-19.jpg",
+          "id": "28767152-10-19",
           "position": 19
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-20.jpg",
-          "id": "28605246-2-20",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-20.jpg",
+          "id": "28767152-10-20",
           "position": 20
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-21.jpg",
-          "id": "28605246-2-21",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-21.jpg",
+          "id": "28767152-10-21",
           "position": 21
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-22.jpg",
-          "id": "28605246-2-22",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-22.jpg",
+          "id": "28767152-10-22",
           "position": 22
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-23.jpg",
-          "id": "28605246-2-23",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-23.jpg",
+          "id": "28767152-10-23",
           "position": 23
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-24.jpg",
-          "id": "28605246-2-24",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-24.jpg",
+          "id": "28767152-10-24",
           "position": 24
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-25.jpg",
-          "id": "28605246-2-25",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-25.jpg",
+          "id": "28767152-10-25",
           "position": 25
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-26.jpg",
-          "id": "28605246-2-26",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-26.jpg",
+          "id": "28767152-10-26",
           "position": 26
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-27.jpg",
-          "id": "28605246-2-27",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-27.jpg",
+          "id": "28767152-10-27",
           "position": 27
         },
         {
-          "url": "https://fotos15.apinmo.com/13731/28605246/2-28.jpg",
-          "id": "28605246-2-28",
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-28.jpg",
+          "id": "28767152-10-28",
           "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28767152/10-29.jpg",
+          "id": "28767152-10-29",
+          "position": 29
         }
       ],
       "description": "Vivir en Yepes es sinónimo de tranquilidad, historia, buena gastronomía y tradiciones.\nSituada en la provincia de Toledo, esta vivienda, con maravillosas calidades y excelente estado de conservación, se encuentra emplazada en una ubicación privilegiada.\nLa vivienda cuenta con 153 mts2 distribuidos de la siguiente forma:\nEn la planta inferior nos encontramos con amplio vestíbulo que da acceso a un gran y luminoso salón/comedor. Al otro lado, nos encontramos con una maravillosa cocina dividida en 2 zonas, una de pantry ( o mesón para comer) y lavadero, y la otra con luna moderna cocina, en colores claros y completamente equipada.\nA continuación nos encontramos con un dormitorio (en la actualidad utilizado como oficina) y un aseo. Cuenta además con excelente terraza con barbacoa.\nEn la parte superior nos encontramos con 3 amplios dormitorios, baño completo y terraza.\nAire acondicionado por splits. Puerta principal acorazada. Vivienda con doble acceso, uno por calle principal y otro por callejón privado. \nNo dudes en contactarme para poder visitarla.",
@@ -377,7 +382,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-04-07 15:02:44"
+      "_fechacambio": "2026-04-13 16:55:23"
     },
     {
       "propertyId": "28476654",
@@ -2752,7 +2757,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-03-05 18:16:19"
+      "_fechacambio": "2026-04-13 19:59:18"
     },
     {
       "propertyId": "27669583",
@@ -6405,6 +6410,196 @@
       "_fechacambio": "2026-03-16 08:15:43"
     },
     {
+      "propertyId": "28764957",
+      "source": "inmovilla",
+      "price": 1459000,
+      "operation": "sale",
+      "size": 133,
+      "rooms": 1,
+      "bathrooms": 3,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-1.jpg",
+          "id": "28764957-2-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-2.jpg",
+          "id": "28764957-2-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-3.jpg",
+          "id": "28764957-2-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-4.jpg",
+          "id": "28764957-2-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-5.jpg",
+          "id": "28764957-2-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-6.jpg",
+          "id": "28764957-2-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-7.jpg",
+          "id": "28764957-2-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-8.jpg",
+          "id": "28764957-2-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-9.jpg",
+          "id": "28764957-2-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-10.jpg",
+          "id": "28764957-2-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-11.jpg",
+          "id": "28764957-2-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-12.jpg",
+          "id": "28764957-2-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-13.jpg",
+          "id": "28764957-2-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-14.jpg",
+          "id": "28764957-2-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-15.jpg",
+          "id": "28764957-2-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-16.jpg",
+          "id": "28764957-2-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-17.jpg",
+          "id": "28764957-2-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-18.jpg",
+          "id": "28764957-2-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-19.jpg",
+          "id": "28764957-2-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-20.jpg",
+          "id": "28764957-2-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-21.jpg",
+          "id": "28764957-2-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-22.jpg",
+          "id": "28764957-2-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-23.jpg",
+          "id": "28764957-2-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-24.jpg",
+          "id": "28764957-2-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-25.jpg",
+          "id": "28764957-2-25",
+          "position": 25
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-26.jpg",
+          "id": "28764957-2-26",
+          "position": 26
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-27.jpg",
+          "id": "28764957-2-27",
+          "position": 27
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-28.jpg",
+          "id": "28764957-2-28",
+          "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-29.jpg",
+          "id": "28764957-2-29",
+          "position": 29
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28764957/2-30.jpg",
+          "id": "28764957-2-30",
+          "position": 30
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Chamberí, zona Universidad. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres  baños.  Dos de ellos en suite.\nCalefacción individual y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Chamberí, zona Universidad. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres  baños.  Dos de ellos en suite.\nCalefacción individual y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-7007B",
+      "address": {
+        "town": "Madrid",
+        "district": "Chamberí",
+        "latitude": 40.428526724,
+        "longitude": -3.703062214
+      },
+      "municipality": "Madrid",
+      "district": "Chamberí",
+      "latitude": 40.428526724,
+      "longitude": -3.703062214,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-13 16:08:15"
+    },
+    {
       "propertyId": "27669588",
       "source": "inmovilla",
       "price": 1460000,
@@ -6899,11 +7094,11 @@
           "position": 28
         }
       ],
-      "description": "Tecnología, diseño, ubicación y personalidad en Monte de la Villa, Villaviciosa de Odón. Así es este hogar, que podrás estrenar junto a tu familia.\nSobre una parcela de 525 m²,  podremos encontrar grandes ventanales, que dan luz durante todo el día y crean espacios perfectos durante la noche, ya que integran jardín privado, jardines exteriores, piscina y vistas. \nEn la planta principal nos encontramos con un amplio y elegante hall/recibidor, dormitorio de invitados, baño de cortesía. Más adelante entramos en un ampio salón  de 82 mts2con cocina de diseño de grandes y con acceso directo a un porche de 49 m² con vistas a la piscina.\nEn la planta superior encontramos una zona de estar muy luminosa con salida a una terraza de 32 m². Cuenta con cuatro dormitorios: suite principal con vestidor, una segunda suite y dos dormitorios adicionales que comparten un baño completo.\nEn la planta inferior se dejará un espacio libre, completamente acabado en donde se podrá contar o con gimnasio, o cine en casa o sala de juegos. Tiene además un baño completo, cuarto de instalaciones y un amplio trastero de 50 m².\nLa casa incorpora soluciones de última generación orientadas al confort y a la eficiencia energética:\nRevestimientos porcelánicos KERAMIKOS, firma italiana de referencia.\nPaneles solares y termo con apoyo solar para agua caliente sanitaria.\nPiscina privada 7 x 4 m con bomba de calor y cascada decorativa, apta para disfrutarla durante todo el año.\nCarpintería interior lacada en blanco, de líneas depuradas.\nSistema de suelo radiante y refrescante mediante aerotermia.\nVentanas de alta gama con rotura de puente térmico y aislamiento superior.\nUna vivienda que une arquitectura moderna, bienestar y eficiencia, en una zona en expansión, rodeada de naturaleza y con excelentes conexiones con Madrid.\nAl estar a punto de terminarse la obra de construcción podría haber diferencias entre los renders y la realidad.",
+      "description": "Tecnología, diseño, ubicación y personalidad en Monte de la Villa, Villaviciosa de Odón. Así es este hogar, que podrás estrenar junto a tu familia.\nSobre una parcela de 525 m²,  podremos encontrar grandes ventanales, que dan luz durante todo el día y crean espacios perfectos durante la noche, ya que integran jardín privado, jardines exteriores, piscina y vistas. \nEn la planta principal nos encontramos con un amplio y elegante hall/recibidor, dormitorio de invitados, baño de cortesía. Más adelante entramos en un amplio salón de 82 mts2, con cocina de diseño y con acceso directo a un porche de 49 m² con vistas a la piscina.\nEn la planta superior encontramos una zona de estar muy luminosa con salida a una terraza de 32 m². Cuenta con cuatro dormitorios: suite principal con vestidor, una segunda suite y dos dormitorios adicionales que comparten un baño completo.\nEn la planta inferior se dejará un espacio libre, completamente acabado en donde se podrá contar o con gimnasio, o cine en casa o sala de juegos. Tiene además un baño completo, cuarto de instalaciones y un amplio trastero de 50 m².\nLa casa incorpora soluciones de última generación orientadas al confort y a la eficiencia energética:\nRevestimientos porcelánicos KERAMIKOS, firma italiana de referencia.\nPaneles solares y termo con apoyo solar para agua caliente sanitaria.\nPiscina privada 7 x 4 m con bomba de calor y cascada decorativa, apta para disfrutarla durante todo el año.\nCarpintería interior lacada en blanco, de líneas depuradas.\nSistema de suelo radiante y refrescante mediante aerotermia.\nVentanas de alta gama con rotura de puente térmico y aislamiento superior.\nUna vivienda que une arquitectura moderna, bienestar y eficiencia, en una zona en expansión, rodeada de naturaleza y con excelentes conexiones con Madrid.\nAl estar a punto de terminarse la obra de construcción podría haber diferencias entre los renders y la realidad.",
       "descriptions": [
         {
           "language": "es",
-          "text": "Tecnología, diseño, ubicación y personalidad en Monte de la Villa, Villaviciosa de Odón. Así es este hogar, que podrás estrenar junto a tu familia.\nSobre una parcela de 525 m²,  podremos encontrar grandes ventanales, que dan luz durante todo el día y crean espacios perfectos durante la noche, ya que integran jardín privado, jardines exteriores, piscina y vistas. \nEn la planta principal nos encontramos con un amplio y elegante hall/recibidor, dormitorio de invitados, baño de cortesía. Más adelante entramos en un ampio salón  de 82 mts2con cocina de diseño de grandes y con acceso directo a un porche de 49 m² con vistas a la piscina.\nEn la planta superior encontramos una zona de estar muy luminosa con salida a una terraza de 32 m². Cuenta con cuatro dormitorios: suite principal con vestidor, una segunda suite y dos dormitorios adicionales que comparten un baño completo.\nEn la planta inferior se dejará un espacio libre, completamente acabado en donde se podrá contar o con gimnasio, o cine en casa o sala de juegos. Tiene además un baño completo, cuarto de instalaciones y un amplio trastero de 50 m².\nLa casa incorpora soluciones de última generación orientadas al confort y a la eficiencia energética:\nRevestimientos porcelánicos KERAMIKOS, firma italiana de referencia.\nPaneles solares y termo con apoyo solar para agua caliente sanitaria.\nPiscina privada 7 x 4 m con bomba de calor y cascada decorativa, apta para disfrutarla durante todo el año.\nCarpintería interior lacada en blanco, de líneas depuradas.\nSistema de suelo radiante y refrescante mediante aerotermia.\nVentanas de alta gama con rotura de puente térmico y aislamiento superior.\nUna vivienda que une arquitectura moderna, bienestar y eficiencia, en una zona en expansión, rodeada de naturaleza y con excelentes conexiones con Madrid.\nAl estar a punto de terminarse la obra de construcción podría haber diferencias entre los renders y la realidad."
+          "text": "Tecnología, diseño, ubicación y personalidad en Monte de la Villa, Villaviciosa de Odón. Así es este hogar, que podrás estrenar junto a tu familia.\nSobre una parcela de 525 m²,  podremos encontrar grandes ventanales, que dan luz durante todo el día y crean espacios perfectos durante la noche, ya que integran jardín privado, jardines exteriores, piscina y vistas. \nEn la planta principal nos encontramos con un amplio y elegante hall/recibidor, dormitorio de invitados, baño de cortesía. Más adelante entramos en un amplio salón de 82 mts2, con cocina de diseño y con acceso directo a un porche de 49 m² con vistas a la piscina.\nEn la planta superior encontramos una zona de estar muy luminosa con salida a una terraza de 32 m². Cuenta con cuatro dormitorios: suite principal con vestidor, una segunda suite y dos dormitorios adicionales que comparten un baño completo.\nEn la planta inferior se dejará un espacio libre, completamente acabado en donde se podrá contar o con gimnasio, o cine en casa o sala de juegos. Tiene además un baño completo, cuarto de instalaciones y un amplio trastero de 50 m².\nLa casa incorpora soluciones de última generación orientadas al confort y a la eficiencia energética:\nRevestimientos porcelánicos KERAMIKOS, firma italiana de referencia.\nPaneles solares y termo con apoyo solar para agua caliente sanitaria.\nPiscina privada 7 x 4 m con bomba de calor y cascada decorativa, apta para disfrutarla durante todo el año.\nCarpintería interior lacada en blanco, de líneas depuradas.\nSistema de suelo radiante y refrescante mediante aerotermia.\nVentanas de alta gama con rotura de puente térmico y aislamiento superior.\nUna vivienda que une arquitectura moderna, bienestar y eficiencia, en una zona en expansión, rodeada de naturaleza y con excelentes conexiones con Madrid.\nAl estar a punto de terminarse la obra de construcción podría haber diferencias entre los renders y la realidad."
         }
       ],
       "propertyType": "house",
@@ -6927,7 +7122,7 @@
         "pool": true,
         "storage": false
       },
-      "_fechacambio": "2026-04-08 10:42:32"
+      "_fechacambio": "2026-04-13 17:09:46"
     },
     {
       "propertyId": "28605669",
