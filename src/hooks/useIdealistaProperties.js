@@ -68,7 +68,7 @@ function transformPaginationItem(item, description = '') {
 // ─── Hook principal ───────────────────────────────────────────────────────────
 export const useIdealistaProperties = () => {
 	const [properties, setProperties] = useState([]);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [selectedProperty, setSelectedProperty] = useState(null);
 	const [propertyImages, setPropertyImages] = useState({});
