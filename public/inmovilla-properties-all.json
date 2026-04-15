@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-15T13:17:29.985Z",
-  "total": 107,
-  "sale": 105,
+  "generatedAt": "2026-04-15T19:10:45.219Z",
+  "total": 109,
+  "sale": 107,
   "rent": 2,
   "properties": [
     {
@@ -5552,7 +5552,7 @@
         }
       ],
       "propertyType": "flat",
-      "reference": "ec-7007W",
+      "reference": "ec-7005W",
       "address": {
         "town": "Madrid",
         "district": "Trafalgar",
@@ -5572,7 +5572,7 @@
         "pool": false,
         "storage": false
       },
-      "_fechacambio": "2026-04-15 13:49:24"
+      "_fechacambio": "2026-04-15 16:57:49"
     },
     {
       "propertyId": "27669577",
@@ -6067,7 +6067,7 @@
         "pool": true,
         "storage": false
       },
-      "_fechacambio": "2026-04-15 09:16:28"
+      "_fechacambio": "2026-04-15 16:42:37"
     },
     {
       "propertyId": "27669574",
@@ -7938,6 +7938,266 @@
         "storage": false
       },
       "_fechacambio": "2026-01-16 13:50:58"
+    },
+    {
+      "propertyId": "28785620",
+      "source": "inmovilla",
+      "price": 1549000,
+      "operation": "sale",
+      "size": 133,
+      "rooms": null,
+      "bathrooms": 3,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-1.jpg",
+          "id": "28785620-9-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-2.jpg",
+          "id": "28785620-9-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-3.jpg",
+          "id": "28785620-9-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-4.jpg",
+          "id": "28785620-9-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-5.jpg",
+          "id": "28785620-9-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-6.jpg",
+          "id": "28785620-9-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-7.jpg",
+          "id": "28785620-9-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-8.jpg",
+          "id": "28785620-9-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-9.jpg",
+          "id": "28785620-9-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-10.jpg",
+          "id": "28785620-9-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-11.jpg",
+          "id": "28785620-9-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-12.jpg",
+          "id": "28785620-9-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-13.jpg",
+          "id": "28785620-9-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-14.jpg",
+          "id": "28785620-9-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-15.jpg",
+          "id": "28785620-9-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-16.jpg",
+          "id": "28785620-9-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-17.jpg",
+          "id": "28785620-9-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-18.jpg",
+          "id": "28785620-9-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-19.jpg",
+          "id": "28785620-9-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-20.jpg",
+          "id": "28785620-9-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-21.jpg",
+          "id": "28785620-9-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-22.jpg",
+          "id": "28785620-9-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-23.jpg",
+          "id": "28785620-9-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-24.jpg",
+          "id": "28785620-9-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-25.jpg",
+          "id": "28785620-9-25",
+          "position": 25
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-26.jpg",
+          "id": "28785620-9-26",
+          "position": 26
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-27.jpg",
+          "id": "28785620-9-27",
+          "position": 27
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-28.jpg",
+          "id": "28785620-9-28",
+          "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-29.jpg",
+          "id": "28785620-9-29",
+          "position": 29
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-30.jpg",
+          "id": "28785620-9-30",
+          "position": 30
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-31.jpg",
+          "id": "28785620-9-31",
+          "position": 31
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-32.jpg",
+          "id": "28785620-9-32",
+          "position": 32
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-33.jpg",
+          "id": "28785620-9-33",
+          "position": 33
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-34.jpg",
+          "id": "28785620-9-34",
+          "position": 34
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-35.jpg",
+          "id": "28785620-9-35",
+          "position": 35
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-36.jpg",
+          "id": "28785620-9-36",
+          "position": 36
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-37.jpg",
+          "id": "28785620-9-37",
+          "position": 37
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-38.jpg",
+          "id": "28785620-9-38",
+          "position": 38
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-39.jpg",
+          "id": "28785620-9-39",
+          "position": 39
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-40.jpg",
+          "id": "28785620-9-40",
+          "position": 40
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-41.jpg",
+          "id": "28785620-9-41",
+          "position": 41
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-42.jpg",
+          "id": "28785620-9-42",
+          "position": 42
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-43.jpg",
+          "id": "28785620-9-43",
+          "position": 43
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28785620/9-44.jpg",
+          "id": "28785620-9-44",
+          "position": 44
+        }
+      ],
+      "description": "Vivienda exterior ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños.  Dos de ellos en suite.\nCalefacción central y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor, cocina integrada y totalmente equipada con electrodomésticos de alta gama. \nCuenta con tres dormitorios y tres baños.  Dos de ellos en suite.\nCalefacción central y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-7008B",
+      "address": {
+        "town": "Madrid",
+        "district": "Ibiza",
+        "latitude": 40.418668116,
+        "longitude": -3.674468838
+      },
+      "municipality": "Madrid",
+      "district": "Ibiza",
+      "latitude": 40.418668116,
+      "longitude": -3.674468838,
+      "features": {
+        "liftAvailable": true,
+        "terrace": false,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-15 16:48:59"
     },
     {
       "propertyId": "28049391",
@@ -12968,6 +13228,331 @@
         "storage": false
       },
       "_fechacambio": "2026-01-23 14:00:09"
+    },
+    {
+      "propertyId": "28786065",
+      "source": "inmovilla",
+      "price": 2400000,
+      "operation": "sale",
+      "size": 174,
+      "rooms": null,
+      "bathrooms": 4,
+      "images": [
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-1.jpg",
+          "id": "28786065-4-1",
+          "position": 1
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-2.jpg",
+          "id": "28786065-4-2",
+          "position": 2
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-3.jpg",
+          "id": "28786065-4-3",
+          "position": 3
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-4.jpg",
+          "id": "28786065-4-4",
+          "position": 4
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-5.jpg",
+          "id": "28786065-4-5",
+          "position": 5
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-6.jpg",
+          "id": "28786065-4-6",
+          "position": 6
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-7.jpg",
+          "id": "28786065-4-7",
+          "position": 7
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-8.jpg",
+          "id": "28786065-4-8",
+          "position": 8
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-9.jpg",
+          "id": "28786065-4-9",
+          "position": 9
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-10.jpg",
+          "id": "28786065-4-10",
+          "position": 10
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-11.jpg",
+          "id": "28786065-4-11",
+          "position": 11
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-12.jpg",
+          "id": "28786065-4-12",
+          "position": 12
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-13.jpg",
+          "id": "28786065-4-13",
+          "position": 13
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-14.jpg",
+          "id": "28786065-4-14",
+          "position": 14
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-15.jpg",
+          "id": "28786065-4-15",
+          "position": 15
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-16.jpg",
+          "id": "28786065-4-16",
+          "position": 16
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-17.jpg",
+          "id": "28786065-4-17",
+          "position": 17
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-18.jpg",
+          "id": "28786065-4-18",
+          "position": 18
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-19.jpg",
+          "id": "28786065-4-19",
+          "position": 19
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-20.jpg",
+          "id": "28786065-4-20",
+          "position": 20
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-21.jpg",
+          "id": "28786065-4-21",
+          "position": 21
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-22.jpg",
+          "id": "28786065-4-22",
+          "position": 22
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-23.jpg",
+          "id": "28786065-4-23",
+          "position": 23
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-24.jpg",
+          "id": "28786065-4-24",
+          "position": 24
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-25.jpg",
+          "id": "28786065-4-25",
+          "position": 25
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-26.jpg",
+          "id": "28786065-4-26",
+          "position": 26
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-27.jpg",
+          "id": "28786065-4-27",
+          "position": 27
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-28.jpg",
+          "id": "28786065-4-28",
+          "position": 28
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-29.jpg",
+          "id": "28786065-4-29",
+          "position": 29
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-30.jpg",
+          "id": "28786065-4-30",
+          "position": 30
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-31.jpg",
+          "id": "28786065-4-31",
+          "position": 31
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-32.jpg",
+          "id": "28786065-4-32",
+          "position": 32
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-33.jpg",
+          "id": "28786065-4-33",
+          "position": 33
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-34.jpg",
+          "id": "28786065-4-34",
+          "position": 34
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-35.jpg",
+          "id": "28786065-4-35",
+          "position": 35
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-36.jpg",
+          "id": "28786065-4-36",
+          "position": 36
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-37.jpg",
+          "id": "28786065-4-37",
+          "position": 37
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-38.jpg",
+          "id": "28786065-4-38",
+          "position": 38
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-39.jpg",
+          "id": "28786065-4-39",
+          "position": 39
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-40.jpg",
+          "id": "28786065-4-40",
+          "position": 40
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-41.jpg",
+          "id": "28786065-4-41",
+          "position": 41
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-42.jpg",
+          "id": "28786065-4-42",
+          "position": 42
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-43.jpg",
+          "id": "28786065-4-43",
+          "position": 43
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-44.jpg",
+          "id": "28786065-4-44",
+          "position": 44
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-45.jpg",
+          "id": "28786065-4-45",
+          "position": 45
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-46.jpg",
+          "id": "28786065-4-46",
+          "position": 46
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-47.jpg",
+          "id": "28786065-4-47",
+          "position": 47
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-48.jpg",
+          "id": "28786065-4-48",
+          "position": 48
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-49.jpg",
+          "id": "28786065-4-49",
+          "position": 49
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-50.jpg",
+          "id": "28786065-4-50",
+          "position": 50
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-51.jpg",
+          "id": "28786065-4-51",
+          "position": 51
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-52.jpg",
+          "id": "28786065-4-52",
+          "position": 52
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-53.jpg",
+          "id": "28786065-4-53",
+          "position": 53
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-54.jpg",
+          "id": "28786065-4-54",
+          "position": 54
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-55.jpg",
+          "id": "28786065-4-55",
+          "position": 55
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-56.jpg",
+          "id": "28786065-4-56",
+          "position": 56
+        },
+        {
+          "url": "https://fotos15.apinmo.com/13731/28786065/4-57.jpg",
+          "id": "28786065-4-57",
+          "position": 57
+        }
+      ],
+      "description": "Vivienda exterior con terraza ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor con acceso a la terraza exterior, cocina independiente y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y cuatro baños.  Tres de ellos en suite y aseo de cortesía.\nAmplia terraza de 9m².\nCalefacción central y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~",
+      "descriptions": [
+        {
+          "language": "es",
+          "text": "Vivienda exterior con terraza ubicada en el Distrito Retiro, zona Ibiza. \nEste inmueble se vende completamente reformado y equipado. Diseño y confort en cada detalle. \nLa vivienda cuenta con salón/comedor con acceso a la terraza exterior, cocina independiente y totalmente equipada con electrodomésticos de alta gama. \nCuenta con cuatro dormitorios y cuatro baños.  Tres de ellos en suite y aseo de cortesía.\nAmplia terraza de 9m².\nCalefacción central y aire acondicionado por Split. \nLa propiedad cuenta con servicio de portería.\nUbicado en zona residencial con excelente comercio, la mejor restauración, colegios y zonas verdes. ~"
+        }
+      ],
+      "propertyType": "flat",
+      "reference": "ec-6130B",
+      "address": {
+        "town": "Madrid",
+        "district": "Ibiza",
+        "latitude": 40.422265715,
+        "longitude": -3.673570523
+      },
+      "municipality": "Madrid",
+      "district": "Ibiza",
+      "latitude": 40.422265715,
+      "longitude": -3.673570523,
+      "features": {
+        "liftAvailable": false,
+        "terrace": true,
+        "conditionedAir": true,
+        "balcony": false,
+        "parkingAvailable": false,
+        "pool": false,
+        "storage": false
+      },
+      "_fechacambio": "2026-04-15 17:53:18"
     },
     {
       "propertyId": "27669672",
