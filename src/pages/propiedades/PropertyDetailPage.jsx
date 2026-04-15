@@ -1,5 +1,5 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import PropertyDetail from '../../components/properties/PropertyDetail';
 import NewDevelopmentDetail from '../../components/properties/NewDevelopmentDetail';
 import { useIdealistaProperties } from '../../hooks/useIdealistaProperties';
@@ -10,8 +10,9 @@ const PropertyDetailPage = () => {
 	const location = useLocation();
 	const [property, setProperty] = useState(location.state?.property || null);
 	const [loading, setLoading] = useState(!location.state?.property);
+	const pendingDescriptionRef = useRef(null);
 
-	const { fetchProperty, fetchPropertyDescription } = useIdealistaProperties();
+	const { fetchProperty, fetchPropertyDescription, loading: hookLoading } = useIdealistaProperties();
 
 	const loadContentfulProperty = useCallback(async id => {
 		try {
@@ -43,13 +44,22 @@ const PropertyDetailPage = () => {
 			return;
 		}
 
-		// Siempre busca en la API en tiempo real (trae descripción actualizada).
-		// Si ya tenemos datos del state los mostramos mientras llega la ficha.
+		// Si las propiedades todavía están cargando, esperar.
+		// Cuando hookLoading pase a false, este efecto se re-ejecuta con el array lleno.
+		if (hookLoading) return;
+
 		fetchProperty(propertyId).then(fresh => {
-			if (fresh) setProperty(fresh);
+			if (fresh) {
+				const desc = pendingDescriptionRef.current;
+				pendingDescriptionRef.current = null;
+				setProperty(prev => {
+					const description = desc || prev?.description || '';
+					return description ? { ...fresh, description } : fresh;
+				});
+			}
 			setLoading(false);
 		});
-	}, [propertyId]);
+	}, [propertyId, hookLoading, fetchProperty, loadContentfulProperty]);
 
 	// Fetch real-time description from ficha API (independent of properties list loading)
 	useEffect(() => {
@@ -57,7 +67,12 @@ const PropertyDetailPage = () => {
 		if (isContentfulId) return;
 		fetchPropertyDescription(propertyId).then(description => {
 			if (description) {
-				setProperty(prev => prev ? { ...prev, description } : prev);
+				setProperty(prev => {
+					if (prev) return { ...prev, description };
+					// La propiedad todavía no cargó — guardar para aplicar cuando llegue
+					pendingDescriptionRef.current = description;
+					return prev;
+				});
 			}
 		});
 	}, [propertyId, fetchPropertyDescription]);

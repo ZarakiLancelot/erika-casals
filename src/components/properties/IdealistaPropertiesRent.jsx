@@ -685,7 +685,7 @@ const PropertiesRent = () => {
 			case 'date_created_desc': return getDate(b, 'created') - getDate(a, 'created');
 			case 'date_created_asc': return getDate(a, 'created') - getDate(b, 'created');
 			case 'city_asc': return getCity(a).localeCompare(getCity(b), 'es');
-			default: return 0;
+			default: return Number(b.propertyId) - Number(a.propertyId);
 		}
 	});
 
@@ -961,7 +961,7 @@ const PropertiesRent = () => {
 										onChange={e => { setSortOrder(e.target.value); setCurrentPage(1); }}
 										aria-label='Ordenar propiedades'
 									>
-										<option value='default'>Ordenar por defecto</option>
+										<option value='default'>Más recientes primero</option>
 										<option value='price_asc'>Precio: menor a mayor</option>
 										<option value='price_desc'>Precio: mayor a menor</option>
 										<option value='date_modified_desc'>Modificación: más reciente</option>
