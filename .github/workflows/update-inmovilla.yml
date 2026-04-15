@@ -31,7 +31,20 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Resetear cualquier archivo staged por postinstall scripts maliciosos
+          git reset HEAD -- .
+
+          # Staging exclusivo del JSON — nada más puede entrar al commit
           git add public/inmovilla-properties-all.json
+
+          # Verificar que SOLO el JSON esté staged
+          STAGED=$(git diff --name-only --staged)
+          if [ "$STAGED" != "public/inmovilla-properties-all.json" ] && [ -n "$STAGED" ]; then
+            echo "ERROR: archivos inesperados en staging: $STAGED"
+            exit 1
+          fi
+
           if git diff --staged --quiet; then
             echo "Sin cambios en el JSON, no se hace commit."
           else
